@@ -2212,9 +2212,31 @@ INPUT ./Inkscape figs//flowMC_loop.pdf
 INPUT Inkscape figs//flowMC_loop.pdf
 INPUT ./Inkscape figs//flowMC_loop.pdf
 INPUT ./Inkscape figs//flowMC_loop.pdf
+INPUT ./Inkscape figs/flowMC_loop_production.pdf_tex
+INPUT Inkscape figs/flowMC_loop_production.pdf_tex
+INPUT ./Inkscape figs/flowMC_loop_production.pdf_tex
+INPUT Inkscape figs/flowMC_loop_production.pdf_tex
+INPUT ./Inkscape figs//flowMC_loop_production.pdf
+INPUT Inkscape figs//flowMC_loop_production.pdf
+INPUT ./Inkscape figs//flowMC_loop_production.pdf
+INPUT ./Inkscape figs//flowMC_loop_production.pdf
+INPUT ./Inkscape figs//flowMC_loop_production.pdf
+INPUT Inkscape figs//flowMC_loop_production.pdf
+INPUT ./Inkscape figs//flowMC_loop_production.pdf
+INPUT ./Inkscape figs//flowMC_loop_production.pdf
 INPUT ./main.toc
 INPUT main.toc
 INPUT main.toc
+INPUT ./Figures/presentation_GW170817_production_vs_NF.pdf
+INPUT ./Figures/presentation_GW170817_production_vs_NF.pdf
+INPUT Figures/presentation_GW170817_production_vs_NF.pdf
+INPUT ./Figures/presentation_GW170817_production_vs_NF.pdf
+INPUT ./Figures/presentation_GW170817_production_vs_NF.pdf
+INPUT ./main.toc
+INPUT main.toc
+INPUT main.toc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
 INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
 INPUT Inkscape figs/jim_flowMC_ripple.pdf_tex
 INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
@@ -2240,29 +2262,27 @@ INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
 INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
 INPUT Inkscape figs//jim_flowMC_ripple.pdf
 INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./main.toc
-INPUT main.toc
-INPUT main.toc
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
-INPUT ./Inkscape figs/flowMC_loop_production.pdf_tex
-INPUT Inkscape figs/flowMC_loop_production.pdf_tex
-INPUT ./Inkscape figs/flowMC_loop_production.pdf_tex
-INPUT Inkscape figs/flowMC_loop_production.pdf_tex
-INPUT ./Inkscape figs//flowMC_loop_production.pdf
-INPUT Inkscape figs//flowMC_loop_production.pdf
-INPUT ./Inkscape figs//flowMC_loop_production.pdf
-INPUT ./Inkscape figs//flowMC_loop_production.pdf
-INPUT ./Inkscape figs//flowMC_loop_production.pdf
-INPUT Inkscape figs//flowMC_loop_production.pdf
-INPUT ./Inkscape figs//flowMC_loop_production.pdf
-INPUT ./Inkscape figs//flowMC_loop_production.pdf
+INPUT ./Figures/global_accs_training.png
+INPUT ./Figures/global_accs_training.png
+INPUT Figures/global_accs_training.png
+INPUT ./Figures/global_accs_training.png
+INPUT ./Figures/global_accs_training.png
+INPUT ./Figures/global_accs_production.png
+INPUT ./Figures/global_accs_production.png
+INPUT Figures/global_accs_production.png
+INPUT ./Figures/global_accs_production.png
+INPUT ./Figures/global_accs_production.png
+INPUT ./Figures/full_corner.png
+INPUT ./Figures/full_corner.png
+INPUT Figures/full_corner.png
+INPUT ./Figures/full_corner.png
+INPUT ./Figures/full_corner.png
 OUTPUT main.nav
 OUTPUT main.toc
 OUTPUT main.snm
@@ -2271,6 +2291,10 @@ INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb

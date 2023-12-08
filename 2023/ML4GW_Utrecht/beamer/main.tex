@@ -88,7 +88,7 @@
 
 \author{Thibeau Wouters}
 
-\date{December 5, 2023}
+\date{December 8, 2023}
 
 
 
@@ -225,11 +225,13 @@ We extend \texttt{jim} \cite{wong2023fast}, based on \texttt{jax} \cite{jax2018g
 
 \begin{frame}{Why \texttt{jax}?}
 
-  \def\x{3.5mm}
+  \def\x{4mm}
 
   \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
     What are the benefits of \texttt{jax} for MCMC?
   \end{tcolorbox}
+
+\vspace{3mm}
 
 \begin{columns}
   \column{0.75\textwidth}
@@ -252,9 +254,9 @@ We extend \texttt{jim} \cite{wong2023fast}, based on \texttt{jax} \cite{jax2018g
     
     % \item Vectorization
     
-    \vspace{\x}
+    % \vspace{\x}
     
-    \item Interoperability with \texttt{numpy}
+    % \item Interoperability with \texttt{numpy}
   \end{enumerate}
   \column{0.20\textwidth}
   \begin{figure}
@@ -338,6 +340,8 @@ Normalizing flows (NF):
     
     \item Metropolis-Hastings acceptance step
   \end{itemize}
+
+  \vspace{8mm}
   
   \incfig[\textwidth]{global_sampling}
 
@@ -347,9 +351,19 @@ Normalizing flows (NF):
 
 \begin{frame}{\texttt{flowMC} -- complete algorithm}
 
+  \only<1>{\textbf{Training loop} \& Production loop}
+  \only<2>{Training loop \& \textbf{Production loop}}
+
   \vspace{-5mm}  
   
-  \incfig[\textwidth]{flowMC_loop}
+  \only<1>{
+    \incfig[\textwidth]{flowMC_loop}
+  }
+
+  \only<2>{
+    \vspace{1cm}
+    \incfig[\textwidth]{flowMC_loop_production}
+  }
 
 \end{frame}
 
@@ -380,7 +394,13 @@ Normalizing flows (NF):
 
   \vspace{\y}
 
-  \incfig[\textwidth]{jim_flowMC_ripple}
+  % \incfig[\textwidth]{jim_flowMC_ripple}
+  \vspace{8mm}
+  \begin{figure}[H]
+    \centering
+    % \includegraphics[scale=0.2]{Figures/presentation_GW170817_production_vs_NF_masses.pdf}
+    \includegraphics[width = 0.55\textwidth]{Figures/presentation_GW170817_production_vs_NF.pdf}
+  \end{figure}
 \end{frame}
 
 
@@ -388,7 +408,9 @@ Normalizing flows (NF):
 
 \begin{frame}{Future work}
 
-  \def\x{3mm}
+  \def\x{6mm}
+
+  \vspace{4mm}
 
   \begin{itemize}
     \item Finish IMRPhenomD\_NRTidalv2 in \texttt{ripple}
@@ -398,16 +420,23 @@ Normalizing flows (NF):
     \item Injection studies and pp-plot
     
     \vspace{\x}
+
+    \item Update NF settings, boost efficiency
     
-    \item Investigate synergy with simulation-based inference 
+    \vspace{\x}
+    
+    \item Investigate synergy with simulation-based inference (\red{let's talk!})
+    
+    % \vspace{\x}
+    
+    % \item Investigate possibility of pretraining
   \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Conclusion}
 
-  \def\x{4mm}
-
+  \def\x{2mm}
 
   \begin{itemize}
     \item \texttt{flowMC}: NF-enhanced, gradient-based MCMC
@@ -420,19 +449,23 @@ Normalizing flows (NF):
     
     \item $\texttt{jim} = \texttt{jax} + \texttt{flowMC} + \texttt{ripple}$
     
-    \vspace{\x}
+    % \vspace{\x}
     
-    \item \texttt{jim} is a promising tool for fast and accurate parameter estimation
+    % \item \texttt{jim} is a promising tool for fast and accurate parameter estimation
     
     \vspace{\x}
 
-    \item \texttt{jim} can be used for parameter estimation of BNS and BBH
+    \item \texttt{jim} can do PE of BNS in $\sim 1$ min sampling/$\sim 30$ min wall time
     
     \vspace{\x}
     
-    \item \texttt{jim} can enhance and benefit from simulation-based inference
+    % \item \texttt{jim} can enhance and benefit from simulation-based inference
     
   \end{itemize}
+
+  \vspace{-5mm}
+
+  \incfig[\textwidth]{jim_flowMC_ripple}
     
 \end{frame}
 
@@ -458,22 +491,32 @@ Normalizing flows (NF):
 \end{frame}
 
 
-\begin{frame}{\texttt{flowMC}: production loop}
+\begin{frame}{Global acceptance for the NF}
 
-  % \vspace{-5mm}  
+  \only<1>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\textwidth]{Figures/global_accs_training.png}
+    \end{figure}  
+  }
 
-  \begin{itemize}
-    \item After training, NF is ``frozen'', and the Markov property is restored. 
-
-    \vspace{4mm}
-    
-    \item We run a few ``production loops'' to sample from the posterior for the final PE.
-  \end{itemize}
-  
-  \incfig[\textwidth]{flowMC_loop_production}
+  \only<2>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.8\textwidth]{Figures/global_accs_production.png}
+    \end{figure}  
+  }
   
 \end{frame}
 
+
+\begin{frame}{Full corner plot \href{https://ldas-jobs.ligo.caltech.edu/~thibeau.wouters/jim_runs/GW170817_TaylorF2/outdir/postprocessing_production_reweighted.png}{(link)}}
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.125]{Figures/full_corner.png}
+  \end{figure}  
+\end{frame}
 
 \end{document}
 

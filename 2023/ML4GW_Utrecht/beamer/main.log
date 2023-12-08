@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  7 DEC 2023 18:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  7 DEC 2023 22:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1562,7 +1562,7 @@ pdfTeX warning: pdflatex (file ./Inkscape figs//jim_flowMC_ripple.pdf): PDF incl
 <Figures/jax.png, id=193, 1204.5pt x 696.6025pt>
 File: Figures/jax.png Graphic file (type png)
 <use Figures/jax.png>
-Package pdftex.def Info: Figures/jax.png  used on input line 266.
+Package pdftex.def Info: Figures/jax.png  used on input line 268.
 (pdftex.def)             Requested size: 68.45801pt x 39.58345pt.
  [7
 
@@ -1570,17 +1570,17 @@ Package pdftex.def Info: Figures/jax.png  used on input line 266.
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 290.
+(Font)              <10> on input line 292.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 290.
+(Font)              <7> on input line 292.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 290.
+(Font)              <5> on input line 292.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 290.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 292.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 290.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 292.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 290.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 292.
  (./Inkscape figs/MALA.pdf_tex
 <Inkscape figs//MALA.pdf, id=212, page=1, 597.50786pt x 845.04686pt>
 File: Inkscape figs//MALA.pdf Graphic file (type pdf)
@@ -1593,7 +1593,7 @@ File: Inkscape figs//MALA.pdf Graphic file (type pdf)
 Package pdftex.def Info: Inkscape figs//MALA.pdf , page2 used on input line 62.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (354.1562pt too high) detected at line 290
+Overfull \vbox (354.1562pt too high) detected at line 292
  []
 
 [9
@@ -1618,7 +1618,7 @@ File: Inkscape figs//NF.pdf Graphic file (type pdf)
 Package pdftex.def Info: Inkscape figs//NF.pdf , page3 used on input line 62.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (371.70273pt too high) detected at line 319
+Overfull \vbox (371.70273pt too high) detected at line 321
  []
 
 [10
@@ -1636,7 +1636,7 @@ File: Inkscape figs//global_sampling.pdf Graphic file (type pdf)
 Package pdftex.def Info: Inkscape figs//global_sampling.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (333.49527pt too high) detected at line 344
+Overfull \vbox (356.25746pt too high) detected at line 348
  []
 
 [11
@@ -1653,7 +1653,7 @@ File: Inkscape figs//flowMC_loop.pdf Graphic file (type pdf)
 Package pdftex.def Info: Inkscape figs//flowMC_loop.pdf , page2 used on input line 60.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (260.1134pt too high) detected at line 354
+Overfull \vbox (275.84254pt too high) detected at line 368
  []
 
 [12
@@ -1661,7 +1661,43 @@ Overfull \vbox (260.1134pt too high) detected at line 354
  <./Inkscape figs//flowMC_loop.pdf> <./Inkscape figs//flowMC_loop.pdf
 
 pdfTeX warning: pdflatex (file ./Inkscape figs//flowMC_loop.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (./main.toc) [13
+>] (./Inkscape figs/flowMC_loop_production.pdf_tex
+<Inkscape figs//flowMC_loop_production.pdf, id=326, page=1, 597.50786pt x 845.04686pt>
+File: Inkscape figs//flowMC_loop_production.pdf Graphic file (type pdf)
+<use Inkscape figs//flowMC_loop_production.pdf, page 1>
+Package pdftex.def Info: Inkscape figs//flowMC_loop_production.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+<Inkscape figs//flowMC_loop_production.pdf, id=327, page=2, 597.50786pt x 845.04686pt>
+File: Inkscape figs//flowMC_loop_production.pdf Graphic file (type pdf)
+<use Inkscape figs//flowMC_loop_production.pdf, page 2>
+Package pdftex.def Info: Inkscape figs//flowMC_loop_production.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+)
+Overfull \vbox (304.29529pt too high) detected at line 368
+ []
+
+[13
+
+ <./Inkscape figs//flowMC_loop_production.pdf> <./Inkscape figs//flowMC_loop_production.pdf
+
+pdfTeX warning: pdflatex (file ./Inkscape figs//flowMC_loop_production.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] (./main.toc) [14
+
+]
+<Figures/presentation_GW170817_production_vs_NF.pdf, id=382, 538.53883pt x 375.93134pt>
+File: Figures/presentation_GW170817_production_vs_NF.pdf Graphic file (type pdf)
+<use Figures/presentation_GW170817_production_vs_NF.pdf>
+Package pdftex.def Info: Figures/presentation_GW170817_production_vs_NF.pdf  used on input line 404.
+(pdftex.def)             Requested size: 188.26346pt x 131.41731pt.
+
+Overfull \vbox (4.86417pt too high) detected at line 404
+ []
+
+[15
+
+ <./Figures/presentation_GW170817_production_vs_NF.pdf>] (./main.toc) [16
+
+] [17
 
 ] (./Inkscape figs/jim_flowMC_ripple.pdf_tex
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
@@ -1693,51 +1729,53 @@ File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page7 used on input line 70.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (340.40472pt too high) detected at line 384
+Overfull \vbox (341.01306pt too high) detected at line 470
  []
 
-[14
-
-] (./main.toc) [15
-
-] [16
-
-] [17
+[18
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 443.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 476.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <8> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 443.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 476.
 
-[18
+[19
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}] [19
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}] [20
 
-] (./Inkscape figs/flowMC_loop_production.pdf_tex
-<Inkscape figs//flowMC_loop_production.pdf, id=379, page=1, 597.50786pt x 845.04686pt>
-File: Inkscape figs//flowMC_loop_production.pdf Graphic file (type pdf)
-<use Inkscape figs//flowMC_loop_production.pdf, page 1>
-Package pdftex.def Info: Inkscape figs//flowMC_loop_production.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//flowMC_loop_production.pdf, id=380, page=2, 597.50786pt x 845.04686pt>
-File: Inkscape figs//flowMC_loop_production.pdf Graphic file (type pdf)
-<use Inkscape figs//flowMC_loop_production.pdf, page 2>
-Package pdftex.def Info: Inkscape figs//flowMC_loop_production.pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-)
-Overfull \vbox (327.52087pt too high) detected at line 475
+]
+<Figures/global_accs_training.png, id=446, 742.9356pt x 512.3943pt>
+File: Figures/global_accs_training.png Graphic file (type png)
+<use Figures/global_accs_training.png>
+Package pdftex.def Info: Figures/global_accs_training.png  used on input line 510.
+(pdftex.def)             Requested size: 273.83728pt x 188.86362pt.
+ [21
+
+ <./Figures/global_accs_training.png>]
+<Figures/global_accs_production.png, id=454, 742.9356pt x 512.3943pt>
+File: Figures/global_accs_production.png Graphic file (type png)
+<use Figures/global_accs_production.png>
+Package pdftex.def Info: Figures/global_accs_production.png  used on input line 510.
+(pdftex.def)             Requested size: 273.83728pt x 188.86362pt.
+ [22
+
+ <./Figures/global_accs_production.png>]
+<Figures/full_corner.png, id=463, 1743.8751pt x 1743.8751pt>
+File: Figures/full_corner.png Graphic file (type png)
+<use Figures/full_corner.png>
+Package pdftex.def Info: Figures/full_corner.png  used on input line 519.
+(pdftex.def)             Requested size: 217.98386pt x 217.98386pt.
+
+Overfull \vbox (2.60356pt too high) detected at line 519
  []
 
-[20
+[23
 
- <./Inkscape figs//flowMC_loop_production.pdf> <./Inkscape figs//flowMC_loop_production.pdf
-
-pdfTeX warning: pdflatex (file ./Inkscape figs//flowMC_loop_production.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
+ <./Figures/full_corner.png>]
 \tf@nav=\write7
 \openout7 = `main.nav'.
 
@@ -1755,18 +1793,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43357 strings out of 476025
- 870778 string characters out of 5790018
+ 43393 strings out of 476025
+ 871940 string characters out of 5790018
  1866388 words of memory out of 5000000
- 62903 multiletter control sequences out of 15000+600000
+ 62929 multiletter control sequences out of 15000+600000
  566318 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,122p,521b,2305s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on main.pdf (20 pages, 3293108 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on main.pdf (23 pages, 4096559 bytes).
 PDF statistics:
- 496 PDF objects out of 1000 (max. 8388607)
- 354 compressed objects within 4 object streams
- 55 named destinations out of 1000 (max. 500000)
- 240 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 548 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 260 words of extra memory for PDF output out of 10000 (max. 10000000)
 

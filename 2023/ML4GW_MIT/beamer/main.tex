@@ -50,6 +50,12 @@
 
 % Other preamble stuff:
 \usepackage{preamble}
+\usepackage{fontawesome}
+
+% Define commands for social media icons with links
+\newcommand{\twitter}{\href{https://twitter.com/ThibeauWouters}{\textcolor{gray}{\faTwitter}}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{gray}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{gray}{\faGithub}}}
 
 %%% Uncomment for another color palette
 % \definecolor{Logo1}{rgb}{0.0, 0, 0.7}
@@ -86,7 +92,7 @@
 \title[ML4GW: \texttt{jax}] %optional
 {Machine Learning for Gravitational Waves: \texttt{jax}}
 
-\author{Thibeau Wouters}
+\author{Thibeau Wouters \vspace{5mm} \newline \github \quad \linkedin \quad \twitter}
 
 \date{December 15, 2023}
 
@@ -130,6 +136,8 @@
 
 \begin{frame}[plain]
 \titlepage
+
+\vspace{-5mm}
 
 \begin{figure}
 \centering
@@ -201,7 +209,7 @@
       What are the benefits of \texttt{jax} for MCMC?
     \end{tcolorbox}
   
-  \vspace{3mm}
+  % \vspace{3mm}
   
   \begin{columns}
     \column{0.75\textwidth}
@@ -269,31 +277,53 @@
 
 \begin{frame}{\#1 -- Don't be scared, just try it out!}
 
-  \def\x{5mm}
+  \def\x{6mm}
 
   \begin{itemize}
     \item \texttt{jax} is easy to get started with: \texttt{numpy} $\rightarrow$ \texttt{jax.numpy} works well!
     
     \vspace{\x}
 
-    \item Read some tutorials, and make sure to read the common gotchas (\href{https://github.com/ThibeauWouters/jax-getting-started/blob/main/jax-getting-started.ipynb}{demo})
+    \item What about large projects?
     
     \begin{itemize}
-      \item Arrays are immutable
+      \vspace{\x}
+
+      \item Make sure to read the \href{https://jax.readthedocs.io/en/latest/notebooks/Common_Gotchas_in_JAX.html}{``sharp bits''} \
       
       \vspace{\x}
 
-      \item Functions must be pure for jitting
+      \item Check out other repositories for inspiration (\href{https://github.com/n2cholas/awesome-jax}{list of repos})
+
+      \vspace{\x}
+      
+      \item Read/watch some tutorials, such as \href{https://github.com/gordicaleksa/get-started-with-JAX}{this one}
       
       \vspace{\x}
+      
+      \item Large project? \textit{Start from scratch!}
+      
+      % \vspace{\x}
 
-      \item Random numbers are a bit annoying
+      % \item Arrays are immutable
+      
+      % \vspace{\x}
+
+      % \item Functions must be pure for jitting
+      
+      % \vspace{\x}
+
+      % \item Random numbers are a bit annoying
     \end{itemize}
   \end{itemize}
+
+  \vspace{3mm}
+
+  \href{https://github.com/ThibeauWouters/jax-getting-started/blob/main/jax-getting-started.ipynb}{Small demo} about first caveats
   
 \end{frame}
 
-\begin{frame}{\#2 -- Functions must be pure: example}
+\begin{frame}{\#2 -- Functions must be pure: conditionals}
 
   Example: \texttt{lalsuite} vs \texttt{jax} for NRTidalv2
 
@@ -343,7 +373,11 @@
     
     \vspace{\x}
 
-    \item \texttt{flax} has a different mindset: compare \href{https://www.tensorflow.org/tutorials/quickstart/beginner\#train_and_evaluate_your_model}{tensorflow} to \href{https://github.com/ThibeauWouters/jax-getting-started/blob/0e4b45133794f86028423b6b4814471e068ef2d3/flax/utils_flax.py\#L183}{flax}
+    \item \texttt{flax} has a different ``mindset'' 
+    
+    \vspace{\x}
+    
+    \item Check out my very basic \href{https://github.com/ThibeauWouters/jax-getting-started/blob/0e4b45133794f86028423b6b4814471e068ef2d3/flax/utils_flax.py\#L183}{flax code}
   \end{itemize}
   
   \centering
@@ -355,14 +389,29 @@
 
 \begin{frame}{Conclusion}
 
-  \def\x{5mm}
+  \def\x{7mm}
 
   \begin{itemize}
-    \item \texttt{jax} is a great tool
+    \item \texttt{jax} is a great tool to speed up code
     
     \vspace{\x}
 
+    \item \texttt{jax} is easy, but watch out for the ``sharp bits''
+    
+    \vspace{\x}
+
+    \item \texttt{flax} implements neural networks with \texttt{jax}
+    
+    \vspace{\x}
+
+    \item Interested? Let's connect and learn together!
   \end{itemize}
+
+  \vspace{5mm}
+  
+  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+    Thanks for listening! Questions?
+  \end{tcolorbox}
 
 \end{frame}
 

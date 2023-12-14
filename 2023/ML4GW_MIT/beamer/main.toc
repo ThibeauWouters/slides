@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Some \texttt {jax} take-aways}{7}{0}{2}
+\beamer@sectionintoc {3}{Conclusion}{11}{0}{3}
+\beamer@sectionintoc {4}{Appendix: GW parameter estimation with \texttt {jax}}{13}{0}{4}

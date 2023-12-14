@@ -1,0 +1,378 @@
+%%% ======= Beamer ======
+\documentclass[usenames,dvipsnames,t]{beamer}
+% \documentclass[usenames,dvipsnames, handout]{beamer}
+\beamertemplatenavigationsymbolsempty % remove toolbar at the bottom of slides
+\usepackage{appendixnumberbeamer} % for appendix
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+\setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{}%
+%     / \inserttotalframenumber
+    \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\colorlet{beamer@blendedblue}{blue!70} % change color theme
+
+
+% For appendix
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
+
+
+
+% Other preamble stuff:
+\usepackage{preamble}
+
+%%% Uncomment for another color palette
+% \definecolor{Logo1}{rgb}{0.0, 0, 0.7}
+% \definecolor{Logo2}{rgb}{2.55, 2.55, 2.55}
+
+% \setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+% \setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+% \setbeamercolor*{palette tertiary}{bg=white, fg=Logo1}
+% \setbeamercolor*{palette quaternary}{bg=white,fg=white}
+% \setbeamercolor{structure}{fg=Logo1} % itemize, enumerate, etc
+% \setbeamercolor{section in toc}{fg=Logo1} % TOC sections
+
+% For figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mdframed}
+
+% --- Inkscape figures:
+\newcommand{\incfig}[2][0.75\textwidth]{%
+    \def\svgwidth{\columnwidth}
+    \resizebox{#1}{!}{\import{Inkscape figs/}{#2.pdf_tex}}
+}
+
+% --- Height of frame
+\newlength{\myheight}
+\setlength{\myheight}{7cm}
+
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[ML4GW: \texttt{jax}] %optional
+{Machine Learning for Gravitational Waves: \texttt{jax}}
+
+\author{Thibeau Wouters}
+
+\date{December 15, 2023}
+
+
+
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}[plain, noframenumbering]
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+  \begin{frame}[plain, noframenumbering]
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+%------------------------------------------------------------
+
+
+\begin{document}
+
+{
+
+% \usebackgroundtemplate{\transparent{0.15}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/ML4GWNL.png}}}
+
+\begin{frame}[plain]
+\titlepage
+
+\begin{figure}
+\centering
+\includegraphics[width=0.25\textwidth]{Figures/utrecht-university.png}
+\end{figure}
+
+\end{frame}
+}
+
+% %The next statement creates the title page.
+% \frame[plain]{\titlepage
+
+
+
+% }
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+\begin{frame}[plain, noframenumbering]
+\frametitle{Table of Contents}
+\tableofcontents
+\end{frame}
+%---------------------------------------------------------
+
+
+\section{Introduction}
+
+\begin{frame}{Parameter estimation}
+
+\def\x{3mm}
+\def\y{2mm}
+
+\begin{itemize}
+    \item Parameter estimation (PE): get \red{posterior} of EM/GW parameters $\theta$ % from data $d$
+    \begin{equation*}
+        \red{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)}
+    \end{equation*}
+
+    \vspace{\y}
+
+    \item Sampling via Markov Chain Monte Carlo (MCMC)~\cite{brooks2011handbook}
+    
+    % \vspace{\y}
+    
+    % \item Success
+\end{itemize}
+
+\vspace{\x}
+
+
+\begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+  \textbf{Goal}: Improve algorithms with a \texttt{jax} implementation
+\end{tcolorbox}
+
+
+\centering
+\incfig[0.9\textwidth]{MCMC_illustration}
+
+\end{frame}
+
+  
+  \begin{frame}{Why \texttt{jax}?}
+  
+    \def\x{4mm}
+  
+    \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+      What are the benefits of \texttt{jax} for MCMC?
+    \end{tcolorbox}
+  
+  \vspace{3mm}
+  
+  \begin{columns}
+    \column{0.75\textwidth}
+    \begin{enumerate}
+      \item Automatic differentiation (AD)
+      
+      \vspace{\x}
+  
+      \item Just-in-time (JIT) compilation
+      
+      \vspace{\x}
+      
+      \item GPU acceleration
+      
+      \vspace{\x}
+      
+      \item Parallelization
+      
+      \vspace{\x}
+      
+      \item Shown to speed up PE for GWs~\cite{wong2023fast}, cosmology~\cite{piras2023cosmopower},...
+      
+      % \vspace{\x}
+      
+      % \item Interoperability with \texttt{numpy}
+    \end{enumerate}
+    \column{0.20\textwidth}
+    \begin{figure}
+      % \centering
+      \includegraphics[width=\textwidth]{Figures/jax.png}
+    \end{figure}
+  \end{columns}
+    
+  \end{frame}
+
+\begin{frame}{What is my experience with \texttt{jax}?}
+
+  \def\x{5mm}
+
+  \begin{enumerate}
+    \item TaylorF2, NRTidalv2 GW in \texttt{ripple}~\cite{edwards2023ripple}
+    
+    \vspace{\x}
+
+    \item Worked with \texttt{flowMC}~\cite{gabrie2021efficient, wong2022flowmc}, a gradient-based, normalizing flow-enhanced MCMC sampler
+    
+    \vspace{\x}
+
+    \item Worked on \texttt{jim}~\cite{wong2023fast}, a PE pipeline for GWs (see appendix of this presentation for more information)
+    
+    \vspace{\x}
+
+    \item Implemented kilonova surrogate models in \texttt{flax}~\cite{flax2020github} for \texttt{NMMA}~\cite{pang2022nmma}
+  \end{enumerate}
+
+  \vspace{5mm}
+
+  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+    What are some take-aways for getting started with \texttt{jax}?
+  \end{tcolorbox}
+  
+\end{frame}
+
+\section{Some \texttt{jax} take-aways}
+
+\begin{frame}{\#1 -- Don't be scared, just try it out!}
+
+  \def\x{5mm}
+
+  \begin{itemize}
+    \item \texttt{jax} is easy to get started with: \texttt{numpy} $\rightarrow$ \texttt{jax.numpy} works well!
+    
+    \vspace{\x}
+
+    \item Read some tutorials, and make sure to read the common gotchas (\href{https://github.com/ThibeauWouters/jax-getting-started/blob/main/jax-getting-started.ipynb}{demo})
+    
+    \begin{itemize}
+      \item Arrays are immutable
+      
+      \vspace{\x}
+
+      \item Functions must be pure for jitting
+      
+      \vspace{\x}
+
+      \item Random numbers are a bit annoying
+    \end{itemize}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{\#2 -- Functions must be pure: example}
+
+  Example: \texttt{lalsuite} vs \texttt{jax} for NRTidalv2
+
+  \vspace{-2mm}
+
+  \begin{columns}
+
+    \column{0.9\textwidth}
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.8\textwidth]{Figures/lalsuite_code.png}
+    \end{figure}
+  
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.8\textwidth]{Figures/ripple_code.png}
+    \end{figure}
+  
+    \column{0.15\textwidth}
+
+    \vspace{1cm}
+
+    \texttt{lalsuite} 
+
+    \vspace{3cm}
+
+    \texttt{jax} 
+
+    (\href{https://github.com/ThibeauWouters/ripple/blob/main/src/ripple/waveforms/utils_tidal.py}{code})
+  
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}{\#3 Neural networks}
+
+
+  \def\x{3mm}
+
+  Neural networks in \texttt{flax}:
+
+  \vspace{\x}
+
+  \begin{itemize}
+    \item Most similar to \texttt{PyTorch}, more work than \texttt{tensorflow}
+    
+    \vspace{\x}
+
+    \item \texttt{flax} has a different mindset: compare \href{https://www.tensorflow.org/tutorials/quickstart/beginner\#train_and_evaluate_your_model}{tensorflow} to \href{https://github.com/ThibeauWouters/jax-getting-started/blob/0e4b45133794f86028423b6b4814471e068ef2d3/flax/utils_flax.py\#L183}{flax}
+  \end{itemize}
+  
+  \centering
+  \incfig[\textwidth]{drawing}
+  
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+
+  \def\x{5mm}
+
+  \begin{itemize}
+    \item \texttt{jax} is a great tool
+    
+    \vspace{\x}
+
+  \end{itemize}
+
+\end{frame}
+
+
+% ======== APPENDIX  ==========
+
+% \appendix
+
+\section{Appendix: GW parameter estimation with \texttt{jax}}
+\input{jim_presentation.tex}
+
+\end{document}
+

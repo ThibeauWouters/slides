@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1702499967 "main.bcf" "main.bbl" "main" 1702580265 0
+["biber main"] 1702499967 "main.bcf" "main.bbl" "main" 1702580862 0
   "./references.bib" 1702494428 2974 723b5fe69080594715c9a6fadc8b5ec1 ""
-  "main.bcf" 1702580265 107803 bb7fb1d16d941befd5113daf8f123e7c "pdflatex"
+  "main.bcf" 1702580862 107803 bb7fb1d16d941befd5113daf8f123e7c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1702580263 "/Users/Woute029/Documents/Code/slides/2023/ML4GW_MIT/beamer/main.tex" "main.pdf" "main" 1702580265 0
-  "/Users/Woute029/Documents/Code/slides/2023/ML4GW_MIT/beamer/main.tex" 1702580262 10334 b0b35fe028da137b44cf532d33ca3eb3 ""
+["pdflatex"] 1702580860 "/Users/Woute029/Documents/Code/slides/2023/ML4GW_MIT/beamer/main.tex" "main.pdf" "main" 1702580862 0
+  "/Users/Woute029/Documents/Code/slides/2023/ML4GW_MIT/beamer/main.tex" 1702580860 10336 79c113c9c8a29d5d2a9a814b6e063aa2 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc" 1463430686 2437 443c81fb50993bacedc5f9a206c322b0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -355,14 +355,14 @@
   "Inkscape figs/global_sampling.pdf_tex" 1702492958 2361 bdba0ca42afce5498f244cbf1502b492 ""
   "Inkscape figs/jim_flowMC_ripple.pdf_tex" 1702492958 3973 b7fa0ea8dc15afaccf519494ab348072 ""
   "jim_presentation.tex" 1702499965 6025 eadf40499e816676fe73913dd8177e6d ""
-  "main.aux" 1702580265 6210 295ca45cc94092b662035dfacfddac4f "pdflatex"
+  "main.aux" 1702580862 6210 295ca45cc94092b662035dfacfddac4f "pdflatex"
   "main.bbl" 1702499969 19281 ede55e9910b5ab9832f6d9ffe5449d29 "biber main"
-  "main.nav" 1702580265 2680 d52c2a3ee7b9b02324ac3c26f06641ad "pdflatex"
-  "main.out" 1702580265 608 86e19d87649a48329bd145a35646a165 "pdflatex"
-  "main.run.xml" 1702580265 2346 fa9a0d6f2a763d80363dbecf9de71ca1 "pdflatex"
-  "main.tex" 1702580262 10334 b0b35fe028da137b44cf532d33ca3eb3 ""
-  "main.toc" 1702580265 279 fb309790d5ac511fe8f6a8d87a56a728 "pdflatex"
-  "preamble.sty" 1702492958 3823 4d8a4f57261d9bd54f720f15d37bc8d7 ""
+  "main.nav" 1702580862 2680 d52c2a3ee7b9b02324ac3c26f06641ad "pdflatex"
+  "main.out" 1702580862 608 86e19d87649a48329bd145a35646a165 "pdflatex"
+  "main.run.xml" 1702580862 2346 fa9a0d6f2a763d80363dbecf9de71ca1 "pdflatex"
+  "main.tex" 1702580860 10336 79c113c9c8a29d5d2a9a814b6e063aa2 ""
+  "main.toc" 1702580862 279 fb309790d5ac511fe8f6a8d87a56a728 "pdflatex"
+  "preamble.sty" 1702580719 3823 4d8a4f57261d9bd54f720f15d37bc8d7 ""
   (generated)
   "main.aux"
   "main.bcf"

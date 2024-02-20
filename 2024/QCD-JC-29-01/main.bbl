@@ -1,0 +1,274 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{GW170817_properties}{article}{}
+      \name{author}{4}{}{%
+        {{hash=4620614ad34308ab8c2ee8d4a7df43d7}{%
+           family={Abbott},
+           familyi={A\bibinitperiod},
+           given={B.\bibnamedelimi P.},
+           giveni={B\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=f8be78180236e580afcca88ecf22498d}{%
+           family={Abbott},
+           familyi={A\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f7ae0f5b920293141b6fbd4a57c1ea8f}{%
+           family={Abbott},
+           familyi={A\bibinitperiod},
+           given={T.\bibnamedelimi D.},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=194a7071763e4f685901e59df9e140d8}{%
+           family={Acernese},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Physical Society}%
+      }
+      \strng{namehash}{d9799319ee6631a4a5c0d1ce9c963e79}
+      \strng{fullhash}{f55b27e7f66fcf90dc805324ffc72bbe}
+      \strng{bibnamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
+      \strng{authorbibnamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
+      \strng{authornamehash}{d9799319ee6631a4a5c0d1ce9c963e79}
+      \strng{authorfullhash}{f55b27e7f66fcf90dc805324ffc72bbe}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{1}
+      \field{journaltitle}{Phys. Rev. X}
+      \field{month}{1}
+      \field{title}{Properties of the Binary Neutron Star Merger GW170817}
+      \field{volume}{9}
+      \field{year}{2019}
+      \field{pages}{011001}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevX.9.011001
+      \endverb
+      \verb{urlraw}
+      \verb https://link.aps.org/doi/10.1103/PhysRevX.9.011001
+      \endverb
+      \verb{url}
+      \verb https://link.aps.org/doi/10.1103/PhysRevX.9.011001
+      \endverb
+    \endentry
+    \entry{Maggiore:2019uih}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=61f4e212ae2ca61f6b61abfd3aa57a54}{%
+           family={Maggiore},
+           familyi={M\bibinitperiod},
+           given={Michele},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5c06c173f8e9ef8956632f0a91d0707b}
+      \strng{fullhash}{5c06c173f8e9ef8956632f0a91d0707b}
+      \strng{bibnamehash}{5c06c173f8e9ef8956632f0a91d0707b}
+      \strng{authorbibnamehash}{5c06c173f8e9ef8956632f0a91d0707b}
+      \strng{authornamehash}{5c06c173f8e9ef8956632f0a91d0707b}
+      \strng{authorfullhash}{5c06c173f8e9ef8956632f0a91d0707b}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.CO}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{JCAP}
+      \field{title}{{Science Case for the Einstein Telescope}}
+      \field{volume}{03}
+      \field{year}{2020}
+      \field{pages}{050}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1475-7516/2020/03/050
+      \endverb
+      \verb{eprint}
+      \verb 1912.02622
+      \endverb
+    \endentry
+    \entry{Tsang:2019esi}{article}{}
+      \name{author}{3}{}{%
+        {{hash=10ad2cd94e52e1caadd285c0ecbebbd2}{%
+           family={Tsang},
+           familyi={T\bibinitperiod},
+           given={Ka\bibnamedelima Wa},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=c33ab6045848c36c2c5d8205f110912f}{%
+           family={Dietrich},
+           familyi={D\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f477e2e34a838b774ce2286897b69042}{%
+           family={Van\bibnamedelimb Den\bibnamedelima Broeck},
+           familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{34cb7d4d9debb3e238552a627c5646ad}
+      \strng{fullhash}{34cb7d4d9debb3e238552a627c5646ad}
+      \strng{bibnamehash}{34cb7d4d9debb3e238552a627c5646ad}
+      \strng{authorbibnamehash}{34cb7d4d9debb3e238552a627c5646ad}
+      \strng{authornamehash}{34cb7d4d9debb3e238552a627c5646ad}
+      \strng{authorfullhash}{34cb7d4d9debb3e238552a627c5646ad}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{gr-qc}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. D}
+      \field{number}{4}
+      \field{title}{{Modeling the postmerger gravitational wave signal and extracting binary properties from future binary neutron star detections}}
+      \field{volume}{100}
+      \field{year}{2019}
+      \field{pages}{044047}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevD.100.044047
+      \endverb
+      \verb{eprint}
+      \verb 1907.02424
+      \endverb
+    \endentry
+    \entry{Fields_2023}{article}{}
+      \name{author}{6}{}{%
+        {{hash=5343fd6132fb63e2208e946a8732d42d}{%
+           family={Fields},
+           familyi={F\bibinitperiod},
+           given={Jacob},
+           giveni={J\bibinitperiod}}}%
+        {{hash=63c5bec317302429786d17c53794631d}{%
+           family={Prakash},
+           familyi={P\bibinitperiod},
+           given={Aviral},
+           giveni={A\bibinitperiod}}}%
+        {{hash=34b34ac641128954ab73975b84325d9b}{%
+           family={Breschi},
+           familyi={B\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5ff701db048de4b8f5a5ec28c9b20fec}{%
+           family={Radice},
+           familyi={R\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=000222316f0924d391bba939aa089cf5}{%
+           family={Bernuzzi},
+           familyi={B\bibinitperiod},
+           given={Sebastiano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a890bf35fe79c13e6e123bec20424d63}{%
+           family={Schneider},
+           familyi={S\bibinitperiod},
+           given={André\bibnamedelimb da\bibnamedelima Silva},
+           giveni={A\bibinitperiod\bibinitdelim d\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Astronomical Society}%
+      }
+      \strng{namehash}{c0f3e135703fcbfc447e65d8cacfab1b}
+      \strng{fullhash}{0a08698d9ed3c6d3ff86ad67ee91a458}
+      \strng{bibnamehash}{c0f3e135703fcbfc447e65d8cacfab1b}
+      \strng{authorbibnamehash}{c0f3e135703fcbfc447e65d8cacfab1b}
+      \strng{authornamehash}{c0f3e135703fcbfc447e65d8cacfab1b}
+      \strng{authorfullhash}{0a08698d9ed3c6d3ff86ad67ee91a458}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2041-8213}
+      \field{journaltitle}{The Astrophysical Journal Letters}
+      \field{month}{7}
+      \field{number}{2}
+      \field{title}{Thermal Effects in Binary Neutron Star Mergers}
+      \field{volume}{952}
+      \field{year}{2023}
+      \field{pages}{L36}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3847/2041-8213/ace5b2
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.3847/2041-8213/ace5b2
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.3847/2041-8213/ace5b2
+      \endverb
+    \endentry
+    \entry{breschi2022kilohertz}{misc}{}
+      \name{author}{6}{}{%
+        {{hash=34b34ac641128954ab73975b84325d9b}{%
+           family={Breschi},
+           familyi={B\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=000222316f0924d391bba939aa089cf5}{%
+           family={Bernuzzi},
+           familyi={B\bibinitperiod},
+           given={Sebastiano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=66a96948bc1b806276493d9c0a949a16}{%
+           family={Chakravarti},
+           familyi={C\bibinitperiod},
+           given={Kabir},
+           giveni={K\bibinitperiod}}}%
+        {{hash=a721f4dde0ea7947987a97c9c964917f}{%
+           family={Camilletti},
+           familyi={C\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+        {{hash=63c5bec317302429786d17c53794631d}{%
+           family={Prakash},
+           familyi={P\bibinitperiod},
+           given={Aviral},
+           giveni={A\bibinitperiod}}}%
+        {{hash=16e4e38f9baa815e722fe619beed162e}{%
+           family={Perego},
+           familyi={P\bibinitperiod},
+           given={Albino},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c61d664d2f25a50759119b7163d02a1d}
+      \strng{fullhash}{3f4990732052cf9853342cd7121e71eb}
+      \strng{bibnamehash}{c61d664d2f25a50759119b7163d02a1d}
+      \strng{authorbibnamehash}{c61d664d2f25a50759119b7163d02a1d}
+      \strng{authornamehash}{c61d664d2f25a50759119b7163d02a1d}
+      \strng{authorfullhash}{3f4990732052cf9853342cd7121e71eb}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{gr-qc}
+      \field{eprinttype}{arXiv}
+      \field{title}{Kilohertz Gravitational Waves From Binary Neutron Star Mergers: Numerical-relativity Informed Postmerger Model}
+      \field{year}{2022}
+      \verb{eprint}
+      \verb 2205.09112
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

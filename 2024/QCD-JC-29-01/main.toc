@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Current methods \& results}{6}{0}{2}
+\beamer@sectionintoc {3}{Future prospects}{11}{0}{3}
+\beamer@sectionintoc {4}{"Thermal Effects in Binary Neutron Star Mergers"}{14}{0}{4}

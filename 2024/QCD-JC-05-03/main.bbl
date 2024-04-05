@@ -1,0 +1,129 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Metzger:2019zeh}{article}{}
+      \name{author}{1}{}{%
+        {{hash=de23138ef5e9dda30cd87ea32947c061}{%
+           family={Metzger},
+           familyi={M\bibinitperiod},
+           given={Brian\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{de23138ef5e9dda30cd87ea32947c061}
+      \strng{fullhash}{de23138ef5e9dda30cd87ea32947c061}
+      \strng{bibnamehash}{de23138ef5e9dda30cd87ea32947c061}
+      \strng{authorbibnamehash}{de23138ef5e9dda30cd87ea32947c061}
+      \strng{authornamehash}{de23138ef5e9dda30cd87ea32947c061}
+      \strng{authorfullhash}{de23138ef5e9dda30cd87ea32947c061}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Living Rev. Rel.}
+      \field{number}{1}
+      \field{title}{{Kilonovae}}
+      \field{volume}{23}
+      \field{year}{2020}
+      \field{pages}{1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1007/s41114-019-0024-0
+      \endverb
+      \verb{eprint}
+      \verb 1910.01617
+      \endverb
+    \endentry
+    \entry{Bulla:2019muo}{article}{}
+      \name{author}{1}{}{%
+        {{hash=409a84e0d6f9fc69749a6139d3316cbf}{%
+           family={Bulla},
+           familyi={B\bibinitperiod},
+           given={Mattia},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{409a84e0d6f9fc69749a6139d3316cbf}
+      \strng{fullhash}{409a84e0d6f9fc69749a6139d3316cbf}
+      \strng{bibnamehash}{409a84e0d6f9fc69749a6139d3316cbf}
+      \strng{authorbibnamehash}{409a84e0d6f9fc69749a6139d3316cbf}
+      \strng{authornamehash}{409a84e0d6f9fc69749a6139d3316cbf}
+      \strng{authorfullhash}{409a84e0d6f9fc69749a6139d3316cbf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Mon. Not. Roy. Astron. Soc.}
+      \field{number}{4}
+      \field{title}{{POSSIS: predicting spectra, light curves and polarization for multi-dimensional models of supernovae and kilonovae}}
+      \field{volume}{489}
+      \field{year}{2019}
+      \field{pages}{5037\bibrangedash 5045}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1093/mnras/stz2495
+      \endverb
+      \verb{eprint}
+      \verb 1906.04205
+      \endverb
+    \endentry
+    \entry{Pang:2022rzc}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=b7330e975af3eb0caf177503a920720a}{%
+           family={Pang},
+           familyi={P\bibinitperiod},
+           given={Peter\bibnamedelimb T.\bibnamedelimi H.},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{fullhash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{bibnamehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{authorbibnamehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{authornamehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{authorfullhash}{a4ee442a41c70f0a1f64865764388b3a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Nature Commun.}
+      \field{number}{1}
+      \field{title}{{An updated nuclear-physics and multi-messenger astrophysics framework for binary neutron star mergers}}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{8352}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-023-43932-6
+      \endverb
+      \verb{eprint}
+      \verb 2205.08513
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

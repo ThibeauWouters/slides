@@ -1,0 +1,217 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{brooks2011handbook}{book}{}
+      \name{author}{4}{}{%
+        {{hash=44e6b85e4b24ea984e58302c151818d6}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1e1eb60e3b6e222217bf8e9b24070b28}{%
+           family={Gelman},
+           familyi={G\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=91338e619ca9474a380864619a3b98a1}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Galin},
+           giveni={G\bibinitperiod}}}%
+        {{hash=85ea5d8c6fc2be6b9cae229fdff73961}{%
+           family={Meng},
+           familyi={M\bibinitperiod},
+           given={Xiao-Li},
+           giveni={X\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC press}%
+      }
+      \strng{namehash}{eb4b2cd91ad78135015c11642dac3ba9}
+      \strng{fullhash}{dab40d7760b6559dd9d433c60f154f16}
+      \strng{bibnamehash}{eb4b2cd91ad78135015c11642dac3ba9}
+      \strng{authorbibnamehash}{eb4b2cd91ad78135015c11642dac3ba9}
+      \strng{authornamehash}{eb4b2cd91ad78135015c11642dac3ba9}
+      \strng{authorfullhash}{dab40d7760b6559dd9d433c60f154f16}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Handbook of markov chain monte carlo}
+      \field{year}{2011}
+    \endentry
+    \entry{wong2023fast}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelima WK},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=449d2d8da3b34cfd003790e04a76ef61}{%
+           family={Isi},
+           familyi={I\bibinitperiod},
+           given={Maximiliano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dc5fcaab9bf075f50d105f88ac87487b}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Thomas\bibnamedelima DP},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{fullhash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{bibnamehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{authorbibnamehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{authornamehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{authorfullhash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2302.05333}
+      \field{title}{Fast gravitational wave parameter estimation without compromises}
+      \field{year}{2023}
+    \endentry
+    \entry{frostig2018compiling}{article}{}
+      \name{author}{3}{}{%
+        {{hash=29563c986154ca2b45d286b4dd5ef92a}{%
+           family={Frostig},
+           familyi={F\bibinitperiod},
+           given={Roy},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e4d515e534ba184f553d5a2a926e0ea7}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Matthew\bibnamedelima James},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=0101ae5b219809cf901e7645ca40b9ae}{%
+           family={Leary},
+           familyi={L\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SysML}%
+      }
+      \strng{namehash}{7111a373a760266ab81692a27e6af416}
+      \strng{fullhash}{7111a373a760266ab81692a27e6af416}
+      \strng{bibnamehash}{7111a373a760266ab81692a27e6af416}
+      \strng{authorbibnamehash}{7111a373a760266ab81692a27e6af416}
+      \strng{authornamehash}{7111a373a760266ab81692a27e6af416}
+      \strng{authorfullhash}{7111a373a760266ab81692a27e6af416}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Systems for Machine Learning}
+      \field{number}{9}
+      \field{title}{Compiling machine learning programs via high-level tracing}
+      \field{volume}{4}
+      \field{year}{2018}
+    \endentry
+    \entry{edwards2023ripple}{article}{}
+      \name{author}{7}{}{%
+        {{hash=dc5fcaab9bf075f50d105f88ac87487b}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Thomas\bibnamedelima DP},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelima WK},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=e4861f35a15bd10a8d69e3c95a11168f}{%
+           family={Lam},
+           familyi={L\bibinitperiod},
+           given={Kelvin\bibnamedelima KH},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=c0ffe4756a90f23da04fa83c753df008}{%
+           family={Coogan},
+           familyi={C\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=297dd34bb5e0d14212907cc52b120315}{%
+           family={Foreman-Mackey},
+           familyi={F\bibinithyphendelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=449d2d8da3b34cfd003790e04a76ef61}{%
+           family={Isi},
+           familyi={I\bibinitperiod},
+           given={Maximiliano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9a9e7c3b60004822a70269023baa5b46}{%
+           family={Zimmerman},
+           familyi={Z\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{fullhash}{793e79bcc16f861d947bac7e2ef313dc}
+      \strng{bibnamehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{authorbibnamehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{authornamehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{authorfullhash}{793e79bcc16f861d947bac7e2ef313dc}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2302.05329}
+      \field{title}{\textsc{ripple}: Differentiable and Hardware-Accelerated Waveforms for Gravitational Wave Data Analysis}
+      \field{year}{2023}
+    \endentry
+    \entry{wong2022flowmc}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelima WK},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=9feb99a880fe811fb01ad7e54e0784d2}{%
+           family={Gabrié},
+           familyi={G\bibinitperiod},
+           given={Marylou},
+           giveni={M\bibinitperiod}}}%
+        {{hash=297dd34bb5e0d14212907cc52b120315}{%
+           family={Foreman-Mackey},
+           familyi={F\bibinithyphendelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{fullhash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{bibnamehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{authorbibnamehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{authornamehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{authorfullhash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2211.06397}
+      \field{title}{\textsc{flowMC}: Normalizing-flow enhanced sampling package for probabilistic inference in Jax}
+      \field{year}{2022}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{General remarks}{7}{0}{2}
+\beamer@sectionintoc {3}{Kilonova models}{10}{0}{3}
+\beamer@sectionintoc {4}{Conclusion and outlook}{18}{0}{4}

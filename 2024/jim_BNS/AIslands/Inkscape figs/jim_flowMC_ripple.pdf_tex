@@ -1,0 +1,72 @@
+%% Creator: Inkscape 1.3 (0e150ed, 2023-07-21), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'jim_flowMC_ripple.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{595.27559055bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.41428571)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{jim_flowMC_ripple.pdf}}%
+    \put(0.2554442,1.15185169){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{flowMC}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{jim_flowMC_ripple.pdf}}%
+    \put(0.16439614,1.08658887){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Gradient-based MCMC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{jim_flowMC_ripple.pdf}}%
+    \put(0.16439615,1.04708082){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Normalizing flows\end{tabular}}}}%
+    \put(0.50049626,1.329871){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{Jim}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{jim_flowMC_ripple.pdf}}%
+    \put(0.41887262,1.26473409){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}GW PE\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{jim_flowMC_ripple.pdf}}%
+    \put(0.41887262,1.22522604){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\gray{Relative binning}\end{tabular}}}}%
+    \put(0.73261617,1.15555674){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{ripple}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{jim_flowMC_ripple.pdf}}%
+    \put(0.64781559,1.08983845){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}AD waveforms\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{jim_flowMC_ripple.pdf}}%
+  \end{picture}%
+\endgroup%

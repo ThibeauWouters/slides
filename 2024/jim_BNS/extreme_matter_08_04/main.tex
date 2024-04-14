@@ -36,6 +36,8 @@
 \usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
 \addbibresource{references.bib}%<- specify bib file
 
+\usepackage{svg}
+
 
 % For appendix
 % \newcommand{\backupbegin}{
@@ -71,6 +73,11 @@
 \usepackage{pdfpages}
 \usepackage{transparent}
 \usepackage{mdframed}
+\usepackage{subcaption}
+
+\setbeamertemplate{caption}[numbered]
+
+
 
 % --- Inkscape figures:
 \newcommand{\incfig}[2][0.75\textwidth]{%
@@ -86,10 +93,10 @@
 %------------------------------------------------------------
 %This block of code defines the information to appear in the
 %Title page
-\title[Extreme matter] %optional
+\title[Extreme matter/PE] %optional
 {Robust parameter estimation on gravitational wave signals from binary neutron star inspirals within minutes}
 
-\author[Thibeau Wouters]{\small{Thibeau Wouters, Peter T.H. Pang, Tim Dietrich, Chris van den Broeck}}
+\author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T.H. Pang, Tim Dietrich, Chris Van Den Broeck} \\ \vspace{7mm} email: \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \\ \vspace{3mm} email: \href{https://arxiv.org/}{arXiv:????.??????}  }
 
 \date{April 8, 2024}
 
@@ -134,10 +141,37 @@
 \begin{frame}[plain]
 \titlepage
 
-\begin{figure}
-\centering
-\includegraphics[width=0.25\textwidth]{Figures/utrecht-university.png}
-\end{figure}
+\begin{columns}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \vspace{1.5mm}
+    \includegraphics[width=0.75\linewidth]{Figures/utrecht-university.png}
+  \end{figure}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/Nikhef_logo-transparent.png}
+  \end{figure}
+\end{columns}
+
+
+%%% as subfigures
+% \begin{figure}
+%   \centering
+%   \begin{subfigure}[b]{0.475\textwidth}
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{Figures/utrecht-university.png}
+%   \end{subfigure}
+%   \caption*{}
+%   \hfill
+%   \begin{subfigure}[b]{0.475\textwidth}
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{Figures/Nikhef_logo-transparent.png}
+%   \end{subfigure}
+%   \caption*{}
+%   % \caption*{}
+% \end{figure}
 
 \end{frame}
 }
@@ -175,26 +209,34 @@
 
     \vspace{\y}
 
-    \item Markov Chain Monte Carlo (MCMC)~\cite{brooks2011handbook}: computationally expensive for binary neutron stars (BNS)
+    \item \textbf{Problem:} Markov Chain Monte Carlo (MCMC): computationally expensive for binary neutron stars (BNS)
     
 \end{itemize}
 
 % \vspace{\x}
 
+\vspace{5mm}
+
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf}
+  \caption*{}
 \end{figure}
 
 \end{frame}
 
+
 \begin{frame}{Methods}
 
+\def\xx{1mm}
 \def\x{3mm}
 \def\y{2mm}
-\def\z{-2mm}
+\def\z{-0mm}
 
 We extend \textsc{Jim}~\cite{wong2023fast} to analyze BNS signals:
+
+\vspace{\xx}
+
 \begin{itemize}
   \item \textsc{jax}: automatic differentiation, GPU acceleration~\cite{frostig2018compiling}
   
@@ -204,109 +246,121 @@ We extend \textsc{Jim}~\cite{wong2023fast} to analyze BNS signals:
   
   \vspace{\x}
 
-  \item Relative binning: speed up likelihood evaluation
+  \item Relative binning: speed up likelihood evaluation~\cite{Krishna:2023bug, Zackay:2018qdy}
 
   \vspace{\x}
   
   \item MCMC sampler: \textsc{flowMC}~\cite{wong2022flowmc}
   \vspace{\y}
   \begin{itemize}
-    \item Gradient-based sampler (local sampler)
+    \item Gradient-based sampler: ``local sampler"
   
     \vspace{\y}
 
-    \item Normalizing flows (global sampler)
+    \item Normalizing flows (NF):  ``global sampler"
   \end{itemize}
 \end{itemize}
 
 \vspace{\z}
 
-\pause
 
 \begin{figure}
   \centering
   \incfig[\textwidth]{flowMCOverview2}
+  \caption*{}
 \end{figure}
-\end{frame}
-
-\begin{frame}{Validation -- waveforms}
-
-Waveforms implemented in \textsc{ripple}: cross-checked against \textsc{lalsuite}.
-
-Accuracy sufficient for PE. \red{might also just skip this slide}
-
-\vspace{3mm}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.7\textwidth]{Figures/mismatch_histogram.pdf}
-\end{figure}
-
 \end{frame}
 
 
 \begin{frame}{Validation -- p-p plot}
   
   \def\x{1mm}
+  \def\y{3mm}
 
   We demonstrate the robustness of \textsc{Jim}:
 
   \begin{itemize}
-    \item 100 GW events with HLV at design sensitivity,,
+    \item 100 GW events with HLV at design sensitivity and $T = 128$ s,
     
     \vspace{\x}
-    
-    \item $T = 128$ s,
+
+    \item \texttt{NRTv2}: reference waveform relative binning without taper,
     
     \vspace{\x}
     
     \item Priors: Table~\ref{tab:parameter_priors}.
   \end{itemize}
 
+
+  \begin{columns}
+    \column{0.49\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=\linewidth]{Figures/pp_plot_TF2.pdf}
+    \end{figure}
+    \column{0.49\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[width=\linewidth]{Figures/pp_plot_NRTv2.pdf}
+    \end{figure}
+  \end{columns}
   
-  \begin{figure}
-    \includegraphics[width=0.49\textwidth]{Figures/pp_plot_TF2.pdf}
-    \includegraphics[width=0.49\textwidth]{Figures/pp_plot_NRTv2.pdf}
-  %  \caption{\ac{p-p} plot for the injections done with \texttt{TaylorF2} (left) and \texttt{IMRPhenomD\_NRTidalv2} (right), each created from 100 injections. For both of the waveform models, the \ac{p-p} plots are agreeing well with the diagonal, demonstrating the robustness of the \textsc{Jim} pipeline on analyzing \ac{BNS} signals.}
-  %  \label{fig:pp plots}
-  \end{figure}
+  % \begin{figure}
+  %   \begin{subfigure}[t]{0.475\textwidth}
+  %     \centering
+  %     \includegraphics[width=\textwidth]{Figures/pp_plot_TF2.pdf}
+  % \end{subfigure}
+  % \hfill
+  % \begin{subfigure}[t]{0.475\textwidth}
+  %     \centering
+  %     \includegraphics[width=\textwidth]{Figures/pp_plot_NRTv2.pdf}
+  % \end{subfigure}
+  % %  \caption{\ac{p-p} plot for the injections done with \texttt{TaylorF2} (left) and \texttt{IMRPhenomD\_NRTidalv2} (right), each created from 100 injections. For both of the waveform models, the \ac{p-p} plots are agreeing well with the diagonal, demonstrating the robustness of the \textsc{Jim} pipeline on analyzing \ac{BNS} signals.}
+  % %  \label{fig:pp plots}
+  % \caption*{}
+  % \end{figure}
   
 \end{frame}
 
 
+
+
 \begin{frame}{Results -- GW170817 \& GW190425}
+  % \begin{minipage}[c]{0.2\textwidth}
+  % \caption{GW170817 with \texttt{TaylorF2}}\label{fig: GW170817 TaylorF2 first plot}
+  % \end{minipage}\hfill
+  % \begin{minipage}[c]{0.8\textwidth}
+    % \end{minipage}
+
+    \def\x{3mm}
+
+    \begin{columns}
+      \column{0.325\textwidth}
+      \begin{itemize}
+        \item Compare with \textsc{pBilby}
+
+        \vspace{\x}
+        
+        \item Cornerplots: Figure~\ref{fig: GW170817 TaylorF2},~\ref{fig: GW170817 NRTidalv2},~\ref{fig: GW190425 TaylorF2},~\ref{fig: GW190425 NRTidalv2}
+
+        \vspace{\x}
   
-  \def\x{1mm}
+        \item Jensen-Shannon divergences: Table~\ref{tab: JS divergences events}
+        
+        \vspace{\x}
+        \item GW170817, \texttt{TaylorF2}:
+      \end{itemize}
 
-  Comparison against \textsc{Parallel Bilby} (\textsc{pBilby}) for GW170817 and GW190425. Jensen-Shannon (JS) divergences (in bits): \red{I don't want to show all the plots (hard to read/takes long to discuss) and will put them in the appendix, but I also don't like flashing the JS divergences, nobody cares about this, so not sure what to do there}
 
-  \vspace{\x}
-
-  \begin{table}
-    \centering
-    \def\arraystretch{1}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l  c  c  c  c }
-\hline\hline
-% & \multicolumn{2}{ c }{GW170817} & \multicolumn{2}{ c }{GW190425} \\
-Parameter & \texttt{TF2} & \texttt{NRTv2} & \texttt{TF2} & \texttt{NRTv2} \\ \hline
-
-$\mathcal{M}$ & $0.001725$ & $0.000516$ & $0.003557$ & $0.002461$ \\
-$q$ & $0.005212$ & $0.007894$ & $0.004837$ & $0.002960$ \\
-$\chi_1$ & $0.005633$ & $0.004301$ & $0.002794$ & $0.004825$ \\
-$\chi_2$ & $0.003030$ & $0.002671$ & $0.002416$ & $0.003041$ \\
-$\Lambda_1$ & $0.001062$ & $0.002208$ & $0.008556$ & $0.000783$ \\
-$\Lambda_2$ & $0.000559$ & $0.002186$ & $0.005808$ & $0.003576$ \\
-$d_L$ & $0.001544$ & $\bm{0.01847}$ & $0.001273$ & $0.002878$ \\
-$\phi_c$ & $0.003500$ & $0.010714$ & $0.003338$ & $0.006126$ \\
-$\cos \iota$ & $0.001615$ & $0.012851$ & $0.006400$ & $0.005279$ \\
-$\psi$ & $0.004048$ & $0.011036$ & $0.001516$ & $0.003730$ \\
-$\alpha$ & $\bm{0.014008}$ & $0.001258$ & $\bm{0.009822}$ & $\bm{0.012291}$ \\
-$\sin \delta$ & $0.009570$ & $0.001761$ & $0.008934$ & $0.009228$ \\
-\hline\hline
-    \end{tabular*}
-    % \caption{Jensen-Shannon divergences (in bits) between the marginal posterior obtained for GW170817 and GW190425 using \texttt{TaylorF2} and \texttt{IMRPhenomD\_NRTidalv2} with \textsc{Jim} and \textsc{pBilby}, with the highest value of each comparison in bold. The \ac{JS} divergences are bound between $[0, 1]$.}
-    \label{tab: JS divergences events}
-\end{table}
+      \column{0.675\textwidth}
+    \vspace{-15.5mm}
+    \begin{figure}
+    \includegraphics[scale = 0.132]{Figures/GW170817_TaylorF2.pdf}
+    \caption*{}
+    \end{figure}
+    \end{columns}
+    
+  
 \end{frame}
 
 
@@ -316,18 +370,23 @@ $\sin \delta$ & $0.009570$ & $0.001761$ & $0.008934$ & $0.009228$ \\
   \def\y{3mm}
 
   \begin{itemize}
-    \item Real events: including runtime to compute reference parameters for relative binning
+    \item Real events: includes (i) runtime to compute reference parameters for relative binning, (ii) training NF, (iii) sampling
     
     \vspace{\x}
 
     \item Injections: median runtime
+    
+    \vspace{\x}
+    
+    \item  1 GPU \footnotesize (A100) \normalsize -- vs -- 480 cores \footnotesize{(Intel Skylake Xeon Platinum $8174$)} \normalsize
+    
   \end{itemize}
   
   \vspace{\y}
 
   \begin{table}
     \centering
-    \renewcommand{\arraystretch}{1.5}
+    \renewcommand{\arraystretch}{1.4}
     \begin{tabular*}{0.975\linewidth}{@{\extracolsep{\fill}} l l c c c}
  Event & WF & \textsc{Jim} \footnotesize{($1$ GPU)} & \textsc{pBilby} \footnotesize{($480$ cores)} \\
   \hline\hline
@@ -381,7 +440,7 @@ $\sin \delta$ & $0.009570$ & $0.001761$ & $0.008934$ & $0.009228$ \\
     % \label{tab: environmental impact}
 \end{table}
 
-${}^\dagger$Number of trees needed to capture the $\rm{CO}_2$ emitted in a year.
+${}^\dagger$Number of trees needed to capture the emitted $\rm{CO}_2$ in a year.
 
 \end{frame}
 
@@ -407,6 +466,11 @@ ${}^\dagger$Number of trees needed to capture the $\rm{CO}_2$ emitted in a year.
       \item normalizing flows
     \end{itemize}
     
+    
+    \vspace{\x}
+
+    \item Analyze BNS in $15$ -- $30$ minutes of sampling time
+    
     \vspace{\x}
 
     \item $100 \times$ more environmentally friendly than \textsc{pBilby}
@@ -426,7 +490,7 @@ ${}^\dagger$Number of trees needed to capture the $\rm{CO}_2$ emitted in a year.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[plain, noframenumbering]{References}
+\begin{frame}{References}
 
 \printbibliography
     
@@ -434,22 +498,85 @@ ${}^\dagger$Number of trees needed to capture the $\rm{CO}_2$ emitted in a year.
 
 % ======== APPENDIX  ==========
 
-\appendix
+% \appendix
 
-\begin{frame}[plain, noframenumbering]
+\begin{frame}{}
 \vfill
 \centering
-\textbf{BACK-UP SLIDES}
+\textbf{APPENDIX}
 \vfill
+\end{frame}
+
+\begin{frame}{Normalizing flow}
+
+  \def\x{4mm}
+
+  Normalizing flows details: 
+
+  \vspace{\x}
+
+  \begin{itemize}
+    \item Rational-quadratic neural spline flows
+    
+    \vspace{\x}
+    
+    \item 10 layers, 8 bins
+    
+    \vspace{\x}
+    
+    \item 128 neurons in hidden layers
+    
+    \vspace{\x}
+    
+    \item Adam optimizer, learning rate decayed (polynomial schedule)
+    
+    \vspace{\x}
+    
+    \item Deep learning library: \textsc{Equinox}~\cite{kidger2021equinox}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Validation -- Mismatch waveforms}
+
+  Cross-check against \textsc{LALsuite}: mismatch histogram based on $10 \ 000$ waveforms, from uniform samples with following ranges:
+
+  \footnotesize
+  \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.0}
+    \begin{tabular}{l l} 
+        \hline\hline
+        Parameter & Range \\
+        \hline
+        Component masses & $[0.5M_{\odot}, 3M_{\odot}]$\\
+        Component aligned spins & $[-0.05, 0.05]$\\
+        Dimensionless tidal deformabilities &  $[0, 5000]$\\
+        Inclination angle & $[0, \pi]$\\
+        \hline\hline
+    \end{tabular}
+    \caption*{}
+\end{table}
+\normalsize
+
+\vspace{-11.75mm}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{Figures/mismatch_histogram.pdf}
+    \caption*{}
+  \end{figure}
+  
 \end{frame}
 
 \begin{frame}{Priors}
   
-  All priors are uniform priors with the specified range.
-
   \begin{table}
+    \caption{Prior ranges used in our analyses. All priors are uniform priors with the specified range.}
+    \label{tab:parameter_priors}
     \renewcommand{\arraystretch}{1}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l l l l}
+    % \begin{tabular}{\textwidth}{@{\extracolsep{\fill}} l l l l l}
+      \begin{tabular}{l l l l l}
     \hline \hline
     Parameter  & Injection & GW170817 & GW190425 \\ \hline
     $\mathcal{M}$ $[M_\odot]$ & $[0.88, 2.61]$ & $[1.18, 1.21]$ & $[1.485, 1.490]$ \\
@@ -464,43 +591,99 @@ ${}^\dagger$Number of trees needed to capture the $\rm{CO}_2$ emitted in a year.
     $\alpha$ & $[0, 2\pi]$ & $[0, 2\pi]$ & $[0, 2\pi]$ \\
     $\sin \delta$ & $[-1, 1]$ & $[-1, 1]$ & $[-1, 1]$ \\
     \hline \hline
-    \end{tabular*}
-    % \caption{Prior ranges for our analyses. All priors are uniform priors with the specified range.}
-    \label{tab:parameter_priors}
+    \end{tabular}
 \end{table}
 \end{frame}
 
-\begin{frame}{GW170817 \texttt{TaylorF2}}
+\begin{frame}{GW170817 \& GW190425: Jensen-Shannon divergences}
+
+  \def\x{-1mm}
+  
+  \vspace{\x}
+
+  \footnotesize
+
+  \begin{table}
+    \centering
+    \def\arraystretch{1}
+    \caption{Jensen-Shannon divergences (in bits) between the marginal posterior obtained for GW170817 and GW190425 using \texttt{TaylorF2} and \texttt{IMRPhenomD\_NRTidalv2} with \textsc{Jim} and \textsc{pBilby}, with the highest value of each comparison in bold. The divergences are bound between $[0, 1]$.}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l  c  c  c  c }
+
+      \hline\hline
+& \multicolumn{2}{ c }{GW170817} & \multicolumn{2}{ c }{GW190425} \\
+Parameter & \texttt{TF2} & \texttt{NRTv2} & \texttt{TF2} & \texttt{NRTv2} \\ \hline
+      
+$\mathcal{M}$ & $0.001725$ & $0.000516$ & $0.003557$ & $0.002461$ \\
+$q$ & $0.005212$ & $0.007894$ & $0.004837$ & $0.002960$ \\
+$\chi_1$ & $0.005633$ & $0.004301$ & $0.002794$ & $0.004825$ \\
+$\chi_2$ & $0.003030$ & $0.002671$ & $0.002416$ & $0.003041$ \\
+$\Lambda_1$ & $0.001062$ & $0.002208$ & $0.008556$ & $0.000783$ \\
+$\Lambda_2$ & $0.000559$ & $0.002186$ & $0.005808$ & $0.003576$ \\
+$d_L$ & $0.001544$ & $\bm{0.01847}$ & $0.001273$ & $0.002878$ \\
+$\phi_c$ & $0.003500$ & $0.010714$ & $0.003338$ & $0.006126$ \\
+$\cos \iota$ & $0.001615$ & $0.012851$ & $0.006400$ & $0.005279$ \\
+$\psi$ & $0.004048$ & $0.011036$ & $0.001516$ & $0.003730$ \\
+$\alpha$ & $\bm{0.014008}$ & $0.001258$ & $\bm{0.009822}$ & $\bm{0.012291}$ \\
+$\sin \delta$ & $0.009570$ & $0.001761$ & $0.008934$ & $0.009228$ \\
+\hline\hline
+    \end{tabular*}
+    \label{tab: JS divergences events}
+\end{table}
+\normalsize
+\end{frame}
+
+\begin{frame}{GW170817 with \texttt{TaylorF2}}
   \vspace{-4.5mm}
   \begin{figure}
-    \centering
+
+    \begin{minipage}[c]{0.2\textwidth}
+    \caption{}\label{fig: GW170817 TaylorF2}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.8\textwidth}
     \includegraphics[scale = 0.132]{Figures/GW170817_TaylorF2.pdf}
+    \end{minipage}
+    
   \end{figure}
 \end{frame}
 
-\begin{frame}{GW170817 \texttt{IMRPhenomD\_NRTidalv2}}
+\begin{frame}{GW170817 with \texttt{IMRPhenomD\_NRTidalv2}}
   \vspace{-4.5mm}
   \begin{figure}
-    \centering
+  
+  \begin{minipage}[c]{0.2\textwidth}
+    \caption{}\label{fig: GW170817 NRTidalv2}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.8\textwidth}
     \includegraphics[scale = 0.132]{Figures/GW170817_NRTidalv2.pdf}
+    \end{minipage}
   \end{figure}
 \end{frame}
 
 
-\begin{frame}{GW190425 \texttt{TaylorF2}}
+\begin{frame}{GW190425 with \texttt{TaylorF2}}
   \vspace{-4.5mm}
   \begin{figure}
-    \centering
+  
+  \begin{minipage}[c]{0.2\textwidth}
+    \caption{}\label{fig: GW190425 TaylorF2}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.8\textwidth}
     \includegraphics[scale = 0.132]{Figures/GW190425_TaylorF2.pdf}
+    \end{minipage}
   \end{figure}
 \end{frame}
 
-\begin{frame}{GW190425 \texttt{IMRPhenomD\_NRTidalv2}}
+\begin{frame}{GW190425 with \texttt{IMRPhenomD\_NRTidalv2}}
   \vspace{-4.5mm}
   \begin{figure}
-    \centering
+  \begin{minipage}[c]{0.2\textwidth}
+    \caption{}\label{fig: GW190425 NRTidalv2}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.8\textwidth}
     \includegraphics[scale = 0.132]{Figures/GW190425_NRTidalv2.pdf}
+  \end{minipage}  
   \end{figure}
+  
 \end{frame}
 
 \end{document}

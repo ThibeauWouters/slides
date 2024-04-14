@@ -1,0 +1,319 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{wong2023fast}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelima WK},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=449d2d8da3b34cfd003790e04a76ef61}{%
+           family={Isi},
+           familyi={I\bibinitperiod},
+           given={Maximiliano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=dc5fcaab9bf075f50d105f88ac87487b}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Thomas\bibnamedelima DP},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{fullhash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{bibnamehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{authorbibnamehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{authornamehash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \strng{authorfullhash}{b4de4ae196a9a501d4fe0b58f2aa29d9}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2302.05333}
+      \field{note}{Available at: \url{https://github.com/kazewong/jim}}
+      \field{title}{Fast gravitational wave parameter estimation without compromises}
+      \field{year}{2023}
+    \endentry
+    \entry{jax2018github}{software}{}
+      \name{author}{11}{}{%
+        {{hash=b75383e6b48c8360c7a60031424c85cf}{%
+           family={Bradbury},
+           familyi={B\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=29563c986154ca2b45d286b4dd5ef92a}{%
+           family={Frostig},
+           familyi={F\bibinitperiod},
+           given={Roy},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7ab2d7e7f2bfceec36e42ad1962fde11}{%
+           family={Hawkins},
+           familyi={H\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=e4d515e534ba184f553d5a2a926e0ea7}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Matthew\bibnamedelima James},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=0101ae5b219809cf901e7645ca40b9ae}{%
+           family={Leary},
+           familyi={L\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=07e607fb522f06610feb023ecfa712e2}{%
+           family={Maclaurin},
+           familyi={M\bibinitperiod},
+           given={Dougal},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bca7d753be3217d63404d860acb6e5f5}{%
+           family={Necula},
+           familyi={N\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=56bf0b340039cf8594436a624ff548a9}{%
+           family={Paszke},
+           familyi={P\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0fd9a0e34f1b2adda41357c948d14986}{%
+           family={Vander{P}las},
+           familyi={V\bibinitperiod},
+           given={Jake},
+           giveni={J\bibinitperiod}}}%
+        {{hash=02f809ed2547f721c304772c06378c2d}{%
+           family={Wanderman-{M}ilne},
+           familyi={W\bibinithyphendelim M\bibinitperiod},
+           given={Skye},
+           giveni={S\bibinitperiod}}}%
+        {{hash=fe167f78433aabd363ac3c06710a1945}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Qiao},
+           giveni={Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{be9c2f36b976223518e841214253df92}
+      \strng{fullhash}{12f83c04441cfb40a3c9b086929c12bf}
+      \strng{bibnamehash}{be9c2f36b976223518e841214253df92}
+      \strng{authorbibnamehash}{be9c2f36b976223518e841214253df92}
+      \strng{authornamehash}{be9c2f36b976223518e841214253df92}
+      \strng{authorfullhash}{12f83c04441cfb40a3c9b086929c12bf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Available at: \url{http://github.com/google/jax}}
+      \field{title}{{\textsc{JAX}}: composable transformations of {P}ython+{N}um{P}y programs}
+      \field{version}{0.3.13}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb http://github.com/google/jax
+      \endverb
+      \verb{url}
+      \verb http://github.com/google/jax
+      \endverb
+    \endentry
+    \entry{gabrie2021efficient}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9feb99a880fe811fb01ad7e54e0784d2}{%
+           family={Gabrié},
+           familyi={G\bibinitperiod},
+           given={Marylou},
+           giveni={M\bibinitperiod}}}%
+        {{hash=db07774de3c5f879cc456105bbbfd71b}{%
+           family={Rotskoff},
+           familyi={R\bibinitperiod},
+           given={Grant\bibnamedelima M},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=3e3d82a14a02cda960c2d71e77f5453c}{%
+           family={Vanden-Eijnden},
+           familyi={V\bibinithyphendelim E\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b4a665dcf4f25dae3631ad0c462fc544}
+      \strng{fullhash}{b4a665dcf4f25dae3631ad0c462fc544}
+      \strng{bibnamehash}{b4a665dcf4f25dae3631ad0c462fc544}
+      \strng{authorbibnamehash}{b4a665dcf4f25dae3631ad0c462fc544}
+      \strng{authornamehash}{b4a665dcf4f25dae3631ad0c462fc544}
+      \strng{authorfullhash}{b4a665dcf4f25dae3631ad0c462fc544}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2107.08001}
+      \field{title}{Efficient bayesian sampling using normalizing flows to assist markov chain monte carlo methods}
+      \field{year}{2021}
+    \endentry
+    \entry{wong2022flowmc}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelima WK},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=9feb99a880fe811fb01ad7e54e0784d2}{%
+           family={Gabrié},
+           familyi={G\bibinitperiod},
+           given={Marylou},
+           giveni={M\bibinitperiod}}}%
+        {{hash=297dd34bb5e0d14212907cc52b120315}{%
+           family={Foreman-Mackey},
+           familyi={F\bibinithyphendelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{fullhash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{bibnamehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{authorbibnamehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{authornamehash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \strng{authorfullhash}{b73ba241ea863c7f38fdd7b337f0b33c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2211.06397}
+      \field{note}{Available at: \url{https://github.com/kazewong/flowMC}}
+      \field{title}{\textsc{flowMC}: Normalizing-flow enhanced sampling package for probabilistic inference in Jax}
+      \field{year}{2022}
+    \endentry
+    \entry{edwards2023ripple}{article}{}
+      \name{author}{7}{}{%
+        {{hash=dc5fcaab9bf075f50d105f88ac87487b}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={Thomas\bibnamedelima DP},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=9a0ac40e1976edff1469ca4a54563861}{%
+           family={Wong},
+           familyi={W\bibinitperiod},
+           given={Kaze\bibnamedelima WK},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=e4861f35a15bd10a8d69e3c95a11168f}{%
+           family={Lam},
+           familyi={L\bibinitperiod},
+           given={Kelvin\bibnamedelima KH},
+           giveni={K\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=c0ffe4756a90f23da04fa83c753df008}{%
+           family={Coogan},
+           familyi={C\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=297dd34bb5e0d14212907cc52b120315}{%
+           family={Foreman-Mackey},
+           familyi={F\bibinithyphendelim M\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=449d2d8da3b34cfd003790e04a76ef61}{%
+           family={Isi},
+           familyi={I\bibinitperiod},
+           given={Maximiliano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9a9e7c3b60004822a70269023baa5b46}{%
+           family={Zimmerman},
+           familyi={Z\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{fullhash}{793e79bcc16f861d947bac7e2ef313dc}
+      \strng{bibnamehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{authorbibnamehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{authornamehash}{5a580999678818623312dcc9ca9e9c74}
+      \strng{authorfullhash}{793e79bcc16f861d947bac7e2ef313dc}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2302.05329}
+      \field{note}{Available at: \url{https://github.com/tedwards2412/ripple/}}
+      \field{title}{\textsc{ripple}: Differentiable and Hardware-Accelerated Waveforms for Gravitational Wave Data Analysis}
+      \field{year}{2023}
+    \endentry
+    \entry{zackay2018relative}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e6106bafbe7b1857ae26afd289b5122c}{%
+           family={Zackay},
+           familyi={Z\bibinitperiod},
+           given={Barak},
+           giveni={B\bibinitperiod}}}%
+        {{hash=87a7ff82afa3f240bb456eb07d104960}{%
+           family={Dai},
+           familyi={D\bibinitperiod},
+           given={Liang},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dc75c9b305e69c3ea4b1a3c7211f6ae4}{%
+           family={Venumadhav},
+           familyi={V\bibinitperiod},
+           given={Tejaswi},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb0310ce60952b7955019cf5ad0cef21}
+      \strng{fullhash}{bb0310ce60952b7955019cf5ad0cef21}
+      \strng{bibnamehash}{bb0310ce60952b7955019cf5ad0cef21}
+      \strng{authorbibnamehash}{bb0310ce60952b7955019cf5ad0cef21}
+      \strng{authornamehash}{bb0310ce60952b7955019cf5ad0cef21}
+      \strng{authorfullhash}{bb0310ce60952b7955019cf5ad0cef21}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1806.08792}
+      \field{title}{Relative binning and fast likelihood evaluation for gravitational wave parameter estimation}
+      \field{year}{2018}
+    \endentry
+    \entry{kidger2021equinox}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=051731aab4dfad9f49233270e9e83536}{%
+           family={Kidger},
+           familyi={K\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d20d588b22dcd2f75514ff84d16bd100}{%
+           family={Garcia},
+           familyi={G\bibinitperiod},
+           given={Cristian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebd1e32c3250f90b52e3a6d1386561ff}
+      \strng{fullhash}{ebd1e32c3250f90b52e3a6d1386561ff}
+      \strng{bibnamehash}{ebd1e32c3250f90b52e3a6d1386561ff}
+      \strng{authorbibnamehash}{ebd1e32c3250f90b52e3a6d1386561ff}
+      \strng{authornamehash}{ebd1e32c3250f90b52e3a6d1386561ff}
+      \strng{authorfullhash}{ebd1e32c3250f90b52e3a6d1386561ff}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.LG}
+      \field{eprinttype}{arXiv}
+      \field{note}{Available at: \url{https://github.com/patrick-kidger/equinox}}
+      \field{title}{\textsc{Equinox}: neural networks in JAX via callable PyTrees and filtered transformations}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2111.00254
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

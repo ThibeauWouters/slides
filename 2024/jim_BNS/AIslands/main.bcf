@@ -2364,13 +2364,7 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">wong2023fast</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">jax2018github</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">gabrie2021efficient</bcf:citekey>
-    <bcf:citekey order="3" intorder="2">wong2022flowmc</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">edwards2023ripple</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">zackay2018relative</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">kidger2021equinox</bcf:citekey>
+    <bcf:citekey order="1" intorder="1" nocite="1">*</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

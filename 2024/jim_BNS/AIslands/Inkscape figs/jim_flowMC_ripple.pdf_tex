@@ -54,19 +54,19 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{jim_flowMC_ripple.pdf}}%
-    \put(0.2554442,1.15185169){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{flowMC}\end{tabular}}}}%
+    \put(0.19419168,1.1554229){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{flowMC}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{jim_flowMC_ripple.pdf}}%
-    \put(0.16439614,1.08658887){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Gradient-based MCMC\end{tabular}}}}%
+    \put(0.10314362,1.09016008){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Gradient-based MCMC\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{jim_flowMC_ripple.pdf}}%
-    \put(0.16439615,1.04708082){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Normalizing flows\end{tabular}}}}%
+    \put(0.10314362,1.05065204){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Normalizing flows\end{tabular}}}}%
     \put(0.50049626,1.329871){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{Jim}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{jim_flowMC_ripple.pdf}}%
     \put(0.41887262,1.26473409){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}GW PE\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{jim_flowMC_ripple.pdf}}%
     \put(0.41887262,1.22522604){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\gray{Relative binning}\end{tabular}}}}%
-    \put(0.73261617,1.15555674){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{ripple}\end{tabular}}}}%
+    \put(0.81251076,1.15555672){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[t]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{c}\textsc{ripple}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{jim_flowMC_ripple.pdf}}%
-    \put(0.64781559,1.08983845){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}AD waveforms\end{tabular}}}}%
+    \put(0.72771017,1.08983843){\color[rgb]{0,0,0}\transparent{0.99298197}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\textsc{jax} waveforms\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=7]{jim_flowMC_ripple.pdf}}%
   \end{picture}%
 \endgroup%

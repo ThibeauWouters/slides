@@ -100,9 +100,9 @@
 %This block of code defines the information to appear in the
 %Title page
 \title[\textsc{Jim} for BNS PE] %optional
-{Robust parameter estimation within minutes on gravitational wave signals from binary neutron stars}
+{Accelerating parameter estimation of binary neutron star mergers with normalizing flows}
 
-\author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T.H. Pang, Tim Dietrich, Chris Van Den Broeck} \\ \vspace{7mm} email: \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \\ \vspace{3mm} \href{https://arxiv.org/}{arXiv:????.??????}}
+\author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T.H. Pang, Tim Dietrich, Chris Van Den Broeck} \\ \vspace{7mm} email: \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \\ \vspace{7mm} \href{http://arxiv.org/abs/2404.11397}{arXiv:2404.11397}}
 
 % \raisebox{-\mydepthfigureintext}{\fbox{\includegraphics[height=\myheightfigureintext]{Figures/arxiv_logo_red_no_background.png}}}
 
@@ -203,14 +203,19 @@
 
 Parameter estimation (PE): get \red{posterior} of GW parameters $\theta$ % from data $d$
 \begin{equation*}
-    \red{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)}
+    \red{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)} = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}}
 \end{equation*}
 
 \vspace{1mm}
 
+% \begin{equation}\label{eq: likelihood function}
+%   \log p(d|\theta) \propto\left\langle d - h(\boldsymbol{\theta}), d - h(\boldsymbol{\theta}) \right\rangle
+% \end{equation}
+
 \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
   \textbf{Problem:} Markov Chain Monte Carlo (MCMC): computationally expensive for binary neutron stars (BNS)
 \end{tcolorbox}
+
 
 \vspace{-1mm}
 
@@ -225,23 +230,33 @@ Parameter estimation (PE): get \red{posterior} of GW parameters $\theta$ % from 
 
 \begin{frame}{Overview}
 
-  \def\x{3mm}
+  \def\x{4mm}
+  \def\y{4mm}
 
-We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018github}, with building blocks: 
+\textsc{Jim}: fast parameter estimation of GW signals with \textsc{jax}
+
+\vspace{\y}
+\begin{itemize}
+  \item MCMC sampler: \textsc{flowMC}
+
+  \vspace{\y}
+
+  \item Waveforms: \textsc{ripple}
+\end{itemize}
+% \vspace{\x}
+% \begin{enumerate}
+%   \item \textsc{flowMC}: Normalizing flow-enhanced, gradient-based MCMC
+  
+%   \vspace{\x}
+
+%   \item \textsc{ripple}: Automatically-differentiable (AD) GW
+  
+%   \vspace{\x}
+
+%   \item \textcolor{gray}{Relative binning likelihood}
+% \end{enumerate}
+
 \vspace{\x}
-\begin{enumerate}
-  \item \textsc{flowMC}~\cite{gabrie2021efficient,wong2022flowmc}: Normalizing flow-enhanced, gradient-based MCMC
-  
-  \vspace{\x}
-
-  \item \textsc{ripple}~\cite{edwards2023ripple}: Automatically-differentiable (AD) GW
-  
-  \vspace{\x}
-
-  \item \textcolor{gray}{Relative binning likelihood~\cite{zackay2018relative}}
-\end{enumerate}
-
-\vspace{-1mm}
 
 \incfig[\textwidth]{jim_flowMC_ripple}
   
@@ -298,7 +313,7 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
 \begin{frame}{Normalizing flows}
 
   \def\x{3mm}
-  \def\y{5mm}
+  \def\y{7mm}
   
   
   % \begin{enumerate}
@@ -309,19 +324,27 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
   % \vspace{\x}
   
   \begin{itemize}
-    \item \blue{Latent space}: easy to sample (e.g. Gaussian)
+    % \item \blue{Latent space}: easy to sample (e.g. Gaussian)
     
-    \vspace{\x}
+    % \vspace{\x}
   
-    \item \red{Data space}: distribution learned from samples
+    % \item \red{Parameter space}: complicated distribution
     
+    % \vspace{\x}
+
+    \item Generative machine learning model
+
+    \vspace{\x}
+
+    \item Learn mapping between \blue{latent} and \red{parameter} space
+
     \vspace{\x}
     
     \item Enable approximate sampling from complicated distributions
 
-    % \vspace{\x}
+    \vspace{\x}
     
-    % \item Training data: MCMC samples
+    \item Training data: MCMC samples
   \end{itemize}
   
   \vspace{\y}
@@ -343,11 +366,11 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
   
     \vspace{\y}
 
-    \item Train NF to approximate posterior
+    \item Train NF with samples from local sampler
   
     \vspace{\y}
 
-    \item Normalizing flows (global sampler)
+    \item Sample normalizing flow (global sampler)
   \end{enumerate}
   
   \vspace{\z}
@@ -456,7 +479,7 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
 \begin{frame}{Results}
 
   \def\x{3mm}
-  \def\y{2mm}
+  \def\y{1mm}
 
   \begin{itemize}
     % \item Implemented \texttt{TaylorF2}, \texttt{IMRPhenomD\_NRTidalv2} in \textsc{ripple}
@@ -467,19 +490,27 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
     
     % \vspace{\x}
 
-    \item Analyzed injections \& 2 BNS events (posteriors: figures~\ref{fig: GW170817 TaylorF2},~\ref{fig: GW170817 NRTidalv2},~\ref{fig: GW190425 TaylorF2},~\ref{fig: GW190425 NRTidalv2})
+    % \item Analyzed injections \& 2 BNS events (posteriors: figures~\ref{fig: GW170817 TaylorF2},~\ref{fig: GW170817 NRTidalv2},~\ref{fig: GW190425 TaylorF2},~\ref{fig: GW190425 NRTidalv2})
+    
+    % \vspace{\x}
+    
+    \item Waveforms: \texttt{TaylorF2} (\texttt{TF2}), \texttt{IMRPhenomD\_NRTidalv2} (\texttt{NRTv2})
 
     \vspace{\x}
 
-    \item \textsc{Jim} wall time includes (i) time to compute reference parameters for relative binning, (ii) training NF, (iii) sampling
+    \item<1> \textsc{Jim} wall time: (i) computing reference parameters for relative binning, (ii) training NF, (iii) sampling
   \end{itemize}
 
+  \vspace{1mm}
+
   \scriptsize
+  \onslide<1>{
   \begin{table}
     \centering
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{ l l c c c c}
- Event & Waveform & \textsc{Jim} & \textsc{pBilby} & RB-\textsc{Bilby} & ROQ-\textsc{Bilby}  \\
+      \hline\hline
+ Event & Waveform & \textsc{Jim} & \textsc{pBilby} & \textsc{RB-Bilby} & \textsc{ROQ-Bilby}  \\
  & & \scriptsize{($1$ GPU)} & \scriptsize{($480$ cores)} & \scriptsize{($24$ cores)} & \scriptsize{($24$ cores)} \\
   \hline\hline
  \multirow{2}{*}{GW170817} & \texttt{TF2} & $(9.70 + 17.00)$ min & $\phantom{0}9.64$ h & $3.18$ h & -- \\
@@ -492,11 +523,13 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
 \end{tabular}
 \label{tab: runtimes table full}
 \end{table}
+
 \normalsize
 
 \vspace{\y}
 
 \scriptsize{(\textsc{pBilby} = \textsc{Parallel Bilby}, RB = relative binning, ROQ = reduced order quadrature)}
+}
 \end{frame}
 
 % \begin{frame}{Results -- GW170817 \& GW190425}
@@ -534,7 +567,7 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
   \def\x{3mm}
   \def\y{1mm}
 
-  \textsc{Jim} is more environmentally friendly than existing pipelines
+  \textsc{Jim} is \red{more environmentally friendly} than existing pipelines
 
   \vspace{\x}
 
@@ -543,31 +576,49 @@ We extend \textsc{Jim}~\cite{wong2023fast}, based on \textsc{jax}~\cite{jax2018g
     
     \vspace{\x}
 
-    \item Average NL household: ${2 \ 810}$ kWh/year
+    \item Convert to number of trees to capture the emitted $\rm{CO}_2$ in a year.
   \end{itemize}
   
   \vspace{\y}
 
   \footnotesize
-  \begin{table}
-    \centering
-    \renewcommand{\arraystretch}{1.25}
-    \begin{tabular*}{0.95\linewidth}{@{\extracolsep{\fill}} l c r c r}
-& & kWh & $\rm{CO}_2$ \footnotesize [$10^3$ kg] \normalsize & Trees${}^\dagger$ \\
- \hline\hline
- \textsc{Jim} & & $\phantom{00}33.78$ & $0.01$ & $0.55$ \\ \hline 
- \textsc{pBilby} & & $3598.53$ & $1.18$ & $59.02$ \\ \hline 
- \textsc{RB-\textsc{Bilby}} & & $90.78$ & $0.03$ & $1.49$ \\ \hline 
- \multirow{2}{*}{ROQ-\textsc{Bilby}} & sampling & $32.00$ & $0.01$ & $0.52$ \\ 
- & precompute${}^\ddagger$ & $5634.06$ & $1.85$ & $92.40$ \\
-\hline\hline
-    \end{tabular*}
-    \label{tab: environmental impact}
+%   \begin{table}
+%     \centering
+%     \renewcommand{\arraystretch}{1.25}
+%     \begin{tabular*}{0.95\linewidth}{@{\extracolsep{\fill}} l c r c r}
+%       \hline\hline
+% & & kWh & $\rm{CO}_2$ \footnotesize [$10^3$ kg] \normalsize & Trees${}^\dagger$ \\
+%  \hline\hline
+%  \textsc{Jim} & & $\phantom{00}33.78$ & $0.01$ & $0.55$ \\ \hline 
+%  \textsc{pBilby} & & $3598.53$ & $1.18$ & $59.02$ \\ \hline 
+%  \textsc{RB-\textsc{Bilby}} & & $90.78$ & $0.03$ & $1.49$ \\ \hline 
+%  \multirow{2}{*}{\textsc{ROQ-Bilby}} & sampling & $32.00$ & $0.01$ & $0.52$ \\ 
+%  & precompute${}^\ddagger$ & $5634.06$ & $1.85$ & $92.40$ \\
+% \hline\hline
+%     \end{tabular*}
+%     \label{tab: environmental impact}
+% \end{table}
+\begin{table}
+  \centering
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular*}{0.75\linewidth}{@{\extracolsep{\fill}} l c r}
+  \hline\hline
+  Method & & Trees \\
+  \hline\hline
+  \textsc{Jim} & & $\phantom{000}0.55$ \\ \hline 
+  \textsc{pBilby} & &  $59.02$ \\ \hline 
+  \textsc{\textsc{RB-Bilby}} & & $1.49$ \\ \hline 
+  \multirow{2}{*}{\textsc{ROQ-Bilby}} & sampling & $0.52$ \\ 
+  & precompute${}^\ddagger$ & $0.44$ \\
+  \hline\hline
+  \end{tabular*}
+  \label{tab: environmental impact}
 \end{table}
 
-${}^\dagger$Number of trees needed to capture the emitted $\rm{CO}_2$ in a year.
 
-${}^\ddagger$Estimated time to build ROQ bases.
+% ${}^\dagger$Number of trees needed to capture the emitted $\rm{CO}_2$ in a year.
+
+${}^\dagger$Estimated cost to build ROQ bases.
 \normalsize
 \end{frame}
 
@@ -575,51 +626,60 @@ ${}^\ddagger$Estimated time to build ROQ bases.
 
 \begin{frame}{Conclusion}
 
-  \def\x{3mm}
-  \def\y{2mm}
+  \def\x{5mm}
+  \def\y{3mm}
+  \def\z{-4mm}
 
   \textsc{Jim}: a fast and environmentally friendly PE pipeline for GW signals
   
   \vspace{\y}
 
   \begin{itemize}
-    \item Enhance MCMC with
-    \begin{itemize}
-      \vspace{\y}
-      \item \textsc{jax},
-      \vspace{\y}
-      \item relative binning,
-      \vspace{\y}
-      \item gradient-based samplers, and
-      \vspace{\y}
-      \item normalizing flows
-    \end{itemize}
+    % \item Enhance MCMC with
+    % \begin{itemize}
+    %   \vspace{\y}
+    %   \item \textsc{jax},
+    %   \vspace{\y}
+    %   \item relative binning,
+    %   \vspace{\y}
+    %   \item gradient-based samplers, and
+    %   \vspace{\y}
+    %   \item normalizing flows
+    % \end{itemize}
     
+    
+    % \vspace{\x}
+
+    \item \texttt{TaylorF2} and \texttt{IMRPhenomD\_NRTidalv2} in \textsc{ripple}
     
     \vspace{\x}
 
-    \item Analyze BNS in $15$ -- $30$ minutes of sampling time
-    
-    \vspace{\x}
+    \item Parameter estimation of BNS in $15$ -- $30$ minutes sampling time without pretraining
 
-    \item More environmentally friendly than existing methods
+    % \vspace{\x}
 
-    \vspace{\x}
+    % \item Science cases:
+    % \begin{itemize}
+    %   \vspace{\y}
+    %   \item low-latency alerts,
 
-    \item Science cases:
-    \begin{itemize}
-      \vspace{\y}
-      \item low-latency alerts,
+    %   \vspace{\y}
 
-      \vspace{\y}
-
-      \item large-scale population studies, and future generation GW detectors
-    \end{itemize}
+    %   \item large-scale population studies, and future generation GW detectors
+    % \end{itemize}
     
   \end{itemize}
+
+  \vspace{\z}
+
+  \begin{figure}
+    \incfig[\textwidth]{jim_flowMC_ripple}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{References}
+
+\nocite{*}
 
 \printbibliography
     
@@ -636,11 +696,9 @@ ${}^\ddagger$Estimated time to build ROQ bases.
 \vfill
 \end{frame}
 
-\begin{frame}{Normalizing flow}
+\begin{frame}{Normalizing flow details}
 
-  \def\x{4mm}
-
-  Normalizing flows details: 
+  \def\x{3mm}
 
   \vspace{\x}
 
@@ -661,8 +719,15 @@ ${}^\ddagger$Estimated time to build ROQ bases.
     
     \vspace{\x}
     
-    \item Deep learning library: \textsc{Equinox}~\cite{kidger2021equinox}
+    \item Deep learning library: \textsc{Equinox}
   \end{itemize}
+
+  \vspace{\x}
+
+  Loss function: KL divergence on sampled data
+  \begin{equation*}
+    \mathcal{L}(T) = - \frac1n \sum_{i=1}^n \log \hat{\rho}(x_i)
+  \end{equation*}
   
 \end{frame}
 

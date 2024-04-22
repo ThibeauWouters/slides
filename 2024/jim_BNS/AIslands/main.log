@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  14 APR 2024 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  22 APR 2024 05:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1583,6 +1583,10 @@ File: Figures/Nikhef_logo-transparent.png Graphic file (type png)
 <use Figures/Nikhef_logo-transparent.png>
 Package pdftex.def Info: Figures/Nikhef_logo-transparent.png  used on input line 176.
 (pdftex.def)             Requested size: 89.85406pt x 40.43301pt.
+
+Overfull \vbox (1.21396pt too high) detected at line 176
+ []
+
 <Figures/GW-2.jpeg, id=55, 149.358pt x 84.0741pt>
 File: Figures/GW-2.jpeg Graphic file (type jpg)
 <use Figures/GW-2.jpeg>
@@ -1593,55 +1597,55 @@ Package pdftex.def Info: Figures/GW-2.jpeg  used on input line 176.
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./Figures/GW-2.jpeg> <./Figures/utrecht-university.png> <./Figures/Nikhef_logo-transparent.png>] (./main.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 223.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 228.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 223.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 228.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 223.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 228.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 223.
+(Font)              <10.95> on input line 228.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 223.
+(Font)              <8> on input line 228.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 223.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 223.
+(Font)              <6> on input line 228.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 228.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 223.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 228.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 223.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 228.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 223.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 228.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 223.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 228.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 223.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 228.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 223.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 228.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 223.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 228.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 223.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 228.
 <Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf, id=80, 707.60785pt x 348.34142pt>
 File: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf Graphic file (type pdf)
 <use Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>
-Package pdftex.def Info: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf  used on input line 223.
+Package pdftex.def Info: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf  used on input line 228.
 (pdftex.def)             Requested size: 222.48985pt x 109.52614pt.
 
-Overfull \vbox (28.5738pt too high) detected at line 223
+Overfull \vbox (28.5738pt too high) detected at line 228
  []
 
 [3
@@ -1649,46 +1653,46 @@ Overfull \vbox (28.5738pt too high) detected at line 223
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 249.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 264.
 
 (./Inkscape figs/jim_flowMC_ripple.pdf_tex
-<Inkscape figs//jim_flowMC_ripple.pdf, id=105, page=1, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=99, page=1, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 1>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//jim_flowMC_ripple.pdf, id=106, page=2, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=100, page=2, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 2>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page2 used on input line 58.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//jim_flowMC_ripple.pdf, id=107, page=3, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=101, page=3, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 3>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page3 used on input line 60.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//jim_flowMC_ripple.pdf, id=108, page=4, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=102, page=4, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 4>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page4 used on input line 63.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//jim_flowMC_ripple.pdf, id=109, page=5, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=103, page=5, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 5>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page5 used on input line 65.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//jim_flowMC_ripple.pdf, id=110, page=6, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=104, page=6, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 6>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page6 used on input line 68.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//jim_flowMC_ripple.pdf, id=111, page=7, 597.50786pt x 845.04686pt>
+<Inkscape figs//jim_flowMC_ripple.pdf, id=105, page=7, 597.50786pt x 845.04686pt>
 File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
 <use Inkscape figs//jim_flowMC_ripple.pdf, page 7>
 Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page7 used on input line 70.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (355.23946pt too high) detected at line 249
+Overfull \vbox (350.28305pt too high) detected at line 264
  []
 
 [4
@@ -1714,23 +1718,23 @@ pdfTeX warning: pdflatex (file ./Inkscape figs//jim_flowMC_ripple.pdf): PDF incl
 >] (./main.toc) [5
 
 ] (./Inkscape figs/NF.pdf_tex
-<Inkscape figs//NF.pdf, id=171, page=1, 597.50786pt x 845.04686pt>
+<Inkscape figs//NF.pdf, id=159, page=1, 597.50786pt x 845.04686pt>
 File: Inkscape figs//NF.pdf Graphic file (type pdf)
 <use Inkscape figs//NF.pdf, page 1>
 Package pdftex.def Info: Inkscape figs//NF.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//NF.pdf, id=172, page=2, 597.50786pt x 845.04686pt>
+<Inkscape figs//NF.pdf, id=160, page=2, 597.50786pt x 845.04686pt>
 File: Inkscape figs//NF.pdf Graphic file (type pdf)
 <use Inkscape figs//NF.pdf, page 2>
 Package pdftex.def Info: Inkscape figs//NF.pdf , page2 used on input line 59.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
-<Inkscape figs//NF.pdf, id=173, page=3, 597.50786pt x 845.04686pt>
+<Inkscape figs//NF.pdf, id=161, page=3, 597.50786pt x 845.04686pt>
 File: Inkscape figs//NF.pdf Graphic file (type pdf)
 <use Inkscape figs//NF.pdf, page 3>
 Package pdftex.def Info: Inkscape figs//NF.pdf , page3 used on input line 62.
 (pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
 )
-Overfull \vbox (349.56691pt too high) detected at line 331
+Overfull \vbox (377.39328pt too high) detected at line 354
  []
 
 [6
@@ -1742,7 +1746,7 @@ pdfTeX warning: pdflatex (file ./Inkscape figs//NF.pdf): PDF inclusion: multiple
 
 pdfTeX warning: pdflatex (file ./Inkscape figs//NF.pdf): PDF inclusion: multiple pdfs with page group included in a single page
 >] (./Inkscape figs/flowMCOverview2.pdf_tex
-<Inkscape figs//flowMCOverview2.pdf, id=184, page=1, 842.22565pt x 180.33011pt>
+<Inkscape figs//flowMCOverview2.pdf, id=172, page=1, 842.22565pt x 180.33011pt>
 File: Inkscape figs//flowMCOverview2.pdf Graphic file (type pdf)
 <use Inkscape figs//flowMCOverview2.pdf, page 1>
 Package pdftex.def Info: Inkscape figs//flowMCOverview2.pdf , page1 used on input line 56.
@@ -1750,73 +1754,85 @@ Package pdftex.def Info: Inkscape figs//flowMCOverview2.pdf , page1 used on inpu
 )
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <14.4> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 359.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 382.
 
 [7
 
  <./Inkscape figs//flowMCOverview2.pdf>] (./main.toc) [8
 
 ]
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 533.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 500.
+(Font)              <5> on input line 533.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 500.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 533.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 500.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 533.
 
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <8> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 500.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 533.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 500.
-(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [9
+[9
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 572.
+(Font)              <9> on input line 623.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 572.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 623.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 572.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 623.
 
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <9> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 572.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 623.
 
 [10
 
 ] (./main.toc) [11
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 620.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 620.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 620.
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 620.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 620.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <7> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 620.
-
-
-LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 620.
+] (./Inkscape figs/jim_flowMC_ripple.pdf_tex
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 1>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 2>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page2 used on input line 58.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 3>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page3 used on input line 60.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 4>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page4 used on input line 63.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 5>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page5 used on input line 65.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 6>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page6 used on input line 68.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+File: Inkscape figs//jim_flowMC_ripple.pdf Graphic file (type pdf)
+<use Inkscape figs//jim_flowMC_ripple.pdf, page 7>
+Package pdftex.def Info: Inkscape figs//jim_flowMC_ripple.pdf , page7 used on input line 70.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+)
+Overfull \vbox (362.72089pt too high) detected at line 678
+ []
 
 [12
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/scit' undefined
-(Font)              using `OT1/lmss/m/sc' instead on input line 626.
-
-
-LaTeX Font Warning: Font shape `OT1/lmss/m/scit' undefined
-(Font)              using `OT1/lmss/m/sc' instead on input line 626.
+(Font)              using `OT1/lmss/m/sc' instead on input line 686.
 
 [13
 
@@ -1824,114 +1840,131 @@ LaTeX Font Warning: Font shape `OT1/lmss/m/scit' undefined
 
 ] [15
 
-]
-<Figures/global_accs_training.png, id=285, 635.976pt x 406.1574pt>
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+<Figures/global_accs_training.png, id=272, 635.976pt x 406.1574pt>
 File: Figures/global_accs_training.png Graphic file (type png)
 <use Figures/global_accs_training.png>
-Package pdftex.def Info: Figures/global_accs_training.png  used on input line 686.
+Package pdftex.def Info: Figures/global_accs_training.png  used on input line 751.
 (pdftex.def)             Requested size: 256.72147pt x 163.94746pt.
 
-Overfull \vbox (3.18161pt too high) detected at line 686
+Overfull \vbox (3.18161pt too high) detected at line 751
  []
 
 [16
 
  <./Figures/global_accs_training.png>]
-<Figures/mismatch_histogram.pdf, id=294, 974.46408pt x 542.7701pt>
+<Figures/mismatch_histogram.pdf, id=280, 974.46408pt x 542.7701pt>
 File: Figures/mismatch_histogram.pdf Graphic file (type pdf)
 <use Figures/mismatch_histogram.pdf>
-Package pdftex.def Info: Figures/mismatch_histogram.pdf  used on input line 718.
+Package pdftex.def Info: Figures/mismatch_histogram.pdf  used on input line 783.
 (pdftex.def)             Requested size: 239.60567pt x 133.45604pt.
 
-Overfull \vbox (35.97289pt too high) detected at line 718
+Overfull \vbox (35.97289pt too high) detected at line 783
  []
 
 [17
 
  <./Figures/mismatch_histogram.pdf>]
-<Figures/pp_plot_TF2.pdf, id=324, 900.49957pt x 672.64746pt>
+<Figures/pp_plot_TF2.pdf, id=309, 900.49957pt x 672.64746pt>
 File: Figures/pp_plot_TF2.pdf Graphic file (type pdf)
 <use Figures/pp_plot_TF2.pdf>
-Package pdftex.def Info: Figures/pp_plot_TF2.pdf  used on input line 753.
+Package pdftex.def Info: Figures/pp_plot_TF2.pdf  used on input line 818.
 (pdftex.def)             Requested size: 167.72658pt x 125.27945pt.
-<Figures/pp_plot_NRTv2.pdf, id=325, 900.49957pt x 672.64746pt>
+<Figures/pp_plot_NRTv2.pdf, id=310, 900.49957pt x 672.64746pt>
 File: Figures/pp_plot_NRTv2.pdf Graphic file (type pdf)
 <use Figures/pp_plot_NRTv2.pdf>
-Package pdftex.def Info: Figures/pp_plot_NRTv2.pdf  used on input line 753.
+Package pdftex.def Info: Figures/pp_plot_NRTv2.pdf  used on input line 818.
 (pdftex.def)             Requested size: 167.72658pt x 125.27945pt.
  [18
 
- <./Figures/pp_plot_TF2.pdf> <./Figures/pp_plot_NRTv2.pdf>] [19
+ <./Figures/pp_plot_TF2.pdf> <./Figures/pp_plot_NRTv2.pdf>]
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 844.
+ [19
 
 ]
-LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <9> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/b/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/bx/it' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <9> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/b/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/it' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/b/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/bx/it' tried instead on input line 817.
-LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 817.
 
-Overfull \vbox (4.77441pt too high) detected at line 817
+LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10> not available
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 882.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 882.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <7> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <9> not available
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <5> not available
+(Font)              Font shape `OT1/lmss/bx/n' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/b/it' in size <9> not available
+(Font)              Font shape `OT1/lmss/bx/it' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <9> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/b/it' in size <6> not available
+(Font)              Font shape `OT1/lmss/bx/it' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <6> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/b/it' in size <5> not available
+(Font)              Font shape `OT1/lmss/bx/it' tried instead on input line 882.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 882.
+
+Overfull \vbox (4.77441pt too high) detected at line 882
  []
 
 [20
 
 ]
-<Figures/GW170817_TaylorF2.pdf, id=377, 1786.32652pt x 1782.16095pt>
+<Figures/GW170817_TaylorF2.pdf, id=362, 1786.32652pt x 1782.16095pt>
 File: Figures/GW170817_TaylorF2.pdf Graphic file (type pdf)
 <use Figures/GW170817_TaylorF2.pdf>
-Package pdftex.def Info: Figures/GW170817_TaylorF2.pdf  used on input line 831.
+Package pdftex.def Info: Figures/GW170817_TaylorF2.pdf  used on input line 896.
 (pdftex.def)             Requested size: 235.80128pt x 235.2514pt.
 
-Overfull \vbox (7.06738pt too high) detected at line 831
+Overfull \vbox (7.06738pt too high) detected at line 896
  []
 
 [21
 
  <./Figures/GW170817_TaylorF2.pdf>]
-<Figures/GW170817_NRTidalv2.pdf, id=400, 1786.32652pt x 1782.16095pt>
+<Figures/GW170817_NRTidalv2.pdf, id=386, 1786.32652pt x 1782.16095pt>
 File: Figures/GW170817_NRTidalv2.pdf Graphic file (type pdf)
 <use Figures/GW170817_NRTidalv2.pdf>
-Package pdftex.def Info: Figures/GW170817_NRTidalv2.pdf  used on input line 844.
+Package pdftex.def Info: Figures/GW170817_NRTidalv2.pdf  used on input line 909.
 (pdftex.def)             Requested size: 235.80128pt x 235.2514pt.
 
-Overfull \vbox (7.06738pt too high) detected at line 844
+Overfull \vbox (7.06738pt too high) detected at line 909
  []
 
 [22
 
  <./Figures/GW170817_NRTidalv2.pdf>]
-<Figures/GW190425_TaylorF2.pdf, id=420, 1760.47997pt x 1760.47997pt>
+<Figures/GW190425_TaylorF2.pdf, id=407, 1760.47997pt x 1760.47997pt>
 File: Figures/GW190425_TaylorF2.pdf Graphic file (type pdf)
 <use Figures/GW190425_TaylorF2.pdf>
-Package pdftex.def Info: Figures/GW190425_TaylorF2.pdf  used on input line 858.
+Package pdftex.def Info: Figures/GW190425_TaylorF2.pdf  used on input line 923.
 (pdftex.def)             Requested size: 232.38945pt x 232.38945pt.
 
-Overfull \vbox (4.20543pt too high) detected at line 858
+Overfull \vbox (4.20543pt too high) detected at line 923
  []
 
 [23
 
  <./Figures/GW190425_TaylorF2.pdf>]
-<Figures/GW190425_NRTidalv2.pdf, id=441, 1760.47997pt x 1760.47997pt>
+<Figures/GW190425_NRTidalv2.pdf, id=428, 1760.47997pt x 1760.47997pt>
 File: Figures/GW190425_NRTidalv2.pdf Graphic file (type pdf)
 <use Figures/GW190425_NRTidalv2.pdf>
-Package pdftex.def Info: Figures/GW190425_NRTidalv2.pdf  used on input line 871.
+Package pdftex.def Info: Figures/GW190425_NRTidalv2.pdf  used on input line 936.
 (pdftex.def)             Requested size: 232.38945pt x 232.38945pt.
 
-Overfull \vbox (4.20543pt too high) detected at line 871
+Overfull \vbox (4.20543pt too high) detected at line 936
  []
 
 [24
@@ -1959,18 +1992,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44492 strings out of 476025
- 892394 string characters out of 5790018
- 1872388 words of memory out of 5000000
- 63986 multiletter control sequences out of 15000+600000
+ 44470 strings out of 476025
+ 891774 string characters out of 5790018
+ 1871388 words of memory out of 5000000
+ 63961 multiletter control sequences out of 15000+600000
  662976 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,122p,1189b,2305s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.pdf (24 pages, 3670382 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmib10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on main.pdf (24 pages, 3664695 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 445 compressed objects within 5 object streams
+ 578 PDF objects out of 1000 (max. 8388607)
+ 435 compressed objects within 5 object streams
  70 named destinations out of 1000 (max. 500000)
  242 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2305,31 +2305,6 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT ./main.toc
 INPUT main.toc
 INPUT main.toc
-INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
-INPUT Inkscape figs/jim_flowMC_ripple.pdf_tex
-INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
-INPUT Inkscape figs/jim_flowMC_ripple.pdf_tex
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
-INPUT Inkscape figs//jim_flowMC_ripple.pdf
-INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT ./Figures/global_accs_training.png
 INPUT ./Figures/global_accs_training.png

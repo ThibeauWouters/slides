@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1713122212 "main.bcf" "main.bbl" "main" 1713757717 0
-  "./references.bib" 1713755129 2374 91e97b50b09c3af33a259bf544d4338f ""
-  "main.bcf" 1713757717 107162 0ef5b2a24ce0816efafd34c48b3fc932 "pdflatex"
+["biber main"] 1713778972 "main.bcf" "main.bbl" "main" 1713779147 0
+  "./references.bib" 1713778929 2249 7b4a83178d2b56b8675c57bfecb84c32 ""
+  "main.bcf" 1713779146 107229 6a925789bf606e0dabfbf5dc8dd14b4b "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1713757715 "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/AIslands/main.tex" "main.pdf" "main" 1713757717 0
-  "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/AIslands/main.tex" 1713757676 23780 0a4bd6a1da30d37461bdab5370e989b8 ""
+["pdflatex"] 1713779145 "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/AIslands/main.tex" "main.pdf" "main" 1713779147 0
+  "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/AIslands/main.tex" 1713779144 23973 fd51a2e51a28a8470971b8d1d67d803a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1202520719 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -389,13 +389,13 @@
   "Inkscape figs/NF.pdf_tex" 1713757715 2767 befbfd0d92ac19c70175dcd8124794bb ""
   "Inkscape figs/flowMCOverview2.pdf_tex" 1713106600 2080 85b860068089eff89f2cfc9e39ec469d ""
   "Inkscape figs/jim_flowMC_ripple.pdf_tex" 1713120517 3987 3a31ffa63c88d2b8a6fe14a1ada18580 ""
-  "main.aux" 1713757717 8539 a9c542513821efa2febcae2b3e1b78a0 "pdflatex"
-  "main.bbl" 1713122214 11844 309e0c049589d511b8240b9ef1a2a0c5 "biber main"
-  "main.nav" 1713757717 3526 d3ec617ffb9bbcb7c46ed13606aa7b75 "pdflatex"
-  "main.out" 1713757717 526 d3182873ceaf68eb1898e93b87641aae "pdflatex"
-  "main.run.xml" 1713757717 2346 fa9a0d6f2a763d80363dbecf9de71ca1 "pdflatex"
-  "main.tex" 1713757676 23780 0a4bd6a1da30d37461bdab5370e989b8 ""
-  "main.toc" 1713757717 211 33892bb50e5ef2f2dce1e47beb378576 "pdflatex"
+  "main.aux" 1713779146 8325 717fbca0f26449e2a71eea9081b13037 "pdflatex"
+  "main.bbl" 1713778974 10546 42b8eaf23f0e282287e1a4744dc6e0ee "biber main"
+  "main.nav" 1713779146 3526 d3ec617ffb9bbcb7c46ed13606aa7b75 "pdflatex"
+  "main.out" 1713779146 526 d3182873ceaf68eb1898e93b87641aae "pdflatex"
+  "main.run.xml" 1713779146 2346 fa9a0d6f2a763d80363dbecf9de71ca1 "pdflatex"
+  "main.tex" 1713779144 23973 fd51a2e51a28a8470971b8d1d67d803a ""
+  "main.toc" 1713779146 211 33892bb50e5ef2f2dce1e47beb378576 "pdflatex"
   "preamble.sty" 1713107265 3693 a10f93364249937b42546141d69a2044 ""
   (generated)
   "main.aux"

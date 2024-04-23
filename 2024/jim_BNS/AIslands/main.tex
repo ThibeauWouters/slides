@@ -7,6 +7,13 @@
 \usecolortheme{default}
 \useinnertheme{circles}
 
+\usepackage{fontawesome}
+
+% Define commands for social media icons with links
+\newcommand{\twitter}{\href{https://twitter.com/ThibeauWouters}{\textcolor{black}{\faTwitter}}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
+
 \setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
 \setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
 \setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
@@ -99,10 +106,10 @@
 %------------------------------------------------------------
 %This block of code defines the information to appear in the
 %Title page
-\title[\textsc{Jim} for BNS PE] %optional
-{Accelerating parameter estimation of binary neutron star mergers with normalizing flows}
+\title[arXiv:2404.11397] %optional
+{\textsc{Jim} for fast parameter estimation of binary neutron star gravitational waves}
 
-\author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T.H. Pang, Tim Dietrich, Chris Van Den Broeck} \\ \vspace{7mm} email: \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \\ \vspace{7mm} \href{http://arxiv.org/abs/2404.11397}{arXiv:2404.11397}}
+\author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T.H. Pang, Tim Dietrich, Chris Van Den Broeck} \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \github \quad \linkedin \quad \twitter \\ \vspace{7mm} \href{http://arxiv.org/abs/2404.11397}{arXiv:2404.11397}}
 
 % \raisebox{-\mydepthfigureintext}{\fbox{\includegraphics[height=\myheightfigureintext]{Figures/arxiv_logo_red_no_background.png}}}
 
@@ -626,67 +633,56 @@ ${}^\dagger$Estimated cost to build ROQ bases.
 
 \begin{frame}{Conclusion}
 
-  \def\x{5mm}
+  \def\x{2mm}
   \def\y{3mm}
-  \def\z{3mm}
+  \def\z{-1mm}
 
   \textsc{Jim}: a fast and environmentally friendly PE pipeline for GW signals. Our contribution:
   
   \vspace{\y}
 
   \begin{itemize}
-    % \item Enhance MCMC with
-    % \begin{itemize}
-    %   \vspace{\y}
-    %   \item \textsc{jax},
-    %   \vspace{\y}
-    %   \item relative binning,
-    %   \vspace{\y}
-    %   \item gradient-based samplers, and
-    %   \vspace{\y}
-    %   \item normalizing flows
-    % \end{itemize}
-    
-    
-    % \vspace{\x}
 
     \item \texttt{TaylorF2} and \texttt{IMRPhenomD\_NRTidalv2} in \textsc{ripple}
     
     \vspace{\x}
 
     \item Parameter estimation of BNS in $15$ -- $30$ minutes sampling time without pretraining
-
-    % \vspace{\x}
-
-    % \item Science cases:
-    % \begin{itemize}
-    %   \vspace{\y}
-    %   \item low-latency alerts,
-
-    %   \vspace{\y}
-
-    %   \item large-scale population studies, and future generation GW detectors
-    % \end{itemize}
     
   \end{itemize}
 
-  \vspace{\x}
+  \vspace{\z}
 
-  Applications:
+\incfig[\textwidth]{jim_flowMC_ripple}
+
+  
+\end{frame}
+
+\begin{frame}{Future work/points of discussion}
+  \def\x{2mm}
+  \def\y{4mm}
+
+  Future applications:
   \begin{itemize}
-    \item Low-latency
-    
-    \vspace{\x}
-
     \item Future GW detectors, e.g. Einstein Telescope
 
     \vspace{\x}
 
-    \item Multi-messenger astrophysics: e.g. \textsc{NMMA}~\cite{Pang:2022rzc}
+    \item Multi-messenger astrophysics: e.g.~\textsc{NMMA}~\cite{Pang:2022rzc}
   \end{itemize}
 
-  
+  \vspace{\y}
+
+  Points of discussion:
+  \begin{itemize}
+    \item \textsc{nessai}, \textsc{Dingo}, \textsc{Jim},...  avoid ``fragmentation of effort''?
+    
+    \vspace{\x}
+
+    \item Normalizing flows for PE: do's and don'ts?
+  \end{itemize}
 \end{frame}
+
 
 \begin{frame}{References}
 

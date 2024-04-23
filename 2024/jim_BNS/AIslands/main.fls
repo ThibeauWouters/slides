@@ -1186,6 +1186,49 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircle
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemecircles.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesome.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifxetex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/biblatex/biblatex.sty
@@ -2109,14 +2152,24 @@ INPUT ./main.nav
 INPUT main.nav
 INPUT main.nav
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesometwo.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesomethree.tfm
 INPUT ./Figures/utrecht-university.png
 INPUT ./Figures/utrecht-university.png
 INPUT Figures/utrecht-university.png
@@ -2133,7 +2186,10 @@ INPUT Figures/GW-2.jpeg
 INPUT ./Figures/GW-2.jpeg
 INPUT ./Figures/GW-2.jpeg
 INPUT /usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc
 INPUT ./main.toc
 INPUT main.toc
 INPUT main.toc
@@ -2201,7 +2257,6 @@ INPUT ./Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
 INPUT Inkscape figs/jim_flowMC_ripple.pdf_tex
@@ -2262,7 +2317,6 @@ INPUT ./Inkscape figs//flowMCOverview2.pdf
 INPUT Inkscape figs//flowMCOverview2.pdf
 INPUT ./Inkscape figs//flowMCOverview2.pdf
 INPUT ./Inkscape figs//flowMCOverview2.pdf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT ./main.toc
 INPUT main.toc
 INPUT main.toc
@@ -2305,6 +2359,31 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT ./main.toc
 INPUT main.toc
 INPUT main.toc
+INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
+INPUT Inkscape figs/jim_flowMC_ripple.pdf_tex
+INPUT ./Inkscape figs/jim_flowMC_ripple.pdf_tex
+INPUT Inkscape figs/jim_flowMC_ripple.pdf_tex
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
+INPUT Inkscape figs//jim_flowMC_ripple.pdf
+INPUT ./Inkscape figs//jim_flowMC_ripple.pdf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT ./Figures/global_accs_training.png
 INPUT ./Figures/global_accs_training.png
@@ -2384,6 +2463,7 @@ INPUT ./main.out
 INPUT ./main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb

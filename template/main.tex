@@ -1,0 +1,206 @@
+%%% ======= Beamer ======
+\documentclass[usenames,dvipsnames,t]{beamer}
+% \documentclass[usenames,dvipsnames, handout]{beamer}
+\beamertemplatenavigationsymbolsempty % remove toolbar at the bottom of slides
+\usepackage{appendixnumberbeamer} % for appendix
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+\usepackage{fontawesome}
+
+% Define commands for social media icons with links
+\newcommand{\twitter}{\href{https://twitter.com/ThibeauWouters}{\textcolor{black}{\faTwitter}}}
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
+
+\setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{}%
+%     / \inserttotalframenumber
+    \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\colorlet{beamer@blendedblue}{blue!70} % change color theme
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
+\addbibresource{references.bib}%<- specify bib file
+
+\usepackage{svg}
+
+
+% For appendix
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
+
+
+
+% Other preamble stuff:
+\usepackage{preamble}
+
+%%% Uncomment for another color palette
+% \definecolor{Logo1}{rgb}{0.0, 0, 0.7}
+% \definecolor{Logo2}{rgb}{2.55, 2.55, 2.55}
+
+% \setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+% \setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+% \setbeamercolor*{palette tertiary}{bg=white, fg=Logo1}
+% \setbeamercolor*{palette quaternary}{bg=white,fg=white}
+% \setbeamercolor{structure}{fg=Logo1} % itemize, enumerate, etc
+% \setbeamercolor{section in toc}{fg=Logo1} % TOC sections
+
+% For figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mdframed}
+\usepackage{subcaption}
+
+\setbeamertemplate{caption}[numbered]
+
+
+% --- Inkscape figures:
+\newcommand{\incfig}[2][0.75\textwidth]{%
+    \def\svgwidth{\columnwidth}
+    \resizebox{#1}{!}{\import{Inkscape figs/}{#2.pdf_tex}}
+}
+
+% --- Height of frame
+\newlength{\myheight}
+\setlength{\myheight}{7cm}
+
+\newlength\myheightfigureintext
+\newlength\mydepthfigureintext
+\settototalheight\myheightfigureintext{Xygp}
+\settodepth\mydepthfigureintext{Xygp}
+\setlength\fboxsep{0pt}
+
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[GW230529] %optional
+{GW230529}
+
+\author[Thibeau Wouters]{Thibeau Wouters \\ \vspace{4mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \\ \vspace{4mm} \github \quad \linkedin \quad \twitter}
+
+% \raisebox{-\mydepthfigureintext}{\fbox{\includegraphics[height=\myheightfigureintext]{Figures/arxiv_logo_red_no_background.png}}}
+
+\date{Jamboree 2024}
+
+
+
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+\AtBeginSection[]
+{
+  \begin{frame}[plain, noframenumbering]
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+%------------------------------------------------------------
+
+
+\begin{document}
+
+{
+
+\usebackgroundtemplate{\transparent{0.15}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/GW-2.jpeg}}}
+
+\begin{frame}[plain]
+\titlepage
+
+\begin{columns}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \vspace{1.5mm}
+    \includegraphics[width=0.75\linewidth]{Figures/utrecht-university.png}
+  \end{figure}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/Nikhef_logo-transparent.png}
+  \end{figure}
+\end{columns}
+
+\end{frame}
+}
+
+% %The next statement creates the title page.
+% \frame[plain]{\titlepage
+
+
+
+% }
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after
+%the title page
+% \begin{frame}[plain, noframenumbering]
+% \frametitle{Table of Contents}
+% \tableofcontents
+% \end{frame}
+%---------------------------------------------------------
+
+
+\section{Introduction}
+
+\begin{frame}{References}
+
+% \nocite{*}
+\printbibliography
+    
+\end{frame}
+
+% ======== APPENDIX  ==========
+
+\appendix
+
+\begin{frame}[plain, noframenumbering]
+\vfill
+\centering
+\textbf{APPENDIX}
+\vfill
+\end{frame}
+
+
+\end{document}

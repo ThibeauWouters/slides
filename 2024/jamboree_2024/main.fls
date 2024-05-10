@@ -2185,8 +2185,199 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesome
 INPUT ./main.toc
 INPUT main.toc
 INPUT main.toc
+INPUT ./Figures/GetToKnowGW230529_English.png
+INPUT ./Figures/GetToKnowGW230529_English.png
+INPUT Figures/GetToKnowGW230529_English.png
+INPUT ./Figures/GetToKnowGW230529_English.png
+INPUT ./Figures/GetToKnowGW230529_English.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT ./main.toc
+INPUT main.toc
+INPUT main.toc
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi6.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy6.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmex10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT ./Figures/mrl_samples.pdf
+INPUT ./Figures/mrl_samples.pdf
+INPUT Figures/mrl_samples.pdf
+INPUT ./Figures/mrl_samples.pdf
+INPUT ./Figures/mrl_samples.pdf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss9.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso9.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx9.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT Figures/mtov_gw230529_set_L1.pdf
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT Figures/mtov_gw230529_set_L1.pdf
+INPUT ./Figures/mtov_gw230529_set_L1.pdf
+INPUT ./Figures/LVK Logo.jpeg
+INPUT ./Figures/LVK Logo.jpeg
+INPUT Figures/LVK Logo.jpeg
+INPUT ./Figures/LVK Logo.jpeg
+INPUT ./Figures/LVK Logo.jpeg
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbx10.tfm
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/LVK Logo.jpeg
+INPUT ./Figures/LVK Logo.jpeg
+INPUT Figures/LVK Logo.jpeg
+INPUT ./Figures/LVK Logo.jpeg
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT Figures/NMMA logo.jpg
+INPUT ./Figures/NMMA logo.jpg
+INPUT ./main.toc
+INPUT main.toc
+INPUT main.toc
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmi7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmsy7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmsso8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmmib7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmssbo10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT ./Figures/mtov_gw230529_set_L1_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L1_pdb.pdf
+INPUT Figures/mtov_gw230529_set_L1_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L1_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L1_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L3_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L3_pdb.pdf
+INPUT Figures/mtov_gw230529_set_L3_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L3_pdb.pdf
+INPUT ./Figures/mtov_gw230529_set_L3_pdb.pdf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 OUTPUT main.nav
 OUTPUT main.toc
 OUTPUT main.snm
@@ -2196,7 +2387,24 @@ INPUT ./main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso12.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb

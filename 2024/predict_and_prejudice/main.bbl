@@ -1,0 +1,106 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{LIGOScientific:2024elc}{article}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{month}{4}
+      \field{title}{{Observation of Gravitational Waves from the Coalescence of a $2.5-4.5~M_\odot$ Compact Object and a Neutron Star}}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2404.04248
+      \endverb
+    \endentry
+    \entry{Koehn:2024set}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=70daec67ae54392c5c7e95a744c6abc5}{%
+           family={Koehn},
+           familyi={K\bibinitperiod},
+           given={Hauke},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{cfaddb3f57229be901e6f4d76975db09}
+      \strng{fullhash}{cfaddb3f57229be901e6f4d76975db09}
+      \strng{bibnamehash}{cfaddb3f57229be901e6f4d76975db09}
+      \strng{authorbibnamehash}{cfaddb3f57229be901e6f4d76975db09}
+      \strng{authornamehash}{cfaddb3f57229be901e6f4d76975db09}
+      \strng{authorfullhash}{cfaddb3f57229be901e6f4d76975db09}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{month}{2}
+      \field{title}{{An overview of existing and new nuclear and astrophysical constraints on the equation of state of neutron-rich dense matter}}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2402.04172
+      \endverb
+    \endentry
+    \entry{Breu:2016ufb}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4421e7a713080ae32b7e162c2bcd4e50}{%
+           family={Breu},
+           familyi={B\bibinitperiod},
+           given={Cosima},
+           giveni={C\bibinitperiod}}}%
+        {{hash=72c35344cecfdbbeebc71d2ca292436a}{%
+           family={Rezzolla},
+           familyi={R\bibinitperiod},
+           given={Luciano},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{d0387a82ee102d1672d4d42733b1aa91}
+      \strng{fullhash}{d0387a82ee102d1672d4d42733b1aa91}
+      \strng{bibnamehash}{d0387a82ee102d1672d4d42733b1aa91}
+      \strng{authorbibnamehash}{d0387a82ee102d1672d4d42733b1aa91}
+      \strng{authornamehash}{d0387a82ee102d1672d4d42733b1aa91}
+      \strng{authorfullhash}{d0387a82ee102d1672d4d42733b1aa91}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{gr-qc}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Mon. Not. Roy. Astron. Soc.}
+      \field{number}{1}
+      \field{title}{{Maximum mass, moment of inertia and compactness of relativistic stars}}
+      \field{volume}{459}
+      \field{year}{2016}
+      \field{pages}{646\bibrangedash 656}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1093/mnras/stw575
+      \endverb
+      \verb{eprint}
+      \verb 1601.06083
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

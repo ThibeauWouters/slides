@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  10 MAY 2024 11:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  10 MAY 2024 11:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1788,6 +1788,10 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
 [10
 
  <./Figures/LVK Logo.jpeg>]
@@ -1809,6 +1813,10 @@ Overfull \hbox (9.4359pt too wide) in paragraph at lines 420--420
  [][]\OT1/lmss/bx/n/8 PRELIMINARY![] 
  []
 
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 420.
@@ -2017,13 +2025,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  45573 strings out of 476025
  902611 string characters out of 5790018
- 1868388 words of memory out of 5000000
+ 1867388 words of memory out of 5000000
  65087 multiletter control sequences out of 15000+600000
  661542 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,122p,1186b,2305s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (19 pages, 2551658 bytes).
+Output written on main.pdf (19 pages, 2551642 bytes).
 PDF statistics:
  357 PDF objects out of 1000 (max. 8388607)
  265 compressed objects within 3 object streams

@@ -202,7 +202,7 @@
 
       \vspace{\y}
 
-      \item GW230529 primary~\cite{LIGOScientific:2024elc} (\textbf{this presentation})
+      \item GW230529 primary~\cite{LIGOScientific:2024elc} (\textbf{main focus of this talk})
     \end{itemize}
 
     \vspace{\x}
@@ -242,7 +242,7 @@
 \begin{columns}
   \column{0.9\textwidth}
 
-  \textsc{NMMA} compiled sets of EOS constraints~\cite{Koehn:2024set}:
+  \textsc{NMMA}~\cite{Pang:2022rzc} compiled sets of EOS constraints~\cite{Koehn:2024set}:
   \footnotesize
   \begin{itemize}
 
@@ -301,7 +301,7 @@
   
   \def\x{3mm}
 
-  \textsc{NMMA} \blue{sets of constraints $\mathcal{D}$} give posterior on $\mtov$. 
+  \textsc{NMMA} \blue{sets of constraints $\mathcal{D}$} give posteriors on $\mtov$. 
   
   Compare this against \red{GW230529}'s properties:
 
@@ -336,7 +336,7 @@
 
   \begin{itemize}
     \vspace{\x}
-    \item Set 1 and without spin agree well with LVK results~\cite{LIGOScientific:2024elc}. 
+    \item Set 1 and without spin: agreement with LVK results~\cite{LIGOScientific:2024elc}. 
 
     \vspace{\x}
 
@@ -353,11 +353,107 @@
   \end{figure}
   \footnotesize
   \begin{center} 
-    (\textsc{PDB}: Powerlaw + Dip + Break population model) 
+    (\textsc{PDB}: \textsc{Powerlaw + Dip + Break} population model) 
   \end{center}
   \normalsize
 
 
+\end{frame}
+
+\begin{frame}{Other results -- PSR J0514-4002E}
+
+  \def\x{3mm}
+
+  Binary MSP system observed by MeerKAT, with companion mass $m_c = 2.35^{+0.20}_{-0.18} \, M_\odot$~\cite{Barr:2024wwl}. We use several priors:
+  \begin{itemize}
+
+    \vspace{\x}
+    \item Constrain pulsar mass above $1.17 M_\odot$
+
+    \vspace{\x}
+
+    \item Isotropic prior
+
+    \vspace{\x}
+
+    \item Prior informed by galactic population
+  \end{itemize}
+
+  \vspace{\x}
+
+  The companion is most likely a \red{black hole}.
+
+  \begin{columns}
+    
+  \column{0.475\textwidth}
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/masses_set_L1.pdf}
+  \end{figure}
+
+  \column{0.575\textwidth}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Figures/PSR_Barr_results.jpg}
+  \end{figure}
+
+  \footnotesize
+  \begin{center}
+    $P(NS)$ for PSR J0514-4002E companion.
+  \end{center}
+  \normalsize
+
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{Other results -- NICER model selection}
+  
+    \def\x{3mm}
+
+    Comparing hotspot models for NICER data from Ref.~\cite{Riley:2019yda} (Ref.~[26] below) and Ref.~\cite{Vinciguerra:2023qxq} (Ref.~[17] below):
+  
+    \begin{columns}
+      \column{0.475\textwidth}
+
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.95\linewidth]{Figures/table_NICER.jpg}
+      \end{figure}
+
+      \column{0.475\textwidth}
+
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.95\linewidth]{Figures/figure_NICER_v2.jpg}
+      \end{figure}
+      
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Other results -- symmetry energy measurements}
+
+
+  Comparing different measurements of the nuclear symmetry energy, CREX~\cite{CREX:2022kgg} and PREX~\cite{PREX:2021umo} and the dipole measurement of ${}^{208}\rm{Pb}$ ~\cite{Tamii:2011pv}
+
+  \begin{columns}
+    \column{0.475\textwidth}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/table_PREX_CREX.jpg}
+    \end{figure}
+
+    \column{0.475\textwidth}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/figure_PREX_CREX_v2.jpg}
+    \end{figure}
+  \end{columns}
+  
 \end{frame}
 
 
@@ -365,27 +461,39 @@
 
 \begin{frame}{Conclusion}
 
-  \def\x{10mm}
+  \def\x{3mm}
+  \def\y{4mm}
 
+  Nature of GW230529 primary:
   \begin{itemize}
-    \item GW230529: primary component in the lower mass gap
+    \vspace{\x}
+    \item \textsc{NMMA} has compiled current EOS constraints into 3 sets (soon: with new NICER observation of PSR J0437-4715)
 
     \vspace{\x}
 
-    \item \textsc{NMMA} has compiled current EOS constraints into 3 sets
+    \item $P(NS)$ ranges between $\sim 0.02\%$ to $\sim 17\%$ (depends on prior and spin)
+    
+    \vspace{\x}
+
+    \item Results are still consistent with black hole interpretation
+  \end{itemize}
+
+  \vspace{\y}
+
+  Other results:
+  \begin{itemize}
+
+    \vspace{\x}
+    \item PSR J0514-4002E companion is most likely a black hole
 
     \vspace{\x}
 
-    \item Accounting for spin raises $P(NS)$ for GW230529 primary to $\sim 17\%$ with \textsc{PDB}. The ``aggressive'' constraints gives $P(NS) \lesssim 1.7\%$
-
-    \vspace{\x}
-
-    \item Results are still consistent with black hole interpretation of GW230529 primary
+    \item Model selection on NICER hotspots and symmetry energy measurements
   \end{itemize}
   
 \end{frame}
 
-\begin{frame}{References}
+\begin{frame}[allowframebreaks]{References}
 
 % \nocite{*}
 \printbibliography

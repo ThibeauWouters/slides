@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  14 JUN 2024 15:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  17 JUN 2024 07:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1708,7 +1708,7 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <9> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 273.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <9> not available
 (Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 273.
-<Figures/NMMA logo.jpg, id=82, 194.7275pt x 167.62625pt>
+<Figures/NMMA logo.jpg, id=83, 194.7275pt x 167.62625pt>
 File: Figures/NMMA logo.jpg Graphic file (type jpg)
 <use Figures/NMMA logo.jpg>
 Package pdftex.def Info: Figures/NMMA logo.jpg  used on input line 273.
@@ -1722,7 +1722,7 @@ Overfull \hbox (1.82442pt too wide) in paragraph at lines 273--273
 []\OT1/lmr/m/sc/10 NMMA  
  []
 
-<Figures/mtov_gw230529_set_L1.pdf, id=83, 867.61641pt x 469.3136pt>
+<Figures/mtov_gw230529_set_L1.pdf, id=84, 867.61641pt x 469.3136pt>
 File: Figures/mtov_gw230529_set_L1.pdf Graphic file (type pdf)
 <use Figures/mtov_gw230529_set_L1.pdf>
 Package pdftex.def Info: Figures/mtov_gw230529_set_L1.pdf  used on input line 273.
@@ -1743,7 +1743,7 @@ Underfull \hbox (badness 2635) in paragraph at lines 298--298
 ] [6
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-<Figures/extreme_matter_P_ns_table.jpg, id=133, 705.63625pt x 395.4775pt>
+<Figures/extreme_matter_P_ns_table.jpg, id=135, 705.63625pt x 395.4775pt>
 File: Figures/extreme_matter_P_ns_table.jpg Graphic file (type jpg)
 <use Figures/extreme_matter_P_ns_table.jpg>
 Package pdftex.def Info: Figures/extreme_matter_P_ns_table.jpg  used on input line 361.
@@ -1755,36 +1755,78 @@ LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <9> not available
 
 [7
 
- <./Figures/extreme_matter_P_ns_table.jpg>] [8
+ <./Figures/extreme_matter_P_ns_table.jpg>]
+<Figures/masses_set_L1.pdf, id=144, 873.55063pt x 475.08455pt>
+File: Figures/masses_set_L1.pdf Graphic file (type pdf)
+<use Figures/masses_set_L1.pdf>
+Package pdftex.def Info: Figures/masses_set_L1.pdf  used on input line 410.
+(pdftex.def)             Requested size: 146.3321pt x 79.58168pt.
+<Figures/PSR_Barr_results.jpg, id=145, 613.29124pt x 191.71625pt>
+File: Figures/PSR_Barr_results.jpg Graphic file (type jpg)
+<use Figures/PSR_Barr_results.jpg>
+Package pdftex.def Info: Figures/PSR_Barr_results.jpg  used on input line 410.
+(pdftex.def)             Requested size: 177.13565pt x 55.37103pt.
+ [8
+
+ <./Figures/masses_set_L1.pdf> <./Figures/PSR_Barr_results.jpg>]
+<Figures/table_NICER.jpg, id=168, 631.35875pt x 541.02126pt>
+File: Figures/table_NICER.jpg Graphic file (type jpg)
+<use Figures/table_NICER.jpg>
+Package pdftex.def Info: Figures/table_NICER.jpg  used on input line 434.
+(pdftex.def)             Requested size: 154.46222pt x 132.35736pt.
+<Figures/figure_NICER_v2.jpg, id=169, 484.81125pt x 497.86pt>
+File: Figures/figure_NICER_v2.jpg Graphic file (type jpg)
+<use Figures/figure_NICER_v2.jpg>
+Package pdftex.def Info: Figures/figure_NICER_v2.jpg  used on input line 434.
+(pdftex.def)             Requested size: 154.46222pt x 158.61955pt.
+ [9
+
+ <./Figures/table_NICER.jpg> <./Figures/figure_NICER_v2.jpg>]
+<Figures/table_PREX_CREX.jpg, id=181, 538.01pt x 257.96375pt>
+File: Figures/table_PREX_CREX.jpg Graphic file (type jpg)
+<use Figures/table_PREX_CREX.jpg>
+Package pdftex.def Info: Figures/table_PREX_CREX.jpg  used on input line 457.
+(pdftex.def)             Requested size: 154.46222pt x 74.05968pt.
+<Figures/figure_PREX_CREX_v2.jpg, id=182, 527.9725pt x 545.03625pt>
+File: Figures/figure_PREX_CREX_v2.jpg Graphic file (type jpg)
+<use Figures/figure_PREX_CREX_v2.jpg>
+Package pdftex.def Info: Figures/figure_PREX_CREX_v2.jpg  used on input line 457.
+(pdftex.def)             Requested size: 154.46222pt x 159.45364pt.
+ [10
+
+ <./Figures/table_PREX_CREX.jpg> <./Figures/figure_PREX_CREX_v2.jpg>] [11
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 393.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 501.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <8> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 393.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 501.
 
-[9
+[12
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] [10
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] [13
+
+
+] [14
 
 ]
-<Figures/mtov_gw230529_set_L1_pdb.pdf, id=169, 867.61641pt x 469.3136pt>
+<Figures/mtov_gw230529_set_L1_pdb.pdf, id=238, 867.61641pt x 469.3136pt>
 File: Figures/mtov_gw230529_set_L1_pdb.pdf Graphic file (type pdf)
 <use Figures/mtov_gw230529_set_L1_pdb.pdf>
-Package pdftex.def Info: Figures/mtov_gw230529_set_L1_pdb.pdf  used on input line 415.
+Package pdftex.def Info: Figures/mtov_gw230529_set_L1_pdb.pdf  used on input line 523.
 (pdftex.def)             Requested size: 308.06367pt x 166.63971pt.
- [11
+ [15
 
  <./Figures/mtov_gw230529_set_L1_pdb.pdf>]
-<Figures/mtov_gw230529_set_L3_pdb.pdf, id=187, 850.08185pt x 469.3136pt>
+<Figures/mtov_gw230529_set_L3_pdb.pdf, id=255, 850.08185pt x 469.3136pt>
 File: Figures/mtov_gw230529_set_L3_pdb.pdf Graphic file (type pdf)
 <use Figures/mtov_gw230529_set_L3_pdb.pdf>
-Package pdftex.def Info: Figures/mtov_gw230529_set_L3_pdb.pdf  used on input line 424.
+Package pdftex.def Info: Figures/mtov_gw230529_set_L3_pdb.pdf  used on input line 532.
 (pdftex.def)             Requested size: 256.72147pt x 141.73328pt.
- [12
+ [16
 
  <./Figures/mtov_gw230529_set_L3_pdb.pdf>]
 \tf@nav=\write7
@@ -1809,18 +1851,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45753 strings out of 476025
- 906911 string characters out of 5790018
- 1861388 words of memory out of 5000000
- 65292 multiletter control sequences out of 15000+600000
- 642505 words of font info for 131 fonts, out of 8000000 for 9000
+ 45852 strings out of 476025
+ 909884 string characters out of 5790018
+ 1868388 words of memory out of 5000000
+ 65369 multiletter control sequences out of 15000+600000
+ 645452 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,1194b,1735s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (12 pages, 2436955 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on main.pdf (16 pages, 3664204 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 226 compressed objects within 3 object streams
- 33 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 288 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

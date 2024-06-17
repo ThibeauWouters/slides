@@ -2365,9 +2365,16 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1" intorder="1">LIGOScientific:2024elc</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">Koehn:2024set</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Breu:2016ufb</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">LIGOScientific:2024elc</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Pang:2022rzc</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">Koehn:2024set</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Breu:2016ufb</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">LIGOScientific:2024elc</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Barr:2024wwl</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Riley:2019yda</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">Vinciguerra:2023qxq</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">CREX:2022kgg</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">PREX:2021umo</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Tamii:2011pv</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

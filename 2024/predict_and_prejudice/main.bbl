@@ -32,6 +32,42 @@
       \verb 2404.04248
       \endverb
     \endentry
+    \entry{Pang:2022rzc}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=b7330e975af3eb0caf177503a920720a}{%
+           family={Pang},
+           familyi={P\bibinitperiod},
+           given={Peter\bibnamedelimb T.\bibnamedelimi H.},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{fullhash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{bibnamehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{authorbibnamehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{authornamehash}{a4ee442a41c70f0a1f64865764388b3a}
+      \strng{authorfullhash}{a4ee442a41c70f0a1f64865764388b3a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Nature Commun.}
+      \field{number}{1}
+      \field{title}{{An updated nuclear-physics and multi-messenger astrophysics framework for binary neutron star mergers}}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{8352}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-023-43932-6
+      \endverb
+      \verb{eprint}
+      \verb 2205.08513
+      \endverb
+    \endentry
     \entry{Koehn:2024set}{article}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -48,8 +84,8 @@
       \strng{authorbibnamehash}{cfaddb3f57229be901e6f4d76975db09}
       \strng{authornamehash}{cfaddb3f57229be901e6f4d76975db09}
       \strng{authorfullhash}{cfaddb3f57229be901e6f4d76975db09}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{astro-ph.HE}
@@ -80,8 +116,8 @@
       \strng{authorbibnamehash}{d0387a82ee102d1672d4d42733b1aa91}
       \strng{authornamehash}{d0387a82ee102d1672d4d42733b1aa91}
       \strng{authorfullhash}{d0387a82ee102d1672d4d42733b1aa91}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{gr-qc}
@@ -98,6 +134,223 @@
       \endverb
       \verb{eprint}
       \verb 1601.06083
+      \endverb
+    \endentry
+    \entry{Barr:2024wwl}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=4a8e9c87e585c5dca5641e685dcb8955}{%
+           family={Barr},
+           familyi={B\bibinitperiod},
+           given={Ewan\bibnamedelima D.},
+           giveni={E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1d03470d5edcb4c34b1ce409f40b1626}
+      \strng{fullhash}{1d03470d5edcb4c34b1ce409f40b1626}
+      \strng{bibnamehash}{1d03470d5edcb4c34b1ce409f40b1626}
+      \strng{authorbibnamehash}{1d03470d5edcb4c34b1ce409f40b1626}
+      \strng{authornamehash}{1d03470d5edcb4c34b1ce409f40b1626}
+      \strng{authorfullhash}{1d03470d5edcb4c34b1ce409f40b1626}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Science}
+      \field{number}{6680}
+      \field{title}{{A pulsar in a binary with a compact object in the mass gap between neutron stars and black holes}}
+      \field{volume}{383}
+      \field{year}{2024}
+      \field{pages}{275\bibrangedash 279}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1126/science.adg3005
+      \endverb
+      \verb{eprint}
+      \verb 2401.09872
+      \endverb
+    \endentry
+    \entry{Riley:2019yda}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=ed24e00cb875210417a3459ceb0ad965}{%
+           family={Riley},
+           familyi={R\bibinitperiod},
+           given={Thomas\bibnamedelima E.},
+           giveni={T\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{7324a34349dcce49b6c52947018a17ff}
+      \strng{fullhash}{7324a34349dcce49b6c52947018a17ff}
+      \strng{bibnamehash}{7324a34349dcce49b6c52947018a17ff}
+      \strng{authorbibnamehash}{7324a34349dcce49b6c52947018a17ff}
+      \strng{authornamehash}{7324a34349dcce49b6c52947018a17ff}
+      \strng{authorfullhash}{7324a34349dcce49b6c52947018a17ff}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Astrophys. J. Lett.}
+      \field{number}{1}
+      \field{title}{{A $NICER$ View of PSR J0030+0451: Millisecond Pulsar Parameter Estimation}}
+      \field{volume}{887}
+      \field{year}{2019}
+      \field{pages}{L21}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3847/2041-8213/ab481c
+      \endverb
+      \verb{eprint}
+      \verb 1912.05702
+      \endverb
+    \endentry
+    \entry{Vinciguerra:2023qxq}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=6ffea7d041c9a967934d621e4afe63c4}{%
+           family={Vinciguerra},
+           familyi={V\bibinitperiod},
+           given={Serena},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{3318ae35b6550110292a4f484df38fe4}
+      \strng{fullhash}{3318ae35b6550110292a4f484df38fe4}
+      \strng{bibnamehash}{3318ae35b6550110292a4f484df38fe4}
+      \strng{authorbibnamehash}{3318ae35b6550110292a4f484df38fe4}
+      \strng{authornamehash}{3318ae35b6550110292a4f484df38fe4}
+      \strng{authorfullhash}{3318ae35b6550110292a4f484df38fe4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{astro-ph.HE}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Astrophys. J.}
+      \field{number}{1}
+      \field{title}{{An Updated Mass–{}Radius Analysis of the 2017–{}2018 NICER Data Set of PSR J0030+0451}}
+      \field{volume}{961}
+      \field{year}{2024}
+      \field{pages}{62}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3847/1538-4357/acfb83
+      \endverb
+      \verb{eprint}
+      \verb 2308.09469
+      \endverb
+    \endentry
+    \entry{CREX:2022kgg}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=726ff2cd9528f1f246a2002588e2208d}{%
+           family={Adhikari},
+           familyi={A\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{fullhash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{bibnamehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{authorbibnamehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{authornamehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{authorfullhash}{b22df1042e3ef798aadb2c7de83520a7}
+      \field{extraname}{1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{nucl-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{number}{4}
+      \field{title}{{Precision Determination of the Neutral Weak Form Factor of Ca48}}
+      \field{volume}{129}
+      \field{year}{2022}
+      \field{pages}{042501}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.129.042501
+      \endverb
+      \verb{eprint}
+      \verb 2205.11593
+      \endverb
+    \endentry
+    \entry{PREX:2021umo}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=726ff2cd9528f1f246a2002588e2208d}{%
+           family={Adhikari},
+           familyi={A\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{fullhash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{bibnamehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{authorbibnamehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{authornamehash}{b22df1042e3ef798aadb2c7de83520a7}
+      \strng{authorfullhash}{b22df1042e3ef798aadb2c7de83520a7}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{nucl-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{number}{17}
+      \field{title}{{Accurate Determination of the Neutron Skin Thickness of $^{208}$Pb through Parity-Violation in Electron Scattering}}
+      \field{volume}{126}
+      \field{year}{2021}
+      \field{pages}{172502}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.126.172502
+      \endverb
+      \verb{eprint}
+      \verb 2102.10767
+      \endverb
+    \endentry
+    \entry{Tamii:2011pv}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{hash=9b845072d65087a49764b96c2ec0b788}{%
+           family={Tamii},
+           familyi={T\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f88d5d9544e3d4f54bd001800204c6dc}
+      \strng{fullhash}{f88d5d9544e3d4f54bd001800204c6dc}
+      \strng{bibnamehash}{f88d5d9544e3d4f54bd001800204c6dc}
+      \strng{authorbibnamehash}{f88d5d9544e3d4f54bd001800204c6dc}
+      \strng{authornamehash}{f88d5d9544e3d4f54bd001800204c6dc}
+      \strng{authorfullhash}{f88d5d9544e3d4f54bd001800204c6dc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{nucl-ex}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{Phys. Rev. Lett.}
+      \field{title}{{Complete electric dipole response and the neutron skin in 208Pb}}
+      \field{volume}{107}
+      \field{year}{2011}
+      \field{pages}{062502}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1103/PhysRevLett.107.062502
+      \endverb
+      \verb{eprint}
+      \verb 1104.5431
       \endverb
     \endentry
   \enddatalist

@@ -107,7 +107,7 @@
 %This block of code defines the information to appear in the
 %Title page
 \title[XMXS] %optional %  [arXiv:2404.11397]
-{Extreme Matter in Extreme Stars 2024: \\ Contributions from Utrecht University}
+{Accelerated Bayesian inference with machine learning}
 
 \author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T. H. Pang, Chris Van Den Broeck} \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \github \quad \linkedin \quad \twitter} % \\ \vspace{7mm} \href{http://arxiv.org/abs/2404.11397}{arXiv:2404.11397}
 
@@ -181,12 +181,43 @@
 
 % \section{Gravitational waves from binary neutron star}
 
+\begin{frame}{\texttt{N}uclear \texttt{M}ulti-\texttt{M}essenger \texttt{A}strophysics}
 
-\begin{frame}{Gravitational waves from binary neutron star}
+  \def\x{7mm}
+  \def\y{3mm}
+  
+  \begin{itemize}
+    \item \texttt{NMMA}: \texttt{N}uclear \texttt{M}ulti-\texttt{M}essenger \texttt{A}strophysics (Peter T.H. Pang) 
+    
+    \vspace{\y}
+    \begin{itemize}
+      \item \url{https://github.com/nuclear-multimessenger-astronomy/nmma}
+      
+      % \vspace{\y}
+      % \item 
+    \end{itemize}
+    
+    \vspace{\x}
+
+    \item A Pythonic library for probing nuclear physics and cosmology with multimessenger analysis
+    
+    \vspace{\x}
+
+    \item Joint Bayesian inference on \red{gravitational waves}, kilonovae, gamma-ray bursts, supernovae
+    
+    \vspace{\x}
+
+    \item Used for overview of EOS constraints: arXiv:2402.04172
+  \end{itemize}
+  
+  \end{frame}
+
+
+\begin{frame}{Gravitational waves from binary neutron stars}
 
   \def\x{5mm}
   
-  The EOS predicts the relation between mass $M$ and radius $R$ or \red{tidal deformability} $\Lambda$ of neutron stars.
+  The EOS predicts the relation between mass $M$ and radius $R$ or \red{tidal deformability} of neutron stars.
 
   \vspace{\x}
 
@@ -207,9 +238,9 @@
 \def\x{3mm}
 \def\y{2mm}
 
-Bayesian inference: get \red{posterior} of GW parameters $\theta$ ($13$ to $17$ parameters) from gravitational wave data $d$:
+Bayesian inference: get \textcolor{ForestGreen}{posterior} of GW parameters $\theta$ ($13$ to $17$ parameters) from gravitational wave data $d$:
 \begin{equation*}
-    \red{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)} = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}}
+    \textcolor{ForestGreen}{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)} = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}}
 \end{equation*}
 
 \vspace{1mm}
@@ -232,23 +263,45 @@ Bayesian inference: get \red{posterior} of GW parameters $\theta$ ($13$ to $17$ 
 
 \begin{frame}{Accelerating Bayesian inference with machine learning}
 
-  \def\x{8mm}
+  \def\x{4mm}
+  \def\y{2mm}
 
   \begin{itemize}
-    \item Accelerate the Bayesian inference with (i) \textsc{jax} and (ii) normalizing flows (machine learning)
+    \item \texttt{Jim}: Accelerate Bayesian inference with (i) \texttt{jax} and (ii) normalizing flows (machine learning) (arXiv:2404.11397)
+    \begin{itemize}
+      \item \url{https://github.com/kazewong/jim/}
+      
+      \item Sampler: \texttt{flowMC} (\url{https://github.com/kazewong/flowMC})
+    \end{itemize}
     
     \vspace{\x}
 
     \item Result: \red{$\sim 30$ minutes} on a single GPU
     
+    % \vspace{\x}
+
+    % \item Enable large-scale simulations on EOS constraints from gravitational waves
+
     \vspace{\x}
 
-    \item Enable large-scale simulations on EOS constraints from gravitational waves
+    \item Ongoing: 
+    \vspace{\y}
+    \begin{itemize}
+      \item Extend to next-generation gravitational wave detectors
+      
+      \vspace{\y}
 
-    \vspace{\x}
+      \item Accelerate TOV solver with \texttt{jax} ($\sim 10 - 100 \times$ faster)
+      
+      \vspace{\y}
 
-    \item Ongoing effort: extend to next-generation gravitational wave detectors
+      \item Add electromagnetic transients -- \texttt{jax} version of \texttt{NMMA}
+    \end{itemize}
   \end{itemize}
+
+  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+    \textbf{Goal:} Direct inference of nuclear physics parameters with multimessenger data.
+  \end{tcolorbox}
 
 
 \end{frame}

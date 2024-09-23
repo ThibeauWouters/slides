@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  20 SEP 2024 12:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  23 SEP 2024 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1615,83 +1615,103 @@ Package pdftex.def Info: Figures/GW-2.jpeg  used on input line 166.
  [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} <./Figures/GW-2.jpeg> <./Figures/utrecht-university.png> <./Figures/Nikhef_logo-transparent.png>]
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 203.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 203.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 203.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 203.
+(Font)              <10.95> on input line 213.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 203.
+(Font)              <8> on input line 213.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 203.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 203.
+(Font)              <6> on input line 213.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 203.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 203.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 203.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 213.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 203.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 213.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 203.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 203.
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 213.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 213.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 203.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 213.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <8> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 203.
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 213.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <6> not available
-(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 203.
-<Figures/ingo_eos_TOV_without_TOV.jpg, id=47, 766.865pt x 468.75125pt>
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 213.
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 213.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 213.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 213.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 213.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 213.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <7> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 213.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <5> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 213.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 213.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <7> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 213.
+LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
+(Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 213.
+ [2
+
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+<Figures/ingo_eos_TOV_without_TOV.jpg, id=58, 766.865pt x 468.75125pt>
 File: Figures/ingo_eos_TOV_without_TOV.jpg Graphic file (type jpg)
 <use Figures/ingo_eos_TOV_without_TOV.jpg>
-Package pdftex.def Info: Figures/ingo_eos_TOV_without_TOV.jpg  used on input line 203.
+Package pdftex.def Info: Figures/ingo_eos_TOV_without_TOV.jpg  used on input line 234.
 (pdftex.def)             Requested size: 205.37926pt x 125.53455pt.
 
-Overfull \vbox (21.13614pt too high) detected at line 203
- []
-
-[2
-
- <./Figures/ingo_eos_TOV_without_TOV.jpg>]
-<Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf, id=56, 707.60785pt x 348.34142pt>
-File: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf Graphic file (type pdf)
-<use Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>
-Package pdftex.def Info: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf  used on input line 230.
-(pdftex.def)             Requested size: 205.37926pt x 101.10146pt.
-
-Overfull \vbox (32.5325pt too high) detected at line 230
+Overfull \vbox (21.13614pt too high) detected at line 234
  []
 
 [3
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>]
+ <./Figures/ingo_eos_TOV_without_TOV.jpg>]
+<Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf, id=66, 707.60785pt x 348.34142pt>
+File: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf Graphic file (type pdf)
+<use Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>
+Package pdftex.def Info: Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf  used on input line 261.
+(pdftex.def)             Requested size: 205.37926pt x 101.10146pt.
 
-LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 254.
+Overfull \vbox (32.5325pt too high) detected at line 261
+ []
 
 [4
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}]
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>] [5
+
+]
 \tf@nav=\write7
 \openout7 = `main.nav'.
 
@@ -1714,18 +1734,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45282 strings out of 476025
- 897979 string characters out of 5790018
- 1860388 words of memory out of 5000000
- 64871 multiletter control sequences out of 15000+600000
- 569911 words of font info for 79 fonts, out of 8000000 for 9000
+ 45406 strings out of 476025
+ 900184 string characters out of 5790018
+ 1863388 words of memory out of 5000000
+ 64978 multiletter control sequences out of 15000+600000
+ 604561 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,122p,1188b,1731s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (4 pages, 591190 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (5 pages, 611363 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
+ 145 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
  104 words of extra memory for PDF output out of 10000 (max. 10000000)
 

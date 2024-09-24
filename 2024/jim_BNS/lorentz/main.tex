@@ -107,7 +107,7 @@
 %This block of code defines the information to appear in the
 %Title page
 \title[XMXS] %optional %  [arXiv:2404.11397]
-{Accelerated Bayesian inference with machine learning}
+{Accelerated Bayesian inference of multimessenger astronomy with \texttt{jax} and machine learning}
 
 \author[Thibeau Wouters]{\small{\textbf{Thibeau Wouters}, Peter T. H. Pang, Chris Van Den Broeck} \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \github \quad \linkedin \quad \twitter} % \\ \vspace{7mm} \href{http://arxiv.org/abs/2404.11397}{arXiv:2404.11397}
 
@@ -146,7 +146,7 @@
   \usebackgroundtemplate{\transparent{0.15}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/GW-2.jpeg}}}
   % \usebackgroundtemplate{\transparent{0.15}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/XMXS_po}}}
   
-\begin{frame}[plain]
+\begin{frame}[plain, noframenumbering]
 \titlepage
 
 \begin{columns}
@@ -188,69 +188,71 @@
   
   \begin{itemize}
     \item \texttt{NMMA}: \texttt{N}uclear \texttt{M}ulti-\texttt{M}essenger \texttt{A}strophysics (Peter T.H. Pang) 
-    
-    \vspace{\y}
-    \begin{itemize}
-      \item \url{https://github.com/nuclear-multimessenger-astronomy/nmma}
-      
-      % \vspace{\y}
-      % \item 
-    \end{itemize}
+    % \vspace{\y}
+    % \begin{itemize}
+    %   \item \url{https://github.com/nuclear-multimessenger-astronomy/nmma}
+    % \end{itemize}
     
     \vspace{\x}
 
     \item A Pythonic library for probing nuclear physics and cosmology with multimessenger analysis
+    % \begin{itemize}
+    %   \item Gravitational waves, kilonovae, gamma-ray bursts
+    % \end{itemize}
     
     \vspace{\x}
 
-    \item Joint Bayesian inference on \red{gravitational waves}, kilonovae, gamma-ray bursts, supernovae
-    
-    \vspace{\x}
-
-    \item Used for overview of EOS constraints: arXiv:2402.04172
+    \item Used for overview of EOS constraints, with ``precomputed'' EOS set (\href{https://arxiv.org/abs/2402.04172}{arXiv:2402.04172})
+    \begin{itemize}
+      \item Metamodel
+      \item Speed-of-sound extension scheme
+    \end{itemize}
   \end{itemize}
+
+  \vspace{\x}
+
+  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+    \textbf{Next step:} Infer EOS parameters directly from multimessenger data
+  \end{tcolorbox}
   
   \end{frame}
 
 
-\begin{frame}{Gravitational waves from binary neutron stars}
+% \begin{frame}{Gravitational waves from binary neutron stars}
 
-  \def\x{5mm}
+%   \def\x{5mm}
   
-  The EOS predicts the relation between mass $M$ and radius $R$ or \red{tidal deformability} of neutron stars.
+%   The EOS predicts the relation between mass $M$ and radius $R$ or \red{tidal deformability} of neutron stars.
 
-  \vspace{\x}
+%   \vspace{\x}
 
-  We can infer the tidal deformability of neutron stars from \red{gravitational wave signals} emitted by binary neutron star mergers.
+%   We can infer the tidal deformability of neutron stars from \red{gravitational wave signals} emitted by binary neutron star mergers.
 
-  \vspace{\x}
+%   \vspace{\x}
   
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.60\textwidth]{Figures/ingo_eos_TOV_without_TOV.jpg}
-    \caption*{}
-  \end{figure}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=0.60\textwidth]{Figures/ingo_eos_TOV_without_TOV.jpg}
+%     \caption*{}
+%   \end{figure}
   
-  \end{frame}
+%   \end{frame}
 
-\begin{frame}{Parameter estimation of neutron star properties}
+\begin{frame}{Bayesian inference}
 
-\def\x{3mm}
+\def\x{4mm}
 \def\y{2mm}
 
-Bayesian inference: get \textcolor{ForestGreen}{posterior} of GW parameters $\theta$ ($13$ to $17$ parameters) from gravitational wave data $d$:
+Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta$ from data $d$ % ($13$ to $17$ parameters) from gravitational wave data $d$:
 \begin{equation*}
     \textcolor{ForestGreen}{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)} = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}}
 \end{equation*}
 
-\vspace{1mm}
+\vspace{\x}
 
 \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-  \textbf{Problem:} Computationally expensive: $\sim 1 - 2$ months on a single CPU core for binary neutron star signal
+  \textbf{Problem:} Prohibitively expensive with multimessenger data 
 \end{tcolorbox}
-
-
-\vspace{-1mm}
 
 \begin{figure}
   \centering
@@ -260,48 +262,113 @@ Bayesian inference: get \textcolor{ForestGreen}{posterior} of GW parameters $\th
 
 \end{frame}
 
+\begin{frame}{\textsc{jax} and normalizing flows}
 
-\begin{frame}{Accelerating Bayesian inference with machine learning}
+  \def\x{4mm}
+  \def\y{2mm}
+  \def\z{0.75cm}
+  
+  % \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+  %   What are the benefits of \textsc{jax} for MCMC?
+  % \end{tcolorbox}
+  
+  
+  \textsc{jax} = \textsc{Numpy} $+$ composable transformations: 
+  \begin{columns}
+    \column{0.75\textwidth}
+    \begin{enumerate}
+      \item Automatic differentiation
+      
+      \vspace{\x}
+      
+      \item Just-in-time (JIT) compilation
+      
+      \vspace{\x}
+      
+      \item GPU acceleration
+      
+      \vspace{\x}
+      
+      \item Parallelization
+  \end{enumerate}
+  \column{0.20\textwidth}
+  \begin{figure}
+    % \centering
+    \includegraphics[width=\textwidth]{Figures/jax.png}
+  \end{figure}
+\end{columns}
+
+\vspace{\z}
+\hrule 
+\vspace{\z}
+
+% \vspace{\z}
+
+\textbf{Normalizing flows}: generative deep learning model to approximate target distribution
+
+\end{frame}  
+
+
+\begin{frame}{Accelerating Bayesian inference for MMA: progress}
 
   \def\x{4mm}
   \def\y{2mm}
 
   \begin{itemize}
-    \item \texttt{Jim}: Accelerate Bayesian inference with (i) \texttt{jax} and (ii) normalizing flows (machine learning) (arXiv:2404.11397)
-    \begin{itemize}
-      \item \url{https://github.com/kazewong/jim/}
-      
-      \item Sampler: \texttt{flowMC} (\url{https://github.com/kazewong/flowMC})
-    \end{itemize}
-    
-    \vspace{\x}
 
-    \item Result: \red{$\sim 30$ minutes} on a single GPU
+    \item Gravitational waves: 
+    \vspace{\y}
+    \begin{itemize}
+      \item Analyze binary neutron stars in \red{15 -- 30 minutes} rather than $\mathcal{O}(\rm{hours})$ (\href{https://arxiv.org/abs/2404.11397}{arXiv:2404.11397})
+      
+      \vspace{\y}
+      
+      \item \faGithub~\href{https://github.com/kazewong/jim}{\texttt{kazewong/jim}}
+    \end{itemize}
+
+    \vspace{\x}
+    
+    % \item \texttt{Jim}: Accelerate Bayesian inference with (i) \texttt{jax} and (ii) normalizing flows (machine learning) (arXiv:2404.11397)
+    % \begin{itemize}
+    %   \item \url{https://github.com/kazewong/jim/}
+      
+    %   \item Sampler: \texttt{flowMC} (\url{https://github.com/kazewong/flowMC})
+    % \end{itemize}
+    
+    % \vspace{\x}
+
+    % \item Result: \red{$\sim 30$ minutes} on a single GPU
     
     % \vspace{\x}
 
     % \item Enable large-scale simulations on EOS constraints from gravitational waves
+
+    \item TOV solver: 
+    \vspace{\y}
+    \begin{itemize}
+      \item \red{10 -- 100 $\times$} faster
+      
+      \vspace{\y}
+      
+      \item \faGithub~\href{https://github.com/tsunhopang/jose}{\texttt{tsunhopang/jose}}
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item Kilonovae, GRBs: \faGithub~\href{https://github.com/ThibeauWouters/fiesta}{\texttt{ThibeauWouters/fiesta}}
 
     \vspace{\x}
 
     \item Ongoing: 
     \vspace{\y}
     \begin{itemize}
-      \item Extend to next-generation gravitational wave detectors
+      \item Next-generation gravitational wave detectors
       
       \vspace{\y}
 
-      \item Accelerate TOV solver with \texttt{jax} ($\sim 10 - 100 \times$ faster)
-      
-      \vspace{\y}
-
-      \item Add electromagnetic transients -- \texttt{jax} version of \texttt{NMMA}
+      \item Combine into one multimessenger analysis pipeline
     \end{itemize}
   \end{itemize}
-
-  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-    \textbf{Goal:} Direct inference of nuclear physics parameters with multimessenger data.
-  \end{tcolorbox}
 
 
 \end{frame}

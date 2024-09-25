@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1726825676 "main.bcf" "main.bbl" "main" 1727250622 0
+["biber main"] 1726825676 "main.bcf" "main.bbl" "main" 1727251003 0
   "./references.bib" 1726733406 2249 7b4a83178d2b56b8675c57bfecb84c32 ""
-  "main.bcf" 1727250622 106743 7670eda348f23ea9d70f606e44141eb4 "pdflatex"
+  "main.bcf" 1727251003 106743 7670eda348f23ea9d70f606e44141eb4 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1727250621 "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/lorentz/main.tex" "main.pdf" "main" 1727250622 0
-  "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/lorentz/main.tex" 1727250620 11498 de479397fa4a4724abf497bc581fd747 ""
+["pdflatex"] 1727251001 "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/lorentz/main.tex" "main.pdf" "main" 1727251003 0
+  "/Users/Woute029/Documents/Code/slides/2024/jim_BNS/lorentz/main.tex" 1727251001 11554 6091420103514fc82570f29dd5df5147 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc" 1463430686 2437 443c81fb50993bacedc5f9a206c322b0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc" 1463430686 2679 32dd8ae231bf4a0752b98f62dc097183 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -364,12 +364,12 @@
   "Figures/utrecht-university.png" 1726733406 90676 12d62f295b1a9496cf7790804560e831 ""
   "Inkscape figs//NF.pdf" 1726733406 76603 ad4098932ec385126f49d3089457d398 ""
   "Inkscape figs/NF.pdf_tex" 1726733406 2767 befbfd0d92ac19c70175dcd8124794bb ""
-  "main.aux" 1727250622 1948 0df575fcc50daec2bfe3d89c16c25cdf "pdflatex"
+  "main.aux" 1727251003 1948 d1d505e17dcef52f7c689e2cf04fc2e5 "pdflatex"
   "main.bbl" 1726825679 466 ee04f40f768daeed26442158e95aba61 "biber main"
-  "main.nav" 1727250622 747 8fbf37dc22a0f6e5f8cdf7b9be01e4f3 "pdflatex"
-  "main.out" 1727250622 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1727250622 2346 fa9a0d6f2a763d80363dbecf9de71ca1 "pdflatex"
-  "main.tex" 1727250620 11498 de479397fa4a4724abf497bc581fd747 ""
+  "main.nav" 1727251003 747 9df86a5f619028559c3791568bf2fd82 "pdflatex"
+  "main.out" 1727251002 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.run.xml" 1727251003 2346 fa9a0d6f2a763d80363dbecf9de71ca1 "pdflatex"
+  "main.tex" 1727251001 11554 6091420103514fc82570f29dd5df5147 ""
   "preamble.sty" 1727205346 3694 1b33d6accdc34b598e4ed171b59b6f44 ""
   (generated)
   "main.aux"

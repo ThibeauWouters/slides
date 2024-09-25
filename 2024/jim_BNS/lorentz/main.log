@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  24 SEP 2024 21:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  25 SEP 2024 09:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1700,20 +1700,48 @@ Overfull \vbox (16.10522pt too high) detected at line 263
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>]
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 309.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 313.
 
 <Figures/jax.png, id=75, 1204.5pt x 696.6025pt>
 File: Figures/jax.png Graphic file (type png)
 <use Figures/jax.png>
-Package pdftex.def Info: Figures/jax.png  used on input line 309.
+Package pdftex.def Info: Figures/jax.png  used on input line 313.
 (pdftex.def)             Requested size: 68.45801pt x 39.58345pt.
 
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <14.4> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 309.
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 313.
 
 [4
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./Figures/jax.png>] [5
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./Figures/jax.png>] (./Inkscape figs/NF.pdf_tex
+<Inkscape figs//NF.pdf, id=84, page=1, 597.50786pt x 845.04686pt>
+File: Inkscape figs//NF.pdf Graphic file (type pdf)
+<use Inkscape figs//NF.pdf, page 1>
+Package pdftex.def Info: Inkscape figs//NF.pdf , page1 used on input line 56.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+<Inkscape figs//NF.pdf, id=85, page=2, 597.50786pt x 845.04686pt>
+File: Inkscape figs//NF.pdf Graphic file (type pdf)
+<use Inkscape figs//NF.pdf, page 2>
+Package pdftex.def Info: Inkscape figs//NF.pdf , page2 used on input line 59.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+<Inkscape figs//NF.pdf, id=86, page=3, 597.50786pt x 845.04686pt>
+File: Inkscape figs//NF.pdf Graphic file (type pdf)
+<use Inkscape figs//NF.pdf, page 3>
+Package pdftex.def Info: Inkscape figs//NF.pdf , page3 used on input line 62.
+(pdftex.def)             Requested size: 342.2953pt x 484.10585pt.
+)
+Overfull \vbox (377.39328pt too high) detected at line 356
+ []
+
+[5
+
+ <./Inkscape figs//NF.pdf> <./Inkscape figs//NF.pdf
+
+pdfTeX warning: pdflatex (file ./Inkscape figs//NF.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <./Inkscape figs//NF.pdf
+
+pdfTeX warning: pdflatex (file ./Inkscape figs//NF.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [6
 
 ]
 \tf@nav=\write7
@@ -1738,18 +1766,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45452 strings out of 476025
- 900972 string characters out of 5790018
+ 45482 strings out of 476025
+ 901682 string characters out of 5790018
  1862388 words of memory out of 5000000
- 65018 multiletter control sequences out of 15000+600000
+ 65038 multiletter control sequences out of 15000+600000
  628002 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,15n,122p,1188b,1731s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,122p,1188b,1731s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (5 pages, 606437 bytes).
+Output written on main.pdf (6 pages, 682775 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 11 named destinations out of 1000 (max. 500000)
- 104 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 174 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 13 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

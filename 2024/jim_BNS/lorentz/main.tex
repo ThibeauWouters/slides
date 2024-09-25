@@ -262,11 +262,11 @@ Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta
 
 \end{frame}
 
-\begin{frame}{\textsc{jax} and normalizing flows}
+\begin{frame}{\textsc{jax}}
 
   \def\x{4mm}
   \def\y{2mm}
-  \def\z{0.75cm}
+  \def\z{1cm}
   
   % \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
   %   What are the benefits of \textsc{jax} for MCMC?
@@ -299,14 +299,61 @@ Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta
 \end{columns}
 
 \vspace{\z}
-\hrule 
-\vspace{\z}
+
+Potential for acceleration in various science areas!
 
 % \vspace{\z}
+% \hrule 
+% \vspace{\z}
 
-\textbf{Normalizing flows}: generative deep learning model to approximate target distribution
+% % \vspace{\z}
+
+% \textbf{Normalizing flows}: generative deep learning model to approximate target distribution
 
 \end{frame}  
+
+\begin{frame}{Normalizing flows}
+
+  \def\x{3mm}
+  \def\y{7mm}
+  
+  
+  % \begin{enumerate}
+  %   \setcounter{enumi}{1}
+  %   \item \textbf{Train normalizing flow:}
+  % \end{enumerate}
+  
+  % \vspace{\x}
+  
+  \begin{itemize}
+    % \item \blue{Latent space}: easy to sample (e.g. Gaussian)
+    
+    % \vspace{\x}
+  
+    % \item \red{Parameter space}: complicated distribution
+    
+    % \vspace{\x}
+
+    \item Generative machine learning model
+
+    \vspace{\x}
+
+    \item Learn mapping between \blue{latent} and \red{parameter} space
+
+    \vspace{\x}
+    
+    \item Enable approximate sampling from complicated distributions
+
+    \vspace{\x}
+    
+    \item Training data: MCMC samples
+  \end{itemize}
+  
+  \vspace{\y}
+    
+  \incfig[\textwidth]{NF}
+  
+\end{frame}
 
 
 \begin{frame}{Accelerating Bayesian inference for MMA: progress}
@@ -346,7 +393,7 @@ Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta
     \item TOV solver: 
     \vspace{\y}
     \begin{itemize}
-      \item \red{10 -- 100 $\times$} faster
+      \item \red{$10 - 100 \times$ faster}
       
       \vspace{\y}
       

@@ -2298,6 +2298,22 @@ INPUT ./Figures/jax.png
 INPUT ./Figures/jax.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
+INPUT ./Inkscape figs/NF.pdf_tex
+INPUT Inkscape figs/NF.pdf_tex
+INPUT ./Inkscape figs/NF.pdf_tex
+INPUT Inkscape figs/NF.pdf_tex
+INPUT ./Inkscape figs//NF.pdf
+INPUT Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
+INPUT ./Inkscape figs//NF.pdf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm

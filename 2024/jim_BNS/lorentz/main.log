@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  26 SEP 2024 08:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.9.4)  26 SEP 2024 08:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1589,12 +1589,16 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )) (./main.nav)
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 166.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 166.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+
+LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <14.4> not available
+(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 166.
+
 LaTeX Font Info:    Trying to load font information for U+fontawesometwo on input line 166.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+(/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 File: ufontawesometwo.fd 2016/05/22 Font definitions for U/fontawesometwo.
 )
 LaTeX Font Info:    Trying to load font information for U+fontawesomethree on input line 166.
@@ -1618,7 +1622,7 @@ Package pdftex.def Info: Figures/GW-2.jpeg  used on input line 166.
 (pdftex.def)             Requested size: 364.22784pt x 273.18233pt.
  [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} <./Figures/GW-2.jpeg> <./Figures/utrecht-university.png> <./Figures/Nikhef_logo-transparent.png>]
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc} <./Figures/GW-2.jpeg> <./Figures/utrecht-university.png> <./Figures/Nikhef_logo-transparent.png>]
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 207.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1655,10 +1659,6 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <8> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 207.
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 207.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 207.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <10.95> not available
 (Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 207.
 LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <8> not available
@@ -1677,6 +1677,10 @@ Overfull \vbox (18.95049pt too high) detected at line 207
 [2
 
 {/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf>]
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 245.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 245.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1697,7 +1701,7 @@ LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
 (Font)              Font shape `OT1/lmss/bx/sl' tried instead on input line 245.
  [3
 
-] [4
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}] [4
 
 ] [5
 
@@ -1706,18 +1710,14 @@ LaTeX Font Info:    Font shape `OT1/lmss/bx/it' in size <5> not available
 LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <10.95> not available
 (Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 316.
 
-<Figures/jax.png, id=89, 1204.5pt x 696.6025pt>
+<Figures/jax.png, id=90, 1204.5pt x 696.6025pt>
 File: Figures/jax.png Graphic file (type png)
 <use Figures/jax.png>
 Package pdftex.def Info: Figures/jax.png  used on input line 316.
 (pdftex.def)             Requested size: 68.45801pt x 39.58345pt.
-
-LaTeX Font Warning: Font shape `OT1/lmss/m/sc' in size <14.4> not available
-(Font)              Font shape `OT1/lmr/m/sc' tried instead on input line 316.
-
 [6
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc} <./Figures/jax.png>] (./Inkscape figs/NF.pdf_tex
+ <./Figures/jax.png>] (./Inkscape figs/NF.pdf_tex
 <Inkscape figs//NF.pdf, id=98, page=1, 597.50786pt x 845.04686pt>
 File: Inkscape figs//NF.pdf Graphic file (type pdf)
 <use Inkscape figs//NF.pdf, page 1>
@@ -1786,7 +1786,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  128i,16n,122p,1188b,1731s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsso10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (12 pages, 694391 bytes).
+Output written on main.pdf (12 pages, 688491 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  157 compressed objects within 2 object streams

@@ -181,6 +181,30 @@
 
 % \section{Gravitational waves from binary neutron star}
 
+\begin{frame}{Bayesian inference}
+
+  \def\x{4mm}
+  \def\y{2mm}
+  
+  Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta$ from data $d$ % ($13$ to $17$ parameters) from gravitational wave data $d$:
+  \vspace{1mm}
+  \begin{equation*}
+      \textcolor{ForestGreen}{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)} % = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}}
+  \end{equation*}
+  
+  \vspace{\x}
+  
+  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+    \textbf{Problem:} Computationally expensive for multimessenger data + EOS
+  \end{tcolorbox}
+  
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.60\textwidth]{Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf}
+    \caption*{}
+  \end{figure}
+  
+  \end{frame}
 \begin{frame}{\texttt{N}uclear \texttt{M}ulti-\texttt{M}essenger \texttt{A}strophysics}
 
   \def\x{7mm}
@@ -200,19 +224,22 @@
     %   \item Gravitational waves, kilonovae, gamma-ray bursts
     % \end{itemize}
     
+    \pause
     \vspace{\x}
 
-    \item Used for overview of EOS constraints, with ``precomputed'' EOS set (\href{https://arxiv.org/abs/2402.04172}{arXiv:2402.04172})
+    \item Used for overview of EOS constraints, with \red{``precomputed''} EOS set (\href{https://arxiv.org/abs/2402.04172}{arXiv:2402.04172})
     \begin{itemize}
       \item Metamodel
       \item Speed-of-sound extension scheme
+      \item $100 \ 000$ EOS
     \end{itemize}
   \end{itemize}
 
-  \vspace{\x}
+  \vspace{\y}
+  \pause
 
   \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-    \textbf{Next step:} Infer EOS parameters directly from multimessenger data
+    \textbf{Next step:} Infer EOS parameters directly from multimessenger data, upgrade software for future detectors
   \end{tcolorbox}
   
   \end{frame}
@@ -237,31 +264,6 @@
 %   \end{figure}
   
 %   \end{frame}
-
-\begin{frame}{Bayesian inference}
-
-\def\x{4mm}
-\def\y{2mm}
-
-Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta$ from data $d$ % ($13$ to $17$ parameters) from gravitational wave data $d$:
-\vspace{1mm}
-\begin{equation*}
-    \textcolor{ForestGreen}{p(\theta | d)} = \frac{p(d | \theta) p(\theta)}{p(d)} % = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}}
-\end{equation*}
-
-\vspace{\x}
-
-\begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-  \textbf{Problem:} Prohibitively expensive with multimessenger data 
-\end{tcolorbox}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=0.60\textwidth]{Figures/mixture_of_gaussians_projection_no_title_colorbar.pdf}
-  \caption*{}
-\end{figure}
-
-\end{frame}
 
 \begin{frame}{\textsc{jax}}
 
@@ -301,7 +303,7 @@ Bayesian inference: get \textcolor{ForestGreen}{posterior} of parameters $\theta
 
 \vspace{\z}
 
-Potential for acceleration in various science areas!
+Potential for accelerating science, without resorting to machine learning!
 
 % \vspace{\z}
 % \hrule 
@@ -364,48 +366,29 @@ Potential for acceleration in various science areas!
 
   \begin{itemize}
 
-    \item Gravitational waves: 
+    \item Gravitational waves \small ~(\href{https://arxiv.org/abs/2404.11397}{arXiv:2404.11397}) \normalsize 
     \vspace{\y}
     \begin{itemize}
-      \item Analyze binary neutron stars in \red{15 -- 30 minutes} rather than $\mathcal{O}(\rm{hours})$ (\href{https://arxiv.org/abs/2404.11397}{arXiv:2404.11397})
+      \item Waveforms: \red{$\mathcal{O}(10^3)$ faster}
       
       \vspace{\y}
-      
-      \item \faGithub~\href{https://github.com/kazewong/jim}{\texttt{kazewong/jim}}
+
+      \item Analyze binary neutron stars in \red{15 -- 30 minutes} rather than $\mathcal{O}(\rm{hours})$ 
     \end{itemize}
 
     \pause
     \vspace{\x}
-    
-    % \item \texttt{Jim}: Accelerate Bayesian inference with (i) \texttt{jax} and (ii) normalizing flows (machine learning) (arXiv:2404.11397)
-    % \begin{itemize}
-    %   \item \url{https://github.com/kazewong/jim/}
-      
-    %   \item Sampler: \texttt{flowMC} (\url{https://github.com/kazewong/flowMC})
-    % \end{itemize}
-    
-    % \vspace{\x}
 
-    % \item Result: \red{$\sim 30$ minutes} on a single GPU
-    
-    % \vspace{\x}
-
-    % \item Enable large-scale simulations on EOS constraints from gravitational waves
-
-    \item TOV solver: 
+    \item TOV solver (EOS $\rightarrow$ NS):
     \vspace{\y}
     \begin{itemize}
       \item \red{$10 - 100 \times$ faster}
-      
-      \vspace{\y}
-      
-      \item \faGithub~\href{https://github.com/tsunhopang/jose}{\texttt{tsunhopang/jose}}
     \end{itemize}
 
     \pause
     \vspace{\x}
 
-    \item Kilonovae, GRBs: \faGithub~\href{https://github.com/ThibeauWouters/fiesta}{\texttt{ThibeauWouters/fiesta}}
+    \item Kilonovae, GRBs: \small \faGithub~\href{https://github.com/ThibeauWouters/fiesta}{\texttt{ThibeauWouters/fiesta}} \normalsize
 
     \pause
     \vspace{\x}
@@ -423,6 +406,36 @@ Potential for acceleration in various science areas!
 
 
 \end{frame}
+
+\begin{frame}{Thanks for listening!}
+
+  \def\x{4mm}
+  \def\y{3mm}
+  
+  Our \textsc{jax} ecosystem:
+  \vspace{\x}
+  \begin{itemize}
+    \item Normalizing flow-enhanced MCMC sampler:\small~\faGithub~\href{https://github.com/kazewong/flowMC}{\texttt{kazewong/flowMC}} \normalsize
+    
+    \vspace{\x}
+  
+    \item Gravitational waveforms:~\small \faGithub~\href{https://github.com/tedwards2412/ripple}{\texttt{tedwards2412/ripple}} \normalsize
+    
+    \vspace{\x}
+    
+    \item Gravitational waves inference toolkit:~\small \faGithub~\href{https://github.com/kazewong/jim}{\texttt{kazewong/jim}} \normalsize
+  
+    \vspace{\x}
+  
+    \item EOS code and TOV solver:~\small \faGithub~\href{https://github.com/tsunhopang/jose}{\texttt{tsunhopang/jose}} (\textit{work in progress}) \normalsize
+  
+    \vspace{\x}
+  
+    \item Kilonovae and GRB:~\small \faGithub~\href{https://github.com/ThibeauWouters/fiesta}{\texttt{ThibeauWouters/fiesta}} (\textit{work in progress}) \normalsize
+  \end{itemize}
+
+\end{frame}
+  
 
 
 \end{document}

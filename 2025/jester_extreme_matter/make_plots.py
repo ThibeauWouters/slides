@@ -20,12 +20,12 @@ plt.rcParams.update(params)
 
 def plot_cs2_sketch():
     
-    plt.figure(figsize = (6, 6))
+    plt.figure(figsize = (8, 4))
     n = np.linspace(2.0, 4.0, 1_000)
     n_sat = 1
     
-    n_grid_points = np.array([2.2, 2.76, 3.1, 3.3, 3.9])
-    cs2_grid_points = np.array([0.4, 0.2, 0.7, 0.8, 0.1])
+    n_grid_points = np.array([2.2, 2.76, 2.9, 3.3, 3.9])
+    cs2_grid_points = np.array([0.4, 0.1, 0.3, 0.7, 0.6])
     
     idx_annot = 3
     

@@ -193,9 +193,9 @@
 %---------------------------------------------------------
 
 
-\begin{frame}{Introduction -- Motivation}
+\begin{frame}{Introduction}
   \def\x{4mm}
-  
+
   Neutron stars (NSs) offer unique probes of the high-density regime of the equation of state (EOS) of dense nuclear matter.
 
   \vspace{\x}
@@ -209,139 +209,97 @@
 
 \end{frame}
 
-% \begin{frame}{Introduction -- Motivation}
 
-%   \def\x{4mm}
-  
-%   \vspace{\x}
+\begin{frame}{Inverting neutron stars with differentiable programming}
+  \def\x{3mm}
+  \def\y{2mm}
 
-%   \begin{itemize}
-%     \item Neutron stars (NSs) are unique probes of the equation of state (EOS) of dense nuclear matter ($\lesssim 8$ times the nuclear saturation density $n_{\rm{sat}} = 0.16 \ \rm{fm}^{-3}$)
-    
-%     \vspace{\x}
-
-%     \item \red{Inverse problem of NSs}: infer EOS from observations of NSs (masses, radii, tidal deformabilities, \dots)
-    
-%     \vspace{\x}
-
-%     \item Often solved with Bayesian inference: computationally expensive!
-
-%   \end{itemize}
-
-%   \vspace{\x}
-  
-%   \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-%     \textbf{Challenge:} 3G GW detectors will observe $\mathcal{O}(10^5)$ BNS/year $\rightarrow$ need for efficient inference
-%   \end{tcolorbox}
-    
-% \end{frame}
-
-\begin{frame}{Introduction --  Differentiable programming with \textsc{jax}}
-  \def\x{5mm}
-  \def\y{7mm}
-
-  Main bottleneck: solving Tolman-Oppenheimer-Volkoff equations
+  Bottleneck: solving Tolman-Oppenheimer-Volkoff (TOV) equations
 
   \vspace{\x}
   
-  Solution: \red{differentiable programming} with \textsc{jax}~\cite{frostig2018compiling}
+  Our solution: \red{differentiable programming} with \textsc{jax}~\cite{frostig2018compiling}
   \begin{itemize}
+    \vspace{\x}
+    
+    \item GPU accelerators -- no emulators required!
+    
     \vspace{\x}
     \item Automatic differentiation to compute gradients of functions
-    
-    \vspace{\x}
-    
-    \item Use efficient MCMC algorithm and GPU accelerators
   \end{itemize}
 
   \vspace{\x}
 
-  Our contributions:
-
-  \begin{itemize}
+  We invert neutron stars using
+  \begin{enumerate}
     \vspace{\x}
 
-    \item Fast inference: $\sim 0.24$ ms per TOV call, $\sim 1$ h for full MCMC run
+    \item \textbf{Bayesian inference}: $\sim 0.24$ ms per TOV call, $\sim 1$ h for MCMC inference
 
     \vspace{\x}
 
-    \item \red{Novel tool} to study EOS: gradient descent on NS observables
-  \end{itemize}
+    \item \textbf{Gradient-based optimizers}: efficient inversion of mass-radius curves
+  \end{enumerate}
 
-  \vspace{\y}
+  \vspace{\x}
   
   Available open source: \textsc{jester} (\href{https://github.com/tsunhopang/jester}{{\faGithub \texttt{tsunhopang/jester}}})
 \end{frame}
 
-
-% \begin{frame}{Introduction --  Overview}
-%   \def\x{2mm}
-
-%   \begin{itemize}
-%     \vspace{\x}
-%     \item Bayesian inference
-    
-%     \begin{itemize}
-%       \vspace{\x}
-%       \item Equation of state parametrization and sampler
-      
-%       \vspace{\x}
-      
-%       \item Validation of methods and scaling
-      
-%       \vspace{\x}
-      
-%       \item Measuring breakdown of chiral effective field theory $\chi_{\rm{EFT}}$ from NSs
-%     \end{itemize}
-
-%     \vspace{\x}
-%     \item Variational inference: gradient descent on NS observables
-    
-%   \end{itemize}
-
-% \end{frame}
-
-
-\begin{frame}{Methods -- Equation of state parametrization}
+\begin{frame}{Methods -- Equation of state parametrization (1)}
 
   \def\x{3mm}
-  \def\y{3mm}
-
-  % \begin{itemize}
-  %   \vspace{\x}
     
-  \red{Lower density} ($< 1-2 \ n_{\rm{sat}}$): metamodel~\cite{Margueron:2017eqc,Margueron:2017lup} 
-  
   \begin{itemize}
-    \vspace{\y}
-    
-    \item Taylor expansion of energy per nucleon $E/A$
+    \item At \red{low density}, we use the metamodel: Taylor expansion of energy per nucleon $E/A$~\cite{Margueron:2017eqc,Margueron:2017lup} in\footnote{$n_{\rm{sat}} \equiv 0.16 \ \rm{fm}^{-3}$} $x = (n - n_{\rm{sat}}) / 3n_{\rm{sat}}$
+    % , ${\rho_{\rm{sat}} \equiv 2.7 \times 10^{14} \ \rm{g} \ \rm{cm}^{-3}}$
 
-    \vspace{\y}
+    \vspace{\x}
 
-    \item Nuclear empirical parameters ($E_{\rm{sym}}, L_{\rm{sym}}$, \dots, $E_{\rm{sat}}, K_{\rm{sat}}$, \dots)
+    \item \red{Nuclear empirical parameters} (NEPs): coefficients of the expansion
   \end{itemize}
 
   \vspace{\x}
 
-  \red{Higher density}: parametrize $c_s^2(n)$ with grid points and interpolation~\cite{Somasundaram:2021clp}
+  \begin{equation*}
+    E/A(n, \delta) = e_{\rm{sat}}(n) + e_{\rm{sym}}(n) \delta^2  + \mathcal{O}(\delta^4) \, , \quad \delta = (n_n - n_p) / n \,
+  \end{equation*}
+
+  \begin{align*}
+    e_{\rm{sat}}(n) &= E_{\rm{sat}} + \tfrac12 K_{\rm{sat}} x^2 + \tfrac{1}{3!} Q_{\rm{sat}} x^3 + \tfrac{1}{4!} Z_{\rm{sat}} x^4 + \mathcal{O}(x^5) \\
+    e_{\rm{sym}}(n) &= E_{\rm{sym}} + L_{\rm{sym}} x + \tfrac12 K_{\rm{sym}} x^2  \\
+    & \quad + \tfrac{1}{3!} Q_{\rm{sym}} x^3 + \tfrac{1}{4!} Z_{\rm{sym}} x^4 + \mathcal{O}(x^5)
+  \end{align*}
+
+\end{frame}
+
+\begin{frame}{Methods -- Equation of state parametrization (2)}
+
+  \def\x{3mm}
+  \def\y{1mm}
+    
+  \begin{itemize}
+    \item The metamodel description breaks down at high density~\cite{Biswas:2020puz}
+
+    \vspace{\x}
+
+    \item Happens at $\red{n_{\rm{break}}} \sim [1, 2] \ n_{\rm{sat}}$
+
+    \vspace{\x}
+    
+    \item \red{Higher density}: parametrize the EOS with $c_s^2(n)$ grid points and linear interpolation~\cite{Somasundaram:2021clp}
+    
+    \vspace{\x}
+    
+    \item By default, $8$ grid points
+  \end{itemize}
+  
+  \vspace{\y}
 
   \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.475\textwidth}
-        \centering
-        \includegraphics[width=0.75\textwidth]{Figures/metamodel_frank.jpg}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.475\textwidth}
-        \centering
-        \includegraphics[width=0.75\textwidth]{Figures/cs2_sketch.pdf}
-    \end{subfigure}
-    % \caption{Three simple graphs}
-    % \label{fig:three graphs}
-\end{figure}
-
-
+    \includegraphics[width=0.65\linewidth]{Figures/cs2_sketch.pdf}
+  \end{figure}
 \end{frame}
 
 \begin{frame}{Methods -- Bayesian inference}
@@ -354,11 +312,13 @@
       \red{p(\theta_{\rm{EOS}} | d)} \propto p(d | \theta_{\rm{EOS}}) p(\theta_{\rm{EOS}})
   \end{equation*}
 
+  \vspace{\y}
+
   Computationally expensive: solve TOV equations for many $\theta_{\rm{EOS}}$!
 
   \begin{itemize}
     \vspace{\y}
-    \item \texttt{JAX}: compile code, run on GPU
+    \item \texttt{JAX}: compiles code, runs on GPU
     
     \vspace{\y}
     \item \texttt{flowMC}~\cite{Gabrie:2021tlu,Wong:2022xvh}: MCMC with normalizing flows as proposal distributions
@@ -380,16 +340,17 @@
 \begin{frame}{Results -- Validation and scaling}
 
   \def\x{2mm}
-  \def\y{2mm}
+  \def\y{3mm}
 
   \begin{itemize}
-    \vspace{\y}
     \item EOS constraints: nuclear theory ($\chi_{\rm{EFT}}$), NS observations (heavy PSRs, NICER, GW170817)
 
     \vspace{\y}
-    \item Extend Koehn+~\cite{Koehn:2024set} with complete EOS sampling
+
+    \item Extend Koehn+~\cite{Koehn:2024set}: directly sample $\theta_{\rm{EOS}}$
 
     \vspace{\y}
+
     \item Scales well with number of parameters (more $c_s^2(n)$ grid points)
   \end{itemize}
 
@@ -415,12 +376,13 @@
 \end{frame}
 
 
-\begin{frame}{Results -- Measure $\chi_{\rm{EFT}}$ breakdown}
+\begin{frame}{Results -- Measuring $n_{\rm{break}}$}
 
   \def\x{2mm}
   \def\y{2mm}
 
-  Theory predicts $\chi_{\rm{EFT}}$ to break down at a density \red{$n_{\rm{break}}$}, around $1-2 \ n_{\rm{sat}}$ -- can we determine this with NSs?
+  $\chi_{\rm{EFT}}$ predicts metamodel to break down at a density $n_{\rm{break}} \sim 1-2 \ n_{\rm{sat}}$ 
+  Can we determine this with NSs?
 
   \begin{itemize}
     \vspace{\y}
@@ -465,7 +427,7 @@
 
     \vspace{\x}
 
-    \item Efficiently invert a complete NS family to find the EOS
+    \item Efficiently invert a complete NS mass-radius curve
   \end{itemize}
 
   \vspace{-3mm}
@@ -488,10 +450,67 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Results -- degeneracy in metamodel parametrization}
+\begin{frame}{Results -- recovery of metamodel parameters}
 
-  Only consider metamodel parameters (no $c_s^2(n)$ extension)
-  
+  \def\x{3mm}
+
+  \begin{itemize}
+    \item Consider only metamodel NEPs -- no $c_s^2(n)$ grid points
+
+    \vspace{\x}
+
+    \item Recover with increasingly more NEPs being varied
+
+    \vspace{\x}
+
+    \item If more NEPs are varied, $L_{\rm{sym}}$ is no longer constrained
+
+    \vspace{\x}
+    
+    \item Recovered EOS deviate $<100$ meters, $<10$ in $\Lambda$ from the true EOS in $[1, 2] \ M_\odot$ range
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{Figures/money_plot.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Conclusion}
+
+  \def\x{5mm}
+  \def\y{7mm}
+
+  \begin{itemize}
+    \item We have developed \textsc{jester}, a differentiable programming framework for the inverse problem of NSs
+
+    \vspace{\x}
+
+    \item We demonstrate accurate and scalable Bayesian inference on NS data
+
+    \vspace{\x}
+
+    \item Gradient-based optimizers can efficiently invert a complete NS family
+
+    \vspace{\x}
+
+    \item New tool to gain insights into how NSs probe the EOS
+  \end{itemize}
+
+  \vspace{\y}
+
+  Available open source: \textsc{jester} (\href{https://github.com/tsunhopang/jester}{{\faGithub \texttt{tsunhopang/jester}}})
+\end{frame}
+
+\appendix
+
+\begin{frame}{More validation results}
+
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Figures/Untitled.jpg}
+  \end{figure}
 \end{frame}
 
 

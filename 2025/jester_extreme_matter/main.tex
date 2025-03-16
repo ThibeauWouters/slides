@@ -41,6 +41,16 @@
 }
 \makeatother
 
+% Show the TOC at the beginning
+\AtBeginSection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}
+      \frametitle{Contents}
+      \tableofcontents[currentsection,subsectionstyle=shaded/shaded/hide]
+  \end{frame}
+}
+
+
 \colorlet{beamer@blendedblue}{blue!70} % change color theme
 
 \usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
@@ -194,13 +204,18 @@
 
 
 \begin{frame}{Introduction}
-  \def\x{4mm}
+  \def\x{2mm}
 
-  Neutron stars (NSs) offer unique probes of the high-density regime of the equation of state (EOS) of dense nuclear matter.
+  % Neutron stars (NSs) offer unique probes of the high-density regime of the equation of state (EOS) of dense nuclear matter.
 
+  
+  \red{Inverse problem of neutron stars}: infer the equation of state (EOS) of dense nuclear matter from observations of neutron stars (NSs): masses, radii, tidal deformabilities, \dots
+  
   \vspace{\x}
 
-  \red{Inverse problem of NSs}: infer the EOS from observations of NSs (masses, radii, tidal deformabilities, \dots)
+  Bottleneck: solving Tolman-Oppenheimer-Volkoff (TOV) equations
+
+  \vspace{\x}
 
   \begin{figure}
     \centering
@@ -212,12 +227,9 @@
 
 \begin{frame}{Inverting neutron stars with differentiable programming}
   \def\x{3mm}
-  \def\y{2mm}
+  \def\y{7mm}
+  \def\z{10mm}
 
-  Bottleneck: solving Tolman-Oppenheimer-Volkoff (TOV) equations
-
-  \vspace{\x}
-  
   Our solution: \red{differentiable programming} with \textsc{jax}~\cite{frostig2018compiling}
   \begin{itemize}
     \vspace{\x}
@@ -225,23 +237,23 @@
     \item GPU accelerators -- no emulators required!
     
     \vspace{\x}
-    \item Automatic differentiation to compute gradients of functions
+    \item Automatic differentiation to compute gradients of code
   \end{itemize}
 
-  \vspace{\x}
+  \vspace{\y}
 
-  We invert neutron stars using
+  We efficiently invert neutron stars with
   \begin{enumerate}
     \vspace{\x}
 
-    \item \textbf{Bayesian inference}: $\sim 0.24$ ms per TOV call, $\sim 1$ h for MCMC inference
+    \item \textbf{Bayesian inference}: using NS data to constrain EOS parameters
 
     \vspace{\x}
 
-    \item \textbf{Gradient-based optimizers}: efficient inversion of mass-radius curves
+    \item \textbf{Gradient-based optimizers}: efficient inversion of $R(M)$ or $\Lambda(M)$
   \end{enumerate}
 
-  \vspace{\x}
+  \vspace{\z}
   
   Available open source: \textsc{jester} (\href{https://github.com/tsunhopang/jester}{{\faGithub \texttt{tsunhopang/jester}}})
 \end{frame}
@@ -251,7 +263,7 @@
   \def\x{3mm}
     
   \begin{itemize}
-    \item At \red{low density}, we use the metamodel: Taylor expansion of energy per nucleon $E/A$~\cite{Margueron:2017eqc,Margueron:2017lup} in\footnote{$n_{\rm{sat}} \equiv 0.16 \ \rm{fm}^{-3}$} $x = (n - n_{\rm{sat}}) / 3n_{\rm{sat}}$
+    \item At \red{low density}, we use the metamodel~\cite{Margueron:2017eqc,Margueron:2017lup}: Taylor expansion of energy per nucleon $E/A$ in\footnote{$n_{\rm{sat}} \equiv 0.16 \ \rm{fm}^{-3}$} $x = (n - n_{\rm{sat}}) / 3n_{\rm{sat}}$
     % , ${\rho_{\rm{sat}} \equiv 2.7 \times 10^{14} \ \rm{g} \ \rm{cm}^{-3}}$
 
     \vspace{\x}
@@ -279,19 +291,12 @@
   \def\y{1mm}
     
   \begin{itemize}
-    \item The metamodel description breaks down at high density~\cite{Biswas:2020puz}
-
-    \vspace{\x}
-
-    \item Happens at $\red{n_{\rm{break}}} \sim [1, 2] \ n_{\rm{sat}}$
+    \item Metamodel description breaks down at $\red{n_{\rm{break}}} \sim [1, 2] \ n_{\rm{sat}}$
 
     \vspace{\x}
     
     \item \red{Higher density}: parametrize the EOS with $c_s^2(n)$ grid points and linear interpolation~\cite{Somasundaram:2021clp}
     
-    \vspace{\x}
-    
-    \item By default, $8$ grid points
   \end{itemize}
   
   \vspace{\y}
@@ -302,59 +307,64 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Methods -- Bayesian inference}
+% \begin{frame}{Methods -- Bayesian inference}
 
-  \def\x{6mm}
-  \def\y{1mm}
+%   \def\x{5mm}
+%   \def\y{1mm}
 
-  \red{Bayesian inference}: get \red{posterior} of EOS parameters $\theta_{\rm{EOS}}$ with Markov chain Monte Carlo (MCMC) and NS data $d$
-  \begin{equation*}
-      \red{p(\theta_{\rm{EOS}} | d)} \propto p(d | \theta_{\rm{EOS}}) p(\theta_{\rm{EOS}})
-  \end{equation*}
+%   Goal: \red{posterior} with MCMC from NS data $d$ % $\red{p(\theta_{\rm{EOS}} | d)}$
+%   \begin{equation*}
+%       \red{p(\theta_{\rm{EOS}} | d)} \propto p(d | \theta_{\rm{EOS}}) p(\theta_{\rm{EOS}})
+%   \end{equation*}
 
-  \vspace{\y}
+%   \vspace{\x}
 
-  Computationally expensive: solve TOV equations for many $\theta_{\rm{EOS}}$!
+%   Computationally expensive: solve TOV equations for many $\theta_{\rm{EOS}}$!
 
-  \begin{itemize}
-    \vspace{\y}
-    \item \texttt{JAX}: compiles code, runs on GPU
+%   \begin{itemize}
+%     \vspace{\y}
+%     \item \texttt{JAX}: compiles code, runs on GPU
     
-    \vspace{\y}
-    \item \texttt{flowMC}~\cite{Gabrie:2021tlu,Wong:2022xvh}: MCMC with normalizing flows as proposal distributions
-  \end{itemize}
+%     \vspace{\y}
+%     \item \texttt{flowMC}~\cite{Gabrie:2021tlu,Wong:2022xvh}: MCMC with normalizing flows as proposal distributions
+%   \end{itemize}
 
-  \vspace{\x}
+%   \vspace{\x}
 
-  With this, we achieve (on NVIDIA H100 GPU)
-  \begin{itemize}
-    \vspace{\y}
-    \item $\sim 0.24$ ms per TOV call
+%   With this, we achieve (on NVIDIA H100 GPU)
+%   \begin{itemize}
+%     \vspace{\y}
+%     \item $\sim 0.24$ ms per TOV solver call
     
-    \vspace{\y}
-    \item Complete MCMC run in $\sim 1$ h 
-  \end{itemize}
-\end{frame}
+%     \vspace{\y}
+%     \item $\sim 1$ h for MCMC run
+%   \end{itemize}
+% \end{frame}
 
+\section{Bayesian inference}
 
-\begin{frame}{Results -- Validation and scaling}
+\begin{frame}{Results -- Bayesian inference}
 
   \def\x{2mm}
-  \def\y{3mm}
+  \def\y{2mm}
 
   \begin{itemize}
     \item EOS constraints: nuclear theory ($\chi_{\rm{EFT}}$), NS observations (heavy PSRs, NICER, GW170817)
 
     \vspace{\y}
 
-    \item Extend Koehn+~\cite{Koehn:2024set}: directly sample $\theta_{\rm{EOS}}$
+    \item Extend Koehn \textit{et al.}~\cite{Koehn:2024set}: directly sample $\theta_{\rm{EOS}}$
+
+    \vspace{\y}
+
+    \item $\sim 0.24$ ms per TOV solver call, \red{$\sim 1$ h} for MCMC run (H100 GPU)
 
     \vspace{\y}
 
     \item Scales well with number of parameters (more $c_s^2(n)$ grid points)
   \end{itemize}
 
-  \vspace{\x}
+  % \vspace{\x}
 
   \begin{columns}
 
@@ -404,18 +414,18 @@
 
 \end{frame}
 
-\begin{frame}{Methods -- Variational inference}
+\section{Gradient-based optimization}
+
+\begin{frame}{Methods -- Gradient-based optimization}
 
   \def\x{2mm}
 
-  Alternative to Bayesian inference: optimization with gradients
-
-  % \vspace{\x}
-
   \begin{itemize}
-    \vspace{\x}
+    % \item Alternative to Bayesian inference: optimization with gradients
 
-    \item $\hat{R}_i, \hat{\Lambda}_i$: ``target'' tidal deformabilities at masses $M_i$
+    % \vspace{\x}
+
+    \item Given $\hat{\Lambda}_i$: ``true'' tidal deformabilities at masses $M_i$ to invert
 
     \vspace{\x}
     
@@ -423,24 +433,28 @@
     
     \vspace{\x}
 
-    \item Gradient descent: $\boldtheta^{(i+1)} \leftarrow \boldtheta^{(i)} - \gamma \nabla L(\boldtheta^{(i)})$
+    \item Gradient descent: $\boldtheta^{(i+1)} \leftarrow \boldtheta^{(i)} - \gamma \nabla L(\boldtheta^{(i)})$ with Adam
+    
+    \begin{itemize}
+      \item Automatic differentation! % $\nabla \Lambda(\boldtheta_{\rm{EOS}})$? 
+    \end{itemize}
 
-    \vspace{\x}
-
-    \item Efficiently invert a complete NS mass-radius curve
   \end{itemize}
 
   \vspace{-3mm}
 
   \begin{columns}
 
-    \column{0.5\textwidth}
+    \column{0.45\textwidth}
 
+    \small
     \begin{equation*}
       L(\thetaeos) = \frac1N \sum_{i=1}^N \left| \frac{\Lambda_i(\thetaeos) - \hat{\Lambda}_i}{\hat{\Lambda}_i} \right|
     \end{equation*}
 
-    \column{0.5\textwidth}
+    \normalsize
+
+    \column{0.60\textwidth}
 
     \begin{figure}[htpb]
       \centering
@@ -450,12 +464,17 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Results -- recovery of metamodel parameters}
+\begin{frame}{Results -- Recovery of nuclear empirical parameters}
 
   \def\x{3mm}
+  \def\y{2mm}
+
+  What do NSs tell us about nuclear empirical parameters (NEPs)?
+
+  \vspace{\y}
 
   \begin{itemize}
-    \item Consider only metamodel NEPs -- no $c_s^2(n)$ grid points
+    \item ``True'' EOS: only NEPs -- no $c_s^2(n)$ grid points
 
     \vspace{\x}
 
@@ -467,7 +486,7 @@
 
     \vspace{\x}
     
-    \item Recovered EOS deviate $<100$ meters, $<10$ in $\Lambda$ from the true EOS in $[1, 2] \ M_\odot$ range
+    \item Recovered EOSs deviate $<100$ meters, $<10$ in $\Lambda$ from the true EOS -- observationally indistinguishable % in $[1, 2] \ M_\odot$ range
   \end{itemize}
 
   \begin{figure}
@@ -502,6 +521,10 @@
   Available open source: \textsc{jester} (\href{https://github.com/tsunhopang/jester}{{\faGithub \texttt{tsunhopang/jester}}})
 \end{frame}
 
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
 \appendix
 
 \begin{frame}{More validation results}
@@ -512,6 +535,8 @@
     \includegraphics[width=\linewidth]{Figures/Untitled.jpg}
   \end{figure}
 \end{frame}
+
+
 
 
 \end{document}

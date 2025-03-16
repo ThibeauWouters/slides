@@ -246,11 +246,11 @@
   \begin{enumerate}
     \vspace{\x}
 
-    \item \textbf{Bayesian inference}: using NS data to constrain EOS parameters
+    \item \textbf{Bayesian inference}: using NS observations to constrain EOS parameters
 
     \vspace{\x}
 
-    \item \textbf{Gradient-based optimizers}: efficient inversion of $R(M)$ or $\Lambda(M)$
+    \item \textbf{Gradient-based optimizers}: given $R(M)$ or $\Lambda(M)$, recover EOS parameters
   \end{enumerate}
 
   \vspace{\z}
@@ -353,7 +353,7 @@
 
     \vspace{\y}
 
-    \item Extend Koehn \textit{et al.}~\cite{Koehn:2024set}: directly sample $\theta_{\rm{EOS}}$
+    \item Extend Koehn \textit{et al.}~\cite{Koehn:2024set}: directly sample $\boldtheta_{\rm{EOS}}$
 
     \vspace{\y}
 
@@ -425,7 +425,7 @@
 
     % \vspace{\x}
 
-    \item Given $\hat{\Lambda}_i$: ``true'' tidal deformabilities at masses $M_i$ to invert
+    \item Given $\hat{R}(M)$ or $\hat{\Lambda}(M)$: recover EOS parameters $\thetaeos$
 
     \vspace{\x}
     
@@ -474,11 +474,11 @@
   \vspace{\y}
 
   \begin{itemize}
-    \item ``True'' EOS: only NEPs -- no $c_s^2(n)$ grid points
+    \item Use only NEPs -- no $c_s^2(n)$ grid points
 
-    \vspace{\x}
+    % \vspace{\x}
 
-    \item Recover with increasingly more NEPs being varied
+    % \item Recover ``true'' EOS with increasingly more NEPs being varied
 
     \vspace{\x}
 
@@ -486,7 +486,7 @@
 
     \vspace{\x}
     
-    \item Recovered EOSs deviate $<100$ meters, $<10$ in $\Lambda$ from the true EOS -- observationally indistinguishable % in $[1, 2] \ M_\odot$ range
+    \item Yet, recovered EOSs deviate $<100$ meters, $<10$ in $\Lambda$ from the true EOS $\rightarrow$ observationally indistinguishable % in $[1, 2] \ M_\odot$ range
   \end{itemize}
 
   \begin{figure}
@@ -509,7 +509,7 @@
 
     \vspace{\x}
 
-    \item Gradient-based optimizers can efficiently invert a complete NS family
+    \item Gradient-based optimizers can efficiently invert a given NS family
 
     \vspace{\x}
 
@@ -524,8 +524,6 @@
 \begin{frame}[allowframebreaks]{References}
   \printbibliography
 \end{frame}
-
-\appendix
 
 \begin{frame}{More validation results}
 

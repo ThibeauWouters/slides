@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{325.98425197bp}%
+    \setlength{\unitlength}{368.50393701bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.52173913)%
+  \begin{picture}(1,0.46153846)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{NS_to_EOS.pdf}}%
-    \put(0.51148367,0.46489407){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Constrain\end{tabular}}}}%
-    \put(0.55289681,0.07307016){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Apply\end{tabular}}}}%
-    \put(0.2102049,0.40671169){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Neutron stars\end{tabular}}}}%
-    \put(0.83015137,0.40671169){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}EOS\end{tabular}}}}%
+    \put(0.45246632,0.41125245){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Constrain\end{tabular}}}}%
+    \put(0.48910103,0.06463899){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Apply\end{tabular}}}}%
+    \put(0.18595048,0.35978342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Neutron stars\end{tabular}}}}%
+    \put(0.73436467,0.35978342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}EOS\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{NS_to_EOS.pdf}}%
   \end{picture}%
 \endgroup%

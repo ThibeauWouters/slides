@@ -211,7 +211,7 @@
 
     \vspace{\x}
 
-    \item Neutron star (NS) properties depend on the EOS: probe its high density regime ($2$-$8$ $n_{\rm{sat}}$)
+    \item Neutron star (NS) properties depend on the EOS: probe its high density regime
   \end{itemize}
 
   \vspace{\x}
@@ -241,15 +241,15 @@
 
     \vspace{\x}
 
-    \item The TOV equations predict NS properties as function of EOS
+    \item Solve TOV equations to predict NS properties from EOS
 
     \vspace{\x}
 
-    \item Solving the TOV equations is slow: \red{costly likelihood} evaluation! Use ML?
+    \item Solving the TOV equations is \red{slow}! 
 
     % \vspace{\x}
 
-    % \item How can we accelerate this process?
+    % \item Use ML to speed up the process?
   \end{itemize}
 
   \vspace{\y}
@@ -259,7 +259,7 @@
 
 \end{frame}
 
-\begin{frame}{\textsc{Jester}: accelerated TOV solvers}
+\begin{frame}{\textsc{Jester}: accelerated TOV solver}
   \def\negx{-3mm}
   \def\x{4mm}
   \def\z{1mm}
@@ -269,18 +269,20 @@
   \begin{columns}
     \begin{column}{0.80\textwidth}
 
-      \textsc{Jester}~\cite{Wouters:2025zju}: fast EOS code and TOV solver with \textsc{Jax}
+      \textsc{Jester}~\cite{Wouters:2025zju}: \textsc{Jax}-based EOS code and TOV solver
       \begin{itemize}
-        \item GPU acceleration
+        \item GPU acceleration, just-in-time (JIT) compilation
 
         \vspace{\z}
 
-        \item Just-in-time (JIT) compilation
+        \item Enable sampling of $\theta_{\rm{EOS}}$ in high-dimensional space
+
+        \vspace{\z}
+
+        \item \red{Same speed as ML surrogates of TOV solvers!}
 
       \end{itemize}
     \end{column}
-
-    \vspace{\x}
 
     \begin{column}{0.20\textwidth}
       \begin{figure}
@@ -290,11 +292,11 @@
     \end{column}
   \end{columns}
 
-  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-    \textsc{Jester} achieves same speed as machine learning surrogates!
-  \end{tcolorbox}
+  % \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+  %   \textsc{Jester} achieves same speed as machine learning surrogates!
+  % \end{tcolorbox}
 
-  \vspace{\negx}
+  \vspace{\x}
 
   \begin{figure}
     \centering
@@ -404,6 +406,7 @@
     \end{itemize}
     
     \vspace{\x}
+    \pause
     
     \item \textbf{\jaxtwo{Equation of state-informed prior}}:
     \begin{align*}
@@ -426,7 +429,7 @@
 
     \vspace{\x}
 
-    \item Emulate $\pi(m_1, m_2, \Lambda_1, \Lambda_2)$  with a \textbf{\jaxtwo{normalizing flow}}
+    \item Emulate $\pi(m_1, m_2, \Lambda_1, \Lambda_2)$  with a \textbf{\jaxtwo{normalizing flow}} (\textsc{FlowJax})
   \end{itemize}
 
   \vspace{\y}
@@ -435,8 +438,12 @@
   \incfig[0.975\textwidth]{NFprior}
 \end{frame}
 
-\begin{frame}{Posterior for single injection}
+\begin{frame}{Simulated binary neutron star signal}
   \def\x{2mm}
+
+  Tidal content of source more constrained (SNR = 13)
+
+  \vspace{\x}
 
   \begin{itemize}
     \item \textbf{\jaxthree{Agnostic}}: uniform prior for chirp mass, mass ratio, $\Lambda_1$, $\Lambda_2$
@@ -444,12 +451,6 @@
     \vspace{\x}
 
     \item \textbf{\jaxtwo{Data-driven}}: normalizing flow prior $\pi(m_1, m_2, \Lambda_1, \Lambda_2)$
-
-    \vspace{\x}
-
-    \item Tidal content of source more constrained (SNR = 13)
-
-    \vspace{\x}
   \end{itemize}
 
   \begin{figure}
@@ -467,7 +468,7 @@
 
     \vspace{\x}
   
-    \item Use EOS constraints to classify mergers
+    \item Use EOS constraints to classify GWs with Bayesian inference
   \end{itemize}
 
   \vspace{\x}
@@ -476,7 +477,7 @@
   \incfig[0.95\textwidth]{bns_vs_nsbh}
 \end{frame}
 
-\begin{frame}{Source classification: proof of concept}
+\begin{frame}{Source classification}
   \def\x{3mm}
   \def\y{-2mm}
 
@@ -500,9 +501,11 @@
 
     \column{.01\textwidth}
     \rule{.2mm}{.8\textheight}
-
+    
+    
     \column{0.49\textwidth}
     \centering 
+    \onslide<2>{
     \textbf{GW190425}
     \vspace{\x}
     \begin{align*}
@@ -517,11 +520,13 @@
       \centering
       \includegraphics[width=0.95\linewidth]{Figures/GW190425.pdf}
     \end{figure}
+    }
+
   \end{columns}
 \end{frame}
 
 
-\begin{frame}{Source classification: proof of concept}
+\begin{frame}{Source classification: closing the loop}
   \def\x{3mm}
   \def\y{-5mm}
 
@@ -582,20 +587,23 @@
 
     \vspace{\x}
 
-    \item Constraining EOS: TOV solvers can be accelerated with \textsc{Jax}, avoiding the need for machine learning surrogates
+    \begin{itemize}
+      \item TOV solvers can be accelerated with \textsc{Jax}, avoiding the need for machine learning surrogates
 
-    \vspace{\x}
+      \vspace{\x}
 
-    \item Applying EOS: Normalizing flows can emulate priors on source parameters informed by EOS knowledge 
+      \item Normalizing flows can emulate priors on source parameters informed by EOS knowledge
+    \end{itemize}
     
     \vspace{\x}
 
-    \item Equation of state-informed priors enable source classification: confidence depends on EOS constraints
+    \item Equation of state-informed priors enable source classification: to be implemented in \textsc{Bilby}
   \end{itemize}
 
 \end{frame}
 
 \begin{frame}[allowframebreaks]{References}
+  \nocite{my_misc_entry}
   \printbibliography
 \end{frame}
 

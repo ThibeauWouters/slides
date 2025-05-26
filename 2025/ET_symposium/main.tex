@@ -259,7 +259,7 @@
   \begin{itemize}
     \item ET will observe $\mathcal{O}(10^5)$ events per year
     
-    \item Signals will be longer ($f_{\rm{min}} = 5$ Hz) and have higher SNRs
+    \item Signals will be longer and have higher SNRs
   \end{itemize}
 
   \pause
@@ -271,64 +271,64 @@
 
 \end{frame}
 
-\begin{frame}{Towards scalable inference}
-  \def\x{5mm}
-  \def\y{1mm}
+% \begin{frame}{Towards scalable inference}
+%   \def\x{5mm}
+%   \def\y{1mm}
 
-  Ingredients to make inference scalable:
-  \begin{itemize}
-    \item Hardware acceleration: GPUs for parallel computations
+%   Ingredients to make inference scalable:
+%   \begin{itemize}
+%     \item Hardware acceleration: GPUs for parallel computations
 
-    \vspace{\y}
+%     \vspace{\y}
 
-    \item Normalizing flows (NFs): neural density estimators
-  \end{itemize}
+%     \item Normalizing flows (NFs): neural density estimators
+%   \end{itemize}
 
-  \pause
-  \vspace{\x}
+%   \pause
+%   \vspace{\x}
 
-  Both are used in two ways:
-  \vspace{\y}
-  \begin{itemize}
-    \onslide<2->{
-      \item Simulation-based inference~\cite{Langendorff:2022fzq, Bhardwaj:2023xph, Dax:2024mcn, Hu:2024oen, Santoliquido:2025lot}:
-      \begin{itemize}
-        \item[$\boldsymbol{\green{+}}$] Fast at inference ($\sim$seconds)
+%   Both are used in two ways:
+%   \vspace{\y}
+%   \begin{itemize}
+%     \onslide<2->{
+%       \item Simulation-based inference~\cite{Langendorff:2022fzq, Bhardwaj:2023xph, Dax:2024mcn, Hu:2024oen, Santoliquido:2025lot}:
+%       \begin{itemize}
+%         \item[$\boldsymbol{\green{+}}$] Fast at inference ($\sim$seconds)
   
-        \vspace{\y}
+%         \vspace{\y}
   
-        \item[$\boldsymbol{\red{-}}$] Needs pre-trained model
+%         \item[$\boldsymbol{\red{-}}$] Needs pre-trained model
 
-        \vspace{\y}
+%         \vspace{\y}
   
-        \item See Lucia Papalini, Filippo Santoliquido,...
-      \end{itemize}
-    }
+%         \item See Lucia Papalini, Filippo Santoliquido,...
+%       \end{itemize}
+%     }
 
-    \vspace{\y}
+%     \vspace{\y}
 
-    \item \only<4->{\textbf{\blue{Hybrid approach: faster likelihoods + NF proposals $\rightarrow$ this talk}}}%
-      \only<3>{Hybrid approach: faster likelihoods + NF proposals}
-      \onslide<3->{
+%     \item \only<4->{\textbf{\blue{Hybrid approach: faster likelihoods + NF proposals $\rightarrow$ this talk}}}%
+%       \only<3>{Hybrid approach: faster likelihoods + NF proposals}
+%       \onslide<3->{
 
-      \begin{itemize}
-        \item[$\boldsymbol{\green{+}}$] No pre-training: more flexibility
+%       \begin{itemize}
+%         \item[$\boldsymbol{\green{+}}$] No pre-training: more flexibility
 
-        \vspace{\y}
+%         \vspace{\y}
 
-        \item[$\boldsymbol{\red{-}}$] Re-implement software
+%         \item[$\boldsymbol{\red{-}}$] Re-implement software
 
-        \vspace{\y}
+%         \vspace{\y}
 
-        \item Also see Luca Negri's poster: neural likelihood estimators
-      \end{itemize}
-      }
-  \end{itemize}
+%         \item Also see Luca Negri's poster: neural likelihood estimators
+%       \end{itemize}
+%       }
+%   \end{itemize}
 
-  % \vspace{2mm}
+%   % \vspace{2mm}
 
-  % \textbf{\blue{This talk focuses on the hybrid approach}}
-\end{frame}
+%   % \textbf{\blue{This talk focuses on the hybrid approach}}
+% \end{frame}
 
 \section{Methods}
 
@@ -356,7 +356,7 @@
 
   \begin{columns}
     \begin{column}{0.84\linewidth}
-      Acceleration with \textsc{Jax} features:
+      Accelerate Python with \textsc{Jax}~\ghlink{jax-ml/jax}:
       \begin{itemize}
         \item Use GPU accelerators
         \item Automatic differentiation $\rightarrow$ gradient-based samplers
@@ -374,9 +374,9 @@
   \pause
   \vspace{7mm}
 
-  \textsc{flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}: MCMC + normalizing flows + \textsc{Jax}
+  \textsc{flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}: MCMC + normalizing flows in \textsc{Jax}
   \begin{itemize}
-    \item MCMC chains as training data: no pre-training
+    \item MCMC chains as training data $\rightarrow$ no pre-training
     \item Also see \textsc{nessai}~\ghlink{mj-will/nessai}~\cite{Williams:2021qyt, Williams:2023ppp}
   \end{itemize}
   \vspace{3mm}
@@ -401,14 +401,11 @@
   \begin{columns}
     \begin{column}[t]{0.62\linewidth}
       \begin{itemize}
-        \item \red{Waveforms} on GPU are $\mathcal{O}(10^3)$ faster
+        \item \red{Waveforms} on GPU: $\mathcal{O}(10^3)$ faster
 
         \vspace{\x}
         
         \item From \textsc{lalsuite} to \textsc{Jax}: \textsc{ripple}~\ghlink{tedwards2412/ripple/}~\cite{Edwards:2023sak}
-        \begin{itemize}
-          \item Also see \textsc{sfts} \ghlink{rodrigo-tenorio/sfts}
-        \end{itemize}
       \end{itemize}
     \end{column}
 
@@ -453,7 +450,7 @@
 
         \vspace{\x}
 
-        \item Evidence: \textsc{harmonic}~\cite{Polanska:2024zpn}
+        \item Evidence? \textsc{harmonic}~\cite{Polanska:2024zpn}
         }
       \end{itemize}
     \end{column}
@@ -462,7 +459,7 @@
     \begin{column}[t]{0.39\linewidth}
       \begin{figure}
         \centering
-        \includegraphics[width=0.95\linewidth]{Figures/corner_plot.pdf}
+        \includegraphics[width=0.99\linewidth]{Figures/corner_plot.pdf}
       \end{figure}
     }
     \end{column}
@@ -489,7 +486,7 @@
     \item Assess scaling of \textsc{Jim}: \jaxbluedark{BBH}+\jaxgreendark{BBH} in O5 with LVK
     \begin{itemize}
       \vspace{\x}
-      \item \texttt{IMRPhenomD} $\rightarrow$ $22$ parameters (joint PE)
+      \item \texttt{IMRPhenomD} $\rightarrow$ $22$ parameters (joint parameter estimation)
 
       \vspace{\x}
 
@@ -509,19 +506,20 @@
 
   \onslide<2->{
 
-    \vspace{-3mm}
+    \vspace{-4mm}
+    
     \begin{columns}
       \begin{column}{0.49\textwidth}
         \begin{figure}
           \centering
-          \includegraphics[width=0.80\linewidth]{Figures/OS_injection_139_1_cornerplot_M_c_s1_z_s2_z.pdf}
+          \includegraphics[width=0.85\linewidth]{Figures/OS_injection_139_v2_1_cornerplot_M_c_q_s1_z_s2_z.pdf}
         \end{figure}
       \end{column}
 
       \begin{column}{0.49\textwidth}
         \begin{figure}
           \centering
-          \includegraphics[width=0.80\linewidth]{Figures/OS_injection_139_2_cornerplot_M_c_s1_z_s2_z.pdf}
+          \includegraphics[width=0.85\linewidth]{Figures/OS_injection_139_v2_2_cornerplot_M_c_q_s1_z_s2_z.pdf}
         \end{figure}
       \end{column}
     \end{columns}
@@ -537,7 +535,7 @@
   \def\x{2mm}
 
   \begin{itemize}
-    \item BNS mergers lead to kilonovae, gamma-ray bursts
+    \item BNS mergers lead to kilonovae, \red{gamma-ray bursts (afterglows)}
 
     \vspace{\x}
     
@@ -554,14 +552,16 @@
 
   \onslide<2->{
     \begin{columns}
-      \begin{column}[c]{0.05\textwidth}
+      \begin{column}[c]{0.14\textwidth}
+        \centering
+        \incfig[0.90\textwidth]{GRB}
       \end{column}
   
-      \begin{column}[c]{0.34\textwidth}
+      \begin{column}[c]{0.24\textwidth}
 
         \vspace{-5mm}
 
-        \fiesta{\textsc{fiesta} surrogates}
+        \fiesta{\textsc{fiesta}}
         \begin{itemize}
           \item $1$m$36$s
           \item $1$ H100 GPU
@@ -646,8 +646,25 @@
 \begin{frame}{Constructing GWTCs \small (Thomas Ng, Kaze Wong) \normalsize}
   \def\x{2mm}
 
-  How can we use the trained normalizing flow proposal from \textsc{FlowMC}?
-  % \begin{itemize}
+  GWTCs do not scale well in \red{memory}:
+  \begin{itemize}
+    \vspace{\x}
+    
+    \item GWTC stores several samples (different waveforms)
+    
+    \vspace{\x}
+    
+    \item Standard: fixed sample size, $\sim 100$ MB
+
+    \vspace{\x}
+    
+    \item<2-> \textsc{flowMC}: generate samples from normalizing flows, $\sim 10$ MB
+
+    % \vspace{\x}
+
+    % \item<3-> Finetune starting from other waveform proposal
+  \end{itemize}
+  % \begin{itemize}s
   %   \item Importance sampling on NF proposals: generate samples
    
   %   \vspace{\x}
@@ -655,22 +672,34 @@
   %   \item Finetune on different prior distribution/waveform model
   % \end{itemize}
 
+  \vspace{3mm}
+
   \centering
-  \incfig[0.9\textwidth]{GWTC}
+  \only<1>{
+    \incfig[0.95\textwidth]{GWTC}
+  }
+  \only<2>{
+    \incfig[0.95\textwidth]{GWTC_flowMC}
+  }
+x
+  % \only<3>{
+  %   \incfig[0.95\textwidth]{GWTC_flowMC_finetune}
+  % }
   
 \end{frame}
 
 \begin{frame}{Conclusion}
   \def\x{3mm}
-  \def\y{2mm}
+  \def\y{1mm}
 
   \begin{itemize}
     \item Progress on scalable Bayesian inference software for 3G, with minimal amount of pre-training
 
     \vspace{\x}
 
-    \item Hybrid acceleration: GPU + normalizing flow
+    \item Hybrid acceleration: GPUs + normalizing flow proposals
     \begin{itemize}
+      \vspace{\y}
       \item \textsc{Jax}/GPU: likelihoods faster
 
       \vspace{\y}
@@ -686,11 +715,12 @@
 
     \item To do
     \begin{itemize}
+      \vspace{\y}
       \item  GW injection studies for ET
 
       \vspace{\y}
 
-      \item More waveform models in \textsc{Jax}
+      \item \red{More waveform models in \textsc{Jax}}
 
       \vspace{\y}
 
@@ -700,19 +730,35 @@
   
   \vspace{4mm}
 
-  \red{Let's talk!}
+  \textbf{Let's talk!}
 \end{frame}
 
 \begin{frame}[plain, noframenumbering]{Thank you for your attention!}
+
+  \def\x{0.5mm}
   
-  Software:
+  Software written in \textsc{Jax}~\ghlink{jax-ml/jax}:
   \begin{itemize}
+    \vspace{\x}
     \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
+
+    \vspace{\x}
+
     \item \textsc{Jim} \ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj} \enumicon{1} \enumicon{2} \enumicon{4}
+
+    \vspace{\x}
+
     \item \textsc{fiesta} \ghlink{ThibeauWouters/fiestaEM} \enumicon{2} %(work in progress...)
+
+    \vspace{\x}
+
     \item \textsc{Jester} \ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju} \enumicon{3}
+
+    \vspace{\x}
+
     \item \textsc{harmonic} \ghlink{astro-informatics/harmonic}~\cite{mcewen2023machinelearningassistedbayesian, polanska2024learnedharmonicmeanestimation, Polanska:2024zpn}
   \end{itemize}
+
   \centering
   \incfig[0.975\textwidth]{talk_overview}
 \end{frame}
@@ -768,24 +814,56 @@
   This has been verified to give accurate evidences (similar values as nested sampling) when GW posteriors are used~\cite{Polanska:2024zpn}. 
 \end{frame}
 
-\begin{frame}{BNS in ET-$\Delta$ example: all parameters}
+\begin{frame}{\textsc{harmonic} with \textsc{jim}}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.1075]{Figures/corner_plot_big.pdf}
+    \includegraphics[scale=0.275]{Figures/polanska.jpg}
+  \end{figure}
+  
+\end{frame}
+
+\begin{frame}{BNS in ET-$\Delta$ example: all parameters}
+  \vspace{-3mm}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.1125]{Figures/corner_plot_big.pdf}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Overlapping signals: all parameters signal A}
+  \vspace{-3mm}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.1075]{Figures/OS_injection_139_v2_1_cornerplot_all.pdf}
+    \includegraphics[scale=0.1325]{Figures/OS_injection_139_v2_1_cornerplot_all.pdf}
   \end{figure}
 \end{frame}
 
 \begin{frame}{Overlapping signals: all parameters signal B}
+  \vspace{-3mm}
   \begin{figure}
     \centering
-    \includegraphics[scale=0.1075]{Figures/OS_injection_139_v2_2_cornerplot_all.pdf}
+    \includegraphics[scale=0.1325]{Figures/OS_injection_139_v2_2_cornerplot_all.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Equation of state O5 projection with 20 BNS: EOS}
+
+  \vspace{-2mm}
+  \begin{itemize}
+    \item \textbf{\jaxthree{Purple}}: target
+    \item \textbf{\red{Red}}: posterior EOS samples (\textbf{black}: maximum log posterior)
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.40]{Figures/postprocessing_EOS.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Equation of state O5 projection with 20 BNS: NS}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.40]{Figures/postprocessing_NS.pdf}
   \end{figure}
 \end{frame}
 

@@ -50,12 +50,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.70707071)%
+  \begin{picture}(1,0.31986532)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{GWTC.pdf}}%
-    \put(0.04038653,0.41819321){\color[rgb]{0,0,0}\transparent{0.80000001}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Standard\end{tabular}}}}}%
-    \put(0.04166727,0.11063439){\color[rgb]{0,0,0}\transparent{0.80000001}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\textsc{flowMC}\end{tabular}}}}}%
+    \put(0.03682312,0.0701072){\color[rgb]{0,0,0}\transparent{0.80000001}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Standard\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{GWTC.pdf}}%
+    \put(0.11090291,0.27468299){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}data\end{tabular}}}}%
+    \put(0.28367866,0.27554368){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}waveform\\\\\end{tabular}}}}%
+    \put(0.52609438,0.27554368){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}sampling\end{tabular}}}}%
+    \put(0.81276654,0.27554368){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}GWTC\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{GWTC.pdf}}%
   \end{picture}%
 \endgroup%

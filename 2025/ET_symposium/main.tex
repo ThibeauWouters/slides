@@ -469,16 +469,63 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Overlapping signals}
+\begin{frame}{Overlapping signals \tiny (Luca Negri, Justin Janquart, James Alvey, Uddipta Bhardwaj) \normalsize}
+
+  \def\x{1mm}
+
+  %%% Colors used in case needed later on?
+  % JAX_BLUE = "#2a56c6" # jax blue, darker
+  % JAX_GREEN = "#00695c" # jax green, darker
+  % JAX_PURPLE = "#6a1b9a" # jax purple, darker
+
+  % https://github.com/ThibeauWouters/jim_testing/tree/9ff1d374c3fa50f95ded8c2446a579c5f22cbb52/overlapping/HLV_BBH_BBH/outdir/injection_139_v2
+
+  %%% For injection_139_v2, the parameters are: 
+  % M_c_1 = 32.06485311503819, M_c_2 = 33.41456227648163
 
   \begin{itemize}
-    \item In 3G, we expect to see \red{overlapping signals}
+    % \item In 3G, we expect to see \red{overlapping signals}
     
-    \item Assess scaling: BBH+BBH in LVK
+    \item Assess scaling of \textsc{Jim}: \jaxbluedark{BBH}+\jaxgreendark{BBH} in O5 with LVK
+    \begin{itemize}
+      \vspace{\x}
+      \item \texttt{IMRPhenomD} $\rightarrow$ $22$ parameters (joint PE)
+
+      \vspace{\x}
+
+      \item $\jaxbluedark{M_c^{(1)}} = 32 M_\odot$, $\jaxgreendark{M_c^{(2)}} = 33 M_\odot$, $\Delta t = 70$ ms
+      
+      \vspace{\x}
+
+      \item $\jaxbluedark{\rm{SNR}^{(1)}} = 25.76$, $\jaxgreendark{\rm{SNR}^{(2)}} = 25.24$ 
+
+      \vspace{\x}
+
+      \item<2-> \red{$1$h$28$m} on H100 (vs 23 days on 16 CPUs~\cite{Janquart:2022fzz})
+    \end{itemize}
   \end{itemize}
 
-  Either 61 or 102 or one of the later ones, need to check in detail
-  
+  \pause
+
+  \onslide<2->{
+
+    \vspace{-3mm}
+    \begin{columns}
+      \begin{column}{0.49\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.80\linewidth]{Figures/OS_injection_139_1_cornerplot_M_c_s1_z_s2_z.pdf}
+        \end{figure}
+      \end{column}
+
+      \begin{column}{0.49\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.80\linewidth]{Figures/OS_injection_139_2_cornerplot_M_c_s1_z_s2_z.pdf}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  }
 \end{frame}
 
 \begin{frame}[plain, noframenumbering]{Overview}
@@ -544,7 +591,7 @@
   \showoverview{3}
 \end{frame}
 
-\begin{frame}{Equation of state inference}
+\begin{frame}{Equation of state inference \small (Peter T.H. Pang) \normalsize}
   \def\x{2mm}
 
   \begin{itemize}
@@ -596,7 +643,7 @@
   \showoverview{4}
 \end{frame}
 
-\begin{frame}{Gravitational wave transient catalogue}
+\begin{frame}{Constructing GWTCs \small (Thomas Ng, Kaze Wong) \normalsize}
   \def\x{2mm}
 
   How can we use the trained normalizing flow proposal from \textsc{FlowMC}?
@@ -725,6 +772,20 @@
   \begin{figure}
     \centering
     \includegraphics[scale=0.1075]{Figures/corner_plot_big.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Overlapping signals: all parameters signal A}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.1075]{Figures/OS_injection_139_v2_1_cornerplot_all.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Overlapping signals: all parameters signal B}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.1075]{Figures/OS_injection_139_v2_2_cornerplot_all.pdf}
   \end{figure}
 \end{frame}
 

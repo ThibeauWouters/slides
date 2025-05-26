@@ -1,0 +1,759 @@
+%%% ======= Beamer ======
+\documentclass[usenames,dvipsnames,t]{beamer}
+% \documentclass[usenames,dvipsnames, handout]{beamer}
+\beamertemplatenavigationsymbolsempty % remove toolbar at the bottom of slides
+\usepackage{appendixnumberbeamer} % for appendix
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+\usepackage{fontawesome}
+
+% Define commands for social media icons with links
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
+\newcommand{\myemail}{\href{mailto:t.r.i.wouters@uu.nl}{\textcolor{black}{\faEnvelope}}}
+
+\newcommand{\ghlink}[1]{\href{https://github.com/#1}{\textcolor{black}{\faGithub}}}
+
+\definecolor{customblue}{HTML}{7db8dc}
+\newcommand{\thetaeos}{\boldsymbol{\theta}_{\rm{EOS}}}
+\newcommand{\boldtheta}{\boldsymbol{\theta}}
+
+
+
+\setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{}%
+%     / \inserttotalframenumber
+    \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+% Show the TOC at the beginning
+\AtBeginSection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection,subsectionstyle=shaded/shaded/hide]
+  \end{frame}
+}
+
+
+\colorlet{beamer@blendedblue}{blue!70} % change color theme
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
+\addbibresource{references.bib}%<- specify bib file
+
+\usepackage[inkscapearea=page]{svg}
+\usepackage{adjustbox}
+
+
+% For appendix
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
+
+
+
+% Other preamble stuff:
+\usepackage{preamble}
+
+%%% Uncomment for another color palette
+% \definecolor{Logo1}{rgb}{0.0, 0, 0.7}
+% \definecolor{Logo2}{rgb}{2.55, 2.55, 2.55}
+
+% \setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+% \setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+% \setbeamercolor*{palette tertiary}{bg=white, fg=Logo1}
+% \setbeamercolor*{palette quaternary}{bg=white,fg=white}
+% \setbeamercolor{structure}{fg=Logo1} % itemize, enumerate, etc
+% \setbeamercolor{section in toc}{fg=Logo1} % TOC sections
+
+% For figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mdframed}
+\usepackage{subcaption}
+
+\setbeamertemplate{caption}[numbered]
+
+
+
+% --- Inkscape figures:
+\newcommand{\incfig}[2][0.75\textwidth]{%
+    \def\svgwidth{\columnwidth}
+    \resizebox{#1}{!}{\import{Inkscape/}{#2.pdf_tex}}
+}
+
+% --- Height of frame
+\newlength{\myheight}
+\setlength{\myheight}{7cm}
+
+\newlength\myheightfigureintext
+\newlength\mydepthfigureintext
+\settototalheight\myheightfigureintext{Xygp}
+\settodepth\mydepthfigureintext{Xygp}
+\setlength\fboxsep{0pt}
+
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos} % for precise positioning
+
+\usepackage{ifthen}
+\newcommand{\showoverview}[1]{%
+  \def\x{2mm}%
+  \def\y{1mm}%
+  
+  Analyzing a multi-messenger \bns{\textbf{binary neutron star}} (BNS) signal:
+  \begin{enumerate}
+    \vspace{\x}
+    \item \ifthenelse{\equal{#1}{1}}{\textbf{Gravitational waves}}{Gravitational waves}
+    
+    % \vspace{\x}
+    
+    % \item \ifthenelse{\equal{#1}{2}}{\textbf{Glitch mitigation}}{Glitch mitigation}
+    
+    \vspace{\x}
+    
+    \item \ifthenelse{\equal{#1}{2}}{\textbf{Electromagnetic counterparts}}{Electromagnetic counterparts}
+    
+    \vspace{\x}
+    
+    \item \ifthenelse{\equal{#1}{3}}{\textbf{Nuclear equation of state}}{Nuclear equation of state}
+    
+    \vspace{\x}
+    
+    \item \ifthenelse{\equal{#1}{4}}{\textbf{Gravitational wave transient catalogue}}{Gravitational wave transient catalogue}
+  \end{enumerate}
+  
+  \vspace{\y}
+  \centering
+  \incfig[0.975\textwidth]{talk_overview}
+}
+
+
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[] %optional
+{Scalable Bayesian inference for 3G: Leveraging hardware acceleration and normalizing flows}
+
+\author[Thibeau Wouters]{Thibeau Wouters \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \github \quad \linkedin \quad \myemail}
+
+
+\date{ET symposium 2025}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the 
+%beginning of each section and highlights the current section:
+
+%------------------------------------------------------------
+
+
+\begin{document}
+
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_BNS_2.png}}}
+
+% \begin{frame}[plain]
+% \titlepage
+
+% \end{frame}
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at (current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Scalable Bayesian inference for 3G: Leveraging hardware acceleration and normalizing flows}\\[1.5ex]
+        \normalsize Thibeau Wouters \\[0.5ex]
+        \github \quad \linkedin \quad \myemail
+      \end{minipage}
+    };
+  \end{tikzpicture}
+  
+  \vspace{7cm}
+
+  \begin{columns}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \vspace{1.5mm}
+    \includegraphics[width=0.75\linewidth]{Figures/utrecht-university.png}
+  \end{figure}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/Nikhef_logo-transparent.png}
+  \end{figure}
+\end{columns}
+  
+  \end{frame}
+}
+
+% %The next statement creates the title page.
+% \frame[plain]{\titlepage
+% }
+
+
+%---------------------------------------------------------
+%This block of code is for the table of contents after the title page
+% \begin{frame}[plain, noframenumbering]
+% \frametitle{Table of Contents}
+% \tableofcontents
+% \end{frame}
+%---------------------------------------------------------
+
+\section{Introduction}
+
+\begin{frame}{Parameter estimation in 3G}
+  \def\x{3mm}
+  \def\y{5mm}
+
+  Parameter estimation is done with \red{Bayesian inference}:
+  \begin{equation*}
+    \rm{posterior} \propto \frac{\rm{likelihood} \times \rm{prior}}{\rm{evidence}}
+  \end{equation*}
+
+  \begin{itemize}
+    \item Sample the posterior: MCMC or nested sampling
+
+    \item $\mathcal{O}(10^6) - \mathcal{O}(10^8)$ likelihood evaluations per inference
+  \end{itemize}
+  
+  \pause
+  \vspace{\y}
+  
+  What about \red{3G} detectors?
+  \begin{itemize}
+    \item ET will observe $\mathcal{O}(10^5)$ events per year
+    
+    \item Signals will be longer ($f_{\rm{min}} = 5$ Hz) and have higher SNRs
+  \end{itemize}
+
+  \pause
+  \vspace{\y}
+
+  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
+    \textbf{Premise}: Current software will not scale to 3G~\cite{Hu:2024mvn}
+  \end{tcolorbox}
+
+\end{frame}
+
+\begin{frame}{Towards scalable inference}
+  \def\x{5mm}
+  \def\y{1mm}
+
+  Ingredients to make inference scalable:
+  \begin{itemize}
+    \item Hardware acceleration: GPUs for parallel computations
+
+    \vspace{\y}
+
+    \item Normalizing flows (NFs): neural density estimators
+  \end{itemize}
+
+  \pause
+  \vspace{\x}
+
+  Both are used in two ways:
+  \vspace{\y}
+  \begin{itemize}
+    \onslide<2->{
+      \item Simulation-based inference~\cite{Langendorff:2022fzq, Bhardwaj:2023xph, Dax:2024mcn, Hu:2024oen, Santoliquido:2025lot}:
+      \begin{itemize}
+        \item[$\boldsymbol{\green{+}}$] Fast at inference ($\sim$seconds)
+  
+        \vspace{\y}
+  
+        \item[$\boldsymbol{\red{-}}$] Needs pre-trained model
+
+        \vspace{\y}
+  
+        \item See Lucia Papalini, Filippo Santoliquido,...
+      \end{itemize}
+    }
+
+    \vspace{\y}
+
+    \item \only<4->{\textbf{\blue{Hybrid approach: faster likelihoods + NF proposals $\rightarrow$ this talk}}}%
+      \only<3>{Hybrid approach: faster likelihoods + NF proposals}
+      \onslide<3->{
+
+      \begin{itemize}
+        \item[$\boldsymbol{\green{+}}$] No pre-training: more flexibility
+
+        \vspace{\y}
+
+        \item[$\boldsymbol{\red{-}}$] Re-implement software
+
+        \vspace{\y}
+
+        \item Also see Luca Negri's poster: neural likelihood estimators
+      \end{itemize}
+      }
+  \end{itemize}
+
+  % \vspace{2mm}
+
+  % \textbf{\blue{This talk focuses on the hybrid approach}}
+\end{frame}
+
+\section{Methods}
+
+
+\begin{frame}{Normalizing flows (NFs)}
+  \def\x{2mm}
+
+  \begin{itemize}
+    \item Trainable bijection between \blue{latent} and \red{data} spaces
+
+    \vspace{\x}
+    
+    \item Sample and evaluate complicated densities
+
+    \vspace{\x}
+    
+    \item Used as \red{proposal distribution}, trained from MCMC chains
+  \end{itemize}
+
+  \centering
+  \incfig[0.90\textwidth]{NF}
+\end{frame}
+
+\begin{frame}{\textsc{Jax} \& \textsc{flowMC}}
+
+  \begin{columns}
+    \begin{column}{0.84\linewidth}
+      Acceleration with \textsc{Jax} features:
+      \begin{itemize}
+        \item Use GPU accelerators
+        \item Automatic differentiation $\rightarrow$ gradient-based samplers
+        \item Just-in-time (JIT) compilation
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.15\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.95\linewidth]{Figures/jax.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+  \pause
+  \vspace{7mm}
+
+  \textsc{flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}: MCMC + normalizing flows + \textsc{Jax}
+  \begin{itemize}
+    \item MCMC chains as training data: no pre-training
+    \item Also see \textsc{nessai}~\ghlink{mj-will/nessai}~\cite{Williams:2021qyt, Williams:2023ppp}
+  \end{itemize}
+  \vspace{3mm}
+
+  \centering
+  \incfig[0.95\textwidth]{flowMCOverview2}
+\end{frame}
+
+\section{Applications}
+
+\begin{frame}{Overview}
+  \showoverview{1}
+\end{frame}
+
+\begin{frame}{Gravitational waves}
+  \def\x{2mm}
+  \def\y{5mm}
+  \def\z{1mm}
+
+  \vspace{-3mm}
+  
+  \begin{columns}
+    \begin{column}[t]{0.62\linewidth}
+      \begin{itemize}
+        \item \red{Waveforms} on GPU are $\mathcal{O}(10^3)$ faster
+
+        \vspace{\x}
+        
+        \item From \textsc{lalsuite} to \textsc{Jax}: \textsc{ripple}~\ghlink{tedwards2412/ripple/}~\cite{Edwards:2023sak}
+        \begin{itemize}
+          \item Also see \textsc{sfts} \ghlink{rodrigo-tenorio/sfts}
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+
+    \begin{column}[t]{0.36\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.99\linewidth]{Figures/strain_zoomed.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+  \pause
+
+  \vspace{5mm}
+  \hrule
+  \vspace{4mm}
+
+  \begin{columns}
+    \begin{column}[t]{0.60\linewidth}
+      \begin{itemize}
+        \item \red{Parameter estimation}: \textsc{Jim}~\ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj}
+    
+        \vspace{\x}
+    
+        \item BNS in LVK analyzed in $\sim 15$ min
+    
+        \vspace{\x}
+
+        \onslide<3->{
+        \item Ongoing work for ET -- example:
+        \begin{itemize}
+          \item BNS, $f_{\rm{min}} = 20$ Hz, SNR = $21$
+
+          \vspace{\z}
+
+          \item ET-$\Delta$, \texttt{IMRPhenomD\_NRTidalv2}
+
+          \vspace{\z}
+
+          \item 30 mins on H100 GPU
+        \end{itemize}
+
+        \vspace{\x}
+
+        \item Evidence: \textsc{harmonic}~\cite{Polanska:2024zpn}
+        }
+      \end{itemize}
+    \end{column}
+
+    \onslide<3->{
+    \begin{column}[t]{0.39\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.95\linewidth]{Figures/corner_plot.pdf}
+      \end{figure}
+    }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Overlapping signals}
+
+  \begin{itemize}
+    \item In 3G, we expect to see \red{overlapping signals}
+    
+    \item Assess scaling: BBH+BBH in LVK
+  \end{itemize}
+
+  Either 61 or 102 or one of the later ones, need to check in detail
+  
+\end{frame}
+
+\begin{frame}[plain, noframenumbering]{Overview}
+  \showoverview{2}
+\end{frame}
+
+
+\begin{frame}{Electromagnetic counterparts \small (Hauke Koehn, Tim Dietrich) \normalsize}
+  \def\x{2mm}
+
+  \begin{itemize}
+    \item BNS mergers lead to kilonovae, gamma-ray bursts
+
+    \vspace{\x}
+    
+    \item Numerical models are too expensive (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
+    % \begin{itemize}
+      %   \item Kilonovae: \textsc{possis}~\cite{Bulla:2019muo}
+      %   \item GRB afterglow: \textsc{afterglowpy}~\cite{Ryan:2019fhz}, \textsc{Pyblastafterglow}~\cite{Nedora:2024vrv}
+      % \end{itemize}
+      
+    \vspace{\x}
+
+    \item<2-> Neural network surrogates for inference: \textsc{fiesta}~\ghlink{ThibeauWouters/fiestaEM}
+  \end{itemize}
+
+  \onslide<2->{
+    \begin{columns}
+      \begin{column}[c]{0.05\textwidth}
+      \end{column}
+  
+      \begin{column}[c]{0.34\textwidth}
+
+        \vspace{-5mm}
+
+        \fiesta{\textsc{fiesta} surrogates}
+        \begin{itemize}
+          \item $1$m$36$s
+          \item $1$ H100 GPU
+        \end{itemize}
+        
+        \vspace{6mm}
+
+        \afterglowpy{\textsc{afterglowpy}}
+        \begin{itemize}
+          \item $4$ hours
+          \item $30$ CPUs
+        \end{itemize}
+      \end{column}
+  
+      \begin{column}[c]{0.59\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.80\linewidth]{Figures/fiesta_result.jpg}
+        \end{figure}
+      \end{column}
+    \end{columns}
+  }
+\end{frame}
+
+
+\begin{frame}[plain, noframenumbering]{Overview}
+  \showoverview{3}
+\end{frame}
+
+\begin{frame}{Equation of state inference}
+  \def\x{2mm}
+
+  \begin{itemize}
+    \item Goal: infer nuclear equation of state (EOS) of neutron stars~\cite{Abac:2025saz}
+
+    \vspace{\x}
+
+    \item Computational bottleneck: solve TOV equations
+
+    \vspace{\x}
+
+    \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{Jax}-based TOV solver
+    \begin{itemize}
+      \item Full inference in $\sim$hours
+      \item No need for machine learning surrogates
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item<3-> End-to-end analysis: constrain EOS from 20 BNS in O5
+  \end{itemize}
+
+  \vspace{-3mm}
+
+  \begin{columns}
+    \onslide<2->{
+      \begin{column}{0.49\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.99\linewidth]{Figures/scaling_plot.pdf}
+        \end{figure}
+      \end{column}
+    }
+
+    \onslide<3->{
+      \begin{column}{0.475\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.99\linewidth]{Figures/BNS_EOS_projection.pdf}
+        \end{figure}
+      \end{column}
+    }
+  \end{columns}
+\end{frame}
+
+\section{Outlook and conclusion}
+
+\begin{frame}[plain, noframenumbering]{Overview}
+  \showoverview{4}
+\end{frame}
+
+\begin{frame}{Gravitational wave transient catalogue}
+  \def\x{2mm}
+
+  How can we use the trained normalizing flow proposal from \textsc{FlowMC}?
+  % \begin{itemize}
+  %   \item Importance sampling on NF proposals: generate samples
+   
+  %   \vspace{\x}
+    
+  %   \item Finetune on different prior distribution/waveform model
+  % \end{itemize}
+
+  \centering
+  \incfig[0.9\textwidth]{GWTC}
+  
+\end{frame}
+
+\begin{frame}{Conclusion}
+  \def\x{3mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item Progress on scalable Bayesian inference software for 3G, with minimal amount of pre-training
+
+    \vspace{\x}
+
+    \item Hybrid acceleration: GPU + normalizing flow
+    \begin{itemize}
+      \item \textsc{Jax}/GPU: likelihoods faster
+
+      \vspace{\y}
+
+      \item \textsc{flowMC}: sampling converges faster
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item Goal: joint multimessenger analyses in $\sim$hours (\textsc{NMMA}~\cite{Pang:2022rzc} in \textsc{Jax})
+
+    \vspace{\x}
+
+    \item To do
+    \begin{itemize}
+      \item  GW injection studies for ET
+
+      \vspace{\y}
+
+      \item More waveform models in \textsc{Jax}
+
+      \vspace{\y}
+
+      \item Equation of state study with ET data
+    \end{itemize}
+  \end{itemize}
+  
+  \vspace{4mm}
+
+  \red{Let's talk!}
+\end{frame}
+
+\begin{frame}[plain, noframenumbering]{Thank you for your attention!}
+  
+  Software:
+  \begin{itemize}
+    \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
+    \item \textsc{Jim} \ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj} \enumicon{1} \enumicon{2} \enumicon{4}
+    \item \textsc{fiesta} \ghlink{ThibeauWouters/fiestaEM} \enumicon{2} %(work in progress...)
+    \item \textsc{Jester} \ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju} \enumicon{3}
+    \item \textsc{harmonic} \ghlink{astro-informatics/harmonic}~\cite{mcewen2023machinelearningassistedbayesian, polanska2024learnedharmonicmeanestimation, Polanska:2024zpn}
+  \end{itemize}
+  \centering
+  \incfig[0.975\textwidth]{talk_overview}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+  \nocite{my_misc_entry}
+  \nocite{Kuifje}
+  \printbibliography
+\end{frame}
+
+\appendix 
+
+\begin{frame}[allowframebreaks]{Evidence calculation: \textsc{harmonic}}
+
+  Evidence $Z$ can be computed from posterior samples with \textsc{harmonic}~\cite{mcewen2023machinelearningassistedbayesian} with the \red{harmonic mean estimator}
+
+  \begin{align*}
+    \rho &\equiv \mathbb{E}_{P(\theta|d)}\left[\frac{1}{L(\theta)}\right] \\ 
+    &= \int \diff \theta \frac{1}{\mathcal{L}(\theta)} P(\theta | d) \\
+    &= \int \diff \theta \frac{1}{\mathcal{L}(\theta)} \frac{\mathcal{L}(\theta) \pi(\theta)}{Z} = \frac{1}{Z}
+  \end{align*}
+
+  Therefore, estimate $\rho$ with posterior samples:
+  \begin{equation*}
+    \hat{\rho} = \frac1N \sum_{i=1}^N \frac{1}{\mathcal{L}(\theta)}, \quad \theta_i \sim P(\theta|d)
+  \end{equation*}
+
+  Can be interpreted as importance sampling
+  \begin{equation*}
+    \rho = \int \diff \theta \frac1Z \frac{\pi(\theta)}{P(\theta | d)} P(\theta | d) \, ,
+  \end{equation*}
+  \textbf{but} with target = prior and sampling density = posterior. Therefore, importance sampling is inefficient -- how to solve?
+
+  New proposal:
+  \begin{align*}
+    \rho &= \mathbb{E}_{P(\theta| d)}\left[ \frac{\varphi(\theta)}{\mathcal{L}(\theta)\pi(\theta)} \right] \\
+    &= \int \mathrm{d}\theta \, \frac{\varphi(\theta)}{\mathcal{L}(\theta)\pi(\theta)} \, P(\theta| d) \\
+    &= \int \mathrm{d}\theta \, \frac{\varphi(\theta)}{\mathcal{L}(\theta)\pi(\theta)} \, \frac{\mathcal{L}(\theta)\pi(\theta)}{Z} = \frac{1}{Z}
+  \end{align*}
+
+  Use the following estimator:
+  \begin{equation*}
+    \hat{\rho} = \frac{1}{N} \sum_{i=1}^N \frac{\varphi(\theta_i)}{\mathcal{L}(\theta_i)\pi(\theta_i)}, \quad \theta_i \sim P(\theta|d)
+  \end{equation*}
+
+  \vspace{5mm}
+  Replace the target distribution $\pi$ with $\varphi$: only requirement is that it is normalized 
+  
+  \vspace{5mm}
+  In practice, this can be achieved with a normalizing flow~\cite{polanska2024learnedharmonicmeanestimation}. \\
+  
+  \vspace{5mm}
+  This has been verified to give accurate evidences (similar values as nested sampling) when GW posteriors are used~\cite{Polanska:2024zpn}. 
+\end{frame}
+
+\begin{frame}{BNS in ET-$\Delta$ example: all parameters}
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.1075]{Figures/corner_plot_big.pdf}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}{Glitch mitigation (Senna van Os, Harsh Narola)}
+
+%   Model glitches as superposition of sine Gaussian wavelets
+%   \begin{itemize}
+%     \item \textsc{BayesWave}: vary number of wavelets
+%     \item \textsc{Jim}: fix $N$ sine Gaussian wavelets, compare different $N$ runs
+%     % \item Batch jobs of $N$ wavelets $\rightarrow$ evidence $Z$ $\rightarrow$ Bayes factor
+%     % \begin{equation*}
+%     %   \ln B_{ij} = \ln Z_i - \ln Z_j
+%     % \end{equation*}
+%     \item Comparable results to \textsc{BayesWave} 
+%     \item $5 \times 10$ mins vs $1h$
+%   \end{itemize}
+
+%   \begin{columns}
+%     \begin{column}{0.49\textwidth}
+%       \begin{figure}
+%         \centering
+%         \includegraphics[width=0.99\linewidth]{Figures/senna_plot.pdf}
+%       \end{figure}
+%     \end{column}
+%     \begin{column}{0.49\textwidth}
+%       \centering
+%       BW comparison figure
+%     \end{column}
+%   \end{columns}
+% \end{frame}
+
+\end{document}

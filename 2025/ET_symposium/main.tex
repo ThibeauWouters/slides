@@ -242,14 +242,15 @@
   \def\y{5mm}
 
   Parameter estimation is done with \red{Bayesian inference}:
-  \begin{equation*}
-    \rm{posterior} \propto \frac{\rm{likelihood} \times \rm{prior}}{\rm{evidence}}
-  \end{equation*}
+  \begin{align*}
+    p(\theta|d) &\propto p(d|\theta) p(\theta) \\
+    \rm{posterior} &\propto \rm{likelihood} \times \rm{prior}
+  \end{align*}
 
   \begin{itemize}
     \item Sample the posterior: MCMC or nested sampling
 
-    \item $\mathcal{O}(10^6) - \mathcal{O}(10^8)$ likelihood evaluations per inference
+    \item $\mathcal{O}(10^6)$ likelihood evaluations: computational bottleneck
   \end{itemize}
   
   \pause
@@ -343,9 +344,9 @@
     
     \item Sample and evaluate complicated densities
 
-    \vspace{\x}
+    % \vspace{\x}
     
-    \item Used as \red{proposal distribution}, trained from MCMC chains
+    % \item Used as \red{proposal distribution}, trained from MCMC chains
   \end{itemize}
 
   \centering
@@ -360,7 +361,7 @@
       \begin{itemize}
         \item Use GPU accelerators
         \item Automatic differentiation $\rightarrow$ gradient-based samplers
-        \item Just-in-time (JIT) compilation
+        % \item Just-in-time (JIT) compilation
       \end{itemize}
     \end{column}
     \begin{column}{0.15\linewidth}
@@ -372,12 +373,13 @@
   \end{columns}
 
   \pause
-  \vspace{7mm}
+  \vspace{10mm}
 
-  \textsc{flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}: MCMC + normalizing flows in \textsc{Jax}
+  \textsc{flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}:
   \begin{itemize}
-    \item MCMC chains as training data $\rightarrow$ no pre-training
-    \item Also see \textsc{nessai}~\ghlink{mj-will/nessai}~\cite{Williams:2021qyt, Williams:2023ppp}
+    \item MCMC + normalizing flows in \textsc{Jax}
+    \item Training data: MCMC chains $\rightarrow$ \red{no pre-training}
+    % \item Also see \textsc{nessai}~\ghlink{mj-will/nessai}~\cite{Williams:2021qyt, Williams:2023ppp}
   \end{itemize}
   \vspace{3mm}
 
@@ -392,7 +394,7 @@
 \end{frame}
 
 \begin{frame}{Gravitational waves}
-  \def\x{2mm}
+  \def\x{3mm}
   \def\y{5mm}
   \def\z{1mm}
 
@@ -430,7 +432,7 @@
     
         \vspace{\x}
     
-        \item BNS in LVK analyzed in $\sim 15$ min
+        \item \green{\checkmark} BNS in LVK analyzed in $\sim 15$ min
     
         \vspace{\x}
 
@@ -440,17 +442,21 @@
           \item BNS, $f_{\rm{min}} = 20$ Hz, SNR = $21$
 
           \vspace{\z}
-
-          \item ET-$\Delta$, \texttt{IMRPhenomD\_NRTidalv2}
+          
+          \item ET-$\Delta$
+          
+          \vspace{\z}
+          
+          \item \texttt{IMRPhenomD\_NRTidalv2}
 
           \vspace{\z}
 
-          \item 30 mins on H100 GPU
+          \item \red{30 mins} on H100 GPU
         \end{itemize}
 
-        \vspace{\x}
+        % \vspace{\x}
 
-        \item Evidence? \textsc{harmonic}~\cite{Polanska:2024zpn}
+        % \item Evidence? \textsc{harmonic}~\cite{Polanska:2024zpn}
         }
       \end{itemize}
     \end{column}
@@ -527,9 +533,138 @@
 \end{frame}
 
 \begin{frame}[plain, noframenumbering]{Overview}
-  \showoverview{2}
+  \showoverview{3}
 \end{frame}
 
+\begin{frame}{Equation of state inference \small (Peter T.H. Pang) \normalsize}
+  \def\x{2mm}
+
+  \begin{itemize}
+    % \item Goal: infer nuclear equation of state (EOS) of neutron stars~\cite{Abac:2025saz}
+
+    % \vspace{\x}
+
+    \item Likelihood involves solving TOV equations (EOS $\rightarrow$ NS): slow!
+
+    \vspace{\x}
+
+    \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{Jax}-based TOV solver
+    \begin{itemize}
+      \item Full inference in \red{$\sim$hours}
+      \item No need for machine learning surrogates
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item<3-> End-to-end analysis: constrain EOS from 20 BNS in O5
+    % \begin{itemize}
+    %   \item $\Lambda_{1.4}$ tidal deformability of $1.4 M_\odot$ NS
+    % \end{itemize}
+  \end{itemize}
+
+  \vspace{-3mm}
+
+  \begin{columns}
+    \onslide<2->{
+      \begin{column}{0.49\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.99\linewidth]{Figures/scaling_plot.pdf}
+        \end{figure}
+      \end{column}
+    }
+
+    \onslide<3->{
+      \begin{column}{0.475\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.99\linewidth]{Figures/BNS_EOS_projection.pdf}
+        \end{figure}
+      \end{column}
+    }
+  \end{columns}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+  \def\x{4mm}
+  \def\y{1mm}
+
+  \begin{itemize}
+    \item Progress on scalable Bayesian inference software for 3G, with minimal amount of pre-training
+
+    \vspace{\x}
+
+    \item Hybrid acceleration: GPUs + normalizing flow proposals
+    \begin{itemize}
+      \vspace{\y}
+      \item \textsc{Jax}/GPU: faster likelihoods
+
+      \vspace{\y}
+
+      \item \textsc{flowMC}: sampling converges faster
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item Goal: joint multimessenger analyses in $\sim$hours
+
+    \vspace{\x}
+
+    \vspace{\y}
+
+    \item \red{Weakness: need waveform models in \textsc{Jax}!}
+  \end{itemize}
+  
+  \vspace{4mm}
+
+  \textbf{Let's talk!}
+\end{frame}
+
+\begin{frame}[plain, noframenumbering]{Thank you for your attention!}
+
+  \def\x{0.5mm}
+  
+  Software written in \textsc{Jax}~\ghlink{jax-ml/jax}:
+  \begin{itemize}
+    \vspace{\x}
+    \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
+
+    \vspace{\x}
+
+    \item \textsc{Jim} \ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj} \enumicon{1} \enumicon{2} \enumicon{4}
+
+    \vspace{\x}
+
+    \item \textsc{fiesta} \ghlink{ThibeauWouters/fiestaEM} \enumicon{2} %(work in progress...)
+
+    \vspace{\x}
+
+    \item \textsc{Jester} \ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju} \enumicon{3}
+
+    \vspace{\x}
+
+    \item \textsc{harmonic} \ghlink{astro-informatics/harmonic}~\cite{mcewen2023machinelearningassistedbayesian, polanska2024learnedharmonicmeanestimation, Polanska:2024zpn}
+  \end{itemize}
+
+  \centering
+  \incfig[0.975\textwidth]{talk_overview}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+  \nocite{my_misc_entry}
+  \nocite{Kuifje}
+  \printbibliography
+\end{frame}
+
+\appendix 
+
+
+
+\begin{frame}[plain, noframenumbering]{Overview}
+  \showoverview{2}
+\end{frame}
 
 \begin{frame}{Electromagnetic counterparts \small (Hauke Koehn, Tim Dietrich) \normalsize}
   \def\x{2mm}
@@ -539,7 +674,7 @@
 
     \vspace{\x}
     
-    \item Numerical models are too expensive (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
+    \item Numerical models are expensive (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
     % \begin{itemize}
       %   \item Kilonovae: \textsc{possis}~\cite{Bulla:2019muo}
       %   \item GRB afterglow: \textsc{afterglowpy}~\cite{Ryan:2019fhz}, \textsc{Pyblastafterglow}~\cite{Nedora:2024vrv}
@@ -586,59 +721,6 @@
   }
 \end{frame}
 
-
-\begin{frame}[plain, noframenumbering]{Overview}
-  \showoverview{3}
-\end{frame}
-
-\begin{frame}{Equation of state inference \small (Peter T.H. Pang) \normalsize}
-  \def\x{2mm}
-
-  \begin{itemize}
-    \item Goal: infer nuclear equation of state (EOS) of neutron stars~\cite{Abac:2025saz}
-
-    \vspace{\x}
-
-    \item Computational bottleneck: solve TOV equations
-
-    \vspace{\x}
-
-    \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{Jax}-based TOV solver
-    \begin{itemize}
-      \item Full inference in $\sim$hours
-      \item No need for machine learning surrogates
-    \end{itemize}
-
-    \vspace{\x}
-
-    \item<3-> End-to-end analysis: constrain EOS from 20 BNS in O5
-  \end{itemize}
-
-  \vspace{-3mm}
-
-  \begin{columns}
-    \onslide<2->{
-      \begin{column}{0.49\textwidth}
-        \begin{figure}
-          \centering
-          \includegraphics[width=0.99\linewidth]{Figures/scaling_plot.pdf}
-        \end{figure}
-      \end{column}
-    }
-
-    \onslide<3->{
-      \begin{column}{0.475\textwidth}
-        \begin{figure}
-          \centering
-          \includegraphics[width=0.99\linewidth]{Figures/BNS_EOS_projection.pdf}
-        \end{figure}
-      \end{column}
-    }
-  \end{columns}
-\end{frame}
-
-\section{Outlook and conclusion}
-
 \begin{frame}[plain, noframenumbering]{Overview}
   \showoverview{4}
 \end{frame}
@@ -681,95 +763,41 @@
   \only<2>{
     \incfig[0.95\textwidth]{GWTC_flowMC}
   }
-x
+
   % \only<3>{
   %   \incfig[0.95\textwidth]{GWTC_flowMC_finetune}
   % }
   
 \end{frame}
 
-\begin{frame}{Conclusion}
-  \def\x{3mm}
-  \def\y{1mm}
 
-  \begin{itemize}
-    \item Progress on scalable Bayesian inference software for 3G, with minimal amount of pre-training
+% \begin{frame}{Glitch mitigation (Senna van Os, Harsh Narola)}
 
-    \vspace{\x}
+%   Model glitches as superposition of sine Gaussian wavelets
+%   \begin{itemize}
+%     \item \textsc{BayesWave}: vary number of wavelets
+%     \item \textsc{Jim}: fix $N$ sine Gaussian wavelets, compare different $N$ runs
+%     % \item Batch jobs of $N$ wavelets $\rightarrow$ evidence $Z$ $\rightarrow$ Bayes factor
+%     % \begin{equation*}
+%     %   \ln B_{ij} = \ln Z_i - \ln Z_j
+%     % \end{equation*}
+%     \item Comparable results to \textsc{BayesWave} 
+%     \item $5 \times 10$ mins vs $1h$
+%   \end{itemize}
 
-    \item Hybrid acceleration: GPUs + normalizing flow proposals
-    \begin{itemize}
-      \vspace{\y}
-      \item \textsc{Jax}/GPU: likelihoods faster
-
-      \vspace{\y}
-
-      \item \textsc{flowMC}: sampling converges faster
-    \end{itemize}
-
-    \vspace{\x}
-
-    \item Goal: joint multimessenger analyses in $\sim$hours (\textsc{NMMA}~\cite{Pang:2022rzc} in \textsc{Jax})
-
-    \vspace{\x}
-
-    \item To do
-    \begin{itemize}
-      \vspace{\y}
-      \item  GW injection studies for ET
-
-      \vspace{\y}
-
-      \item \red{More waveform models in \textsc{Jax}}
-
-      \vspace{\y}
-
-      \item Equation of state study with ET data
-    \end{itemize}
-  \end{itemize}
-  
-  \vspace{4mm}
-
-  \textbf{Let's talk!}
-\end{frame}
-
-\begin{frame}[plain, noframenumbering]{Thank you for your attention!}
-
-  \def\x{0.5mm}
-  
-  Software written in \textsc{Jax}~\ghlink{jax-ml/jax}:
-  \begin{itemize}
-    \vspace{\x}
-    \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
-
-    \vspace{\x}
-
-    \item \textsc{Jim} \ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj} \enumicon{1} \enumicon{2} \enumicon{4}
-
-    \vspace{\x}
-
-    \item \textsc{fiesta} \ghlink{ThibeauWouters/fiestaEM} \enumicon{2} %(work in progress...)
-
-    \vspace{\x}
-
-    \item \textsc{Jester} \ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju} \enumicon{3}
-
-    \vspace{\x}
-
-    \item \textsc{harmonic} \ghlink{astro-informatics/harmonic}~\cite{mcewen2023machinelearningassistedbayesian, polanska2024learnedharmonicmeanestimation, Polanska:2024zpn}
-  \end{itemize}
-
-  \centering
-  \incfig[0.975\textwidth]{talk_overview}
-\end{frame}
-
-\begin{frame}[allowframebreaks]{References}
-  \nocite{my_misc_entry}
-  \nocite{Kuifje}
-  \printbibliography
-\end{frame}
-
-\appendix 
+%   \begin{columns}
+%     \begin{column}{0.49\textwidth}
+%       \begin{figure}
+%         \centering
+%         \includegraphics[width=0.99\linewidth]{Figures/senna_plot.pdf}
+%       \end{figure}
+%     \end{column}
+%     \begin{column}{0.49\textwidth}
+%       \centering
+%       BW comparison figure
+%     \end{column}
+%   \end{columns}
+% \end{frame}
 
 \begin{frame}[allowframebreaks]{Evidence calculation: \textsc{harmonic}}
 
@@ -867,32 +895,5 @@ x
   \end{figure}
 \end{frame}
 
-% \begin{frame}{Glitch mitigation (Senna van Os, Harsh Narola)}
-
-%   Model glitches as superposition of sine Gaussian wavelets
-%   \begin{itemize}
-%     \item \textsc{BayesWave}: vary number of wavelets
-%     \item \textsc{Jim}: fix $N$ sine Gaussian wavelets, compare different $N$ runs
-%     % \item Batch jobs of $N$ wavelets $\rightarrow$ evidence $Z$ $\rightarrow$ Bayes factor
-%     % \begin{equation*}
-%     %   \ln B_{ij} = \ln Z_i - \ln Z_j
-%     % \end{equation*}
-%     \item Comparable results to \textsc{BayesWave} 
-%     \item $5 \times 10$ mins vs $1h$
-%   \end{itemize}
-
-%   \begin{columns}
-%     \begin{column}{0.49\textwidth}
-%       \begin{figure}
-%         \centering
-%         \includegraphics[width=0.99\linewidth]{Figures/senna_plot.pdf}
-%       \end{figure}
-%     \end{column}
-%     \begin{column}{0.49\textwidth}
-%       \centering
-%       BW comparison figure
-%     \end{column}
-%   \end{columns}
-% \end{frame}
 
 \end{document}

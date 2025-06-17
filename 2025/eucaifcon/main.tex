@@ -249,6 +249,8 @@
 
   \pause
 
+  \vspace{4mm}
+
   \begin{itemize}
     \item Sample the posterior: MCMC or nested sampling
 
@@ -261,9 +263,9 @@
     \item $\mathcal{O}(10^6)$ likelihood evaluations: computational bottleneck
   \end{itemize}
   
-  % \vspace{\y}
+  \vspace{2mm}
 
-  % \centering
+  \centering
   \incfig[0.95\textwidth]{sampling}
   
 \end{frame}
@@ -287,20 +289,21 @@
     \textbf{Premise}: Current software does not meet these demands~\cite{Hu:2024mvn}
   \end{tcolorbox}
 
+  \pause
   \vspace{\x}
 
   How to make parameter estimation scalable?
   \begin{itemize}
-    \item GPUs: reduce cost of likelihood evaluations
+    \item Reduce cost of likelihood evaluations
 
     \vspace{\y}
 
-    \item Normalizing flows: proposals for MCMC
+    \item Improve MCMC proposals
   \end{itemize}
 
   \pause
   \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-    \textbf{Goal}: Fast sampling with minimal pretraining: flexible alternative to simulation-based inference~\cite{Langendorff:2022fzq, Bhardwaj:2023xph, Dax:2024mcn, Hu:2024oen, Santoliquido:2025lot}.
+    \textbf{Goal}: Fast sampling with minimal pretraining: flexible alternative to simulation-based inference~\cite{Langendorff:2022fzq, Bhardwaj:2023xph, Dax:2024mcn, Hu:2024oen, Santoliquido:2025lot}
   \end{tcolorbox}
   \vspace{\y}
   % \begin{itemize}
@@ -371,7 +374,7 @@
     \begin{column}{0.84\linewidth}
       Accelerate Python with \textsc{Jax}~\ghlink{jax-ml/jax}:
       \begin{itemize}
-        \item Python code on GPUs
+        \item GPUs
         \item Automatic differentiation:
         \begin{itemize}
           \item Gradient-based samplers
@@ -461,7 +464,7 @@
         \onslide<3->{
         \item Ongoing work for future detectors:
         \begin{itemize}
-          \item Binary neutron star
+          \item Binary neutron star: 13D
 
           % \vspace{\z}
 
@@ -515,7 +518,7 @@
   \begin{itemize}
     % \item In 3G, we expect to see \red{overlapping signals}
     
-    \item Assess scaling of \textsc{Jim}: \jaxbluedark{BBH}+\jaxgreendark{BBH} in O5 with LVK
+    \item Assess scaling of \textsc{Jim}: \jaxbluedark{BBH}+\jaxgreendark{BBH} with LIGO-Virgo
     \begin{itemize}
       \vspace{\x}
       \item 2 binary black hole mergers: $22$ parameters
@@ -596,11 +599,11 @@
 
     \vspace{\x}
 
-    \item To predict neutron star properties, we solve the TOV equations: ordinary differential equations
+    \item<2-> To predict neutron star properties, we solve the TOV equations: ordinary differential equations (ODEs)
     
     \vspace{\x}
 
-    \item<2-> Done for each sample $\theta_{\rm{EOS}}$: \red{costly likelihood}
+    \item<3-> Done for each sample $\theta_{\rm{EOS}}$: \red{costly likelihood}
 
     % \vspace{\x}
 
@@ -609,12 +612,12 @@
 
   \vspace{\y}
 
-  \only<1>{
+  \only<2>{
     \centering
     \incfig[0.95\textwidth]{TOV}
   }
 
-  \only<2->{
+  \only<3->{
     \centering
     \incfig[0.95\textwidth]{NS_likelihood}
   }
@@ -636,7 +639,7 @@
     \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{Jax}-based TOV solver
     \begin{itemize}
       \item Full inference in \red{$\sim$hours}
-      \item No need for machine learning surrogates
+      \item No need for ML emulators
     \end{itemize}
 
     \vspace{\x}
@@ -673,7 +676,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Autodifferentiable ODE solvers}
+\begin{frame}{Auto-differentiable ODE solvers}
 
   \def\x{2mm}
 
@@ -682,18 +685,22 @@
 
     \vspace{\x}
 
-    \item Can frame inference as optimization problem:
+    \item Frame inference as optimization problem:
     \begin{itemize}
       \item Gradient descent on loss function $\mathcal{L}(\theta_{\rm{EOS}})$
     \end{itemize}
 
-    \vspace{\x}
+    % \vspace{\x}
 
-    \item Tool to assess systematics of equation of state inference
+    % \item<2-> Tool to assess systematics of equation of state inference
   \end{itemize}
 
-  \centering
-  \incfig[0.95\textwidth]{jester_ad}
+  \vspace{3mm}
+
+  \only<2->{
+    \centering
+    \incfig[0.95\textwidth]{jester_ad}
+  }
   
   
 \end{frame}
@@ -705,8 +712,8 @@
   \def\y{1mm}
 
   \begin{itemize}
-    \item Progress on scalable Bayesian inference software for 3G, with minimal amount of pre-training
-
+    \item Progress on scalable Bayesian inference, with minimal pre-training
+ 
     \vspace{\x}
 
     \item Hybrid acceleration: GPUs + normalizing flow proposals
@@ -721,16 +728,14 @@
 
     \vspace{\x}
 
-    \item Goal: joint multimessenger analyses in $\sim$hours
+    \item Simulators in \textsc{Jax} can remove the need for emulators (GW, TOV)
 
     \vspace{\x}
 
-    \vspace{\y}
-
-    \item \red{Weakness: need waveform models in \textsc{Jax}!}
+    \item Auto-differentiable ODE solvers: inference as optimization problem
   \end{itemize}
   
-  \vspace{4mm}
+  \vspace{8mm}
 
   \textbf{Let's talk!}
 \end{frame}
@@ -795,7 +800,7 @@
       
     \vspace{\x}
 
-    \item<2-> Neural network surrogates for inference: \textsc{fiesta}~\ghlink{ThibeauWouters/fiestaEM}
+    \item<2-> Neural network emulators for inference: \textsc{fiesta}~\ghlink{ThibeauWouters/fiestaEM}
   \end{itemize}
 
   \onslide<2->{

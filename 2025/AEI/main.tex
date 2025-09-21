@@ -322,28 +322,34 @@
   \todo{Snapshots}
 \end{frame}
 
-% \begin{frame}{Gravitational waves}
+\begin{frame}{Tidal deformability}
+  \def\x{4mm}
 
-%   \def\x{2mm}
-%   \begin{itemize}
-%     \item Gravitational waves offer a new way to probe the physics of black holes and neutron stars
-
-%     \vspace{\x}
-
-%     \item LIGO-Virgo-Kagra collaboration detected \red{218} events in GWTC-4.0~\cite{LIGOScientific:2025slb}
+  \begin{itemize}
+    \item Neutron stars are tidally deformed in a binary, quantified by tidal deformability $\Lambda$
     
-%     \vspace{\x}
+    \vspace{\x}
+    
+    \item Depends on the mass and equation of state: $\Lambda = \Lambda(m, \rm{EOS})$
+    
+    \vspace{\x}
 
-%     \item So far, 2 binary neutron star mergers: GW170817 and GW190425
-%   \end{itemize}
+    \item Black holes: $\Lambda = 0$
+    
+    \vspace{\x}
 
-%   \vspace{\x}
+    \item<2-> Affect phase of GWs
+  \end{itemize}
 
-%   \begin{figure}
-%     \centering
-%     \includegraphics[width=0.75\linewidth]{Figures/stellar_graveyard.png}
-%   \end{figure}
-% \end{frame}
+  \only<1>{
+    \centering
+    \incfig[1.0\textwidth]{tidal}
+  }
+  \only<2>{
+    \centering
+    \todo{waveform}
+  }
+\end{frame}
 
 \begin{frame}{Kilonovae}
 
@@ -443,7 +449,7 @@
       
       \vspace{\z}
 
-      \item $10^{5} - 10^{6}$ black hole mergers/year (now: $\sim 200$/10 years)
+      \item $10^{5} - 10^{6}$ binary black hole mergers/year (now: $\sim 200$/10 years)
       
       \vspace{\z}
       
@@ -461,32 +467,35 @@
       \item Longer signals: binary neutron star: $2$ hours vs 2 minutes 
       \item Signals will overlap
     \end{itemize}
-
-    \vspace{\y}
-
-    \item<4-> Can we handle this computationally?
   \end{itemize}
+
+  \vspace{4mm}
+
+  \begin{tcolorbox}[colback=red!10!white, colframe=red!80!black, coltext=black]
+  Current software cannot handle the ET data analysis problem~\cite{Hu:2024mvn}
+  \end{tcolorbox}
 \end{frame}
 
-\begin{frame}{Computational burden of Einstein Telescope}
+% \todo{Move to backup!}
+% \begin{frame}{Computational burden of Einstein Telescope}
 
-  \vspace{-5mm}
+%   \vspace{-5mm}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.95\linewidth]{Figures/Hu_Veitch.jpg}
-  \end{figure}
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=0.95\linewidth]{Figures/Hu_Veitch.jpg}
+%   \end{figure}
 
-  \vspace{2mm}
+%   \vspace{2mm}
 
-  \begin{itemize}
-    \item Billions -- quadrillions of CPU hours for 1 month of data~\cite{Hu:2024mvn}
+%   \begin{itemize}
+%     \item Billions -- quadrillions of CPU hours for 1 month of data~\cite{Hu:2024mvn}
 
-    \item Neglecting binary neutron stars \& multimessenger, overlapping signals,...
+%     \item Neglecting binary neutron stars \& multimessenger, overlapping signals,...
 
-    \item \red{Current software does not scale}
-  \end{itemize}
-\end{frame}
+%     \item \red{Current software does not scale}
+%   \end{itemize}
+% \end{frame}
 
 \begin{frame}{My research focus: why -- how -- what}
   \def\x{4mm}
@@ -558,14 +567,16 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Parameter estimation: Nested sampling}
 
-  \def\x{3mm}
+% \todo{Ditch this?}
+% \begin{frame}{Parameter estimation: Nested sampling}
 
-  How do we sample the posterior? \red{Nested sampling}
+%   \def\x{3mm}
 
-  \todo{explain nested sampling}
-\end{frame}
+%   How do we sample the posterior? \red{Nested sampling}
+
+%   \todo{explain nested sampling}
+% \end{frame}
 
 \begin{frame}{Parameter estimation: Markov chain Monte Carlo}
 
@@ -587,7 +598,7 @@
   \incfig[0.9\textwidth]{sampling}
 \end{frame}
 
-\begin{frame}{Computational aspects}
+\begin{frame}<1-4>[label=compaspects]{Computational aspects}
 
   \def\x{3mm}
   \def\y{1mm}
@@ -613,7 +624,8 @@
       
       \vspace{\y}
 
-      \item Efficiency of sampler (proposals)
+      \item \alt<4->{\textbf{Efficiency of sampler (proposals)}}{Efficiency of sampler (proposals)}
+
     \end{itemize}
 
     \vspace{\x}
@@ -621,211 +633,37 @@
 
     \item $\blue{\tau_{{\rm{likelihood}}}}$:
     \begin{itemize}
-      \item Complexity model
+      \item Complexity model/likelihood function
 
       \vspace{\y}
 
-      \item Parallelization of likelihood evaluations
+      \item \alt<4->{\textbf{Parallelization of likelihood evaluations}}{Parallelization of likelihood evaluations}
+
 
       \vspace{\y}
       
-      \item Hardware
+      \item \alt<4->{\textbf{Hardware}}{Hardware}
     \end{itemize}
   \end{itemize}
-\end{frame}
-
-\begin{frame}{Tidal deformability}
-  \def\x{4mm}
-
-  \begin{itemize}
-    \item Neutron stars are tidally deformed in a binary, quantified by tidal deformability $\Lambda$
-    
-    \vspace{\x}
-    
-    \item Depends on the mass and equation of state: $\Lambda = \Lambda(m, \rm{EOS})$
-    
-    \vspace{\x}
-
-    \item Black holes: $\Lambda = 0$
-    
-    \vspace{\x}
-
-    \item<2-> Affect phase of GWs
-  \end{itemize}
-
-  \only<1>{
-    \centering
-    \incfig[1.0\textwidth]{tidal}
-  }
-  \only<2>{
-    \centering
-    \todo{waveform}
-  }
-\end{frame}
-
-\begin{frame}{Neutron star observables}
-
-  \def\x{2mm}
-  
-  \begin{itemize}
-    \item Masses, radii, and tidal deformation of neutron stars
-
-    \vspace{\x}
-
-    \item Uniquely determined by the equation of state, have to solve the TOV equations
-    
-    \vspace{\x}
-
-    \item How can we probe them in multimessenger astronomy?
-  \end{itemize}
-
-  \centering
-  \incfig[0.90\textwidth]{TOV}
-\end{frame}
-
-\begin{frame}{Parameter estimation}
-  \def\x{3mm}
-  \def\y{3mm}
-  \def\z{1mm}
-
-  Estimate parameters $\theta$ of a model for data $d$ with Bayesian inference:
-  \begin{align*}
-    p(\theta|d) &\propto p(d|\theta) p(\theta) \\
-    \rm{posterior} &\propto \rm{likelihood} \times \rm{prior}
-  \end{align*}
 
   \pause
+  \vspace{6mm}
 
-  \vspace{4mm}
-
-  \begin{itemize}
-    \item Sample the posterior: MCMC or nested sampling
-
-    \vspace{\z}
-
-    \item Propose samples, \mcmcgreen{accept}/\mcmcred{reject} based on likelihood
-
-    \vspace{\z}
-    
-    \item $\mathcal{O}(10^6)$ likelihood evaluations: computational bottleneck
-  \end{itemize}
-  
-  \vspace{2mm}
-
-  \centering
-  \incfig[0.95\textwidth]{sampling}
-  
+  \textbf{How can we optimize this?}
 \end{frame}
 
-\begin{frame}{Future gravitational wave detectors}
+\subsection{\textsc{JAX}}
+
+
+\begin{frame}{\textsc{JAX}}
+
   \def\x{5mm}
   \def\y{1mm}
 
-  Future GW detectors: 10$\times$ more sensitive
-  \begin{itemize}
-    \item $\mathcal{O}(10^5)$ events/year (now: $\mathcal{O}(10^2)$ events/decade)
-
-    \vspace{\y}
-    
-    \item Signals are longer, louder, and overlap
-  \end{itemize}
-
-  \pause
-
-  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-    \textbf{Premise}: Current software does not meet these demands~\cite{Hu:2024mvn}
-  \end{tcolorbox}
-
-  \pause
-  \vspace{\x}
-
-  How to make parameter estimation scalable?
-  \begin{itemize}
-    \item Reduce cost of likelihood evaluations
-
-    \vspace{\y}
-
-    \item Improve MCMC proposals
-  \end{itemize}
-
-  \pause
-  \begin{tcolorbox}[colback=blue!10, boxrule=0pt]
-    \textbf{Goal}: Fast sampling with minimal pretraining: flexible alternative to simulation-based inference~\cite{Langendorff:2022fzq, Bhardwaj:2023xph, Dax:2024mcn, Hu:2024oen, Santoliquido:2025lot}
-  \end{tcolorbox}
-  \vspace{\y}
-  % \begin{itemize}
-  %   \onslide<2->{
-  %     \item Simulation-based inference~:
-  %     \begin{itemize}
-  %       \item[$\boldsymbol{\green{+}}$] Fast at inference ($\sim$seconds)
-  
-  %       \vspace{\y}
-  
-  %       \item[$\boldsymbol{\red{-}}$] Needs pre-trained model
-  %     \end{itemize}
-  %   }
-
-  %   \vspace{\y}
-
-  %   \item \only<4->{\textbf{\blue{Hybrid approach: faster likelihoods + NF proposals $\rightarrow$ this talk}}}%
-  %     \only<3>{Hybrid approach: faster likelihoods + NF proposals}
-  %     \onslide<3->{
-
-  %     \begin{itemize}
-  %       \item[$\boldsymbol{\green{+}}$] No pre-training: more flexibility
-
-  %       \vspace{\y}
-
-  %       \item[$\boldsymbol{\red{-}}$] Re-implement software
-  %     \end{itemize}
-  %     }
-  % \end{itemize}
-
-\end{frame}
-
-% \begin{frame}{Towards scalable inference}
-%   \def\x{5mm}
-%   \def\y{1mm}
-
-  
-%   \end{itemize}
-
-%   % \vspace{2mm}
-%   % \textbf{\blue{This talk focuses on the hybrid approach}}
-% \end{frame}
-
-% \begin{frame}{Normalizing flows (NFs)}
-%   \def\x{2mm}
-
-%   \begin{itemize}
-%     \item Trainable bijection between \blue{latent} and \red{data} spaces
-
-%     \vspace{\x}
-    
-%     \item Sample and evaluate complicated densities
-
-%     % \vspace{\x}
-    
-%     % \item Used as \red{proposal distribution}, trained from MCMC chains
-%   \end{itemize}
-
-%   \centering
-%   \incfig[0.90\textwidth]{NF}
-% \end{frame}
-
-\begin{frame}{\textsc{Jax} \& \textsc{flowMC} \small (Kaze Wong) \normalsize}
-
   \begin{columns}
     \begin{column}{0.84\linewidth}
-      Accelerate Python with \textsc{Jax}~\ghlink{jax-ml/jax}:
-      \begin{itemize}
-        \item GPUs
-        \item Automatic differentiation:
-        \begin{itemize}
-          \item Gradient-based samplers
-          \item Optimization
-        \end{itemize}
-      \end{itemize}
+      \textbf{\textsc{JAX}}~\ghlink{jax-ml/jax}
+      ``is a Python library for accelerator-oriented array computation and program transformation, designed for high-performance numerical computing and large-scale machine learning.''~\cite{jax2018github}
     \end{column}
     \begin{column}{0.15\linewidth}
       \begin{figure}
@@ -835,7 +673,76 @@
     \end{column}
   \end{columns}
 
-  \pause
+  \vspace{\x}
+
+  In particular:
+  \begin{itemize}
+    \vspace{\y}
+    \item Python: integrate into existing workflows
+
+    \vspace{\y}
+
+    \item Focus on arrays: widespread applications
+    
+    \vspace{\y}
+
+    \item Numpy-like API: (\texttt{numpy} $\rightarrow$ \texttt{jax.numpy})
+
+    \pause
+    
+    \vspace{\y}
+
+    \item GPU accelerators
+    
+    \vspace{\y}
+
+    \item Composable function transformations: \jaxjit, \jaxgrad, \jaxvmap~\& \jaxpmap
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{\textsc{JAX} -- Function transformations}
+
+  \def\x{3mm}
+  \def\y{1mm}
+
+  \begin{itemize}
+    \item \jaxjit: Just-in-time compilation to XLA (CPU/GPU/TPU)
+    
+    \vspace{\y}
+    
+    \item<2-> \jaxgrad: Automatic differentiation: compute gradients with chain rule
+    
+    \vspace{\y}
+    
+    \item<3-> \jaxvmap, \jaxpmap: Vectorization, batch processing, parallelization
+    
+    \vspace{\y}
+
+    \item<4-> Composable, e.g.:
+    \begin{itemize}
+      \item Higher-order derivatives: \texttt{jaxgrad(jaxgrad(f))}
+      
+      \item Evolve $N$ chains in parallel along gradient of the likelihood
+      \begin{equation*}
+        \boldtheta \leftarrow \alpha * \jaxvmap\left(  \jaxjit(\jaxgrad(\texttt{logL}(\boldtheta))) \right)
+      \end{equation*}
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{\x}
+
+  \todo{Some figure for autodiff}
+  
+\end{frame}
+
+% later in the presentation
+\againframe<5->{compaspects}
+
+\subsection{Normalizing flows}
+
+\subsection{Proposals}
+
+\begin{frame}{Proposal steps}
   \vspace{6mm}
 
   \textsc{flowMC}~\ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}:
@@ -1010,28 +917,20 @@
   \showoverview{3}
 \end{frame}
 
-\begin{frame}{The nuclear equation of state}
+\begin{frame}{Equation of state inference}
+
   \def\x{2mm}
-  \def\y{2mm}
-
+  
   \begin{itemize}
-    \item The equation of state of dense nuclear matter is uncertain~\cite{Koehn:2024set}
+    \item Masses, radii, and tidal deformation of neutron stars
 
     \vspace{\x}
-    
-    \item Neutron stars probe its high density regime
-    
-    \vspace{\x}
 
-    \item Solve inverse problem with Bayesian inference
+    \item Uniquely determined by the equation of state, have to solve the TOV equations
   \end{itemize}
 
-  \vspace{\x}
-
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.75\linewidth]{Figures/Koehn_EOS.jpg} 
-  \end{figure}
+  \centering
+  \incfig[0.90\textwidth]{TOV}
 \end{frame}
 
 

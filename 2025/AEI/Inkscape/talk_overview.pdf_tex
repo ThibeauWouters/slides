@@ -54,11 +54,9 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{talk_overview.pdf}}%
-    \put(0.39625809,0.26037563){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\enumicon{1}\end{tabular}}}}%
-    \put(0.70170996,0.28198948){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\enumicon{2}\end{tabular}}}}%
+    \put(0.39625809,0.21534018){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\enumicon{1}\end{tabular}}}}%
+    \put(0.65345043,0.29108281){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\enumicon{2}\end{tabular}}}}%
     \put(0.91150941,0.24976869){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\enumicon{3}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{talk_overview.pdf}}%
-    \put(0.55331265,0.02130172){\color[rgb]{0,0,0}\transparent{0.940476}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}GWTC \enumicon{4}\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{talk_overview.pdf}}%
   \end{picture}%
 \endgroup%

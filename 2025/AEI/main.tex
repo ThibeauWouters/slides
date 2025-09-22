@@ -154,10 +154,6 @@
     \vspace{\x}
     
     \item \ifthenelse{\equal{#1}{3}}{\textbf{Nuclear equation of state}}{Nuclear equation of state}
-    
-    \vspace{\x}
-    
-    \item \ifthenelse{\equal{#1}{4}}{\textbf{Gravitational wave transient catalogue}}{Gravitational wave transient catalogue}
   \end{enumerate}
   
   \vspace{\y}
@@ -320,35 +316,6 @@
   Observe neutron star mergers through gravitational waves and electromagnetic radiation: GW170817~\cite{LIGOScientific:2017vwq, LIGOScientific:2017zic}
 
   \todo{Snapshots}
-\end{frame}
-
-\begin{frame}{Tidal deformability}
-  \def\x{4mm}
-
-  \begin{itemize}
-    \item Neutron stars are tidally deformed in a binary, quantified by tidal deformability $\Lambda$
-    
-    \vspace{\x}
-    
-    \item Depends on the mass and equation of state: $\Lambda = \Lambda(m, \rm{EOS})$
-    
-    \vspace{\x}
-
-    \item Black holes: $\Lambda = 0$
-    
-    \vspace{\x}
-
-    \item<2-> Affect phase of GWs
-  \end{itemize}
-
-  \only<1>{
-    \centering
-    \incfig[1.0\textwidth]{tidal}
-  }
-  \only<2>{
-    \centering
-    \todo{waveform}
-  }
 \end{frame}
 
 \begin{frame}{Kilonovae}
@@ -545,7 +512,7 @@
 
 \begin{frame}{Parameter estimation: Bayesian inference}
 
-  \def\x{3mm}
+  \def\x{5mm}
 
   How do we ``measure'' source parameters $\theta$ for data $d$? 
 
@@ -556,6 +523,9 @@
     {\rm{posterior}} = p(\theta|d, \mathcal{M}) = \frac{p(d|\theta, \mathcal{M}) p(\theta | \mathcal{M})}{p(d | \mathcal{M})} = \frac{\rm{likelihood} \times \rm{prior}}{\rm{evidence}}
   \end{equation*}
 
+  \vspace{\x}
+
+  Ingredients:
   \begin{itemize}
     \item Prior: specified by users
     
@@ -585,17 +555,25 @@
   How do we sample the posterior? \red{Markov chain Monte Carlo}
 
   \begin{itemize}
-    \item $N$ chains $\boldtheta_i$ sample posterior in parallel
+    \item $N$ chains $\boldtheta_i$ explore posterior in parallel
     
     \item Evolve chains to new position: proposal 
     
     \item Compute likelihood $\rightarrow$ \mcmcgreen{accept}/\mcmcred{reject}
   \end{itemize}
+  
+  \vspace{\x}
+
+  Alteratives: nested sampling, sequential Monte Carlo
 
   \vspace{\x}
 
   \centering
   \incfig[0.9\textwidth]{sampling}
+
+  \vspace{\x}
+
+  
 \end{frame}
 
 \begin{frame}<1-4>[label=compaspects]{Computational aspects}
@@ -652,17 +630,17 @@
   \textbf{How can we optimize this?}
 \end{frame}
 
-\subsection{\textsc{JAX}}
+\subsection{\textsc{jax}}
 
 
-\begin{frame}{\textsc{JAX}}
+\begin{frame}{\textsc{jax}}
 
   \def\x{5mm}
   \def\y{1mm}
 
   \begin{columns}
     \begin{column}{0.84\linewidth}
-      \textbf{\textsc{JAX}}~\ghlink{jax-ml/jax}
+      \textbf{\textsc{jax}}~\ghlink{jax-ml/jax}
       ``is a Python library for accelerator-oriented array computation and program transformation, designed for high-performance numerical computing and large-scale machine learning.''~\cite{jax2018github}
     \end{column}
     \begin{column}{0.15\linewidth}
@@ -700,7 +678,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\textsc{JAX} -- Function transformations}
+\begin{frame}{\textsc{jax} -- Function transformations}
 
   \def\x{3mm}
   \def\y{1mm}
@@ -740,19 +718,53 @@
 
 \subsection{Normalizing flows}
 
-\subsection{Proposals}
+\begin{frame}{Normalizing flows}
+  \def\x{2mm}
 
-\begin{frame}{Proposal steps}
-  \vspace{6mm}
-
-  \textsc{flowMC}~\ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}:
+  \textbf{Q}: Given samples $\{\red{x}\} \sim \red{p(x)}$, how can we get $\red{p(x)}$?
   \begin{itemize}
-    \item MCMC + normalizing flow proposals in \textsc{Jax}
-    \item Training data: MCMC chains $\rightarrow$ \red{no pre-training}
-    % \item Use NF as proposal density
-    \item<3-> Also see \textsc{nessai}~\ghlink{mj-will/nessai}~\cite{Williams:2021qyt, Williams:2023ppp}, \textsc{pocoMC}~\ghlink{minaskar/pocomc}~\cite{Karamanis:2022ksp}
+    \item Evaluate density at any point
+
+    \item Generate new samples
   \end{itemize}
-  \vspace{3mm}
+
+  \vspace{2mm}
+  \pause
+
+  \textbf{A}: Normalizing flows: generative machine learning model, bijection between \blue{latent} space (Gaussian) and \red{data} space
+
+  \vspace{-2mm}
+
+  \centering
+  \incfig[0.85\textwidth]{NF}
+\end{frame}
+
+\subsection{\textsc{flowMC}}
+
+\begin{frame}{\textsc{flowMC}}
+  \def\y{1mm}
+
+  \textsc{flowMC}~\ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}: normalizing flow-enhanced MCMC
+
+  \begin{enumerate}
+    \vspace{\y}
+
+    \item Run gradient-based sampler (local sampler)
+    
+    \vspace{\y}
+
+    \item Train normalizing flow on MCMC chains
+    
+    \vspace{\y}
+
+    \item Propose samples from the normalizing flow (global sampler)
+
+    \vspace{\y}
+
+    \item Repeat
+  \end{enumerate}
+
+  \vspace{10mm}
 
   \centering
   \incfig[0.95\textwidth]{flowMCOverview2}
@@ -764,10 +776,10 @@
   \showoverview{1}
 \end{frame}
 
-\begin{frame}{Gravitational waves}
+\begin{frame}{Gravitational waves: \textsc{ripple}}
   \def\x{3mm}
   \def\y{5mm}
-  \def\z{1mm}
+  \def\z{2mm}
 
   \vspace{-3mm}
   
@@ -776,12 +788,9 @@
       \begin{itemize}
         \item \red{Waveforms} on GPU: $\mathcal{O}(10^3)$ faster
 
-        \vspace{\x}
+        \vspace{\z}
         
-        \item From \textsc{lalsuite} to \textsc{Jax}: \textsc{ripple}~\ghlink{tedwards2412/ripple/}~\cite{Edwards:2023sak}
-        \begin{itemize}
-          \item Also see \textsc{sfts}~\ghlink{rodrigo-tenorio/sfts}~\cite{Tenorio:2025gci}
-        \end{itemize}
+        \item \textsc{ripple}~\ghlink{tedwards2412/ripple/}~\cite{Edwards:2023sak}: from \textsc{lalsuite} to \textsc{jax}
       \end{itemize}
     \end{column}
 
@@ -794,73 +803,154 @@
   \end{columns}
 
   \pause
+  \vspace{\x}
 
-  \vspace{5mm}
-  \hrule
-  \vspace{2.5mm}
+  \begin{itemize}
+    \item Waveforms available in \textsc{ripple}:
+    
+    \vspace{\z}
+
+      \begin{itemize}
+        \item Binary black holes:
+      \begin{itemize}
+        \item \texttt{IMRPhenomXAS}
+        \item \texttt{IMRPhenomD}
+        \item \texttt{IMRPhenomPv2}
+      \end{itemize}
+      \end{itemize}
+
+      \vspace{\z}
+      
+      \begin{itemize}
+        \item Binary neutron stars:
+      \begin{itemize}
+        \item \texttt{TaylorF2}
+        \item \texttt{IMRPhenomD\_NRTidalv2}
+        \item \texttt{IMRPhenomPv\_NRTidalv2} (by Nihar Gupte)
+      \end{itemize}
+      \end{itemize}
+
+      \vspace{\z}
+
+      \item Also see \textsc{gwfast}~\ghlink{CosmoStatGW/gwfast}~\cite{Iacovelli:2022mbg} and \textsc{sfts}~\ghlink{rodrigo-tenorio/sfts}~\cite{Tenorio:2025gci}
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Gravitational waves: \textsc{Jim}}
+
+  \def\x{3mm}
+  \def\y{5mm}
+  \def\z{1mm}
+
+  \red{Parameter estimation}: \textsc{Jim}~\ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj}: \textsc{ripple} + \textsc{flowMC}
+
+  \begin{itemize}
+    
+    \item Verified for binary neutron stars in current generation detectors~\cite{Wouters:2024oxj}
+
+    \vspace{\z}
+
+    \item Matches \textsc{bilby}, passes $pp$-test
+
+    \vspace{\z}
+
+    \item<2-> Runtime: from hours to minutes
+
+    \vspace{\z}
+
+    \item<3-> Up to $5 - 10 \times$ more effective samples (normalizing flow)
+
+    \vspace{\z}
+    
+    \item<4-> More cost-effective/energy-efficient
+  \end{itemize}
+
+  \only<2>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/jim_table_runtimes.jpg}
+    \end{figure}
+  }
+
+  \vspace{\x}
+
+  \only<3>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.80\linewidth]{Figures/Jim_ess.jpg}
+    \end{figure}
+  }
+
+  \only<4>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.80\linewidth]{Figures/Jim_trees.jpg}
+    \end{figure}
+  }
+
+\end{frame}
+
+\begin{frame}{Gravitational waves: \textsc{Jim} reanalysis -- Thomas Ng}
+
+  \begin{itemize}
+    \item Re-analyze GWTC-3 with \texttt{IMRPhenomPv2}
+
+    \item \textsc{Jim} on A800 GPU: on average $\sim 7$ times faster than \textsc{bilby} on 16 CPUs, \textbf{without compromises}
+    
+    \item \red{Work in progress!}
+  \end{itemize}
+
+  \vspace{2mm}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.90\linewidth]{Figures/speedup_NVIDIA_A800-SXM4-80GB.pdf}
+  \end{figure}
+  
+\end{frame}
+
+
+\begin{frame}{Einstein Telescope}
+
+  \def\x{4mm}
+
+  \begin{tcolorbox}[colback=red!10!white, colframe=red!80!black, coltext=black]
+  Work in progress: showing proof-of-concepts!
+  \end{tcolorbox}
+
+  \pause
+  \vspace{2mm}
 
   \begin{columns}
-    \begin{column}[t]{0.60\linewidth}
+    \begin{column}[t]{0.50\linewidth}
       \begin{itemize}
-        \item \red{Parameter estimation}: \textsc{Jim}~\ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj}
-    
+        \item ET posteriors are multimodal
+
         \vspace{\x}
-    
-        \item \green{\checkmark} Current detectors
-        \begin{itemize}
-          \item Hours $\rightarrow$ minutes
-        \end{itemize}
-    
-        \vspace{\x}
-
-        \onslide<3->{
-        \item Ongoing work for future detectors:
-        \begin{itemize}
-          \item Binary neutron star: 13D
-
-          % \vspace{\z}
-
-          % \item $f_{\rm{min}} = 20$ Hz, SNR = $21$
-
-          \vspace{\z}
-          
-          \item Einstein Telescope
-          
-          % \vspace{\z}
-          
-          % \item \texttt{IMRPhenomD\_NRTidalv2}
-
-          \vspace{\z}
-
-          \item \red{30 mins} on H100 GPU
-        \end{itemize}
-
-        % \vspace{\x}
-
-        % \item Evidence? \textsc{harmonic}~\cite{Polanska:2024zpn}
-        }
+        
+        \item Normalizing flows help to jump between modes
       \end{itemize}
     \end{column}
 
-    \onslide<3->{
-    \begin{column}[t]{0.39\linewidth}
+    \begin{column}[t]{0.49\linewidth}
       \begin{figure}
         \centering
-        \includegraphics[width=0.99\linewidth]{Figures/corner_plot.pdf}
+        \includegraphics[width=0.90\linewidth]{Figures/corner_plot.pdf}
       \end{figure}
-    }
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{Overlapping signals \tiny (Luca Negri, Justin Janquart, James Alvey, Uddipta Bhardwaj) \normalsize}
+\begin{frame}{Overlapping signals}
 
   \def\x{1mm}
 
   %%% Colors used in case needed later on?
-  % JAX_BLUE = "#2a56c6" # jax blue, darker
-  % JAX_GREEN = "#00695c" # jax green, darker
-  % JAX_PURPLE = "#6a1b9a" # jax purple, darker
+  % jax_BLUE = "#2a56c6" # jax blue, darker
+  % jax_GREEN = "#00695c" # jax green, darker
+  % jax_PURPLE = "#6a1b9a" # jax purple, darker
 
   % https://github.com/ThibeauWouters/jim_testing/tree/9ff1d374c3fa50f95ded8c2446a579c5f22cbb52/overlapping/HLV_BBH_BBH/outdir/injection_139_v2
 
@@ -885,35 +975,98 @@
 
       \vspace{\x}
 
-      \item<2-> \red{$1$h$28$m} on H100 (vs 23 days on 16 CPUs~\cite{Janquart:2022fzz})
+      \item $1$h$28$m on H100 GPU (vs several days on 16 CPUs~\cite{Janquart:2022fzz})
     \end{itemize}
   \end{itemize}
 
-  \pause
+  \vspace{-4mm}
+  
+  \begin{columns}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.85\linewidth]{Figures/OS_injection_139_v2_1_cornerplot_M_c_q_s1_z_s2_z.pdf}
+      \end{figure}
+    \end{column}
+
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.85\linewidth]{Figures/OS_injection_139_v2_2_cornerplot_M_c_q_s1_z_s2_z.pdf}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[plain, noframenumbering]{Overview}
+  \showoverview{2}
+\end{frame}
+
+\begin{frame}{Electromagnetic counterparts \small (Hauke Koehn, Tim Dietrich) \normalsize}
+  \def\x{2mm}
+
+  \begin{itemize}
+    \item Kilonovae and \red{GRB afterglows}
+
+    \vspace{\x}
+    
+    \item Current libraries too large to `jaxify' (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
+      
+    \vspace{\x}
+
+    \item<2-> Neural network emulators for inference: \textsc{fiesta}~\ghlink{ThibeauWouters/fiestaEM}~\cite{Koehn:2025zzb}
+    
+    \vspace{\x}
+
+    \item<3-> Scales well for systematics `nuisance parameters'
+  \end{itemize}
 
   \onslide<2->{
-
-    \vspace{-4mm}
-    
     \begin{columns}
-      \begin{column}{0.49\textwidth}
-        \begin{figure}
-          \centering
-          \includegraphics[width=0.85\linewidth]{Figures/OS_injection_139_v2_1_cornerplot_M_c_q_s1_z_s2_z.pdf}
-        \end{figure}
+      \begin{column}[c]{0.14\textwidth}
+        \centering
+        \incfig[0.90\textwidth]{GRB}
       \end{column}
+  
+      \begin{column}[c]{0.24\textwidth}
 
-      \begin{column}{0.49\textwidth}
-        \begin{figure}
+        \vspace{-5mm}
+
+        \fiesta{\textsc{fiesta}}
+        \begin{itemize}
+          \item $1$m$36$s
+          \item $1$ H100 GPU
+        \end{itemize}
+        
+        \vspace{6mm}
+
+        \afterglowpy{\textsc{afterglowpy}}
+        \begin{itemize}
+          \item $4$ hours
+          \item $30$ CPUs
+        \end{itemize}
+      \end{column}
+  
+      \begin{column}[c]{0.59\textwidth}
+        \only<2>{
+          \begin{figure}
           \centering
-          \includegraphics[width=0.85\linewidth]{Figures/OS_injection_139_v2_2_cornerplot_M_c_q_s1_z_s2_z.pdf}
+          \includegraphics[width=0.70\linewidth]{Figures/fiesta_result.jpg}
         \end{figure}
+        }
+        \only<3>{
+          \vspace{2mm}
+          \begin{figure}
+          \centering
+          \includegraphics[width=0.825\linewidth]{Figures/fiesta_scaling.jpg}
+        \end{figure}
+        }
       \end{column}
     \end{columns}
   }
 \end{frame}
 
-\begin{frame}[plain, noframenumbering]{Overview}
+\begin{frame}{Overview}
   \showoverview{3}
 \end{frame}
 
@@ -980,7 +1133,7 @@
 
     \vspace{\x}
 
-    \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{Jax}-based TOV solver
+    \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{jax}-based TOV solver
     \begin{itemize}
       \item Full inference in \red{$\sim$hours}
       \item No need for ML emulators
@@ -1025,7 +1178,7 @@
   \def\x{2mm}
 
   \begin{itemize}
-    \item ODE solvers in \textsc{Jax} are auto-differentiable (\textsc{diffrax}~\ghlink{patrick-kidger/diffrax})
+    \item ODE solvers in \textsc{jax} are auto-differentiable (\textsc{diffrax}~\ghlink{patrick-kidger/diffrax})
 
     \vspace{\x}
 
@@ -1063,7 +1216,7 @@
     \item Hybrid acceleration: GPUs + normalizing flow proposals
     \begin{itemize}
       \vspace{\y}
-      \item \textsc{Jax}/GPU: faster likelihoods
+      \item \textsc{jax}/GPU: faster likelihoods
 
       \vspace{\y}
 
@@ -1072,7 +1225,7 @@
 
     \vspace{\x}
 
-    \item Simulators in \textsc{Jax} can remove the need for emulators (GW, TOV)
+    \item Simulators in \textsc{jax} can remove the need for emulators (GW, TOV)
 
     \vspace{\x}
 
@@ -1088,7 +1241,7 @@
 
   \def\x{0.5mm}
   
-  Software written in \textsc{Jax}~\ghlink{jax-ml/jax}:
+  Software written in \textsc{jax}~\ghlink{jax-ml/jax}:
   \begin{itemize}
     \vspace{\x}
     \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
@@ -1122,147 +1275,6 @@
 
 \appendix 
 
-
-
-\begin{frame}[plain, noframenumbering]{Overview}
-  \showoverview{2}
-\end{frame}
-
-\begin{frame}{Electromagnetic counterparts \small (Hauke Koehn, Tim Dietrich) \normalsize}
-  \def\x{2mm}
-
-  \begin{itemize}
-    \item BNS mergers lead to kilonovae, \red{gamma-ray bursts (afterglows)}
-
-    \vspace{\x}
-    
-    \item Numerical models are expensive (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
-    % \begin{itemize}
-      %   \item Kilonovae: \textsc{possis}~\cite{Bulla:2019muo}
-      %   \item GRB afterglow: \textsc{afterglowpy}~\cite{Ryan:2019fhz}, \textsc{Pyblastafterglow}~\cite{Nedora:2024vrv}
-      % \end{itemize}
-      
-    \vspace{\x}
-
-    \item<2-> Neural network emulators for inference: \textsc{fiesta}~\ghlink{ThibeauWouters/fiestaEM}
-  \end{itemize}
-
-  \onslide<2->{
-    \begin{columns}
-      \begin{column}[c]{0.14\textwidth}
-        \centering
-        \incfig[0.90\textwidth]{GRB}
-      \end{column}
-  
-      \begin{column}[c]{0.24\textwidth}
-
-        \vspace{-5mm}
-
-        \fiesta{\textsc{fiesta}}
-        \begin{itemize}
-          \item $1$m$36$s
-          \item $1$ H100 GPU
-        \end{itemize}
-        
-        \vspace{6mm}
-
-        \afterglowpy{\textsc{afterglowpy}}
-        \begin{itemize}
-          \item $4$ hours
-          \item $30$ CPUs
-        \end{itemize}
-      \end{column}
-  
-      \begin{column}[c]{0.59\textwidth}
-        \begin{figure}
-          \centering
-          \includegraphics[width=0.80\linewidth]{Figures/fiesta_result.jpg}
-        \end{figure}
-      \end{column}
-    \end{columns}
-  }
-\end{frame}
-
-\begin{frame}[plain, noframenumbering]{Overview}
-  \showoverview{4}
-\end{frame}
-
-\begin{frame}{Constructing GWTCs \small (Thomas Ng, Kaze Wong) \normalsize}
-  \def\x{2mm}
-
-  GWTCs do not scale well in \red{memory}:
-  \begin{itemize}
-    \vspace{\x}
-    
-    \item GWTC stores several samples (different waveforms)
-    
-    \vspace{\x}
-    
-    \item Standard: fixed sample size, $\sim 100$ MB
-
-    \vspace{\x}
-    
-    \item<2-> \textsc{flowMC}: generate samples from normalizing flows, $\sim 10$ MB
-    \begin{itemize}
-      \item Also see Michael Williams' talk/poster
-    \end{itemize}
-
-    % \vspace{\x}
-
-    % \item<3-> Finetune starting from other waveform proposal
-  \end{itemize}
-  % \begin{itemize}s
-  %   \item Importance sampling on NF proposals: generate samples
-   
-  %   \vspace{\x}
-    
-  %   \item Finetune on different prior distribution/waveform model
-  % \end{itemize}
-
-  \vspace{3mm}
-
-  \centering
-  \only<1>{
-    \incfig[0.95\textwidth]{GWTC}
-  }
-  \only<2>{
-    \incfig[0.95\textwidth]{GWTC_flowMC}
-  }
-
-  % \only<3>{
-  %   \incfig[0.95\textwidth]{GWTC_flowMC_finetune}
-  % }
-  
-\end{frame}
-
-
-% \begin{frame}{Glitch mitigation (Senna van Os, Harsh Narola)}
-
-%   Model glitches as superposition of sine Gaussian wavelets
-%   \begin{itemize}
-%     \item \textsc{BayesWave}: vary number of wavelets
-%     \item \textsc{Jim}: fix $N$ sine Gaussian wavelets, compare different $N$ runs
-%     % \item Batch jobs of $N$ wavelets $\rightarrow$ evidence $Z$ $\rightarrow$ Bayes factor
-%     % \begin{equation*}
-%     %   \ln B_{ij} = \ln Z_i - \ln Z_j
-%     % \end{equation*}
-%     \item Comparable results to \textsc{BayesWave} 
-%     \item $5 \times 10$ mins vs $1h$
-%   \end{itemize}
-
-%   \begin{columns}
-%     \begin{column}{0.49\textwidth}
-%       \begin{figure}
-%         \centering
-%         \includegraphics[width=0.99\linewidth]{Figures/senna_plot.pdf}
-%       \end{figure}
-%     \end{column}
-%     \begin{column}{0.49\textwidth}
-%       \centering
-%       BW comparison figure
-%     \end{column}
-%   \end{columns}
-% \end{frame}
 
 \begin{frame}[allowframebreaks]{Evidence calculation: \textsc{harmonic}}
 

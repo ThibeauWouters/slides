@@ -58,7 +58,8 @@
     \put(0,0){\includegraphics[width=\unitlength,page=2]{sampling.pdf}}%
     \put(0.68499879,0.1868732){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\times 10^6$\end{tabular}}}}%
     \put(0.15072465,0.26954607){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\theta_i$\end{tabular}}}}%
-    \put(0.02606874,0.24425227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$p(\theta)$\end{tabular}}}}%
+    \put(0.02606874,0.24425227){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$p(\boldtheta)$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{sampling.pdf}}%
+    \put(0.17831517,0.03458083){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}= likelihood evaluation\end{tabular}}}}%
   \end{picture}%
 \endgroup%

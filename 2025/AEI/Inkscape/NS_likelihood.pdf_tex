@@ -54,7 +54,7 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0.13902885,0.27917949){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\theta_{\rm{EOS}}$\end{tabular}}}}%
-    \put(0.77245013,0.12036835){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\mathcal{L}(d|\theta_{\rm{EOS}})$\end{tabular}}}}%
+    \put(0.77245013,0.12036835){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$p(d|\theta_{\rm{EOS}})$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{NS_likelihood.pdf}}%
     \put(0.08360238,0.17981914){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Pressure\end{tabular}}}}}%
     \put(0.1219734,0.11151883){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Density\end{tabular}}}}%
@@ -62,5 +62,6 @@
     \put(0.44620169,0.17981914){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Mass\end{tabular}}}}}%
     \put(0.488806,0.1136355){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Radius\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{NS_likelihood.pdf}}%
+    \put(0.4689252,0.01268042){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}update \end{tabular}}}}%
   \end{picture}%
 \endgroup%

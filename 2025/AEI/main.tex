@@ -252,22 +252,10 @@
     \item Neutron stars: supernova remnants, densest matter in the universe
 
     \item $m \sim 1.2 - 2.3 M_\odot$, $R \sim 10-13$ km
-
-    \item<2-> Cosmic laboratories for fundamental physics
   \end{itemize}
 
-  \only<1>{
-    \centering
-    \incfig[0.90\textwidth]{NS_above_Berlin}
-  }
-  
-  \only<2>{
-    \vspace{\x}
-    \begin{figure}
-      \centering
-      \includegraphics[width=0.99\linewidth]{Figures/NS_diagram.jpg}
-    \end{figure}
-  }
+  \centering
+  \incfig[0.90\textwidth]{NS_above_Berlin}
 \end{frame}
 
 \begin{frame}{Equation of state}
@@ -275,19 +263,13 @@
   \def\x{3mm}
   \def\y{1mm}
 
-  \begin{itemize}
-    \item Neutron stars uniquely probe the cold equation of state (EOS) of dense nuclear matter~\cite{Koehn:2024set}
-
-    \vspace{\y}
-
-    \item How to determine the EOS from neutron stars?
-  \end{itemize}
+  Neutron stars uniquely probe the equation of state (EOS) of dense nuclear matter~\cite{Koehn:2024set}
 
   \vspace{\x}
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.80\linewidth]{Figures/Koehn_EOS.jpg}
+    \includegraphics[width=0.85\linewidth]{Figures/Koehn_EOS.jpg}
   \end{figure}
 \end{frame}
 
@@ -318,62 +300,62 @@
   \todo{Snapshots}
 \end{frame}
 
-\begin{frame}{Kilonovae}
+% \begin{frame}{Kilonovae}
 
-  \def\x{3mm}
-  \def\y{1mm}
+%   \def\x{3mm}
+%   \def\y{1mm}
 
-  \begin{itemize}
-    \item Electromagnetic counterpart of a binary neutron star merger~\cite{Metzger:2019zeh}
+%   \begin{itemize}
+%     \item Electromagnetic counterpart of a binary neutron star merger~\cite{Metzger:2019zeh}
 
-    \vspace{\y}
+%     \vspace{\y}
     
-    \item Lasts days-weeks, isotropic
+%     \item Lasts days-weeks, isotropic
     
-    \vspace{\y}
+%     \vspace{\y}
 
-    \item Powered by radioactive decay of heavy elements: r-process
+%     \item Powered by radioactive decay of heavy elements: r-process
     
-    \vspace{\y}
+%     \vspace{\y}
 
-    \item Ejecta depend on EOS \todo{ how and put in the slide}
-  \end{itemize}
+%     \item Ejecta depend on EOS \todo{ how and put in the slide}
+%   \end{itemize}
 
-  \vspace{\x}
+%   \vspace{\x}
 
-  \centering
-  \incfig[0.9\textwidth]{KN}
-\end{frame}
+%   \centering
+%   \incfig[0.9\textwidth]{KN}
+% \end{frame}
 
 
-\begin{frame}{Gamma-ray bursts afterglow}
+% \begin{frame}{Gamma-ray bursts afterglow}
 
-  \def\x{3mm}
-  \def\y{4mm}
+%   \def\x{3mm}
+%   \def\y{4mm}
 
-  \begin{columns}
-    \begin{column}[c]{0.70\textwidth}
-      \begin{itemize}
-        \item Short gamma-ray burst: relativistic jet launched after merger ($\sim 1$ s)
+%   \begin{columns}
+%     \begin{column}[c]{0.70\textwidth}
+%       \begin{itemize}
+%         \item Short gamma-ray burst: relativistic jet launched after merger ($\sim 1$ s)
 
-        \vspace{\y}
+%         \vspace{\y}
 
-        \item Afterglow: broadband emission from radio to X-rays
+%         \item Afterglow: broadband emission from radio to X-rays
 
-        \vspace{\y}
+%         \vspace{\y}
 
-        \item Lasts weeks-years
-      \end{itemize}
-    \end{column}
+%         \item Lasts weeks-years
+%       \end{itemize}
+%     \end{column}
 
-    \hfill
+%     \hfill
 
-    \begin{column}[c]{0.25\textwidth}
-      \centering
-      \incfig[0.75\columnwidth]{GRB_intro}
-    \end{column}
-  \end{columns}
-\end{frame}
+%     \begin{column}[c]{0.25\textwidth}
+%       \centering
+%       \incfig[0.75\columnwidth]{GRB_intro}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
 
 % \begin{frame}{Binary neutron star mergers: implications}
 
@@ -465,9 +447,11 @@
 % \end{frame}
 
 \begin{frame}{My research focus: why -- how -- what}
-  \def\x{4mm}
-  \def\y{1mm}
+  \def\y{0.5mm}
 
+  \vspace{-6mm}
+
+  \begin{tcolorbox}[colback=jaxbluedarkcolor!15!white, colframe=jaxbluedarkcolor!80!black, coltext=black]
   \textbf{Why?}
 
   To make inference of multimessenger astrophysics scalable
@@ -477,14 +461,15 @@
     \item Prepare for future detectors
 
     \vspace{\y}
-    
+
     \item Understand systematic effects through simulated data
   \end{itemize}
+  \end{tcolorbox}
 
-  \vspace{\x}
   \pause
 
-  \textbf{How?} 
+  \begin{tcolorbox}[colback=jaxgreendarkcolor!15!white, colframe=jaxgreendarkcolor!80!black, coltext=black]
+  \textbf{How?}
 
   Without compromises to flexibility and accuracy
 
@@ -496,13 +481,15 @@
 
     \item Use machine learning to assist inference, not replace it
   \end{itemize}
+  \end{tcolorbox}
 
-  \vspace{\x}
   \pause
 
+  \begin{tcolorbox}[colback=jaxthreecolor!15!white, colframe=jaxthreecolor!80!black, coltext=black]
   \textbf{What?}
 
   GPU-accelerated Bayesian joint inference framework of neutron star mergers and dense matter physics
+  \end{tcolorbox}
 \end{frame}
 
 
@@ -588,7 +575,7 @@
   \pause
 
   \begin{itemize}
-    \item $\red{N_{{\rm{likelihood}}}}$:
+    \item $\red{N_{{\rm{likelihood}}}}$: total number of likelihood evaluations
     \begin{itemize}
       \item Dimensionality of $\boldtheta$
       
@@ -609,7 +596,7 @@
     \vspace{\x}
     \pause
 
-    \item $\blue{\tau_{{\rm{likelihood}}}}$:
+    \item $\blue{\tau_{{\rm{likelihood}}}}$: speed of a single likelihood evaluation
     \begin{itemize}
       \item Complexity model/likelihood function
 
@@ -641,7 +628,7 @@
   \begin{columns}
     \begin{column}{0.84\linewidth}
       \textbf{\textsc{jax}}~\ghlink{jax-ml/jax}
-      ``is a Python library for accelerator-oriented array computation and program transformation, designed for high-performance numerical computing and large-scale machine learning.''~\cite{jax2018github}
+      ``is a Python library for accelerator-oriented array computation and program transformation, designed for \red{high-performance} numerical computing and large-scale machine learning.''~\cite{jax2018github}
     \end{column}
     \begin{column}{0.15\linewidth}
       \begin{figure}
@@ -665,11 +652,13 @@
     \vspace{\y}
 
     \item Numpy-like API: (\texttt{numpy} $\rightarrow$ \texttt{jax.numpy})
+  \end{itemize}
 
-    \pause
-    
-    \vspace{\y}
+  \pause
+  \vspace{4mm}
 
+  \red{Gamechangers}:
+  \begin{itemize}
     \item GPU accelerators
     
     \vspace{\y}
@@ -892,7 +881,7 @@
 
 \end{frame}
 
-\begin{frame}{Gravitational waves: \textsc{Jim} reanalysis -- Thomas Ng}
+\begin{frame}{Gravitational waves: GWTC-3 analysis -- Thomas Ng}
 
   \begin{itemize}
     \item Re-analyze GWTC-3 with \texttt{IMRPhenomPv2}
@@ -1010,7 +999,7 @@
 
     \vspace{\x}
     
-    \item Current libraries too large to `jaxify' (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
+    \item Code libraries too large to `jaxify' (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
       
     \vspace{\x}
 
@@ -1070,90 +1059,166 @@
   \showoverview{3}
 \end{frame}
 
-\begin{frame}{Equation of state inference}
+\begin{frame}{Equation of state inference -- warmup}
+
+  \def\x{3mm}
+  \def\y{3mm}
+
+  \begin{itemize}
+    \item How do we constrain the EOS from neutron star observations?
+
+    \vspace{\y}
+    
+    \item Define parametrization and likelihood
+    
+    \vspace{\y}
+    
+    \item GWs from binary neutron stars inspiral as example
+  \end{itemize}
+
+  \vspace{\x}
+  
+  \centering
+  \begin{figure}
+    \includegraphics[width=0.75\linewidth]{Figures/Koehn_EOS.jpg}
+  \end{figure}
+  
+\end{frame}
+
+\begin{frame}{Equation of state inference -- parametrization}
 
   \def\x{2mm}
-  
+  \def\y{1mm}
+
   \begin{itemize}
-    \item Masses, radii, and tidal deformation of neutron stars
+    \item $n \leq \tfrac12 n_{\rm{sat}}$: fixed
+
+    \vspace{\x}
+    
+    \item $\tfrac12 n_{\rm{sat}} \leq n \leq \red{n_{\rm{break}}}$: metamodel EOS, nuclear physics inspired
+    
+    \vspace{\x}
+
+    \item $n \leq \red{n_{\rm{break}}}$: agnostic extension
 
     \vspace{\x}
 
-    \item Uniquely determined by the equation of state, have to solve the TOV equations
+    \item $>26$ (\textbf{!}) parameters $\thetaeos$
   \end{itemize}
 
   \centering
-  \incfig[0.90\textwidth]{TOV}
+  \incfig[0.825\textwidth]{EOS_parametrizion}
 \end{frame}
 
+\begin{frame}{Tidal deformability}
+  \def\x{4mm}
+
+  \begin{itemize}
+    \item Neutron stars are tidally deformed in a binary, quantified by tidal deformability $\Lambda$: affect phase of GWs
+    
+    \vspace{\x}
+    
+    \item Neutron stars: $\Lambda = \Lambda(m, \rm{EOS})$, black holes: $\Lambda = 0$
+    
+    % \vspace{\x}
+
+    % \item Black holes: $\Lambda = 0$
+
+    \vspace{\x}
+
+    \item GWs give us $p(m_1, m_2, \Lambda_1, \Lambda_2 | d)$ for EOS inference
+  \end{itemize}
+
+  \vspace{\x}
+
+  \centering
+  \incfig[1.0\textwidth]{tidal}
+\end{frame}
+
+% \begin{frame}{Tidal deformability postprocessing}
+
+%   \def\x{3mm}
+
+%   \begin{itemize}
+%     \item Binary neutron star GWs: $17$ parameters
+
+%     \vspace{\x}
+
+%     \item EOS: only need masses and tidal deformabilities
+
+%     \vspace{\x}
+
+%     \item Marginal $4$d posterior: obtained with normalizing flow
+%   \end{itemize}
+
+%   \vspace{\x}
+
+%   \begin{figure}
+%     \centering
+%     \includegraphics[scale=0.225]{Figures/GW170817_mass_lambdas_plot.pdf}
+%   \end{figure}
+
+%   % \centering
+%   % \incfig[0.95\textwidth]{GW170817_mass_lambdas}
+
+% \end{frame}
 
 \begin{frame}{Equation of state}
   \def\x{2mm}
   \def\y{5mm}
 
   \begin{itemize}
-    \item Parametrization $\theta_{\rm{EOS}}$: constrain with Bayesian inference
-
-    \vspace{\x}
-
-    \item<2-> To predict neutron star properties, we solve the TOV equations: ordinary differential equations (ODEs)
+    \item To predict neutron star properties, we solve the TOV equations: ordinary differential equations (ODEs)
     
     \vspace{\x}
 
-    \item<3-> Done for each sample $\theta_{\rm{EOS}}$: \red{costly likelihood}
+    \item<2-> Done for each sample $\theta_{\rm{EOS}}$: \red{costly likelihood}
+    
+    \vspace{\x}
 
-    % \vspace{\x}
-
-    % \item Use ML to speed up the process?
+    \item<2-> How to make this scalable without compromises?
   \end{itemize}
 
   \vspace{\y}
 
-  \only<2>{
+  \only<1>{
     \centering
     \incfig[0.95\textwidth]{TOV}
   }
 
-  \only<3->{
+  \only<2->{
     \centering
     \incfig[0.95\textwidth]{NS_likelihood}
   }
 
 \end{frame}
 
-\begin{frame}{\textsc{Jester} \small (Peter T.H. Pang) \normalsize}
+\begin{frame}{\textsc{Jester}}
   \def\x{2mm}
 
   \begin{itemize}
-    % \item Goal: infer nuclear equation of state (EOS) of neutron stars~\cite{Abac:2025saz}
-
-    % \vspace{\x}
-
-    \item Solving TOV equations (EOS $\rightarrow$ NS) is slow
-
-    \vspace{\x}
-
-    \item<2-> \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{jax}-based TOV solver
+    \item \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{jax}-based TOV solver
     \begin{itemize}
+      \item $1000\times$ faster, without compromises!
       \item Full inference in \red{$\sim$hours}
-      \item No need for ML emulators
     \end{itemize}
 
     \vspace{\x}
 
-    \item<3-> End-to-end analysis: from gravitational waves of neutron star mergers to the equation of state
+    \item<2-> \textsc{Jim}$+$\textsc{Jester}: from GWs to EOS in a few hours
     \begin{itemize}
-      \item Example: 20 BNS in O5
+      \item Example: 20 binary neutron stars in O5
     \end{itemize}
-    % \begin{itemize}
-    %   \item $\Lambda_{1.4}$ tidal deformability of $1.4 M_\odot$ NS
-    % \end{itemize}
+
+    \vspace{\x}
+    
+    \item<2-> Open up possibilities to study systematics in EOS inference
   \end{itemize}
 
   \vspace{-3mm}
 
   \begin{columns}
-    \onslide<2->{
+    \onslide<1->{
       \begin{column}{0.49\textwidth}
         \begin{figure}
           \centering
@@ -1162,7 +1227,7 @@
       \end{column}
     }
 
-    \onslide<3->{
+    \onslide<2->{
       \begin{column}{0.475\textwidth}
         \begin{figure}
           \centering
@@ -1178,18 +1243,14 @@
   \def\x{2mm}
 
   \begin{itemize}
-    \item ODE solvers in \textsc{jax} are auto-differentiable (\textsc{diffrax}~\ghlink{patrick-kidger/diffrax})
+    \item ODE solvers written in \textsc{jax} are auto-differentiable % (\textsc{diffrax}~\ghlink{patrick-kidger/diffrax})
 
     \vspace{\x}
 
     \item Frame inference as optimization problem:
     \begin{itemize}
-      \item Gradient descent on loss function $\mathcal{L}(\theta_{\rm{EOS}})$
+      \item Gradient descent on loss function $\mathcal{L}(\thetaeos)$
     \end{itemize}
-
-    % \vspace{\x}
-
-    % \item<2-> Tool to assess systematics of equation of state inference
   \end{itemize}
 
   \vspace{3mm}
@@ -1198,8 +1259,14 @@
     \centering
     \incfig[0.95\textwidth]{jester_ad}
   }
-  
-  
+\end{frame}
+
+\section{Neural priors}
+
+\begin{frame}[plain]{}
+  \vspace{15mm}
+  \huge and now, for something completely different... \normalsize
+  \vspace{15mm}
 \end{frame}
 
 \section{Outlook and conclusion}
@@ -1237,35 +1304,52 @@
   \textbf{Let's talk!}
 \end{frame}
 
-\begin{frame}[plain, noframenumbering]{Thank you for your attention!}
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_dinosaur.png}}}
 
-  \def\x{0.5mm}
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at ([yshift=2cm]current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Thanks for listening!}
+      \end{minipage}
+    };
+  \end{tikzpicture}
+
+  \end{frame}
+}
+
+% \begin{frame}[plain, noframenumbering]{Thank you for your attention!}
+
+%   \def\x{0.5mm}
   
-  Software written in \textsc{jax}~\ghlink{jax-ml/jax}:
-  \begin{itemize}
-    \vspace{\x}
-    \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
+%   Software written in \textsc{jax}~\ghlink{jax-ml/jax}:
+%   \begin{itemize}
+%     \vspace{\x}
+%     \item \textsc{flowMC} \ghlink{kazewong/flowMC}~\cite{Gabrie:2021tlu, Wong:2022xvh}
 
-    \vspace{\x}
+%     \vspace{\x}
 
-    \item \textsc{Jim} \ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj} \enumicon{1} \enumicon{2} \enumicon{4}
+%     \item \textsc{Jim} \ghlink{kazewong/jim}~\cite{Wong:2023lgb,Wouters:2024oxj} \enumicon{1} \enumicon{2} \enumicon{4}
 
-    \vspace{\x}
+%     \vspace{\x}
 
-    \item \textsc{fiesta} \ghlink{ThibeauWouters/fiestaEM} \enumicon{2} %(work in progress...)
+%     \item \textsc{fiesta} \ghlink{ThibeauWouters/fiestaEM} \enumicon{2} %(work in progress...)
 
-    \vspace{\x}
+%     \vspace{\x}
 
-    \item \textsc{Jester} \ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju} (built with \textsc{diffrax}~\ghlink{patrick-kidger/diffrax}) \enumicon{3}
+%     \item \textsc{Jester} \ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju} (built with \textsc{diffrax}~\ghlink{patrick-kidger/diffrax}) \enumicon{3}
 
-    \vspace{\x}
+%     \vspace{\x}
 
-    \item \textsc{harmonic} \ghlink{astro-informatics/harmonic}~\cite{mcewen2023machinelearningassistedbayesian, polanska2024learnedharmonicmeanestimation, Polanska:2024zpn}
-  \end{itemize}
+%     \item \textsc{harmonic} \ghlink{astro-informatics/harmonic}~\cite{mcewen2023machinelearningassistedbayesian, polanska2024learnedharmonicmeanestimation, Polanska:2024zpn}
+%   \end{itemize}
 
-  \centering
-  \incfig[0.975\textwidth]{talk_overview}
-\end{frame}
+%   \centering
+%   \incfig[0.975\textwidth]{talk_overview}
+% \end{frame}
 
 \begin{frame}[allowframebreaks]{References}
   \nocite{my_misc_entry}

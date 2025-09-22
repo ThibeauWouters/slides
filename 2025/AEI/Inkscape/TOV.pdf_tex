@@ -54,17 +54,12 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{TOV.pdf}}%
-    \put(0.01954921,0.12105475){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Pressure\end{tabular}}}}}%
-    \put(0.05792023,0.05275446){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Density\end{tabular}}}}%
-    \put(0.83715961,0.20184328){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Mass\end{tabular}}}}}%
-    \put(0.86944049,0.15169656){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Radius\end{tabular}}}}%
+    \put(0.0205961,0.12655162){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Pressure\end{tabular}}}}}%
+    \put(0.06184192,0.05313419){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Density\end{tabular}}}}%
+    \put(0.85027441,0.16482428){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\Lambda$\end{tabular}}}}}%
+    \put(0.88065125,0.05134024){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Mass\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{TOV.pdf}}%
-    \put(0.83927618,0.05760333){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\Lambda$\end{tabular}}}}}%
-    \put(0.87155707,0.00745663){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Mass\end{tabular}}}}%
+    \put(0.36910385,0.2526421){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Solve TOV equations\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{TOV.pdf}}%
-    \put(0.33947052,0.26110876){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Solve TOV equations\end{tabular}}}}%
-    \put(0.82868372,0.29111408){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Neutron stars\end{tabular}}}}%
-    \put(0.00429826,0.29111408){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Equation of state\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=4]{TOV.pdf}}%
   \end{picture}%
 \endgroup%

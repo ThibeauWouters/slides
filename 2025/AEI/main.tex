@@ -250,9 +250,11 @@
 
   \begin{itemize}
     \item Neutron stars: supernova remnants, densest matter in the universe
-
+    
     \item $m \sim 1.2 - 2.3 M_\odot$, $R \sim 10-13$ km
   \end{itemize}
+
+  \pause
 
   \centering
   \incfig[0.90\textwidth]{NS_above_Berlin}
@@ -263,7 +265,7 @@
   \def\x{3mm}
   \def\y{1mm}
 
-  Neutron stars uniquely probe the equation of state (EOS) of dense nuclear matter~\cite{Koehn:2024set}
+  Neutron stars probe the high-density part of the equation of state (EOS) of dense nuclear matter~\cite{Koehn:2024set}
 
   \vspace{\x}
 
@@ -273,114 +275,52 @@
   \end{figure}
 \end{frame}
 
-% \begin{frame}{Neutron star masses}
-%   \todo{Fill}
-% \end{frame}
-
-
-% \begin{frame}{Neutron star masses and radii}
-%   \todo{Fill}
-% \end{frame}
-
-
-% \begin{frame}{Neutron star masses and tidal deformation}
-%   \todo{Fill}
-% \end{frame}
-
 
 \subsection{Multimessenger astrophysics}
 
 
-\begin{frame}{Multimessenger astrophysics}
+\begin{frame}{Multimessenger astrophysics: GW170817}
 
   \def\x{2mm}
   
-  Observe neutron star mergers through gravitational waves and electromagnetic radiation: GW170817~\cite{LIGOScientific:2017vwq, LIGOScientific:2017zic}
+  Neutron star mergers emit gravitational waves and electromagnetic radiation: GW170817~\cite{LIGOScientific:2017vwq, LIGOScientific:2017zic}
 
-  \todo{Snapshots}
-\end{frame}
-
-% \begin{frame}{Kilonovae}
-
-%   \def\x{3mm}
-%   \def\y{1mm}
-
-%   \begin{itemize}
-%     \item Electromagnetic counterpart of a binary neutron star merger~\cite{Metzger:2019zeh}
-
-%     \vspace{\y}
-    
-%     \item Lasts days-weeks, isotropic
-    
-%     \vspace{\y}
-
-%     \item Powered by radioactive decay of heavy elements: r-process
-    
-%     \vspace{\y}
-
-%     \item Ejecta depend on EOS \todo{ how and put in the slide}
-%   \end{itemize}
-
-%   \vspace{\x}
-
-%   \centering
-%   \incfig[0.9\textwidth]{KN}
-% \end{frame}
-
-
-% \begin{frame}{Gamma-ray bursts afterglow}
-
-%   \def\x{3mm}
-%   \def\y{4mm}
-
-%   \begin{columns}
-%     \begin{column}[c]{0.70\textwidth}
-%       \begin{itemize}
-%         \item Short gamma-ray burst: relativistic jet launched after merger ($\sim 1$ s)
-
-%         \vspace{\y}
-
-%         \item Afterglow: broadband emission from radio to X-rays
-
-%         \vspace{\y}
-
-%         \item Lasts weeks-years
-%       \end{itemize}
-%     \end{column}
-
-%     \hfill
-
-%     \begin{column}[c]{0.25\textwidth}
-%       \centering
-%       \incfig[0.75\columnwidth]{GRB_intro}
-%     \end{column}
-%   \end{columns}
-% \end{frame}
-
-% \begin{frame}{Binary neutron star mergers: implications}
-
-%   \def\x{2mm}
+  \only<1>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/GW170817_inspiral.jpg}
+    \end{figure}  
+  }
   
-%   \begin{itemize}
-%     \item \textbf{Equation of state}
-    
-%     \vspace{\x}
-    
-%     \item Formation site of heavy elements
-    
-%     \vspace{\x}
-    
-%     \item Determine Hubble constant
-
-%     \vspace{\x}
-    
-%     \item Confirm GWs travel at speed of light ($\sim 10^{-15}$)
-    
-%     \vspace{\x}
-    
-%     \item<2-> After 10 years of detections: \red{$1$} event
-%   \end{itemize}
-% \end{frame}
+  \only<2>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/GW170817_merger.jpg}
+    \end{figure}  
+  }
+  
+  \only<3>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/GW170817_GRB.jpg}
+    \end{figure}  
+  }
+  
+  \only<4>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/GW170817_KN.jpg}
+    \end{figure}  
+  }
+  
+  \only<5>{
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/GW170817_GRB_afterglow.jpg}
+    \end{figure}  
+  }
+  
+\end{frame}
 
 \subsection{Future detectors and challenges}
 
@@ -389,7 +329,18 @@
   \def\y{2mm}
   \def\z{1mm}
 
-  \red{Einstein Telescope}: Third-generation ground-based GW detector~\cite{ET:2019dnz, Abac:2025saz}
+  \textbf{Einstein Telescope}: Third-generation ground-based GW detector~\cite{ET:2019dnz, Abac:2025saz}
+
+  \only<1>{
+    \vspace{3mm}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.95\linewidth]{Figures/ET_triangle.jpg}
+    \end{figure}
+
+    \hspace{5mm} (or 2 L-shaped detectors...)
+  }
+
   \begin{itemize}
     \item<2-> Increased sensitivity
     
@@ -413,38 +364,24 @@
 
     \item<3-> Observe from $5$ Hz (now: $20$ Hz)
     \begin{itemize}
-      \item Longer signals: binary neutron star: $2$ hours vs 2 minutes 
-      \item Signals will overlap
+      
+      \item Longer signals
+      \begin{itemize}
+        \item Binary neutron star: $2$ hours (vs 2 minutes now)
+      \end{itemize}
+      \item Signals will overlap: joint analysis needed
     \end{itemize}
   \end{itemize}
 
   \vspace{4mm}
 
+  \onslide<4->{
   \begin{tcolorbox}[colback=red!10!white, colframe=red!80!black, coltext=black]
   Current software cannot handle the ET data analysis problem~\cite{Hu:2024mvn}
   \end{tcolorbox}
+  }
 \end{frame}
 
-% \todo{Move to backup!}
-% \begin{frame}{Computational burden of Einstein Telescope}
-
-%   \vspace{-5mm}
-
-%   \begin{figure}
-%     \centering
-%     \includegraphics[width=0.95\linewidth]{Figures/Hu_Veitch.jpg}
-%   \end{figure}
-
-%   \vspace{2mm}
-
-%   \begin{itemize}
-%     \item Billions -- quadrillions of CPU hours for 1 month of data~\cite{Hu:2024mvn}
-
-%     \item Neglecting binary neutron stars \& multimessenger, overlapping signals,...
-
-%     \item \red{Current software does not scale}
-%   \end{itemize}
-% \end{frame}
 
 \begin{frame}{My research focus: why -- how -- what}
   \def\y{0.5mm}
@@ -504,6 +441,7 @@
   How do we ``measure'' source parameters $\theta$ for data $d$? 
 
   \vspace{\x}
+  \pause
   
   Bayesian inference:
   \begin{equation*}
@@ -511,29 +449,20 @@
   \end{equation*}
 
   \vspace{\x}
+  \pause
 
   Ingredients:
   \begin{itemize}
-    \item Prior: specified by users
-    
-    \item Likelihood: often costly
-    
     \item Posterior: intractable, needs stochastic samplers
+    
+    \item Prior: specified by users, encode beliefs
+    
+    \item Likelihood: \red{computational bottleneck}
 
     \item Evidence: model selection
   \end{itemize}
 \end{frame}
 
-
-% \todo{Ditch this?}
-% \begin{frame}{Parameter estimation: Nested sampling}
-
-%   \def\x{3mm}
-
-%   How do we sample the posterior? \red{Nested sampling}
-
-%   \todo{explain nested sampling}
-% \end{frame}
 
 \begin{frame}{Parameter estimation: Markov chain Monte Carlo}
 
@@ -551,7 +480,7 @@
   
   \vspace{\x}
 
-  Alteratives: nested sampling, sequential Monte Carlo
+  Alternatives: nested sampling, sequential Monte Carlo
 
   \vspace{\x}
 
@@ -639,6 +568,7 @@
   \end{columns}
 
   \vspace{\x}
+  \pause
 
   In particular:
   \begin{itemize}
@@ -669,40 +599,39 @@
 
 \begin{frame}{\textsc{jax} -- Function transformations}
 
-  \def\x{3mm}
-  \def\y{1mm}
+  \def\x{8mm}
+  \def\y{2mm}
 
   \begin{itemize}
-    \item \jaxjit: Just-in-time compilation to XLA (CPU/GPU/TPU)
+    \item \jaxjit: Just-in-time compilation
     
     \vspace{\y}
     
-    \item<2-> \jaxgrad: Automatic differentiation: compute gradients with chain rule
+    \item<2-> \jaxgrad: Automatic differentiation:
+    \begin{itemize}
+      \item Chain rule on computational graph
+      
+      \item Exact gradients (up to machine precision), fast
+    \end{itemize}
     
     \vspace{\y}
     
     \item<3-> \jaxvmap, \jaxpmap: Vectorization, batch processing, parallelization
     
-    \vspace{\y}
+    \vspace{\x}
 
-    \item<4-> Composable, e.g.:
+    \item<4-> These are composable, e.g.:
     \begin{itemize}
-      \item Higher-order derivatives: \texttt{jaxgrad(jaxgrad(f))}
+      \item Higher-order derivatives: \texttt{\jaxgrad(\jaxgrad(f))}
       
       \item Evolve $N$ chains in parallel along gradient of the likelihood
       \begin{equation*}
-        \boldtheta \leftarrow \alpha * \jaxvmap\left(  \jaxjit(\jaxgrad(\texttt{logL}(\boldtheta))) \right)
+        \boldtheta \leftarrow \boldtheta + \alpha * \jaxvmap\left(  \jaxjit(\jaxgrad(\texttt{logL}(\boldtheta))) \right)
       \end{equation*}
     \end{itemize}
   \end{itemize}
-
-  \vspace{\x}
-
-  \todo{Some figure for autodiff}
-  
 \end{frame}
 
-% later in the presentation
 \againframe<5->{compaspects}
 
 \subsection{Normalizing flows}
@@ -881,24 +810,26 @@
 
 \end{frame}
 
-\begin{frame}{Gravitational waves: GWTC-3 analysis -- Thomas Ng}
+% \begin{frame}{Gravitational waves: GWTC-3 analysis -- Thomas Ng}
 
-  \begin{itemize}
-    \item Re-analyze GWTC-3 with \texttt{IMRPhenomPv2}
-
-    \item \textsc{Jim} on A800 GPU: on average $\sim 7$ times faster than \textsc{bilby} on 16 CPUs, \textbf{without compromises}
+%   \begin{itemize}
+%     \item Re-analyze GWTC-3 with \texttt{IMRPhenomPv2}
     
-    \item \red{Work in progress!}
-  \end{itemize}
+%     \pause
 
-  \vspace{2mm}
+%     \item \textsc{Jim} on A800 GPU: on average $\sim 7$ times faster than \textsc{bilby} on 16 CPUs, \textbf{without compromises}
+    
+%     \item \red{Work in progress!}
+%   \end{itemize}
 
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.90\linewidth]{Figures/speedup_NVIDIA_A800-SXM4-80GB.pdf}
-  \end{figure}
+%   \vspace{2mm}
+
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=0.90\linewidth]{Figures/speedup_NVIDIA_A800-SXM4-80GB.pdf}
+%   \end{figure}
   
-\end{frame}
+% \end{frame}
 
 
 \begin{frame}{Einstein Telescope}
@@ -987,30 +918,55 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{Open call}
+
+  \begin{itemize}
+    \item Biggest bottleneck in development: \textsc{JAX} waveforms
+
+    \vspace{3mm}
+    
+    \item Most waveforms developed in C, some waveforms in Python 
+    
+    \vspace{3mm}
+    
+    \item What is the reason \textit{not} to go for \textsc{JAX}?
+  \end{itemize}
+
+  \vspace{10mm}
+  \pause 
+
+  \begin{tcolorbox}[colback=green!10!white, colframe=green!80!black, coltext=black]
+  Get in touch if you are interested! We need you!
+
+  \vspace{3mm}
+
+  \textsc{Jim} developers $\cap$ waveform developers = \textbf{you}?
+  \end{tcolorbox}
+
+  \vspace{10mm}
+  
+\end{frame}
+
 \begin{frame}[plain, noframenumbering]{Overview}
   \showoverview{2}
 \end{frame}
 
-\begin{frame}{Electromagnetic counterparts \small (Hauke Koehn, Tim Dietrich) \normalsize}
+\begin{frame}{Electromagnetic counterparts \small (Hauke Koehn)\normalsize}
   \def\x{2mm}
 
   \begin{itemize}
-    \item Kilonovae and \red{GRB afterglows}
+    \item Predicting a \red{GRB afterglow} is slow
 
     \vspace{\x}
     
-    \item Code libraries too large to `jaxify' (e.g. \textsc{afterglowpy}~\cite{Ryan:2019fhz})
+    \item Code libraries too large to `jaxify': neural network emulators for inference: \textsc{fiesta}~\ghlink{nuclear-multimessenger-astronomy/fiestaEM}~\cite{Koehn:2025zzb}
       
     \vspace{\x}
 
-    \item<2-> Neural network emulators for inference: \textsc{fiesta}~\ghlink{ThibeauWouters/fiestaEM}~\cite{Koehn:2025zzb}
-    
-    \vspace{\x}
-
-    \item<3-> Scales well for systematics `nuisance parameters'
+    \item<2-> Scales well for systematics `nuisance parameters'
   \end{itemize}
 
-  \onslide<2->{
+  \onslide<1->{
     \begin{columns}
       \begin{column}[c]{0.14\textwidth}
         \centering
@@ -1037,13 +993,13 @@
       \end{column}
   
       \begin{column}[c]{0.59\textwidth}
-        \only<2>{
+        \only<1>{
           \begin{figure}
           \centering
           \includegraphics[width=0.70\linewidth]{Figures/fiesta_result.jpg}
         \end{figure}
         }
-        \only<3>{
+        \only<2>{
           \vspace{2mm}
           \begin{figure}
           \centering
@@ -1071,9 +1027,9 @@
     
     \item Define parametrization and likelihood
     
-    \vspace{\y}
+    % \vspace{\y}
     
-    \item GWs from binary neutron stars inspiral as example
+    % \item GWs from binary neutron stars inspiral as example
   \end{itemize}
 
   \vspace{\x}
@@ -1091,7 +1047,7 @@
   \def\y{1mm}
 
   \begin{itemize}
-    \item $n \leq \tfrac12 n_{\rm{sat}}$: fixed
+    \item $n \leq \tfrac12 n_{\rm{sat}}$: fixed crust
 
     \vspace{\x}
     
@@ -1199,7 +1155,7 @@
   \begin{itemize}
     \item \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{jax}-based TOV solver
     \begin{itemize}
-      \item $1000\times$ faster, without compromises!
+      \item $1000\times$ faster, without compromises
       \item Full inference in \red{$\sim$hours}
     \end{itemize}
 
@@ -1212,7 +1168,7 @@
 
     \vspace{\x}
     
-    \item<2-> Open up possibilities to study systematics in EOS inference
+    \item<2-> Enable systematics studies in EOS inference
   \end{itemize}
 
   \vspace{-3mm}
@@ -1236,6 +1192,44 @@
       \end{column}
     }
   \end{columns}
+\end{frame}
+
+\begin{frame}{Anistropy in neutron stars \small (Peter T. H. Pang) \normalsize}
+
+  \def\x{1mm}
+
+  \begin{itemize}
+    \item Anistropic pressure: $\gamma \propto p - p_t$
+
+    \vspace{\x}
+    
+    \item<2-> Magnetic fields, dark matter clusters, superfluids...
+
+    \vspace{\x}
+    
+    \item<3-> Preference for negative anisotropy, but weak evidence~\cite{Pang:2025fes}
+  \end{itemize}
+
+  \begin{columns}
+    \begin{column}{0.475\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.99\linewidth]{Figures/anisotropy.jpg}
+      \end{figure}
+      
+    \end{column}
+    
+    \begin{column}{0.475\textwidth}
+      \onslide<3->{
+        \begin{figure}
+        \centering
+        \includegraphics[width=0.99\linewidth]{Figures/measure_anistotropy.jpg}
+      \end{figure}
+      }
+      
+    \end{column}
+  \end{columns}
+  
 \end{frame}
 
 \begin{frame}{Auto-differentiable ODE solvers}
@@ -1263,40 +1257,322 @@
 
 \section{Neural priors}
 
-\begin{frame}[plain]{}
-  \vspace{15mm}
-  \huge and now, for something completely different... \normalsize
-  \vspace{15mm}
+% \begin{frame}[plain]{}
+%   \vspace{15mm}
+%   \huge and now, for something completely different... \normalsize
+%   \vspace{15mm}
+% \end{frame}
+
+\begin{frame}{Neutron star data analysis loop}
+
+  \def\x{2mm}
+  \def\y{3mm}
+
+  Data analysis of neutron stars forms a \textbf{loop}:
+
+  \vspace{1mm}
+  \begin{enumerate}
+      \item Constraining the EOS with neutron star observations
+
+      \vspace{\x}
+      
+      \item \red{Applying} EOS knowledge in neutron star data analysis (e.g., GW)
+  \end{enumerate}
+
+  \vspace{\x}
+
+  How can we efficiently perform \red{Step 2}?
+
+  \vspace{5mm}
+
+  \centering
+  \incfig[0.9\textwidth]{NS_to_EOS}
 \end{frame}
 
-\section{Outlook and conclusion}
+\begin{frame}{Case study}
+
+  \def\x{2mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item Take constraints on EOS from:
+    \begin{itemize}
+      \vspace{\y}
+      \item \textbf{Radio timing}: EOS must support $2\,M_{\odot}$ neutron stars
+
+      \vspace{\y}
+
+      \item \textbf{Chiral EFT}: nuclear theory predictions (valid $<2 n_{\rm{sat}}$)
+      
+      \vspace{\y}
+
+      \item \textbf{NICER}: Mass-radius observations of neutron stars
+    \end{itemize}
+  \end{itemize}
+    
+  \vspace{\x}
+  \centering
+  \incfig[0.85\textwidth]{R14_table}
+  \vspace{\x}
+    
+  \begin{itemize}
+    \item How can we use this information in GW analyses?
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Equation of state-informed priors}
+  \def\x{4mm}
+  \def\y{1mm}
+
+  \begin{itemize}
+    \item This should enter the prior on $\Lambda_i$
+    \begin{align*}
+      \mathcal{P}(\theta_{\rm{GW}} | d ) &\propto \mathcal{L}(d | \theta_{\rm{GW}}) \red{\pi(\theta_{\rm{GW}})}
+    \end{align*}
+
+    % \vspace{-4mm}
+
+    \item By default, we choose \textbf{\jaxthree{agnostic priors}}: e.g. $\Lambda_{1,2} \sim \mathcal{U}(0, 5000)$
+
+    \vspace{\x}
+    \pause
+
+    \item \textbf{But}, we have prior knowledge from the EOS:
+    \begin{itemize}
+      \vspace{\y}
+      \item Masses $m_i$ determined by $M_{\rm{max}}$ (or population)
+
+      \vspace{\y}
+
+      \item $\Lambda_i = \Lambda_i(m_i, {\rm{EOS}})$
+    \end{itemize}
+    
+    \vspace{\x}
+    \pause
+    
+    \item \textbf{\jaxtwo{Equation of state-informed prior}}: take \jaxtwo{EOS uncertainty} into account
+    \begin{align*}
+      \pi(m_1, m_2, \Lambda_1, \Lambda_2) = \int \diff \theta_{\rm{EOS}} \ &\pi(m_1, m_2 | \theta_{\rm{EOS}}) \pi(\Lambda_1, \Lambda_2 | m_1, m_2, \theta_{\rm{EOS}}) \\
+      &\times \jaxtwo{\pi(\theta_{\rm{EOS}})}
+    \end{align*}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}{Equation of state-informed priors}
+  \def\x{2mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item Example: EOSs with $M_{\rm{max}} > 2.0 M_\odot$
+    
+    \vspace{\x}
+
+    \item Sample to produce $\pi(m_1, m_2, \Lambda_1, \Lambda_2)$
+  \end{itemize}
+
+  \vspace{\y}
+
+  \centering
+  \incfig[0.975\textwidth]{NFprior}
+\end{frame}
+
+
+
+\begin{frame}{Source classification}
+  \def\x{2mm}
+
+  \begin{itemize}
+    \item Similar to the \textbf{\jaxtwo{binary neutron star (BNS)}} prior, we can also construct a \textbf{\nsbh{neutron star-black hole (NSBH)}} prior
+    \begin{itemize}
+      \item BH mass in $[M_{\rm{max}}(\rm{EOS}), 5\, M_\odot]$
+    \end{itemize}
+
+    \vspace{\x}
+  
+    \item Classify events with Bayesian model selection
+  \end{itemize}
+
+  \vspace{\x}
+
+  \centering
+  \incfig[0.90\textwidth]{bns_vs_nsbh}
+\end{frame}
+
+\begin{frame}{Neural priors}
+  \def\x{1mm}
+  \begin{itemize}
+    \item Masses can also be informed by populations
+    \begin{itemize}
+      \item Uniform (agnostic)
+      \item Gaussian
+      \item Double Gaussian
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item (BNS/NSBH) $\times$ ($3$ populations) $\times$ ($3$ EOS constraints) = $18$ priors
+    
+    \vspace{\x}
+
+    \item Emulate with normalizing flow: \textbf{\jaxtwo{neural priors}}
+  \end{itemize}
+
+  \pause
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.99\linewidth]{Figures/neural_priors.jpg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Application}
+
+  \begin{itemize}
+    \item Implemented in \textsc{bilby}
+
+    \item Consider three ``low-mass'' GWs
+  
+
+  \begin{columns}
+      \begin{column}{0.30\textwidth}
+        \begin{itemize}
+          \item GW170817
+          \item GW190425
+          \item GW230529
+        \end{itemize}
+      \end{column}
+      
+      \begin{column}{0.69\textwidth}
+        \begin{figure}
+          \centering
+          \includegraphics[width=0.75\linewidth]{Figures/GW230529_mass_diagram.jpg}
+        \end{figure}
+      \end{column}
+    \end{columns}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{GW170817 -- classification}
+
+  Showing $\log_{10}$ Bayes factors: negative = less preferred
+
+  \begin{itemize}
+    \item Strongly prefer BNS over NSBH
+    \item Gaussian population, EOS inconclusive
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.50\linewidth]{Figures/GW170817_EOS_source_classification.jpg}
+  \end{figure}
+  
+\end{frame}
+
+\begin{frame}{GW170817 -- parameter constraints}
+
+  \begin{itemize}
+    \item More equal mass ratio $q\geq 0.9$
+    \item $\tilde{\Lambda}$ bimodal, resolved by extra EOS information
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.525\linewidth]{Figures/GW170817_corner_gaussian_bns_PRESENTATION.pdf}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{GW190425 -- classification}
+
+  Showing $\log_{10}$ Bayes factors: negative = less preferred
+  \begin{itemize}
+    \item Prefer BNS over NSBH, but less conclusive
+    \item Most consistent with uniform population
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.50\linewidth]{Figures/GW190425_EOS_source_classification.jpg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{GW190425 -- parameter constraints}
+
+  \begin{itemize}
+    \item Less equal masses ($q\leq 0.9$)
+    \item Higher distances
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.525\linewidth]{Figures/GW190425_corner_uniform_bns_PRESENTATION.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{GW230529 -- classification}
+
+  Showing $\log_{10}$ Bayes factors: negative = less preferred
+  \begin{itemize}
+    \item Decisive evidence for NSBH over BNS
+    \item Weak evidence for population or EOS (low SNR)
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.50\linewidth]{Figures/GW230529_EOS_source_classification.jpg}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{GW230529 -- parameter constraints}
+
+  \begin{itemize}
+    \item Mass ratio more constrained $\rightarrow$ $\chi_{1z}$ more constrained
+    \item Higher distances
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.525\linewidth]{Figures/GW230529_corner_gaussian_nsbh_PRESENTATION.pdf}
+  \end{figure}
+\end{frame}
+
+
+
+\section{Conclusion}
 
 \begin{frame}{Conclusion}
   \def\x{4mm}
   \def\y{1mm}
 
   \begin{itemize}
-    \item Progress on scalable Bayesian inference, with minimal pre-training
+    \item Progress on scalable Bayesian inference, with minimal comrpomises
  
     \vspace{\x}
 
-    \item Hybrid acceleration: GPUs + normalizing flow proposals
+    \item Accelerate likelihood-based inference with
     \begin{itemize}
       \vspace{\y}
-      \item \textsc{jax}/GPU: faster likelihoods
+      \item \textsc{JAX}: GPU for faster likelihoods
 
       \vspace{\y}
 
-      \item \textsc{flowMC}: sampling converges faster
+      \item Normalizing flows to aid in inference (sampling, priors)
     \end{itemize}
 
     \vspace{\x}
 
-    \item Simulators in \textsc{jax} can remove the need for emulators (GW, TOV)
+    \item GWs: checked for LVK, work in progress for ET: waveform experts needed!
 
     \vspace{\x}
 
-    \item Auto-differentiable ODE solvers: inference as optimization problem
+    \item Kilonova/GRB: emulators for fast inference
+
+    \vspace{\x}
+
+    \item EOS: scalable inference, open up systematics studies
   \end{itemize}
   
   \vspace{8mm}

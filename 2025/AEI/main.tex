@@ -921,7 +921,16 @@
 \begin{frame}{Open call}
 
   \begin{itemize}
-    \item Biggest bottleneck in development: \textsc{JAX} waveforms
+    \item Recently: nested samplers in \textsc{JAX} for GW~\cite{Prathaban:2025qgg}
+    \begin{itemize}
+      \item Using \textsc{ripple} waveforms
+      \item Momentum towards waveforms on GPU?
+    \end{itemize}
+
+    \pause
+    \vspace{3mm}
+
+    \item Biggest bottleneck for us: \textsc{JAX} waveforms
 
     \vspace{3mm}
     
@@ -929,7 +938,7 @@
     
     \vspace{3mm}
     
-    \item What is the reason \textit{not} to go for \textsc{JAX}?
+    \item Bridge between \textsc{lalsuite} and \textsc{ripple}?
   \end{itemize}
 
   \vspace{10mm}
@@ -1548,14 +1557,14 @@
   \def\y{1mm}
 
   \begin{itemize}
-    \item Progress on scalable Bayesian inference, with minimal comrpomises
+    \item Progress on scalable Bayesian inference, with minimal compromises
  
     \vspace{\x}
 
     \item Accelerate likelihood-based inference with
     \begin{itemize}
       \vspace{\y}
-      \item \textsc{JAX}: GPU for faster likelihoods
+      \item \textsc{JAX}: GPU for faster likelihoods, automatic differentiation
 
       \vspace{\y}
 
@@ -1564,7 +1573,10 @@
 
     \vspace{\x}
 
-    \item GWs: checked for LVK, work in progress for ET: waveform experts needed!
+    \item GWs: verified for LVK, work in progress for ET
+    \begin{itemize}
+      \item  Waveform experts more than welcome!
+    \end{itemize}
 
     \vspace{\x}
 
@@ -1575,7 +1587,7 @@
     \item EOS: scalable inference, open up systematics studies
   \end{itemize}
   
-  \vspace{8mm}
+  \vspace{4mm}
 
   \textbf{Let's talk!}
 \end{frame}

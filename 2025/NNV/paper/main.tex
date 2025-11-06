@@ -1,0 +1,531 @@
+\documentclass[
+    reprint,
+    preprintnumbers,
+    superscriptaddress,
+    % groupedaddress,
+    % unsortedaddress,
+    % runinaddress,
+    % frontmatterverbose, 
+    nofootinbib,
+    %nobibnotes,
+    %bibnotes,
+     amsmath,amssymb,
+     aps,
+     prd,
+    %rmp,
+    %prstab,
+    %prstper,
+    floatfix,
+    ]{revtex4-2}
+    
+    \bibliographystyle{apsrev4-1}
+    
+    \usepackage{graphicx}
+    \usepackage[usenames,dvipsnames]{xcolor}
+    \usepackage[utf8]{inputenc}
+    \usepackage{color}
+    \usepackage{orcidlink}
+    \usepackage{caption}
+    \usepackage{subcaption}
+    \usepackage{hyperref}
+    \usepackage[normalem]{ulem} 
+    \usepackage{physics}
+    \usepackage{placeins}
+    \usepackage{comment}
+\usepackage{booktabs, multirow}
+    \usepackage{enumitem}
+    \usepackage{comment}
+    \usepackage{bm}
+    \usepackage{bigints}
+    \usepackage[nolist,nohyperlinks]{acronym}
+
+\hypersetup{
+  colorlinks   = true,
+  urlcolor     = blue,
+  linkcolor    = blue,
+  citecolor   = blue
+}
+    \allowdisplaybreaks[1]
+
+\usepackage{float}
+
+\newcommand{\potsdam}{Institut f{\"u}r Physik und Astronomie, Universit{\"a}t Potsdam, Haus 28, Karl-Liebknecht-Str. 24/25, 14476, Potsdam, Germany}
+\newcommand{\aei}{Max Planck Institute for Gravitational Physics (Albert Einstein Institute), Am M{\"u}hlenberg 1, Potsdam 14476, Germany}
+\newcommand{\grasp}{Institute for Gravitational and Subatomic Physics (GRASP), Utrecht University, Princetonplein 1, 3584 CC Utrecht, The Netherlands}
+\newcommand{\nikhef}{Nikhef, Science Park 105, 1098 XG Amsterdam, The Netherlands}
+
+\newcommand{\Msol}{\rm{M}_\odot}
+\newcommand{\Msun}{\Msol}
+\newcommand{\MTOV}{M_{\rm{TOV}}}
+\newcommand{\nsat}{n_{\rm{sat}}}
+\newcommand{\nbreak}{n_{\rm{break}}}
+\newcommand\bkt[1]{\left( {#1} \right)}
+\newcommand\sbkt[1]{\left[ {#1} \right]}
+\newcommand{\ii}{\rm{i}}
+\newcommand{\rex}{r_\rm{ex}}
+\newcommand{\dtc}{\Delta t_\rm{c}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\tw}[1]{\textcolor{teal}{[\texttt{TW: #1}]}}
+\newcommand{\anna}[1]{\textcolor{orange}{[\texttt{AP: #1}]}}
+\newcommand{\pp}[1]{\textcolor{blue}{[\texttt{PP: #1}]}}
+
+\begin{document}
+
+\title{Analyzing GW231109\_235456 and understanding its potential implications for population studies, nuclear physics, and multi-messenger astronomy}
+
+\author{Thibeau Wouters~\orcidlink{0009-0006-2797-3808}}
+\email{t.r.i.wouters@uu.nl}
+\affiliation{\grasp}
+\affiliation{\nikhef}
+\author{Anna Puecher~\orcidlink{0000-0003-1357-4348}}
+\affiliation{\potsdam}
+\author{{Peter T. H. Pang~\orcidlink{0000-0001-7041-3239}}}
+\affiliation{\nikhef}
+\affiliation{\grasp}
+\author{{Tim Dietrich~\orcidlink{0000-0003-2374-307X}}}
+\affiliation{\potsdam}
+\affiliation{\aei}
+\date{\today}
+
+\begin{abstract}
+We study the gravitational-wave trigger GW231109\_235456, a sub-threshold binary neutron star merger candidate observed in the first part of the fourth observing run of the LIGO–Virgo–KAGRA collaboration. 
+Assuming the trigger is of astrophysical origin, we analyze it using state-of-the-art waveform models and investigate the robustness of the inferred source parameters under different prior choices in Bayesian inference. 
+We assess the implications for population studies, nuclear physics, and multi-messenger astronomy. 
+Analysing the component masses, we find that GW231109\_235456 supports the proposed double Gaussian mass distribution of neutron star masses. Moreover, we find that the remnant most likely collapsed promptly to a black hole and that, because of the large distance, a possible kilonova connected to the merger was noticeably dimmer than AT2017gfo.
+In addition, we provide constraints on the equation of state from GW231109\_235456 alone, as well as combined with GW170817 and GW190425. 
+In our projections for the future, we simulate a similar event using the upcoming generation of gravitational-wave detectors. Our findings indicate that we can constrain the neutron star radius with an accuracy of 400 meters using the Einstein Telescope alone, or 300 meters when combined with the Cosmic Explorer, both at $90\%$ credibility.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+The first multi-messenger observation of a \ac{BNS} merger, the joint observation of the \ac{GW} signal GW170817~\cite{LIGOScientific:2017vwq}, the kilonova AT2017gfo~\cite{LIGOScientific:2017pwl, Andreoni:2017ppd, Coulter:2017wya, Lipunov:2017dwd, Shappee:2017zly, Tanvir:2017pws, J-GEM:2017tyx}, the gamma-ray burst GRB170817A~\cite{LIGOScientific:2017zic, Goldstein:2017mmi, Savchenko:2017ffs} and its afterglow~\cite{Hallinan:2017woc, Alexander:2018dcl, Margutti:2018xqd, Ghirlanda:2018uyx, Troja:2017nqp, DAvanzo:2018zyz}, showcased the importance of such observations for our understanding of cosmology and the nuclear equation of state~\cite{LIGOScientific:2017adf, LIGOScientific:2018cki}.
+
+Since then, there has not been a definitive multi-messenger detection of a \ac{BNS} merger. 
+However, a variety of GW and \ac{EM} signals have been observed that are likely connected to \ac{BNS} mergers. 
+Among them, the GW event GW190425~\cite{LIGOScientific:2020aai}, a compact binary merger with a total mass of $\sim3.4 M_\odot$, has been identified as a \ac{BNS} candidate, although the \ac{NSBH} hypothesis cannot be ruled out~\cite{Foley:2020kus, Han:2020qmn, Kyutoku:2020xka, Dudi:2021abi}.
+On the \ac{EM} side, GRB211211A~\cite{Rastinejad:2022zbg, Troja:2022yya, Kunert:2023vqd} and GRB230307A~\cite{JWST:2023jqa} have been identified as long GRBs with strong evidence of kilonova components.
+However, due to the larger distance of the event and the fact that Advanced LIGO~\cite{LIGOScientific:2014pky} and Advanced Virgo~\cite{VIRGO:2014yos} were not operational at the time, it cannot be definitively confirmed that these events originated from a compact binary merger.
+
+Recently, the fourth Gravitational-Wave Transient Catalog (GWTC-4.0)~\cite{LIGOScientific:2025slb} reported observations from the first part of the fourth observing run (O4a) of the LIGO-Virgo-KAGRA (LVK) collaboration, but did not include any confident \ac{BNS} candidates. 
+However, a possible sub-threshold candidate, GW231109\_235456 (from here onwards, abbreviated as GW231109), has been identified as a significant trigger in a sub-threshold targeted search~\cite{Niu:2025nha}, with an inferred total mass of $2.95^{+0.38}_{-0.07} \, \Msun$ and a \ac{SNR} of $9.7$. 
+Note that this \ac{SNR} is noticeably lower than the \ac{SNR} of GW170817, which was around $32.4$~\cite{LIGOScientific:2018hze}, but also below the \ac{SNR}  of $12.9$ found for GW190425~\cite{LIGOScientific:2020aai}. 
+Unfortunately, due to this low \ac{SNR}, the inferred tidal deformabilities of GW231109 remain largely uninformative~\cite{Niu:2025nha}. 
+While a potential candidate \ac{EM} counterpart was reported by Ref.~\cite{Li:2025rmj}, it is uncertain whether it originates from the same source as GW231109. 
+
+In this work, we provide a thorough analysis of the GW event to determine the properties of the source and examine its consistency with different population models. 
+We investigate potential constraints on the \ac{EOS} of dense nuclear matter, verifying parameter estimation consistency for different prior choices.
+In addition, we estimate the fate of the merger remnant, the properties of the ejecta, and predict the kilonova light curves.
+Finally, we simulate a system similar to GW231109 as observed by the third-generational \ac{GW} detectors \ac{ET}~\cite{Punturo:2010zz, Hild:2010id} and \ac{CE}~\cite{Reitze:2019iox, Evans:2021gyd, Evans:2023euw} to project how the increased sensitivy of these detectors would constrain the \ac{EOS} from similar sources. 
+
+\section{Gravitational wave parameter estimation}
+
+Using Bayes' theorem, we sample the posterior distribution of the \ac{GW} source parameters with nested sampling~\cite{Skilling:2004pqw, Skilling:2006gxv}.
+In particular, we use the \texttt{dynesty} sampler~\cite{Speagle:2019ivv,sergey_koposov_2024_12537467} with $2000$ live points, employing the standard settings of \texttt{bilby}~\cite{Ashton:2018jfp}.
+
+Compared to the analysis presented in Ref.~\cite{Niu:2025nha}, we introduce the following changes. First, we adopt more advanced \ac{BNS} waveform models, namely, \texttt{IMRPhenomXAS\_NRTidalv3} for aligned spin systems and \texttt{IMRPhenomXP\_NRTidalv3} for systems with precessing spins~\cite{Abac:2023ujg, Colleoni:2023ple}. 
+These models incorporate the \texttt{NRTidalv3} tidal phase calibrated to unequal-mass systems with dynamical tides~\cite{Abac:2023ujg}. Second, we extend the analysis duration to $256$ seconds and increase the maximum frequency to $2048$ Hz to improve sensitivity to tidal effects, which are stronger at higher frequencies~\cite{Dietrich:2020eud, Chatziioannou:2020pqz}.\footnote{The on-source \ac{PSD} is computed with \textsc{BayesWave}~\cite{Cornish:2014kda, Littenberg:2014oda, Cornish:2020dwh} with open-data strain from \textsc{gwosc}~\cite{LIGOScientific:2025snk, KAGRA:2023pio, LIGOScientific:2019lzm}.} 
+Finally, we accelerate the likelihood evaluation using multibanding~\cite{Garcia-Quiros:2020qlt, Morisaki:2021ngj} rather than \ac{ROQ}~\cite{Smith:2016qas, Morisaki:2023kuq}. 
+
+\subsection{Priors}\label{ssec: GW PE priors}
+
+To isolate the effect of priors, we test different prior choices for the masses, spins, and tidal deformabilities of the two \acp{NS}.
+For the extrinsic parameters, the priors are identical to Ref.~\cite{Romero-Shaw:2020owr}, with the luminosity distance prior uniform in comoving volume and source frame time. 
+
+\textit{Masses:}
+We consider four mass prior choices for this analysis.
+First, the `default' prior samples uniformly over detector-frame component masses while restricting the detector-frame chirp mass $\mathcal{M}_c$ to the range $[1.29, 1.32]\,\Msun$, and the mass ratio $q = m_2/m_1$ to the range $[0.125, 1]$, following standard \ac{GW} inference practice.\footnote{The specific range for the chirp mass was chosen in order to contain the value of $1.306\,\Msun$ recovered by the template search~\cite{Niu:2025nha}.}
+Second, the `uniform' prior adopts a uniform distribution over source-frame component masses in $[1, 3]\,\Msun$, consistent with the \ac{NS} population observed in \acp{GW}~\cite{Landry:2021hvl, KAGRA:2021duu}.
+Third, the `Gaussian' population prior~\cite{Ozel:2012ax, Kiziltan:2013oja, Ozel:2016oaf}, draws source-frame component masses from a Gaussian distribution $\mathcal{N}\left(1.33\,\Msun, (0.09\,\Msun)^2\right)$.
+Fourth, the `double Gaussian' population prior~\cite{Schwab:2010jm, Antoniadis:2016hxz, Alsing:2017bbc, Farrow:2019xnc, Shao:2020bzt, Horvath:2020dkr}, draws the source-frame masses from a weighted mixture\footnote{See Ref.~\cite{Shao:2020bzt} for the definition of the relative weight.} of two Gaussian distributions, i.e., $\mathcal{N}(1.372\,\Msun, \left(0.05768\,\Msun\right)^2)$ with a relative weight of $0.7137$, and $\mathcal{N}(1.534\,\Msun, \left(0.09102\,\Msun\right)^2)$ with a relative weight of $0.2863$, which is identical to Ref.~\cite{Niu:2025nha}.
+
+\textit{Spins:} 
+For the magnitude of the dimensionless component spins $a_i$, we consider two uniform priors where the maximum magnitude is either $0.05$ or $0.4$, referred to as the low-spin and high-spin priors, respectively. 
+If not specified otherwise, our fiducial runs use the low-spin prior $a_i < 0.05$.
+Although the maximum known spin for an \ac{NS} in a binary system is $\sim 0.2$ \cite{Hessels:2006ze}, the limit used in the high-spin prior corresponds to the maximum spin observed in isolated \acp{NS}~\cite{Hessels:2006ze}. 
+Note that theoretical calculations suggest that dimensionless spins can exceed this value \cite{Dietrich:2015pxa}.
+
+\textit{Tidal deformabilities:}
+The information about matter effects is primarily encoded in the dimensionless tidal deformability parameters $\Lambda_i$, which describe the deformation of an \ac{NS} in a binary system as a consequence of the gravitational field created by its companion~\cite{Hinderer:2009ca, Damour:2009vw, Damour:2012yf}.
+We consider three priors for the tidal deformabilities in this work.
+First, we sample $\Lambda_{i}$ uniformly in the range $[0,5000]$.
+Second, we use \ac{QUR}, which are relations between source parameters that are largely independent of the specific \ac{EOS}.
+Specifically, we use the binary Love relations~\cite{Yagi:2015pkc} and follow the approach outlined in Ref.~\cite{Chatziioannou:2018vzf}, while acknowledging the associated caveats and drawbacks discussed in Ref.~\cite{Kastaun:2019bxo}.
+Finally, we perform parameter estimation by sampling a set of \acp{EOS} constrained by observations. 
+In particular, we use the set of \acp{EOS} from Ref.~\cite{Koehn:2024set} (with data available at Ref.~\cite{eos_tool}) and the weights derived by the observations collected in `Set A'.\footnote{`Set A' contains information obtained from chiral effective field theory, perturbative quantum chromodynamics, radio measurements of massive pulsars, the X-ray NICER measurement of PSR J0030+0451 and PSR J0740+6620, and the analysis of GW170817; see Ref.~\cite{Koehn:2024set} for details.}
+At each likelihood evaluation, the sampled \ac{EOS} is used to compute $\Lambda_{i}$ following the implementation in Ref.~\cite{Pang:2022rzc}. 
+
+Our fiducial prior choice for the individual analyses discussed in the following depends on the specific question being addressed.
+For inferring the \ac{EOS} in Sec.~\ref{sec:eos}, we use posteriors obtained by sampling $\Lambda_i$ uniformly in the range $[0, 5000]$, to guarantee that the prior remains agnostic to existing \ac{EOS} constraints. 
+In contrast, for predicting the fate of the remnant (Sec.~\ref{sec:remn}) and potential kilonova lightcurves (Sec.~\ref{ssec: KN LC}), we restrict ourselves to posteriors that perform \ac{EOS} sampling to ensure that the masses and tidal deformabilities samples are consistent with physical constraints imposed by the \ac{EOS}.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{m1m2_overview.pdf}
+    \caption{Source-frame component masses of low-mass \ac{GW} events that most likely contain at least one NS, namely, GW170817~\cite{LIGOScientific:2017vwq}, GW190425~\cite{LIGOScientific:2020aai}, GW230529~\cite{LIGOScientific:2024elc}, and GW231109\_235456 (GW231109). GW231109's individual masses lie between those of GW170817 and GW190425. 
+    The gray shade in the 1D panels shows the transition from NS to BH masses: the color opacity corresponds to the cumulative density function of the TOV mass posterior, based on the uncertainty in the TOV mass inferred later in this work from measurements of heavy pulsars (see Sec.~\ref{sec:eos} for details).}
+    \label{fig: m1-m2 overview of BNS events and GW230529}
+\end{figure}
+
+\subsection{Source properties}\label{ssec:pe_res}
+
+\begin{figure*}[t]
+     \centering
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=0.99\textwidth]{comparison_l5000_spin.pdf}
+     \end{subfigure}
+     \hfill
+     \begin{subfigure}[b]{0.49\textwidth}
+         \centering
+         \includegraphics[width=0.99\textwidth]{comparison_leos_spin.pdf}
+     \end{subfigure}
+        \caption{Posterior on chirp mass $\mathcal{M}_c$, mass ratio $q$, effective spin $\chi_{\rm eff}$, and mass-weighted tidal deformability $\tilde{\Lambda}$ of the \ac{GW} inference using the default mass priors, i.e., uniform in detector-frame component masses. \textit{Left panel}: $\Lambda_i$ are sampled uniformly in the range $[0, 5000]$. \textit{Right panel}: $\Lambda_i$ are determined by the \ac{EOS} sampled on-the-fly, with samples where the primary mass exceeds the TOV mass being discarded. The light (dark) shading indicates the $68\%$ ($95\%$) credible area. The median values of the recovered parameters, together with the $90\%$ credible intervals, are reported above the marginalized posterior distributions.}
+        \label{fig: GW PE cornerplots}
+\end{figure*}
+
+Figure~\ref{fig: m1-m2 overview of BNS events and GW230529} shows the one- and two-dimensional posteriors for the source-frame component masses recovered for GW231109, compared to other low-mass \ac{GW} observations that likely contained at least one \ac{NS}. 
+For GW170817, GW190425, and GW231109, the default mass, low-spin, and uniform in $\Lambda_i$ priors were used. 
+For GW230529, we vary the magnitude of the spin of the \ac{BH} up to $0.99$. 
+The masses of GW231109 are consistent with those expected for a \ac{BNS} system, being slightly heavier than those of GW170817 but still lighter than those of GW190425.
+
+Figure~\ref{fig: GW PE cornerplots} shows the posteriors for chirp mass $\mathcal{M}_c$, mass ratio $q$, effective spin $\chi_{\rm eff}$~\cite{Santamaria:2010yb, Ajith:2009bn} 
+\begin{equation}
+    \chi_{\rm eff} = \frac{\chi_1 m_1 + \chi_2 m_2}{m_1 + m_2} \, ,
+\end{equation}
+where $\chi_i$ are the component aligned spins, and mass-weighted tidal deformability~\cite{Flanagan:2007ix, Favata:2013rwa} 
+\begin{equation}
+    \tilde{\Lambda} = \frac{16}{3} \frac{\left(m_1 + 12 m_2\right) m_1^4 \Lambda_1 + \left(m_2 + 12 m_1\right) m_2^4 \Lambda_2}{\left(m_1 + m_2\right)^5} \, .
+\end{equation}
+
+The left panel of Fig.~\ref{fig: GW PE cornerplots} shows the posterior with $\Lambda_i$ sampled uniformly in $[0, 5000]$, while the right panel is obtained by sampling the \ac{EOS}; cf.\ Sec.~\ref{ssec: GW PE priors}.
+In both cases, we show our different spin prior choices and we use the default mass priors as defined in Sec.~\ref{ssec: GW PE priors}. 
+We find consistent results across the different mass prior choices.
+For the posteriors obtained from sampling the \ac{EOS}, we remove posterior samples for which the primary mass $m_1$ exceeds the \ac{TOV} mass of the corresponding \ac{EOS}. 
+
+We find that the broader spin priors result in wider posteriors on the masses, regardless of the prior choice on the tidal deformabilities. This is due to the correlation between mass ratio and spin~\cite{Ng:2018neg}. 
+When using a larger spin prior, we observe a stronger support for high positive spin values. 
+In these cases, the inspiral process is generally decelerated due to the repulsive spin-orbit interactions that occur at the 1.5 post-Newtonian order.
+However, this deceleration can be offset if the system's mass ratio is lower.
+Therefore, systems that are both highly spinning and more asymmetric can generate similar \ac{GW} signatures.
+Additionally, attractive tidal effects can also help counterbalance the higher spins.
+Indeed, the posterior using the uniform prior on tidal deformabilities recovers higher tidal deformabilities when using the high-spin prior. 
+
+When directly sampling over the \ac{EOS}, we obtain slightly narrower posteriors on the masses and, consequently, on the spins.
+The posterior on $\tilde{\Lambda}$ coincides quite well for both spin priors when sampling the \ac{EOS}, despite the large spin prior resulting in a broader posterior on the mass ratio. 
+However, the tighter constraints on $\tilde{\Lambda}$ relative to the default prior runs stem from the information already incorporated into the \ac{EOS} prior employed.  
+Therefore, also in this case, the posterior on $\tilde{\Lambda}$ is dominated by the prior. 
+
+\subsection{Consistency with populations}\label{ssec: populations}
+
+Comparing the posteriors obtained with different mass priors to the population models that determine those priors (cf.~Sec.~\ref{ssec: GW PE priors}) can hint at the underlying \ac{BNS} population.
+Figure~\ref{fig: populations and component masses KDEs} shows this comparison visually with the prior and posterior distributions for the source-frame component masses in dashed and solid lines, respectively. The different colors refer to the different population models that determined the priors. As a caveat, we note that the search performed in Ref.~\cite{Niu:2025nha} assumed a double-Gaussian population model.
+
+To quantify the degree of similarity between the various population-prior and posterior distributions, we use the \ac{JSD}~\cite{Lin:1991zzm}.
+A \ac{JSD} value of $0$ bits indicates that the two distributions are the same, while a value of $1$ bit signifies they are completely different. 
+The \ac{JSD} values are given in Table~\ref{tab: JSD for masses and populations} in Appendix~\ref{app: JSD table}.
+
+For both the primary and secondary masses, we observe that the distribution pair with the lowest \ac{JSD}, indicating the most consistent distributions, does not correspond to the scenario in which the population prior aligns with the prior used to obtain that posterior. This suggests that the event is informative and contributes measurable information beyond the prior.
+
+For both masses, we find that all posteriors obtained with various priors are most consistent with the double Gaussian prior. 
+This indicates that the double-Gaussian population model adequately represents both the primary and secondary mass distributions for this event.
+\footnote{We note that this conclusion remains also valid when using a double Gaussian with $\mathcal{N}(1.34\,\Msun, (0.08 \,\Msun)^2)$ and a relative weight of $0.65$, and $N(1.80\,\Msun, (0.21\,\Msun)^2)$ with a relative weight of $0.35$ as in Ref.~\cite{Alsing:2017bbc}.}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{populations_component_masses_comparison.pdf}
+    \caption{Comparison between priors (dashed lines) from populations and corresponding posteriors (solid lines) of the source-frame component masses, for the four mass priors considered.}
+    \label{fig: populations and component masses KDEs}
+\end{figure}
+
+\subsection{Implications for the equation of state}\label{sec:eos}
+
+We use the posteriors on the masses and tidal deformabilities obtained in Sec.~\ref{ssec:pe_res} to constrain the \ac{EOS} with the same setup as Ref.~\cite{Wouters:2025zju}, which we briefly detail below.
+
+Our \ac{EOS} parametrization consists of three different parts.
+First, below a density of $0.5\,\nsat$, the \ac{EOS} is fixed to the crust model from Ref.~\cite{Douchin:2001sv}. 
+Here, $\nsat = 0.16~\rm{fm}^{-3}$ denotes the nuclear saturation density.
+Second, between $0.5\,\nsat$ and a breakdown density $\nbreak$, which is varied uniformly on-the-fly during sampling between $[1, 2]\,\nsat$~\cite{Tews:2018iwm}, we employ the metamodel parametrization of the \ac{EOS}~\cite{Margueron:2017eqc, Margueron:2017lup, Somasundaram:2020chb}. 
+Third, the high-density part of the \ac{EOS}, i.e., in the range $[\nbreak, 25\,\nsat]$, is parametrized by grid points in the sound speed profile $c_s^2(n)$, from which the pressure-density relation can be computed~\cite{Tews:2018iwm, Greif:2018njt, Tews:2019cap, Somasundaram:2021clp}. 
+
+To obtain posteriors over the \ac{EOS}, we use \textsc{Jester}~\cite{Wouters:2025zju}, which allows us to directly sample our high-dimensional (in particular, $26$-dimensional) \ac{EOS} parametrization by accelerating the inference with \textsc{jax}~\cite{frostig2018compiling}.
+In particular, the code is executed on a \ac{GPU}, and we use \textsc{flowMC}, an efficient normalizing flow-enhanced \ac{MCMC} sampler~\cite{Gabrie:2021tlu, Wong:2022xvh}. 
+
+During sampling, we incorporate a likelihood term that disfavors \acp{EOS} predicting a \ac{TOV} mass below the mass of the heaviest observed \acp{PSR}.
+In particular, we use the measurements of \ac{PSR} J1614-2230~\cite{Demorest:2010bx, Shamohammadi:2022ttx} with a mass ${M = (1.937 \pm 0.014) \ M_\odot}$, and \ac{PSR} J0740+6620~\cite{Fonseca:2021wxt} with a mass ${M = (2.08 \pm 0.07) \ M_\odot}$ (see also Refs.~\cite{NANOGrav:2019jur, Riley:2021pdl, Salmi:2022cgy, Miller:2021qha, NANOGrav:2023hde, Dittmann:2024mbo, Salmi:2024aum}).\footnote{Uncertainties on the masses are quoted at the $68\%$ credible level.}
+Throughout this work, we refer to this constraint as `heavy \acp{PSR}'. 
+
+Additionally, for the \ac{BNS} events considered in this work, we use the marginalized 4-dimensional posteriors on the source-frame component masses and tidal deformabilities to approximate the pseudo-likelihood function for the \ac{EOS} parameters. 
+In practice, we train a normalizing flow to estimate the density of these marginal posteriors.
+The flows use the block neural autoregressive flow architecture~\cite{decao2019blockneuralautoregressiveflow} and are trained with \textsc{FlowJax}~\cite{ward2023flowjax}. 
+
+Table~\ref{tab: R14 main results} shows the posterior median value and $90\%$ credible intervals of the radius of a $1.4\,\Msun$ \ac{NS}. 
+For GW231109, we use the posterior obtained with the default mass, low-spin, and uniform in $\Lambda_i$ prior.
+The constraints on the \ac{TOV} mass and the pressure at $3\nsat$, as well as the results obtained from other prior choices for GW231109, are given by Table~\ref{tab: eos_parameters} in Appendix~\ref{app: more EOS results}. 
+
+Both GW190425 and GW231109 align with the constraints set by heavy-pulsar measurements and do not impose any noticeable constraints, which can be attributed to their lower \ac{SNR} compared to GW170817. 
+For GW190425, moreover, the high mass of the event is expected to give poor constraints on the \ac{EOS}~\cite{Ray:2022hzg}. 
+Since both GW190425 and GW231109 prefer slightly larger $R_{1.4}$ values, the uncertainties are reduced compared to the constraints from heavy \acp{PSR} due to the support of the prior. 
+The effect of the \ac{GW} prior choices for GW231109 is minimal and well below the reported uncertainty, as shown in Table~\ref{tab: eos_parameters}. 
+
+The combination of GW170817 and GW190425 yields a higher median $R_{1.4}$ value. 
+When we combine all three \ac{BNS} candidates, we find $R_{1.4} = 12.1_{-1.2}^{+1.1}$ km, compared to $12.2_{-1.4}^{+1.1}$ km when considering GW170817 alone, at $90\%$ credibility.
+Overall, as expected, we find that the constraints are driven by the high-\ac{SNR} signals GW170817 (as also noted by Refs.~\cite{DelPozzo:2013ala, Lackey:2014fwa, HernandezVivanco:2019vvk}) and that including additional low-\ac{SNR} \ac{BNS} candidates only leads to marginal changes. 
+
+\begin{table}[t]
+    \centering
+    \caption{Posterior on $R_{1.4}$ obtained from the constraints discussed in Sec.~\ref{sec:eos}, denoted by the median with $90\%$ credible intervals as uncertainty.
+    All inferences with \ac{GW} data also include the constraints from heavy \acp{PSR}. 
+    }
+    \input{eos_r14_table}
+    \label{tab: R14 main results}
+\end{table}
+
+\subsection{Estimating the remnant fate}\label{sec:remn}
+
+Depending on the properties of the system, the remnant formed during the merger process can have different lifetimes before collapsing into a \ac{BH} or even remain stable~\cite{Hotokezaka:2011dh, Hotokezaka:2013iia, Sarin:2020gxb, Dietrich:2020eud, Bernuzzi:2020tgt}. Typically, for heavier masses, the system promptly collapses to a \ac{BH}. Alternatively, a differentially-rotating hyper-massive neutron star (HMNS) can be formed, with possibly higher mass than the maximum mass sustained by a uniformly rotating \ac{NS}. This HMNS survives for a few milliseconds before different mechanisms dissipate the differential rotation, either causing it to collapse to a \ac{BH} or, in case of slightly lower masses, to form a uniformly rotating supra-massive \ac{NS} (SMNS) that survives up to $\mathcal{O}(1 \, {\rm s})$ before collapsing. For very low-mass systems, the mass of the remnant produced by the merger can be lower than the \ac{TOV} mass, and therefore a stable \ac{NS} is formed.
+
+To predict the remnant expected for this trigger, we use the classifiers developed in Ref.~\cite{Puecher:2024dhl}, based on gradient boost decision trees~\cite{friedman2001greedy, FRIEDMAN2002367}.
+In particular, three different classifiers are available: \emph{Classifier A} distinguishes between prompt collapse to \ac{BH} ($p_{\rm \textsc{pcbh}}$) or formation of a \ac{NS} remnant ($p_{\rm \textsc{rns}}$); \emph{Classifier B} further distinguishes the \ac{NS} remnant scenario in formation of a HMNS ($p_{\rm \textsc{hmns}}$) or a remnant (which could be a HMNS, SMNS, or stable NS) that survives more than $25 \, \rm{ms}$ ($p_{\rm \textsc{nc}}$); \emph{Classifier C}, in which the HMNS class is further divided into short-lived ($p_{\rm \textsc{short}}$), i.e., for which the HMNS collapses to a BH in a time $2 \, {\rm ms} < \tau_{\rm BH} < 5 \, {\rm ms}$, and long-lived ($p_{\rm \textsc{long}}$), i.e., with $\tau_{\rm BH} > 5 \, {\rm ms}$.
+All three classifiers predict the remnant based on the values of source parameters that can be inferred from the inspiral signal: the total mass, the mass-weighted tidal deformability $\tilde{\Lambda}$, the mass ratio $q$, and the effective spin $\chi_{\rm eff}$. 
+
+Table~\ref{tab:remn} shows the probabilities for the different kinds of remnants based on the posteriors both from our fiducial run with EOS sampling and low-spin prior ($a_i < 0.05$), and the EOS-sampling analysis with larger spin prior ($a_i < 0.4$).
+We do not apply the classifier to posteriors obtained with uniform priors on the tidal deformabilities or to those assuming the \ac{QUR}, since the event’s low \ac{SNR} leads to a poorly constrained $\tilde{\Lambda}$, producing samples with nonphysical combinations of masses and tidal deformabilities. 
+In both cases and for all three classifiers, the preferred scenario is a prompt collapse to a \ac{BH}, although there is a non-negligible probability for the formation of an HMNS.
+The prompt-collapse probability is higher for the high-spin analysis, consistent with the overall higher mass inferred (see Figure~\ref{fig: GW PE cornerplots}).
+In case an HMNS was formed, it was most likely short-lived, i.e., it collapsed within 5~ms from merger.
+
+\begingroup
+\renewcommand*{\arraystretch}{2}
+\setlength{\tabcolsep}{8pt}
+\begin{table}[t]
+\caption{Probabilities of the different merger outcomes using the three classifiers developed in Ref.~\cite{Puecher:2024dhl} applied to the posteriors obtained while sampling the \ac{EOS}, for both low-spin and high-spin priors.}
+\begin{flushleft}
+\begin{tabular}{l|cccc}
+\hline\hline
+\textbf{Classifier A} & $p_{\textsc{pcbh}}$ & $p_{\textsc{rns}}$ & & \\
+\hline
+Low spin  & $57.4\%$ & $42.6\%$ & & \\
+High spin & $79.1\%$ & $20.9\%$ & & \\
+\hline
+\textbf{Classifier B} & $p_{\textsc{pcbh}}$ & $p_{\textsc{HMNS}}$ & $p_{\textsc{NC}}$ & \\
+\hline
+Low spin  & $57.9\%$ & $42.0\%$ & $0.1\%$ & \\
+High spin & $79.1\%$ & $20.8\%$ & $0.1\%$ & \\
+\hline
+\textbf{Classifier C} & $p_{\textsc{pcbh}}$ & $p_{\textsc{short}}$ & $p_{\textsc{long}}$ & $p_{\textsc{nc}}$ \\
+\hline
+Low spin  & $62.8\%$ & $35.0\%$ & $2.1\%$ & $0.0\%$ \\
+High spin & $83.1\%$ & $14.3\%$ & $1.8\%$ & $0.7\%$ \\
+\hline\hline
+\end{tabular}
+\label{tab:remn}
+\end{flushleft}
+\end{table}
+\endgroup
+
+\subsection{Estimating possible kilonova lightcurves}\label{ssec: KN LC}
+
+Given the non-negligible probability of an HMNS formation, we predict the corresponding kilonova light curves to assess what \ac{EM} counterpart this event would have produced.
+For this purpose, we use the nuclear-physics and multi-messenger astrophysics framework 
+\textsc{nmma}~\cite{Pang:2022rzc}, and employ the \texttt{Bu2019lm} model~\cite{Dietrich:2020efo}, together with the posteriors from our fiducial run with \ac{EOS} sampling.
+The \texttt{Bu2019lm} model is built using \texttt{POSSIS}~\cite{Bulla:2019muo,Bulla:2022mwo}, a radiative transfer code simulating photon packets diffusing out of the eject material.
+Both the dynamic ejecta mass \(M^{\rm ej}_{\rm dyn}\) and the disk mass $M_{\rm disk}$ are estimated using the relations presented in Ref.~\cite{Pang:2022rzc}. 
+The wind ejecta mass $M^{\rm ej}_{\rm wind}$ is assumed to be 30\% of the disk mass~\cite{Fujibayashi:2017puw,Lund:2024fjk}. 
+The opening angle $\Phi$ between the lanthanide-rich and lanthanide-poor dynamical ejecta components is varied within the range of $[15^{\circ}, 75^{\circ}]$. 
+The estimated ejecta masses are $\log_{10}M^{\rm ej}_{\rm dyn} / M_\odot = -2.20^{+0.34}_{-0.14}$ and $\log_{10}M^{\rm ej}_{\rm wind} / M_\odot = -1.27^{+0.21}_{-0.02}$. 
+The quoted values represent the median along with the $90\%$ credible interval as uncertainty.
+
+The estimated lightcurves, along with the observations from AT2017gfo~\cite{LIGOScientific:2017pwl, Andreoni:2017ppd, Coulter:2017wya, Lipunov:2017dwd, Shappee:2017zly, Tanvir:2017pws, J-GEM:2017tyx}, are presented in Figure~\ref{fig: lc}. 
+The lightcurves shown represent the median values, along with the $90\%$ credible interval, measured in AB magnitudes across various photometric bandpasses. 
+It is evident that for this event, at a distance of around $165$ Mpc, the kilonova lightcurves are significantly dimmer than for AT2017gfo. If this event is detected by the online search pipeline, the kilonova lightcurves may be partially captured by the Zwicky Transient Facility~\cite{Kasliwal:2020wmy, Ahumada:2024qpr} and potentially fully captured by the Vera Rubin Observatory~\cite{Bianco:2021ape}. Alternatively, if the event occurred closer to us and an HMNS were formed, it would be more feasible to detect its electromagnetic signature.
+
+Reference~\cite{Li:2025rmj} performed a search for an \ac{EM} counterpart of GW231109 with archival data and reported one candidate, AT2023xqy, to be in good agreement with the trigger time and distance reported by the \ac{GW} pipelines.
+However, given that AT2023xqy peaks roughly $14$ days after the \ac{GW} trigger, our results make it challenging to interpret this transient as a plausible kilonova counterpart of GW231109.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{GW231109_lc_with_band.pdf}
+\caption{The lightcurves presented with the median values, along with the 90\% credible interval, measured in AB magnitudes across various photometric bandpasses. These observations are compared with data from AT2017gfo~\cite{LIGOScientific:2017pwl, Andreoni:2017ppd, Coulter:2017wya, Lipunov:2017dwd, Shappee:2017zly, Tanvir:2017pws, J-GEM:2017tyx}.}
+\label{fig: lc}
+\end{figure}
+
+\section{Injections with third-generation detectors}
+\label{sec:inj}
+
+To evaluate the potential implications on the \ac{EOS} from a source like GW231109, we simulate a similar source detected by third-generation detectors. 
+These detectors are anticipated to observe up to $\mathcal{O}(10^4)$ \ac{BNS} events annually, with around $\mathcal{O}(10^3)$ of those having an \ac{SNR} greater than $100$~\cite{ET:2019dnz, Abac:2025saz}.
+Two detector configurations are considered.
+First, we assume \ac{ET} in its triangular xylophone configuration, with 10~km arms and located in Limburg~\cite{et_psd}. 
+Second, we consider \ac{ET} in a network with \ac{CE}, where \ac{CE} is assumed to be an L-shaped detector with 40~km arm-length located at the current LIGO-Hanford site~\cite{CE-T2000017-v8}.
+
+The injected parameters are the median values of the posteriors obtained in our fiducial analysis with \ac{EOS} sampling (i.e., the low-spin prior run in the right panel of Figure~\ref{fig: GW PE cornerplots}).
+However, given the poor constraints on the spin angle parameters, the median values would correspond to highly precessing systems, which are not expected in the known \ac{BNS} population and could induce biases in the analysis due to the models' limited calibration accuracy in this parameter region. 
+Therefore, we simulate a system with aligned spins. 
+The injected \ac{EOS}, from which the tidal deformabilities are computed, is the maximum likelihood \ac{EOS} inferred using only heavy \acp{PSR}, as described in Sec.~\ref{sec:eos}. 
+The simulated signals yield \ac{SNR} values of $134$ and $294$ for the ET and ET+CE networks, respectively.
+
+The recovery uses the \texttt{IMRPhenomXP\_NRTidalv3} waveform, without assuming aligned spins, to be consistent with the previous analyses, and with the default mass, low-spin, and uniform tidal deformability priors.
+The starting frequencies for the analysis are set to $5$ Hz for \ac{ET} and $10$ Hz for \ac{CE}.\footnote{Being planned to be built underground, ET is expected to gain sensitivity also below 10~Hz.} 
+In this work, we do not consider effects from the rotation of the Earth.
+
+Figure~\ref{fig: ET and ET+CE GW PE results} shows the resulting posteriors for chirp mass $\mathcal{M}_c$, mass ratio $q$, effective spin $\chi_{\rm eff}$, and mass-weighted tidal deformability $\tilde{\Lambda}$. 
+All parameters are well recovered with an improved accuracy compared to the posteriors from Figure~\ref{fig: GW PE cornerplots}, due to the higher \ac{SNR}. 
+As expected, the uncertainties are further reduced when considering \ac{ET} in a network with \ac{CE}. 
+
+\begin{figure}[t]
+     \centering
+     \includegraphics[width=0.99\columnwidth]{comparison_new_ET_vs_ET_CE.pdf}
+     \caption{Posterior on parameters from a simulated source similar to GW231109 observed with ET and a network of ET with CE. The black lines indicate the injected values. The median values of the recovered parameters, together with the $90\%$ credible intervals, are reported above the marginalized posterior distributions.}
+     \label{fig: ET and ET+CE GW PE results}
+ \end{figure}
+
+Figure~\ref{fig: EOS curves and Mc source and lambda tilde} shows the posteriors on the source-frame chirp mass $\mathcal{M}^{\rm{src}}$ and mass-weighted tidal deformabilities for the simulated source as detected by 3G detectors, compared to  GW170817.
+The uncertainty in the source-frame chirp mass is larger for the simulated signals compared to GW170817, despite the detector-frame chirp mass being well-measured thanks to the high \ac{SNR}. 
+This is because the redshift values in the posteriors of the simulated signals have a larger spread at the larger distance of $168$ Mpc. 
+We also show posterior samples from the \ac{EOS} inference outlined in Sec.~\ref{sec:eos} using GW170817 as a constraint, also shown in Table~\ref{tab: R14 main results}, as well as the \ac{EOS} used to compute the tidal deformabilities for the injection.
+The curves are plotted assuming an equal mass system for visualization. 
+Due to the tidal deformabilities being well measured at this high \ac{SNR}, the simulated events are more informative for the \ac{EOS} compared to GW170817. 
+
+ \begin{figure}[t]
+    \centering
+    \includegraphics[width=0.99\columnwidth]{anna_tim_favourite_plot.pdf}
+    \caption{Posterior samples on source-frame chirp mass and $\tilde{\Lambda}$ for GW170817 (pink) and the simulated signals (orange shades), together with posterior \ac{EOS} samples constrained by GW170817, color-coded by the posterior probability. 
+    The \ac{EOS} used for the injections, as well as the simulated signal, are shown in black.
+    The light (dark) shades represent $68\%$ ($95\%$) credible areas.
+    }
+    \label{fig: EOS curves and Mc source and lambda tilde}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.99\columnwidth]{ET_full_injection_R14_histogram.pdf}
+    \caption{Posterior constraints on $R_{1.4}$ when constrained by a GW231109-like source observed with \ac{ET}, and a network consisting of \ac{ET} and \ac{CE}. The posterior determined by measurements of heavy pulsars is shown in gray.}
+    \label{fig: ET and ET+CE R14 results}
+\end{figure}
+
+Figure~\ref{fig: ET and ET+CE R14 results} shows the resulting constraints on $R_{1.4}$ from the posteriors shown in Figure~\ref{fig: ET and ET+CE GW PE results}, using the same setup as described in Sec.~\ref{sec:eos}. 
+The resulting constraints give $12.30_{-0.36}^{+0.31}$  km and $12.08_{-0.28}^{+0.29}$ km at the $90\%$ credible level, for the inference using \ac{ET} and \ac{ET}-\ac{CE} network, respectively, whereas the injected value is $12.23$ km. 
+Therefore, the uncertainties on the inferred $R_{1.4}$ are decreased significantly with third-generational \ac{GW} detectors. 
+
+We note that our projection is optimistic, since, apart from precession effects, the injection and recovery use the same waveform, such that effects from waveform systematics can be ignored. 
+This will become important for signals with an \ac{SNR} above $\gtrsim 80$~\cite{Gamba:2020wgg}, when mismodelling effects in the \ac{BNS} inspiral~\cite{Pratten:2021pro}, or combining information from a few tens of \ac{BNS} mergers~\cite{Kunert:2021hgm}. 
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+In this work, we performed investigations of GW231109\_235456 (abbreviated GW231109), a subthreshold \ac{BNS} candidate identified by Ref.~\cite{Niu:2025nha} in LIGO-Virgo-KAGRA's O4a observing run. 
+By using state-of-the-art \ac{BNS} waveform models, various prior choices, and extending the frequency range of the analysis to $2048$ Hz, we aim to provide a comprehensive discussion of the \ac{GW} trigger and its potential implications. 
+Due to the low \ac{SNR} of the signal, prior assumptions noticeably influence the final posterior distributions.
+
+By using different priors on the source-frame component masses, we find that the source is most consistent with the double Gaussian population model. 
+
+We additionally constrain the \ac{EOS} from GW231109, finding that the \ac{EOS} is poorly constrained from GW231109 alone, due to the low \ac{SNR} of the event. 
+However, by combining GW231109 with GW170817~\cite{LIGOScientific:2017vwq} and GW190425~\cite{LIGOScientific:2020aai}, we constrain the radius of a $1.4\,\Msun$ \ac{NS} to be $12.1^{+1.1}_{-1.2}$ km, compared to $12.2^{+1.1}_{-1.4}$ km from GW170817 alone, at the $90\%$ credible level. 
+
+Furthermore, we predict the fate of the remnant formed after the merger using machine-learning classifiers trained on numerical-relativity simulations of \ac{BNS} mergers from Ref.~\cite{Puecher:2024dhl}. 
+We find that the merger most likely led to a prompt collapse to a \ac{BH} and, if an HMNS was formed first, it was likely short-lived, i.e., collapsed to a \ac{BH} around $2-5$ ms after merger.
+We also predict the lightcurves from a potential kilonova counterpart that would originate from the merger, finding that they are much dimmer than AT2017gfo~\cite{LIGOScientific:2017pwl, Andreoni:2017ppd, Coulter:2017wya, Lipunov:2017dwd, Shappee:2017zly, Tanvir:2017pws, J-GEM:2017tyx} and unlikely to be detectable. 
+
+Finally, we use the inferred source properties of GW231109 to simulate a signal with similar properties as observed by \ac{ET}, and a network of \ac{ET} and \ac{CE}. 
+Due to the increased \ac{SNR}, the source properties are better constrained, which decreases the uncertainties $R_{1.4}$ down to around $400$ meters when observed with \ac{ET}, and $300$ meters when observed by both \ac{ET} and \ac{CE}. 
+
+\appendix
+
+\section{Jensen-Shannon divergences}\label{app: JSD table}
+
+Table~\ref{tab: JSD for masses and populations} shows the \ac{JSD} values between the prior and posterior distributions on which the discussion presented in Sec.~\ref{ssec: populations} is based. 
+
+\begingroup
+\renewcommand*{\arraystretch}{2}
+\begin{table*}[t]
+\input{JSD_tabular}
+\caption{JSD values (in bits) between the prior and posterior distributions of the source-frame component masses, for the various mass priors described in Sec.~\ref{ssec: GW PE priors} and using the default low-spin, uniform in $\Lambda_i$ priors. Bold values denote the lowest \ac{JSD} within each row.}
+\label{tab: JSD for masses and populations}
+\end{table*}
+\endgroup
+
+\section{Constraints on \ac{EOS} quantities}\label{app: more EOS results}
+
+In Table~\ref{tab: eos_parameters} we show the constraints on the \ac{EOS} by summarizing a few quantities of interest. 
+In particular, we show the \ac{TOV} mass, $\MTOV$, the radius of a $1.4\,\Msun$ \ac{NS}, $R_{1.4}$, and the pressure at $3\nsat$, $p(3\nsat)$, for the various constraints discussed in Sec.~\ref{sec:eos}.
+The inference results using information from a \ac{BNS} candidate use the same default prior as defined in Sec.~\ref{ssec: GW PE priors}, i.e., using the default mass prior, low-spin prior, and sampling $\Lambda_i$ uniformly in the range $[0, 5000]$ for all \ac{BNS}. 
+When considering GW231109 alone, we infer the \ac{EOS} by changing one aspect of these prior choices, as denoted by the brackets and explained in detail in Sec.~\ref{ssec: GW PE priors}. 
+In particular, the label \texttt{XAS} denotes inferring the \ac{EOS} from the posterior obtained when using the aligned spin waveform approximant \texttt{IMRPhenomXP\_NRTidalv3} in the recovery. 
+
+\begin{table*}[t]
+\centering
+\caption{Constraints on $\MTOV$, $R_{1.4}$ and $p(3\nsat)$. For GW231109, we show the constraints for various prior choices as described in Sec.~\ref{ssec:pe_res}. All constraints using \ac{BNS} mergers additionally enforce the heavy pulsar constraint.
+All values denote 90\% credible intervals.
+}
+\label{tab: eos_parameters}
+\input{eos_inference_table}
+\end{table*}
+
+\section*{Data availability}
+
+Code and data to reproduce the results in this manuscript is available at Ref.~\cite{paper_repo}.
+
+
+\section*{Acknowledgments}
+
+We thank Lami Suleiman, the LIGO-Virgo-KAGRA extreme matter community, Mick Wright, and Michael Williams for fruitful discussions and feedback that led to the improvement of this work.
+T.W. is supported by the research program of the Netherlands Organization for Scientific Research (NWO) under grant number OCENW.XL21.XL21.038.
+A.P., T.D. acknowledge funding from the EU Horizon under ERC Starting Grant, no.\ SMArt-101076369.
+P.T.H.P. is supported by the research program of the Netherlands Organization for Scientific Research (NWO) under grant number VI.Veni.232.021.
+We thank SURF (www.surf.nl) for the support in using the National Supercomputer Snellius under project number EINF-14622.
+The computations were performed on the DFG-funded research cluster Jarvis at the University of Potsdam (INST 336/173-1; project number: 502227537).
+Views and opinions expressed are those of the authors only and do not necessarily reflect those of the European Union or the European Research Council. Neither the European Union nor the granting authority can be held responsible for them. This research has made use of data or software obtained from the Gravitational Wave Open Science Center (gwosc.org), a service of the LIGO Scientific Collaboration, the Virgo Collaboration, and KAGRA. This material is based upon work supported by NSF's LIGO Laboratory which is a major facility fully funded by the National Science Foundation, as well as the Science and Technology Facilities Council (STFC) of the United Kingdom, the Max-Planck-Society (MPS), and the State of Niedersachsen/Germany for support of the construction of Advanced LIGO and construction and operation of the GEO600 detector. Additional support for Advanced LIGO was provided by the Australian Research Council. Virgo is funded, through the European Gravitational Observatory (EGO), by the French Centre National de Recherche Scientifique (CNRS), the Italian Istituto Nazionale di Fisica Nucleare (INFN) and the Dutch Nikhef, with contributions by institutions from Belgium, Germany, Greece, Hungary, Ireland, Japan, Monaco, Poland, Portugal, Spain. KAGRA is supported by Ministry of Education, Culture, Sports, Science and Technology (MEXT), Japan Society for the Promotion of Science (JSPS) in Japan; National Research Foundation (NRF) and Ministry of Science and ICT (MSIT) in Korea; Academia Sinica (AS) and National Science and Technology Council (NSTC) in Taiwan.
+T.W. acknowledges the use of generative AI (Claude Sonnet 4.5) to proofread the manuscript.
+All AI-generated outputs were carefully reviewed and edited by T.W. to ensure accuracy.
+
+
+\begin{acronym}
+    \acro{AD}[AD]{automatic differentiation}
+    \acro{JIT}[JIT]{just-in-time}
+    \acro{PE}[PE]{parameter estimation}
+    \acro{ROQ}[ROQ]{reduced order quadrature}
+    \acro{MCMC}[MCMC]{Markov chain Monte Carlo}
+    \acro{LVK}[LVK]{LIGO-Virgo-KAGRA}
+    \acro{3G}[3G]{third-generation}
+    \acro{PSR}[PSR]{pulsar}
+    \acro{GW}[GW]{gravitational wave}
+    \acrodefplural{GWs}{gravitational waves}
+    \acro{QUR}[QUR]{quasi-universal relations}
+    \acro{ET}[ET]{Einstein Telescope}
+    \acro{CE}[CE]{Cosmic Explorer}
+    \acro{EM}[EM]{electromagnetic}
+    \acro{CBC}[CBC]{compact binary coalescences}
+    \acro{NS}[NS]{neutron star}
+    \acrodefplural{NSs}{neutron stars}
+    \acro{KDE}[KDE]{kernel density estimate}
+    \acro{NF}[NF]{normalizing flow}
+    \acro{BBH}[BBH]{binary black hole}
+    \acro{BNS}[BNS]{binary neutron star}
+    \acro{BH}[BH]{black hole}
+    \acro{NSBH}[NSBH]{neutron star-black hole}
+    \acro{EOS}[EOS]{equation of state}
+    \acro{EFT}[EFT]{effective field theory}
+    \acro{chiEFT}[$\chi$EFT]{chiral effective field theory}
+    \acro{NEP}[NEP]{nuclear empirical parameter}
+    \acro{HIC}[HIC]{heavy-ion collision}
+    \acrodefplural{NEPs}{nuclear empirical parameters}
+    \acro{MM}[MM]{metamodel}
+    \acro{CSE}[CSE]{speed-of-sound extension scheme}
+    \acro{TOV}[TOV]{Tolman-Oppenheimer-Volkoff}
+    \acro{JS}[JS]{Jensen-Shannon}
+    \acro{JSD}[JSD]{Jensen-Shannon divergence}
+    \acro{CPU}[CPU]{central processing unit}
+    \acro{GPU}[GPU]{graphical processing unit}
+    \acro{TPU}[TPU]{tensor processing unit}
+    \acro{ML}[ML]{machine learning}
+    \acro{SNR}[SNR]{signal-to-noise ratio}
+    \acro{PSD}[PSD]{power spectral density}
+    \acro{NICER}[NICER]{Neutron star Interior Composition ExploreR}
+\end{acronym}
+
+\bibliography{references}{}
+\bibliographystyle{apsrev4-1}
+
+\end{document}

@@ -1,0 +1,67 @@
+%% Creator: Inkscape 1.3 (0e150ed, 2023-07-21), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'NS_likelihood.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{708.66141732bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.32)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.13902885,0.27917949){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$\theta_{\rm{EOS}}$\end{tabular}}}}%
+    \put(0.77245013,0.12036835){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}$p(d|\theta_{\rm{EOS}})$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{NS_likelihood.pdf}}%
+    \put(0.08360238,0.17981914){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Pressure\end{tabular}}}}}%
+    \put(0.1219734,0.11151883){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Density\end{tabular}}}}%
+    \put(0.29599896,0.15485376){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}TOV\end{tabular}}}}%
+    \put(0.44620169,0.17981914){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Mass\end{tabular}}}}}%
+    \put(0.488806,0.1136355){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Radius\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{NS_likelihood.pdf}}%
+    \put(0.4689252,0.01268042){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}update \end{tabular}}}}%
+  \end{picture}%
+\endgroup%

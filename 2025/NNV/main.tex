@@ -1,0 +1,466 @@
+%%% ======= Beamer ======
+\documentclass[usenames,dvipsnames,t]{beamer}
+\beamertemplatenavigationsymbolsempty % remove toolbar at the bottom of slides
+\usepackage{appendixnumberbeamer} % for appendix
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+\usepackage{fontawesome}
+
+% Define commands for social media icons with links
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
+\newcommand{\myemail}{\href{mailto:t.r.i.wouters@uu.nl}{\textcolor{black}{\faEnvelope}}}
+
+\newcommand{\ghlink}[1]{\href{https://github.com/#1}{\textcolor{black}{\faGithub}}}
+
+\definecolor{customblue}{HTML}{7db8dc}
+\newcommand{\thetaeos}{\boldsymbol{\theta}_{\rm{EOS}}}
+\newcommand{\boldtheta}{\boldsymbol{\theta}}
+
+\setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{}%
+    \hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+% Show the TOC at the beginning of each section
+\AtBeginSection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection,subsectionstyle=shaded/shaded/hide]
+  \end{frame}
+}
+
+\colorlet{beamer@blendedblue}{blue!70} % change color theme
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
+\addbibresource{references.bib}%<- specify bib file
+
+\usepackage[inkscapearea=page]{svg}
+\usepackage{adjustbox}
+
+% For appendix
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
+
+% Other preamble stuff:
+\usepackage{preamble}
+
+% For figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mdframed}
+\usepackage{subcaption}
+
+\setbeamertemplate{caption}[numbered]
+
+% --- Inkscape figures:
+\newcommand{\incfig}[2][0.75\textwidth]{%
+    \def\svgwidth{\columnwidth}
+    \resizebox{#1}{!}{\import{Inkscape/}{#2.pdf_tex}}
+}
+
+% --- Height of frame
+\newlength{\myheight}
+\setlength{\myheight}{7cm}
+
+\newlength\myheightfigureintext
+\newlength\mydepthfigureintext
+\settototalheight\myheightfigureintext{Xygp}
+\settodepth\mydepthfigureintext{Xygp}
+\setlength\fboxsep{0pt}
+
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos} % for precise positioning
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Analyzing GW231109\_235456] %optional
+{Analyzing GW231109\_235456 and its implications for the neutron star equation of state}
+
+\subtitle{NNV meeting}
+
+\author[T. Wouters et al.]{Thibeau Wouters, Anna Puecher, Peter T. H. Pang, Tim Dietrich}
+
+\date{\today}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+\begin{document}
+
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{/Users/Woute029/Documents/Code/slides/2025/AEI/Figures/tintin_BNS_2.png}}}
+
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at (current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Analyzing GW231109\_235456 and its implications for the neutron star equation of state}\\[1ex]
+        \small Thibeau Wouters, Anna Puecher, Peter T. H. Pang, Tim Dietrich
+      \end{minipage}
+    };
+  \end{tikzpicture}
+
+  \end{frame}
+}
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Neutron stars and the equation of state}
+
+  \def\x{3mm}
+
+  Neutron stars probe the high-density part of the equation of state (EOS) of dense nuclear matter~\cite{Koehn:2024set}
+
+  \vspace{\x}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{Figures/Koehn_EOS.jpg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Tidal deformability}
+  \def\x{4mm}
+
+  \begin{itemize}
+    \item Neutron stars are tidally deformed in a binary
+    
+    \vspace{\x}
+
+    \item Quantified by tidal deformability $\Lambda$, depends on equation of state
+
+    \vspace{\x}
+
+    \item \textbf{Challenge}: $\Lambda$ harder to measure than masses (higher-order effect)
+  \end{itemize}
+
+  \vspace{\x}
+
+  \centering
+  \incfig[1.0\textwidth]{tidal}
+\end{frame}
+
+\begin{frame}{Binary neutron star mergers: GW170817 and GW190425}
+
+  \def\x{3mm}
+
+  So far, two confident BNS detections:
+
+  \vspace{\x}
+
+  \begin{enumerate}
+    \item<1-> \textbf{GW170817}~\cite{LIGOScientific:2017vwq}
+    \begin{itemize}
+      \item First multimessenger detection (GW + EM)
+      \item SNR $\sim 32$ (distance: $\sim 40$ Mpc)
+      \item Loud signal $\rightarrow$ excellent constraints on EOS
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item<2-> \textbf{GW190425}~\cite{LIGOScientific:2020aai}
+    \begin{itemize}
+      \item Heavier system: total mass $\sim 3.4\,M_{\odot}$
+      \item SNR $\sim 12$ (distance: $\sim 160$ Mpc)
+      \item Fainter, more massive $\rightarrow$ poor EOS constraints
+    \end{itemize}
+  \end{enumerate}
+
+\end{frame}
+
+\begin{frame}{GWTC-4.0 and GW231109\_235456}
+
+  \def\x{3mm}
+
+  \begin{itemize}
+    \item<1-> GWTC-4.0 released recently~\cite{LIGOScientific:2025slb}:
+    \begin{itemize}
+      \item Over 200 gravitational wave detections in total
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item<2-> \textbf{No confident BNS detections} in O4a
+
+    \vspace{\x}
+
+    \item<3-> However: sub-threshold candidate \textbf{GW231109\_235456} identified~\cite{Niu:2025nha}
+    \begin{itemize}
+      \item \red{SNR $\sim 9.7$} (distance: $\sim 165$ Mpc)
+      \item Fainter, but mass closer to GW170817 than GW190425
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{\x}
+
+  \onslide<4->{
+  \begin{tcolorbox}[colback=blue!10!white, colframe=blue!80!black, coltext=black]
+  Can we still learn something about the EOS?
+  \end{tcolorbox}
+  }
+\end{frame}
+
+\begin{frame}{GW231109: component masses}
+
+  \def\x{2mm}
+
+  Component masses compared to other low-mass GW events~\cite{LIGOScientific:2017vwq, LIGOScientific:2020aai, LIGOScientific:2024elc}
+
+  \vspace{\x}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.60\linewidth]{Figures/m1m2_overview.pdf}
+  \end{figure}
+\end{frame}
+
+% \begin{frame}{GW231109: source properties}
+
+%   \def\x{2mm}
+
+%   Parameter estimation with advanced waveform models~\cite{Abac:2023ujg, Colleoni:2023ple}
+
+%   \vspace{\x}
+
+%   \begin{figure}
+%     \centering
+%     \includegraphics[width=0.75\linewidth]{Figures/comparison_l5000_spin.pdf}
+%   \end{figure}
+
+%   \begin{itemize}
+%     \item Low SNR $\rightarrow$ posteriors dominated by priors
+%     \item Spin-mass ratio correlation
+%   \end{itemize}
+% \end{frame}
+
+\begin{frame}{This work}
+
+  \def\x{3mm}
+
+  We analyze GW231109\_235456 and investigate:
+
+  \vspace{\x}
+
+  \begin{enumerate}
+    \item Can we extract \textit{any} additional information about the EOS?
+
+    \vspace{\x}
+
+    \item How will future detectors (Einstein Telescope, Cosmic Explorer) improve constraints for similar events?
+  \end{enumerate}
+
+\end{frame}
+
+\section{Methods}
+
+\begin{frame}{Equation of state inference}
+  \def\x{2mm}
+  \def\y{5mm}
+
+  \begin{itemize}
+    \item To predict neutron star properties, we solve the TOV equations: ordinary differential equations (ODEs)
+
+    \vspace{\x}
+
+    \item<2-> Done while sampling parametrization for the EOS: \red{costly likelihood}
+    
+    \vspace{\x}
+
+    \item<3-> Typically $\mathcal{O}(10^6)$ samples for inference
+
+    \vspace{\x}
+
+    \item<3-> Would take \red{days} with CPUs
+  \end{itemize}
+
+  \vspace{\y}
+
+  \only<1>{
+    \centering
+    \incfig[0.95\textwidth]{TOV}
+  }
+
+  \only<2->{
+    \centering
+    \incfig[0.95\textwidth]{NS_likelihood}
+  }
+
+\end{frame}
+
+\begin{frame}{GPU acceleration: \textsc{Jester}}
+  \def\x{2mm}
+
+  \begin{itemize}
+    \item \textsc{Jester}~\ghlink{nuclear-multimessenger-astronomy/jester}~\cite{Wouters:2025zju}: \textsc{jax}-based TOV solver
+    \begin{itemize}
+      \item $1000\times$ faster, without compromises
+      \item Full inference in \red{$\sim$1 hour on GPU} (vs days on CPU)
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item Enables systematic studies in EOS inference
+
+  \end{itemize}
+
+  \vspace{\x}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.625\linewidth]{/Users/Woute029/Documents/Code/slides/2025/AEI/Figures/scaling_plot.pdf}
+  \end{figure}
+\end{frame}
+
+\section{Results}
+
+\begin{frame}{EOS constraints from GW231109}
+
+  \def\x{2mm}
+
+  Constraints on radius of $1.4\,M_{\odot}$ neutron star ($R_{1.4}$):
+
+  % \vspace{\x}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.625\linewidth]{Figures/final_R14_histogram.pdf}
+  \end{figure}
+
+\end{frame}
+
+\begin{frame}{Projection: Einstein Telescope \& Cosmic Explorer}
+
+  \def\x{1mm}
+
+  \begin{itemize}
+    \item Simulate GW231109-like event with third-generation detectors
+
+    \vspace{\x}
+
+    \item ET: SNR $\sim 134$, ET+CE network: SNR $\sim 294$
+
+    \vspace{\x}
+
+    \item Recovery improved
+  \end{itemize}
+
+  \vspace{\x}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.99\linewidth]{Figures/anna_tim_favourite_plot_presentation.pdf}
+  \end{figure}
+  
+\end{frame}
+
+
+\begin{frame}{Projection: radius constraints}
+
+  \def\x{2mm}
+
+  Recover radius with accuracy of $300$-$400$ meters (ET+CE vs ET)
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.625\linewidth]{Figures/ET_full_injection_R14_histogram.pdf}
+  \end{figure}
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}{Conclusions}
+
+  \def\x{5mm}
+  \def\z{5mm}
+
+  \begin{itemize}
+    \item GW231109\_235456: sub-threshold BNS candidate in O4a
+
+    \vspace{\x}
+
+    \item Low SNR ($\sim 9.7$): poor EOS constraints
+    
+
+    \vspace{\x}
+
+    \item Future detectors (ET, CE) will dramatically improve constraints
+    \begin{itemize}
+      \item $R_{1.4}$ uncertainty: $\sim 300-400$ meters
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item GPU-accelerated tools (\textsc{Jester}):
+    \begin{itemize}
+      \item Enable fast systematic studies
+      \item Can handle Einstein Telescope and Cosmic Explorer signals
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{\z}
+
+  \textbf{Thank you for your attention!}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+\appendix
+
+\backupbegin
+
+\begin{frame}{Posterior distributions for ET/ET+CE injections}
+
+  \def\x{2mm}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.60\linewidth]{Figures/comparison_new_ET_vs_ET_CE.pdf}
+  \end{figure}
+  
+\end{frame}
+
+\backupend
+
+\end{document}

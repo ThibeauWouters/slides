@@ -1,0 +1,186 @@
+\ProvidesPackage{preamble}
+
+%%% Import packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage[]{xcolor}
+\newcommand{\smallcite}[1]{\scriptsize \cite{#1}  \normalsize \hspace{-0.6mm}} % smaller font for \cite command
+%\usepackage{graphicx}
+\usepackage{tikz}
+%\usepackage{multicol}
+\usepackage{float}
+%\usepackage{pdfpages}
+\usepackage{bigstrut}
+%\usepackage{svg}
+\usepackage[font=small,labelfont=it]{caption}
+%\usepackage{ytableau}
+%\usepackage[a4paper]{geometry}
+%\usepackage{fullpage}
+%\usepackage{sidecap}
+%\setlength{\parskip}{11pt plus 1pt minus 1pt}
+%\setlength{\parindent}{0cm}
+\usepackage{url}
+\usepackage{calc}
+%\usepackage{mdframed}
+
+\usepackage[normalem]{ulem}
+\usepackage{subcaption}
+
+\usepackage{lmodern}
+
+\usepackage{multirow}
+\usepackage{multicol} % "cannot be used with revtex 4.2"
+\usepackage{tabularx}
+\usepackage{bm}
+
+% Decent hyperref set-up
+%%% more information: https://tex.stackexchange.com/questions/50747/options-for-appearance-of-links-in-hyperref
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    citecolor = blue
+}
+
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\l@chapter}{1.0em}{0.8em}{}{}
+% \makeatother
+
+% ----------------------------------
+% Special font:
+% \usepackage{kpfonts}
+
+%% Header
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \lhead{Wouters Thibeau}
+% \usepackage[a4paper,margin=1in,headheight=.4in,headsep=12pt,heightrounded]{geometry}
+
+
+% % ---------------------------------- 
+
+% Useful commands for the beamer stuff
+
+\newcommand{\comment}[1]{\scriptsize (#1) \normalsize\hspace{-0.6mm}}
+
+
+% For referencing full frames at the end
+
+\newcommand{\slideref}[1]{\hypertarget<\thebeamerpauses>{#1}{}}
+
+% Colours
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\todo}[1]{\red{TODO: #1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{ForestGreen}{#1}}
+\newcommand{\black}[1]{\textcolor{black}{#1}}
+\newcommand{\grey}[1]{\textcolor{grey}{#1}}
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+\definecolor{mcmcgreencolor}{RGB}{0,150,0}
+\definecolor{mcmcredcolor}{RGB}{200,0,0}
+\definecolor{jaxtwocolor}{HTML}{00695C}
+\definecolor{bnscolor}{HTML}{16d5fc}
+\definecolor{jaxbluedarkcolor}{HTML}{2a56c6}
+\definecolor{jaxthreecolor}{HTML}{9C27B0}
+\definecolor{jaxgreendarkcolor}{HTML}{00695c}
+\definecolor{nsbhcolor}{HTML}{ff3d00}
+\definecolor{mrmeasurement}{HTML}{e58f9c}
+\definecolor{nuclear}{HTML}{83bd84}
+\definecolor{gwcolor}{HTML}{a144a2}
+\definecolor{fiesta}{HTML}{1918e5}
+\definecolor{afterglowpy}{HTML}{e5a44d}
+
+\newcommand{\mcmcgreen}[1]{\textcolor{mcmcgreencolor}{#1}}
+\newcommand{\mcmcred}[1]{\textcolor{mcmcredcolor}{#1}}
+\newcommand{\jaxtwo}[1]{\textcolor{jaxtwocolor}{#1}}
+\newcommand{\jaxthree}[1]{\textcolor{jaxthreecolor}{#1}}
+\newcommand{\jaxbluedark}[1]{\textcolor{jaxbluedarkcolor}{#1}}
+\newcommand{\jaxgreendark}[1]{\textcolor{jaxgreendarkcolor}{#1}}
+\newcommand{\nsbh}[1]{\textcolor{nsbhcolor}{#1}}
+\newcommand{\bns}[1]{\textcolor{bnscolor}{#1}}
+\newcommand{\afterglowpy}[1]{\textcolor{afterglowpy}{#1}}
+\newcommand{\fiesta}[1]{\textcolor{fiesta}{#1}}
+
+\newcommand{\jaxjit}{{\textcolor{jaxbluedarkcolor}{\texttt{jit}}}}
+\newcommand{\jaxgrad}{{\textcolor{jaxgreendarkcolor}{\texttt{grad}}}}
+\newcommand{\jaxvmap}{{\textcolor{jaxthreecolor}{\texttt{vmap}}}}
+\newcommand{\jaxpmap}{{\textcolor{jaxthreecolor}{\texttt{pmap}}}}
+
+\newcommand{\enumicon}[1]{%
+  {\def\theenumi{#1}%
+   \usebeamerfont*{itemize/enumerate body}%
+   \usebeamercolor[fg]{itemize/enumerate item}%
+   \usebeamertemplate{enumerate item}}%
+}
+
+
+%%% New commands:
+
+% Mathematics
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\newcommand*\Diff[1]{\mathop{}\!\mathrm{d^#1}}
+
+% Physics:
+\newcommand{\mn}{{\mu\nu}}
+\newcommand{\rs}{{\rho\sigma}}
+
+
+% Useful:
+
+\newcommand{\inv}{^{-1}}
+
+% Physics packages:
+% \usepackage{tensor}
+\usepackage{physics}
+\usepackage{diagbox}
+\usepackage{booktabs}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\renewcommand*{\bibfont}{\scriptsize}
+\usepackage{tcolorbox}
+
+% % listings
+% \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+% \definecolor{codegreen}{rgb}{0,0.6,0}
+% \definecolor{codepurple}{rgb}{0.58,0,0.82}
+% \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+morekeywords={self},              % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false
+}}

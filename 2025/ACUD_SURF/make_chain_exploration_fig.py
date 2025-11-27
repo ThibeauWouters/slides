@@ -30,21 +30,33 @@ def setup_plot_style():
     plt.rcParams.update(params)
 
 
-def create_target_distribution():
-    """Create a bimodal target distribution (mixture of two Gaussians)."""
-    # Mode 1: lower left
-    mean1 = np.array([-2.0, -0.5])
-    cov1 = np.array([[0.8, 0.4], [0.4, 0.3]])
-    dist1 = multivariate_normal(mean=mean1, cov=cov1)
+def create_target_distribution(mean1=None, cov1=None, mean2=None, cov2=None, weight1=0.5):
+    """Create a bimodal target distribution (mixture of two Gaussians).
 
-    # Mode 2: upper right
-    mean2 = np.array([1.5, 1.0])
-    cov2 = np.array([[0.5, -0.2], [-0.2, 0.4]])
+    Args:
+        mean1: Mean of first Gaussian (default: [-2.0, -0.5])
+        cov1: Covariance of first Gaussian (default: [[0.8, 0.4], [0.4, 0.3]])
+        mean2: Mean of second Gaussian (default: [1.5, 1.0])
+        cov2: Covariance of second Gaussian (default: [[0.5, -0.2], [-0.2, 0.4]])
+        weight1: Weight of first Gaussian (default: 0.5)
+    """
+    # Default values
+    if mean1 is None:
+        mean1 = np.array([-2.0, -0.5])
+    if cov1 is None:
+        cov1 = np.array([[0.8, 0.4], [0.4, 0.3]])
+    if mean2 is None:
+        mean2 = np.array([1.5, 1.0])
+    if cov2 is None:
+        cov2 = np.array([[0.5, -0.2], [-0.2, 0.4]])
+
+    dist1 = multivariate_normal(mean=mean1, cov=cov1)
     dist2 = multivariate_normal(mean=mean2, cov=cov2)
+    weight2 = 1.0 - weight1
 
     def target_pdf(pos):
         """Bimodal target distribution."""
-        return 0.5 * dist1.pdf(pos) + 0.5 * dist2.pdf(pos)
+        return weight1 * dist1.pdf(pos) + weight2 * dist2.pdf(pos)
 
     return target_pdf
 
@@ -95,7 +107,12 @@ def make_mcmc_figure(
     alpha_true=1.0,
     figsize=(10, 6),
     dpi=300,
-    random_seed=42
+    random_seed=42,
+    mean1=None,
+    cov1=None,
+    mean2=None,
+    cov2=None,
+    weight1=0.5
 ):
     """Generate MCMC exploration figure and save to file.
 
@@ -113,6 +130,11 @@ def make_mcmc_figure(
         figsize: Figure size tuple (width, height)
         dpi: Resolution for PNG output
         random_seed: Random seed for reproducibility
+        mean1: Mean of first Gaussian in mixture
+        cov1: Covariance of first Gaussian in mixture
+        mean2: Mean of second Gaussian in mixture
+        cov2: Covariance of second Gaussian in mixture
+        weight1: Weight of first Gaussian (0 to 1)
     """
     # Set random seed
     np.random.seed(random_seed)
@@ -120,8 +142,8 @@ def make_mcmc_figure(
     # Setup plot style
     setup_plot_style()
 
-    # Create target distribution
-    target_pdf = create_target_distribution()
+    # Create target distribution with custom parameters
+    target_pdf = create_target_distribution(mean1, cov1, mean2, cov2, weight1)
 
     # Create grid for contour plot
     x = np.linspace(-5, 4, 300)
@@ -165,7 +187,7 @@ def make_mcmc_figure(
 
         # Define contour levels
         max_Z = np.max(Z)
-        contour_levels = max_Z * np.linspace(0.005, 0.999, 15)
+        contour_levels = max_Z * np.linspace(0.005, 1.0, 15)
 
         # Plot filled contours with colormap (higher zorder than chains)
         contourf = ax.contourf(X, Y, Z, levels=contour_levels, cmap=cmap,
@@ -248,7 +270,7 @@ def make_mcmc_figure(
 
 
 if __name__ == "__main__":
-    # Example usage
+    # Example usage - MCMC exploration figures
 
     make_mcmc_figure(
         filename="chain_exploration_start",
@@ -293,4 +315,85 @@ if __name__ == "__main__":
         figsize=(10, 6),
         dpi=300,
         random_seed=42
+    )
+
+    # Generate 5 density-only plots with different configurations
+    # Configuration 1: Original bimodal (default)
+    make_mcmc_figure(
+        filename="density_1",
+        n_chains=0,
+        n_samples=0,
+        show_true_density=True,
+        alpha_true=1.0,
+        figsize=(10, 6),
+        dpi=300,
+        random_seed=42
+    )
+
+    # Configuration 2: Well-separated modes
+    make_mcmc_figure(
+        filename="density_2",
+        n_chains=0,
+        n_samples=0,
+        show_true_density=True,
+        alpha_true=1.0,
+        figsize=(10, 6),
+        dpi=300,
+        random_seed=42,
+        mean1=np.array([-3.0, -1.5]),
+        cov1=np.array([[0.5, 0.0], [0.0, 0.5]]),
+        mean2=np.array([2.5, 2.0]),
+        cov2=np.array([[0.6, 0.1], [0.1, 0.6]]),
+        weight1=0.5
+    )
+
+    # Configuration 3: Unequal weights (mode 1 dominant)
+    make_mcmc_figure(
+        filename="density_3",
+        n_chains=0,
+        n_samples=0,
+        show_true_density=True,
+        alpha_true=1.0,
+        figsize=(10, 6),
+        dpi=300,
+        random_seed=42,
+        mean1=np.array([-1.5, 0.0]),
+        cov1=np.array([[1.0, 0.3], [0.3, 0.8]]),
+        mean2=np.array([2.0, 1.5]),
+        cov2=np.array([[0.4, -0.1], [-0.1, 0.3]]),
+        weight1=0.7
+    )
+
+    # Configuration 4: Elongated correlated modes
+    make_mcmc_figure(
+        filename="density_4",
+        n_chains=0,
+        n_samples=0,
+        show_true_density=True,
+        alpha_true=1.0,
+        figsize=(10, 6),
+        dpi=300,
+        random_seed=42,
+        mean1=np.array([-2.5, -1.0]),
+        cov1=np.array([[1.2, 0.8], [0.8, 0.6]]),
+        mean2=np.array([1.0, 1.5]),
+        cov2=np.array([[0.8, -0.6], [-0.6, 0.5]]),
+        weight1=0.5
+    )
+
+    # Configuration 5: Close modes with different shapes
+    make_mcmc_figure(
+        filename="density_5",
+        n_chains=0,
+        n_samples=0,
+        show_true_density=True,
+        alpha_true=1.0,
+        figsize=(10, 6),
+        dpi=300,
+        random_seed=42,
+        mean1=np.array([-1.0, 0.5]),
+        cov1=np.array([[0.6, 0.2], [0.2, 0.4]]),
+        mean2=np.array([1.0, -0.5]),
+        cov2=np.array([[1.0, 0.0], [0.0, 0.3]]),
+        weight1=0.6
     )

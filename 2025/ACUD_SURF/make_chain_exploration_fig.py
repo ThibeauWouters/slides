@@ -13,9 +13,9 @@ import seaborn as sns
 ALPHA = 1.0
 PLOT_SAMPLES = False  # Flag to plot individual sample points
 SHOW_COLORBAR = False  # Flag to show colorbar
-# CMAP = 'viridis'      # Colormap for filled contours
-CMAP = sns.color_palette("rocket_r", as_cmap=True)
-# CMAP = sns.color_palette("crest", as_cmap=True)
+PLOT_N_CHAINS = 5  # Number of chains to plot (1-5)
+# Use a colormap that works on black background (light colors)
+CMAP = sns.color_palette("rocket", as_cmap=True)  # Reversed for light on dark
 
 # Set random seed for reproducibility
 np.random.seed(42)
@@ -23,10 +23,13 @@ np.random.seed(42)
 params = {"axes.grid": False,
         "text.usetex" : True,
         "font.family" : "serif",
-        "ytick.color" : "black",
-        "xtick.color" : "black",
-        "axes.labelcolor" : "black",
-        "axes.edgecolor" : "black",
+        "ytick.color" : "white",
+        "xtick.color" : "white",
+        "axes.labelcolor" : "white",
+        "axes.edgecolor" : "white",
+        "axes.facecolor" : "black",
+        "figure.facecolor" : "black",
+        "savefig.facecolor" : "black",
         "font.serif" : ["Computer Modern Serif"]
         }
 
@@ -58,11 +61,20 @@ X, Y = np.meshgrid(x, y)
 pos = np.dstack((X, Y))
 Z = target_pdf(pos)
 
+# Define starting locations for up to 5 chains
+STARTING_LOCATIONS = [
+    np.array([-4.5, -2.0]),   # Lower left, outside mode
+    np.array([3.0, 3.0]),     # Upper right, outside mode
+    np.array([-3.0, 2.5]),    # Upper left
+    np.array([2.5, -3.0]),    # Lower right
+    np.array([0.0, -3.5])     # Bottom center
+]
+
 # Run Metropolis-Hastings MCMC
-def metropolis_hastings(target_pdf, n_samples=1000, proposal_std=0.3):
+def metropolis_hastings(target_pdf, start_pos, n_samples=1000, proposal_std=0.3):
     """Run Metropolis-Hastings algorithm."""
     samples = []
-    current = np.array([-4.5, -2])  # Start from lower left, outside mode
+    current = start_pos.copy()
 
     for i in range(n_samples):
         # Propose new sample
@@ -81,9 +93,13 @@ def metropolis_hastings(target_pdf, n_samples=1000, proposal_std=0.3):
 
     return np.array(samples)
 
-# Generate MCMC samples
+# Generate MCMC samples for multiple chains
 n_samples = 300
-chain = metropolis_hastings(target_pdf, n_samples=n_samples, proposal_std=0.25)
+chains = []
+for i in range(PLOT_N_CHAINS):
+    chain = metropolis_hastings(target_pdf, STARTING_LOCATIONS[i],
+                                n_samples=n_samples, proposal_std=0.25)
+    chains.append(chain)
 
 # Create figure
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -97,23 +113,30 @@ contour_levels = max_Z * np.linspace(0.005, 0.999, 15)
 # Plot filled contours with colormap
 contourf = ax.contourf(X, Y, Z, levels=contour_levels, cmap=CMAP, alpha=ALPHA)
 
-# Plot contour lines
-contours = ax.contour(X, Y, Z, levels=contour_levels, colors='white',
-                      linewidths=0.5, alpha=ALPHA)
+# Plot contour lines (light gray on black background)
+contours = ax.contour(X, Y, Z, levels=contour_levels, colors='lightgray',
+                      linewidths=0.5, alpha=0.6)
 
-# Plot chain path (red line)
-ax.plot(chain[:, 0], chain[:, 1], color='#CC3333', linewidth=2,
-        alpha=0.9, zorder=10)
-ax.scatter(chain[:, 0], chain[:, 1], color='#CC3333', s=10, alpha=0.9)
+# Define colors for different chains (bright colors for black background)
+chain_colors = ['#FF6666', '#66B2FF', '#66FF66', '#FFD700', '#FF66FF']
 
-# Plot samples (blue dots) - only if flag is True
-if PLOT_SAMPLES:
-    ax.scatter(chain[:, 0], chain[:, 1], color='blue', s=20, alpha=0.6,
-              zorder=11, edgecolors='none')
+# Plot all chains
+for idx, chain in enumerate(chains):
+    color = chain_colors[idx]
 
-# Mark starting point with a distinct marker
-ax.scatter(chain[0, 0], chain[0, 1], color='#CC3333', s=150, marker='o',
-          zorder=12, edgecolors='black', linewidths=2)
+    # Plot chain path
+    ax.plot(chain[:, 0], chain[:, 1], color=color, linewidth=2,
+            alpha=0.9, zorder=10)
+    ax.scatter(chain[:, 0], chain[:, 1], color=color, s=10, alpha=0.9)
+
+    # Plot samples (blue dots) - only if flag is True
+    if PLOT_SAMPLES:
+        ax.scatter(chain[:, 0], chain[:, 1], color=color, s=20, alpha=0.6,
+                  zorder=11, edgecolors='none')
+
+    # Mark starting point with a distinct marker
+    ax.scatter(chain[0, 0], chain[0, 1], color=color, s=150, marker='o',
+              zorder=12, edgecolors='white', linewidths=2)
 
 # Styling
 ax.set_xlim(-5, 4)
@@ -128,20 +151,24 @@ ax.set_ylabel('Parameter 2', fontsize=fs_labels)
 if SHOW_COLORBAR:
     cbar = plt.colorbar(contourf, ax=ax, pad=0.02)
     cbar.set_label('Target', fontsize=12, rotation=90, labelpad=15)
+    cbar.ax.yaxis.set_tick_params(color='white')
+    plt.setp(plt.getp(cbar.ax.axes, 'yticklabels'), color='white')
 
-# Clean up spines
+# Clean up spines (white borders)
 for spine in ax.spines.values():
     spine.set_visible(True)
     spine.set_linewidth(1.5)
+    spine.set_color('white')
 
 plt.tight_layout()
 
-# Save figure
-output_path = 'Figures/chain_exploration.pdf'
-plt.savefig(output_path, bbox_inches='tight', dpi=300)
+# Save figure as PNG for Google Slides (better than JPG for presentation graphics)
+output_path = 'Figures/chain_exploration.png'
+plt.savefig(output_path, bbox_inches='tight', dpi=300, facecolor='black')
 print(f"Figure saved to {output_path}")
 
-# Also save as SVG for editing if needed
-svg_path = 'Figures/chain_exploration.svg'
-plt.savefig(svg_path, bbox_inches='tight')
+# Also save PDF version
+pdf_path = 'Figures/chain_exploration.pdf'
+plt.savefig(pdf_path, bbox_inches='tight', facecolor='black')
+print(f"PDF saved to {pdf_path}")
 print(f"DONE")

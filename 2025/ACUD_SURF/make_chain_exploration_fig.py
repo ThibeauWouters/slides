@@ -112,7 +112,9 @@ def make_mcmc_figure(
     cov1=None,
     mean2=None,
     cov2=None,
-    weight1=0.5
+    weight1=0.5,
+    xlim=None,
+    ylim=None
 ):
     """Generate MCMC exploration figure and save to file.
 
@@ -135,6 +137,8 @@ def make_mcmc_figure(
         mean2: Mean of second Gaussian in mixture
         cov2: Covariance of second Gaussian in mixture
         weight1: Weight of first Gaussian (0 to 1)
+        xlim: Tuple (xmin, xmax) for x-axis limits (default: (-5, 4))
+        ylim: Tuple (ymin, ymax) for y-axis limits (default: (-4, 4))
     """
     # Set random seed
     np.random.seed(random_seed)
@@ -223,8 +227,14 @@ def make_mcmc_figure(
                   zorder=12, edgecolors='white', linewidths=2, alpha=alpha)
 
     # Styling
-    ax.set_xlim(-5, 4)
-    ax.set_ylim(-4, 4)
+    # Set default limits if not provided
+    if xlim is None:
+        xlim = (-5, 4)
+    if ylim is None:
+        ylim = (-4, 4)
+
+    ax.set_xlim(xlim)
+    ax.set_ylim(ylim)
     ax.set_aspect('equal')
     ax.grid(False)
 
@@ -285,6 +295,23 @@ if __name__ == "__main__":
         figsize=(10, 6),
         dpi=300,
         random_seed=42
+    )
+
+    make_mcmc_figure(
+        filename="MCMC_stepping_zoomed",
+        n_chains=1,
+        n_samples=300,
+        proposal_std=0.25,
+        plot_samples=False,
+        show_colorbar=False,
+        show_true_density=True,
+        alpha=1.0,
+        alpha_true=0.40,
+        figsize=(10, 6),
+        dpi=300,
+        random_seed=42,
+        xlim=(-5, -0.35),  # Focus on bottom-left region (approx half width)
+        ylim=(-3, 0.75)      # Focus on bottom-left region (approx half height)
     )
 
     make_mcmc_figure(

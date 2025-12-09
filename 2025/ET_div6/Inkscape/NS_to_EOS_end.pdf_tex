@@ -54,7 +54,7 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{NS_to_EOS_end.pdf}}%
-    \put(0.46060732,0.41125245){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\texttt{jester}\end{tabular}}}}%
+    \put(0.46060732,0.41125245){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}\textsc{jester}\end{tabular}}}}%
     \put(0.43618437,0.06463899){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Neural priors\end{tabular}}}}%
     \put(0.17373893,0.35978342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}Neutron stars\end{tabular}}}}%
     \put(0.73436467,0.35978342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0.60000002}\smash{\begin{tabular}[t]{l}EOS\end{tabular}}}}%

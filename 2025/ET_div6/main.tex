@@ -169,12 +169,12 @@
   \end{frame}
 }
 
+\input{talk_structure.tex}
+
 \begin{frame}
 \frametitle{Table of Contents}
 \tableofcontents[hideallsubsections]
 \end{frame}
-
-\input{talk_structure.tex}
 
 \section{Part 1: Analyzing GW231109\_235456 in the ET era}
 
@@ -197,17 +197,22 @@
     \item<3-> However: sub-threshold candidate \textbf{GW231109\_235456} identified~\cite{Niu:2025nha}
     \begin{itemize}
       \item \red{SNR $\sim 9.7$} (distance: $\sim 165$ Mpc)
-      \item Fainter, but mass closer to GW170817 than GW190425
+      \item But mass closer to GW170817 than GW190425
     \end{itemize}
   \end{itemize}
 
-  \vspace{\x}
+  \vspace{5mm}
 
   \onslide<4->{
   \begin{tcolorbox}[colback=blue!10!white, colframe=blue!80!black, coltext=black]
   What can we learn about the EOS from such a merger?
   \end{tcolorbox}
+
+  \vspace{5mm}
+
+  \small (More on populations, remnant, EM counterpart: \texttt{arXiv:2510.22290}) \normalsize
   }
+
 \end{frame}
 
 \begin{frame}{GW231109\_235456: component masses}
@@ -240,8 +245,23 @@
 \begin{frame}{Constraining EOS from GW231109\_235456}
 
   \def\x{2mm}
+  \def\z{1mm}
 
-  Put information on jester here
+  \begin{itemize}
+    \item Parametrized EOS inference: $26$ parameters in total
+    \begin{itemize}
+      \item Fixed crust
+      \item Metamodel
+      \item Speed-of-sound extension
+    \end{itemize}
+
+    \item Accelerate with GPUs: \textsc{jester}~\cite{Wouters:2025zju}: $\sim 1$ hour
+  \end{itemize}
+
+  \vspace{3mm}
+
+  \centering
+  \incfig[0.825\textwidth]{EOS_parametrizion}
 
 \end{frame}
 
@@ -273,7 +293,7 @@
 
     \vspace{\x}
 
-    \item Recovery improved
+    \item Recovery of tidal deformation improved
   \end{itemize}
 
   \vspace{\x}
@@ -314,14 +334,19 @@
 
     \vspace{\x}
 
-    \item \textsc{jester} can handle individual high SNR signals: efficiently go from NS observations to EOS constraints
+    \item \textsc{jester}: constrain EOS from 3G BNS in $\sim 1$ hour
   \end{itemize}
+
+  \vspace{5mm}
+
+  \centering
+  \incfig[0.95\textwidth]{NS_to_EOS_part1}
   
 \end{frame}
 
 \section{Part 2: Neural priors for GW inference}
 
-\input{talk_structure.tex}
+\input{talk_structure_part2.tex}
 
 \begin{frame}{Neural priors: motivation}
   \def\x{3mm}
@@ -443,7 +468,7 @@
 
   \begin{itemize}
     \item Neural density estimators: trainable bijections
-    \item Often used in PE, e.g., \textsc{dingo}~\cite{Dax:2021tsq, Dax:2022pxd}, \textsc{nessai}~\cite{Williams:2021qyt,Williams:2023ppp}
+    \item Often used in GW: \textsc{dingo}~\cite{Dax:2021tsq, Dax:2022pxd}, \textsc{nessai}~\cite{Williams:2021qyt,Williams:2023ppp}
     \item Generate samples, evaluate density: can be used as priors~\cite{Alsing:2021wef}
   \end{itemize}
 
@@ -509,8 +534,6 @@
 
   Analyze GW170817, GW190425, GW230529 with:
   \begin{itemize}
-    \item $4096$ live points, multibanding likelihood
-
     \item \texttt{IMRPhenomXP\_NRTidalv3}
 
     \item Neural priors for $m_i$, $\Lambda_i$ (standard priors for other parameters)
@@ -520,8 +543,8 @@
 
   Two contributions:
   \begin{enumerate}
-    \item Narrower constraints with neural priors
     \item Model selection with Bayes factors
+    \item Narrower constraints with neural priors
   \end{enumerate}
 
   \vspace{\x}
@@ -545,60 +568,60 @@
 
 \end{frame}
 
-\begin{frame}{GW170817: Source classification}
+\begin{frame}{Source classification: All events}
 
-  Showing $\log_{10}$ Bayes factors relative to model with highest evidence
+  $\log_{10}$ Bayes factors relative to model with highest evidence (`ref.')
 
-  \vspace{3mm}
+  \vspace{1mm}
 
   \begin{table}
     \centering
     \scriptsize
-    \begin{tabular}{|l|l|l|c|}
+    \begin{tabular}{|l|l|l|c|c|c|}
     \hline
-    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW170817} \\
+    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW170817} & \textbf{GW190425} & \textbf{GW230529} \\
     \hline\hline
-    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred4}$-1.83$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.80$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred4}$-1.58$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.68$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \textbf{ref.} \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.76$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred3}$-1.36$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.59$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.92$ \\
+    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred4}$-1.83$ & \cellcolor{jeffreysred1}$-0.07$ & \cellcolor{jeffreysred5}$-13.14$ \\
+    \cline{3-6}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.80$ & \cellcolor{jeffreysred1}$-0.11$ & \cellcolor{jeffreysred5}$-13.12$ \\
+    \cline{3-6}
+     &  & PSRs+NICER & \cellcolor{jeffreysred4}$-1.58$ & \textbf{ref.} & \cellcolor{jeffreysred5}$-12.92$ \\
+    \cline{2-6}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.68$ & \cellcolor{jeffreysred5}$-6.89$ & \cellcolor{jeffreysred5}$-18.82$ \\
+    \cline{3-6}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \textbf{ref.} & \cellcolor{jeffreysred5}$-8.47$ & \cellcolor{jeffreysred5}$-18.83$ \\
+    \cline{3-6}
+     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.76$ & \cellcolor{jeffreysred5}$-5.45$ & \cellcolor{jeffreysred5}$-18.81$ \\
+    \cline{2-6}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred3}$-1.36$ & \cellcolor{jeffreysred2}$-0.55$ & \cellcolor{jeffreysred5}$-13.75$ \\
+    \cline{3-6}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.59$ & \cellcolor{jeffreysred2}$-0.79$ & \cellcolor{jeffreysred5}$-13.77$ \\
+    \cline{3-6}
+     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.92$ & \cellcolor{jeffreysred2}$-0.57$ & \cellcolor{jeffreysred5}$-13.71$ \\
     \hline\hline
-    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred5}$-224.65$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.66$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.66$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-224.67$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.66$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.66$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-224.67$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.68$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.67$ \\
+    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred5}$-224.65$ & \cellcolor{jeffreysred4}$-1.52$ & \cellcolor{jeffreysred1}$-0.08$ \\
+    \cline{3-6}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.66$ & \cellcolor{jeffreysred3}$-1.35$ & \cellcolor{jeffreysred1}$-0.02$ \\
+    \cline{3-6}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.66$ & \cellcolor{jeffreysred4}$-1.63$ & \cellcolor{jeffreysred1}$-0.25$ \\
+    \cline{2-6}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-224.67$ & \cellcolor{jeffreysred2}$-0.82$ & \cellcolor{jeffreysred1}$-0.05$ \\
+    \cline{3-6}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.66$ & \cellcolor{jeffreysred3}$-1.11$ & \cellcolor{jeffreysred1}$-0.20$ \\
+    \cline{3-6}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.66$ & \cellcolor{jeffreysred3}$-1.43$ & \textbf{ref.} \\
+    \cline{2-6}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-224.67$ & \cellcolor{jeffreysred5}$-4.11$ & \cellcolor{jeffreysred1}$-0.14$ \\
+    \cline{3-6}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.68$ & \cellcolor{jeffreysred5}$-3.83$ & \cellcolor{jeffreysred1}$-0.13$ \\
+    \cline{3-6}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.67$ & \cellcolor{jeffreysred5}$-24.31$ & \cellcolor{jeffreysred1}$-0.05$ \\
     \hline
     \end{tabular}
   \end{table}
 \end{frame}
 
-\begin{frame}{GW170817: Parameter constraints (Gaussian pop.)}
+\begin{frame}{Parameter constraints: GW170817 (Gaussian population)}
 
   \vspace{-3mm}
   \begin{figure}
@@ -607,81 +630,7 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{GW170817: Discussion}
-  \def\x{5mm}
-
-  \textbf{Source classification:}
-  \begin{itemize}
-    \item Decisive evidence for BNS over NSBH
-    \item Prefer Gaussian population model
-    \item Slight preference for softer EOS (PSRs+$\chi_{\rm{EFT}}$)
-  \end{itemize}
-
-  \vspace{\x}
-
-  \textbf{Parameter constraints:}
-  \begin{itemize}
-    \item More equal mass ratio: $q \geq 0.9$
-    \item Constrained tidal deformability $\tilde{\Lambda}$
-    \item Higher luminosity distance compared to agnostic prior
-    \item Matches multimessenger analyses of GW170817~\cite{Radice:2018ozg, Coughlin:2018fis, LIGOScientific:2018hze, Pang:2022rzc, Breschi:2024qlc}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{GW190425: Source classification}
-
-  Showing $\log_{10}$ Bayes factors relative to best model
-
-  \vspace{3mm}
-
-  \begin{table}
-    \centering
-    \scriptsize
-    \begin{tabular}{|l|l|l|c|}
-    \hline
-    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW190425} \\
-    \hline\hline
-    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred1}$-0.07$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.11$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \textbf{ref.} \\
-    \cline{2-4}
-     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-6.89$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-8.47$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-5.45$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.55$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.79$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.57$ \\
-    \hline\hline
-    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred4}$-1.52$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred3}$-1.35$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred4}$-1.63$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.82$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred3}$-1.11$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred3}$-1.43$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-4.11$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-3.83$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-24.31$ \\
-    \hline
-    \end{tabular}
-  \end{table}
-\end{frame}
-
-\begin{frame}{GW190425: Parameter constraints (Uniform pop.)}
+\begin{frame}{Parameter constraints: GW190425 (uniform population)}
 
   \vspace{-3mm}
 
@@ -691,80 +640,7 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{GW190425: Discussion}
-  \def\x{5mm}
-
-  \textbf{Source classification:}
-  \begin{itemize}
-    \item Prefer BNS over NSBH (but less conclusive than GW170817)
-    \item Most consistent with uniform population
-    \item Masses are outliers compared to galactic binaries
-  \end{itemize}
-
-  \vspace{\x}
-
-  \textbf{Parameter constraints:}
-  \begin{itemize}
-    \item Less equal masses: $q \leq 0.9$
-    \item $\tilde{\Lambda} \approx 200$ (more prior-dominated due to lower SNR)
-    \item Higher luminosity distance: $182^{+41}_{-49}$ Mpc vs. $157^{+64}_{-65}$ Mpc ($90\%$ credibility)
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{GW230529: Source classification}
-
-  Showing $\log_{10}$ Bayes factors relative to best model
-
-  \vspace{3mm}
-
-  \begin{table}
-    \centering
-    \scriptsize
-    \begin{tabular}{|l|l|l|c|}
-    \hline
-    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW230529} \\
-    \hline\hline
-    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred5}$-13.14$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-13.12$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-12.92$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-18.82$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-18.83$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-18.81$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-13.75$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-13.77$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-13.71$ \\
-    \hline\hline
-    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred1}$-0.08$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.02$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred1}$-0.25$ \\
-    \cline{2-4}
-     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred1}$-0.05$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.20$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \textbf{ref.} \\
-    \cline{2-4}
-     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred1}$-0.14$ \\
-    \cline{3-4}
-     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.13$ \\
-    \cline{3-4}
-     &  & PSRs+NICER & \cellcolor{jeffreysred1}$-0.05$ \\
-    \hline
-    \end{tabular}
-  \end{table}
-\end{frame}
-
-\begin{frame}{GW230529: Parameter constraints (Gaussian pop.)}
+\begin{frame}{Parameter constraints: GW230529 (Gaussian population)}
 
   \vspace{-3mm}
 
@@ -774,46 +650,69 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{GW230529: Discussion}
-  \def\x{5mm}
 
-  \textbf{Source classification:}
+\begin{frame}{Discussion: Parameter constraints}
+  \def\x{2mm}
+
+  \textbf{GW170817:}
   \begin{itemize}
-    \item Decisive evidence for NSBH over BNS (agrees with LVK~\cite{LIGOScientific:2024elc})
-    \item No evidence between hypotheses (low SNR)
+    \item More equal mass ratio: $q \geq 0.9$
+    \item Constrained tidal deformability $\tilde{\Lambda}$
+    \item Higher luminosity distance compared to agnostic prior
+    \item Agrees with multimessenger analyses~\cite{Radice:2018ozg, Coughlin:2018fis, LIGOScientific:2018hze, Pang:2022rzc, Breschi:2024qlc}
   \end{itemize}
 
   \vspace{\x}
 
-  \textbf{Parameter constraints:}
+  \textbf{GW190425:}
   \begin{itemize}
-    \item Mass ratio more constrained: $q \leq 0.4$
-    \begin{itemize}
-      \item As a result, improved spin constraints ($\chi_{1z}$ closer to zero)
-    \end{itemize}
-    \item Tidal deformability posteriors dominated by priors
-    \item Luminosity distance: $235^{+59}_{-58}$ Mpc vs. $201^{+84}_{-97}$ Mpc ($90\%$ credibility)
-    \item Less tidal information: \texttt{NRTidalv3} tapers at ($90\%$ credibility)
-    \begin{itemize}
-      \item $641_{-158}^{+318}$ Hz (agnostic priors)
-      \item $858_{-108}^{+113}$ Hz (neural prior, reference model)
-    \end{itemize}
+    \item Less equal masses: $q \leq 0.9$; $\tilde{\Lambda} \approx 200$ (prior-dominated, low SNR)
+    \item Higher luminosity distance: $182^{+41}_{-49}$ Mpc vs. $157^{+64}_{-65}$ Mpc
+  \end{itemize}
+
+  \vspace{\x}
+
+  \textbf{GW230529:}
+  \begin{itemize}
+    \item Mass ratio more constrained: $q \leq 0.4$ (improved spin constraints)
+    \item Tidal posteriors dominated by priors
+    \item Higher luminosity distance: $235^{+59}_{-58}$ Mpc vs. $201^{+84}_{-97}$ Mpc
   \end{itemize}
 \end{frame}
 
+
+
 \begin{frame}{Conclusion (part 2)}
   \def\x{3mm}
+  \def\y{1mm}
   \def\z{5mm}
 
   \begin{itemize}
-    \item Flexible way to encode non-trivial prior information
+    \item  \jaxtwo{\textbf{Neural priors}}: Flexible way to encode non-trivial prior information
+
+    \vspace{\x}
+
     \item Two highlights:
+    \vspace{\y}
     \begin{enumerate}
       \item Bayesian model selection
+
+      \vspace{\y}
+
       \item Informed parameter constraints
     \end{enumerate}
+
+    \vspace{\x}
+
     \item Implemented in \textsc{bilby}
+
+    \vspace{\x}
+
     \item Data-driven approach: easy to extend/generalize
+
+    \vspace{\x}
+
+    \item Future work: apply to 3G BNS
   \end{itemize}
 \end{frame}
 
@@ -821,12 +720,17 @@
 
 \begin{frame}{Conclusion}
   \def\x{3mm}
+  \def\y{2mm}
   \def\z{5mm}
 
   Methods for closing the neutron star data analysis loop:
+  \vspace{\y}
   \begin{enumerate}
-    \item \textsc{jester}: from nuclear physics and multimessenger astronomy to EOS constraints
-    \item Neural priors: incorporate NS physics into GW inference
+    \item \textsc{jester}: from NS observations to EOS constraints
+    
+    \vspace{\y}
+
+    \item Neural priors: incorporate EOS knowledge into GW inference
   \end{enumerate}
 
   \vspace{\x}
@@ -834,8 +738,6 @@
   \centering
   \incfig[0.9\textwidth]{NS_to_EOS_end}
 \end{frame}
-
-
 
 \begin{frame}[allowframebreaks]{References}
   \printbibliography

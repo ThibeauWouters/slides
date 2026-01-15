@@ -1,0 +1,909 @@
+%%% ======= Beamer ======
+\documentclass[usenames,dvipsnames,t]{beamer}
+% \documentclass[usenames,dvipsnames, handout]{beamer}
+\beamertemplatenavigationsymbolsempty % remove toolbar at the bottom of slides
+\usepackage{appendixnumberbeamer} % for appendix
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+\usepackage{fontawesome}
+\usepackage{colortbl}  % For \cellcolor in tables
+
+% Define commands for social media icons with links
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
+\newcommand{\myemail}{\href{mailto:t.r.i.wouters@uu.nl}{\textcolor{black}{\faEnvelope}}}
+
+\newcommand{\ghlink}[1]{\href{https://github.com/#1}{\textcolor{black}{\faGithub}}}
+
+\definecolor{customblue}{HTML}{7db8dc}
+\newcommand{\thetaeos}{\boldsymbol{\theta}_{\rm{EOS}}}
+\newcommand{\boldtheta}{\boldsymbol{\theta}}
+
+% Color definitions for Jeffrey's scale interpretation
+% Taken from part of "rocket" color scheme of Seaborn
+\definecolor{jeffreysred1}{HTML}{f6cdb0}  % barely worth mentioning
+\definecolor{jeffreysred2}{HTML}{fc9074}  % substantial
+\definecolor{jeffreysred3}{HTML}{f4744c}  % strong
+\definecolor{jeffreysred4}{HTML}{ef5b43}  % very strong
+\definecolor{jeffreysred5}{HTML}{f52a44}  % decisive
+
+
+
+\setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{}%
+%     / \inserttotalframenumber
+    \hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+% Show the TOC at the beginning
+\AtBeginSection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection,subsectionstyle=shaded/shaded/hide]
+  \end{frame}
+}
+
+% Show TOC at beginning of each subsection
+\AtBeginSubsection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection, currentsubsection, subsectionstyle=show/shaded/hide]
+  \end{frame}
+}
+
+
+\colorlet{beamer@blendedblue}{blue!70} % change color theme
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
+\addbibresource{references.bib}%<- specify bib file
+
+\usepackage[inkscapearea=page]{svg}
+\usepackage{adjustbox}
+
+
+% For appendix
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
+
+
+
+% Other preamble stuff:
+\usepackage{preamble}
+
+%%% Uncomment for another color palette
+% \definecolor{Logo1}{rgb}{0.0, 0, 0.7}
+% \definecolor{Logo2}{rgb}{2.55, 2.55, 2.55}
+
+% \setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+% \setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+% \setbeamercolor*{palette tertiary}{bg=white, fg=Logo1}
+% \setbeamercolor*{palette quaternary}{bg=white,fg=white}
+% \setbeamercolor{structure}{fg=Logo1} % itemize, enumerate, etc
+% \setbeamercolor{section in toc}{fg=Logo1} % TOC sections
+
+% For figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mdframed}
+\usepackage{subcaption}
+
+\setbeamertemplate{caption}[numbered]
+
+\usepackage{multirow}
+
+
+% --- Inkscape figures:
+\newcommand{\incfig}[2][0.75\textwidth]{%
+    \def\svgwidth{\columnwidth}
+    \resizebox{#1}{!}{\import{Inkscape/}{#2.pdf_tex}}
+}
+
+% --- Height of frame
+\newlength{\myheight}
+\setlength{\myheight}{7cm}
+
+\newlength\myheightfigureintext
+\newlength\mydepthfigureintext
+\settototalheight\myheightfigureintext{Xygp}
+\settodepth\mydepthfigureintext{Xygp}
+\setlength\fboxsep{0pt}
+
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos} % for precise positioning
+
+\usepackage{ifthen}
+
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Neural priors] %optional
+{Incorporating neutron star physics into gravitational wave inference with neural priors}
+
+\author[Thibeau Wouters]{\textbf{Thibeau Wouters}, Peter T. H. Pang, Tim Dietrich, Chris Van Den Broeck \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \href{https://arxiv.org/abs/2511.22987}{\texttt{arXiv:2511.22987}} \newline \github \quad \linkedin \quad \myemail}
+
+\date{GRANDMA call 15/01/2026}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+
+%------------------------------------------------------------
+
+
+\begin{document}
+
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_BNS_2.png}}}
+
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at (current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Incorporating neutron star physics into gravitational wave inference with neural priors}\\[1.5ex]
+        \small Thibeau Wouters, Peter T. H. Pang, Tim Dietrich, Chris Van Den Broeck \normalsize \\[0.5ex]
+        {\hypersetup{hidelinks}
+         \href{https://arxiv.org/abs/2511.22987}{\texttt{arXiv:2511.22987}}
+        } \\[0.5ex]
+        \github \quad \linkedin \quad \myemail
+      \end{minipage}
+    };
+  \end{tikzpicture}
+
+  \vspace{7cm}
+
+  \begin{columns}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \vspace{1.5mm}
+    \includegraphics[width=0.75\linewidth]{Figures/utrecht-university.png}
+  \end{figure}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/Nikhef_logo-transparent.png}
+  \end{figure}
+\end{columns}
+
+  \end{frame}
+}
+
+
+\begin{frame}
+\frametitle{Table of Contents}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Warm-up example: Motivation}
+  \def\x{5mm}
+  \def\y{3mm}
+
+  \textbf{``What is the probability that the Sun will rise tomorrow?''}
+  \pause
+  \vspace{\x}
+
+  Your \red{prior belief} (before seeing tomorrow's data) can be:
+
+  \begin{itemize}
+    \item Agnostic: $p(\rm{}\rm{rise}) = 0.5$, $p(\rm{}\rm{not~rise}) = 0.5$
+    
+    \vspace{\y}
+    \pause
+    
+    \item Informed: $p(\rm{}\rm{rise}) \approx 1$, $p(\rm{}\rm{not~rise}) \approx 0$
+    \begin{itemize}
+      \item Theory: celestial mechanics
+      \item Past observations: every day so far
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{\x}
+  \pause
+
+  Can we do something similar for gravitational wave (GW) signals involving neutron stars (NSs)?
+\end{frame}
+
+\begin{frame}{Bayesian inference}
+  \def\x{3mm}
+  \def\y{1mm}
+
+  \textbf{How does GW parameter estimation work?}
+  
+  \vspace{\x}
+  
+  Bayesian inference:
+
+  \begin{equation*}
+    \mathcal{P}(\theta_{\rm{GW}} | d ) = \frac{\mathcal{L}(d | \theta_{\rm{GW}}) \red{\pi(\theta_{\rm{GW}})}}{\mathcal{Z}}
+  \end{equation*}
+
+  \vspace{\x}
+
+  \begin{itemize}
+    \vspace{\y}
+    \item Posterior $\mathcal{P}(\theta_{\rm{GW}} | d )$: probability of parameters $\theta_{\rm{GW}}$ given data $d$
+
+    \vspace{\y}
+
+    \item Likelihood $\mathcal{L}(d | \theta_{\rm{GW}})$: probability of data $d$ given parameters $\theta_{\rm{GW}}$ and a waveform model
+
+    \vspace{\y}
+
+    \item \red{Prior} \red{$\pi(\theta_{\rm{GW}})$}: initial belief about parameters $\theta_{\rm{GW}}$ before seeing data $d$
+  \end{itemize}
+
+  \vspace{\x}
+  \pause
+
+  Our final parameter estimates are a ``mixture'' of prior beliefs and information from the data.
+
+\end{frame}
+
+\begin{frame}{Motivation}
+  \def\x{3mm}
+  \def\y{1mm}
+
+  \begin{itemize}
+    \item Bayesian inference crucially depends on \red{priors}:
+    \begin{equation*}
+      \mathcal{P}(\theta_{\rm{GW}} | d ) \propto \frac{\mathcal{L}(d | \theta_{\rm{GW}}) \red{\pi(\theta_{\rm{GW}})}}{\mathcal{Z}}
+    \end{equation*}
+
+    \vspace{\x}
+    
+    \item By default, LVK uses \red{agnostic priors}, but what if we \textit{do} have non-trivial prior information? (Theory and observations)
+    
+    \vspace{\x}
+
+    \item Case study in this work: neutron stars (NSs) and information from
+    \begin{itemize}
+      \item Population models
+      \item Equation of state (EOS) constraints
+    \end{itemize}
+  \end{itemize}
+
+  \vspace{\x}
+
+  \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Neural priors]
+    Flexible way to encode NS physics into GW inference
+  \end{tcolorbox}
+\end{frame}
+
+\begin{frame}{Tidal deformability}
+  \def\x{4mm}
+
+  \begin{itemize}
+    \item Neutron stars are tidally deformed in a binary
+    
+    \vspace{\x}
+    
+    \item Quantified by the tidal deformability $\Lambda$
+
+    \vspace{\x}
+
+    \item Depends on the equation of state: $\Lambda = \Lambda(m, \rm{EOS})$
+
+    \vspace{\x}
+
+    \item Imprint in the GW phase: $\tilde{\Lambda}(m_i, \Lambda_i)$ %  $\rightarrow$ measurable $\rightarrow$ EOS constraints
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \incfig[1.0\textwidth]{tidal}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Key idea}
+  \def\x{3mm}
+
+  Train normalizing flow (NF) on samples informed by populations and EOS
+  $\rightarrow$ \jaxtwo{\textbf{neural prior}}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.55\linewidth]{Figures/Figure1.pdf}
+  \end{figure}
+\end{frame}
+
+
+\section{Methods}
+
+\begin{frame}{NS population models}
+  \def\x{3.5mm}
+
+  Three fiducial population models for NS masses:
+
+  \vspace{\x}
+
+  \begin{enumerate}
+    \item \textbf{Uniform}~\cite{LIGOScientific:2021qlt, Landry:2021hvl, Golomb:2024lds}:
+    \begin{itemize}
+      \item Only use EOS constraints for maximum mass ($\MTOV$)
+      \item NS mass $\sim U[1\,\Msun, M_{\rm{TOV}}]$
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item \textbf{Gaussian}~\cite{Ozel:2016oaf}:
+    \begin{itemize}
+      \item NS mass $\sim \mathcal{N}(1.33\,\Msun, (0.09\,\Msun)^2)$
+    \end{itemize}
+
+    \vspace{\x}
+
+    \item \textbf{Double Gaussian}~\cite{Alsing:2017bbc, Shao:2020bzt}:
+    \begin{itemize}
+      \item Weighted mixture of two Gaussians
+      \item $0.65 \times \mathcal{N}(1.34\,\Msun, (0.07\,\Msun)^2) + 0.35 \times \mathcal{N}(1.80\,\Msun, (0.21\,\Msun)^2)$
+    \end{itemize}
+  \end{enumerate}
+
+  \vspace{\x}
+
+  For neutron star-black hole (NSBH) systems:
+  \begin{itemize}
+    \item BH mass $m_1^{\rm{src}}$: from $[\MTOV, 5\,\Msun]$
+    \item NS mass $m_2^{\rm{src}}$: above models
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Equation of state constraints}
+
+  \def\x{2mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item We use three equation of state constraints~\cite{Koehn:2024set}:
+
+    \begin{enumerate}
+      \vspace{\y}
+      \item \textbf{Heavy pulsars}: must support $2\,M_{\odot}$ NSs
+
+      \vspace{\y}
+
+      \item \textbf{Chiral EFT} ($\chi_{\rm{EFT}}$): nuclear theory predictions (softer EOS)
+
+      \vspace{\y}
+
+      \item \textbf{NICER}: mass-radius observations of NSs (stiffer EOS)
+    \end{enumerate}
+
+    \vspace{\x}
+
+    \item Posterior EOS samples obtained with \textsc{jester}~\cite{Wouters:2025zju}~\ghlink{nuclear-multimessenger-astronomy/jester}
+  \end{itemize}
+
+  \vspace{-1mm}
+
+  \centering
+  \incfig[0.95\textwidth]{R14_table}
+\end{frame}
+
+\begin{frame}{Normalizing flows}
+  \def\x{3mm}
+
+  Normalizing flows~\cite{Kobyzev:2019ydm, Papamakarios:2019fms}
+
+  \begin{itemize}
+    \item Neural density estimators: trained on samples (predictions)
+    \item Generate samples and evaluate density
+    \item Can be used as priors in nested sampling!~\cite{Alsing:2021wef}
+  \end{itemize}
+
+  % \vspace{\x}
+
+  \centering
+  \incfig[0.85\textwidth]{NF}
+\end{frame}
+
+\begin{frame}{Construction of neural priors}
+  \def\x{5mm}
+  \def\y{2mm}
+
+  Steps to generate training data:
+  \begin{enumerate}
+    \vspace{\y}
+    
+    \item Draw EOS posterior curve: determines $\MTOV$, $\Lambda(m)$
+    
+    \vspace{\y}
+    
+    \item Draw masses from population model
+
+    \vspace{\y}
+    
+    \item Compute $\Lambda_i = \Lambda(m_i)$ for NSs (NSBH: $\Lambda_1 = 0$)
+  \end{enumerate}
+
+  \vspace{\x}
+  \pause
+
+  Training:
+  \begin{itemize}
+    \vspace{\y}
+
+    \item Repeat procedure $N_{\rm{training}}$ times to get training set
+    
+    \vspace{\y}
+
+    \item Train normalizing flow to approximate density
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{All neural priors}
+  \vspace{-1mm}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.99\linewidth]{Figures/bns_nsbh_all_populations_chirp_tilde.pdf}
+  \end{figure}
+\end{frame}
+
+\section{Results}
+
+\begin{frame}{Setup}
+
+  \def\x{3mm}
+
+  Analyze GW170817, GW190425, GW230529 with:
+  \begin{itemize}
+    \item $4096$ live points, multibanding likelihood
+    
+    \item \texttt{IMRPhenomXP\_NRTidalv3}
+    
+    \item Neural priors for $m_i$, $\Lambda_i$ (standard priors for other parameters)
+  \end{itemize}
+
+  \vspace{\x}
+
+  Two contributions:
+  \begin{enumerate}
+    \item Narrower constraints with neural priors
+    \item Model selection with Bayes factors
+  \end{enumerate}
+
+  \vspace{\x}
+
+  \begin{table}
+    \centering
+    \caption*{\textbf{Jeffreys' scale for Bayes factors} ($\log_{10}$ scale)}
+    \small
+    \begin{tabular}{ccc}
+      \hline
+      $\log_{10}(\mathcal{B}_1^2)$ & Interpretation & Color \\
+      \hline
+      $[0,\, \tfrac{1}{2}]$ & Barely worth mentioning & \cellcolor{jeffreysred1} \\
+      $[\tfrac{1}{2},\, 1]$ & Substantial & \cellcolor{jeffreysred2} \\
+      $[1,\, \tfrac{3}{2}]$ & Strong & \cellcolor{jeffreysred3} \\
+      $[\tfrac{3}{2},\, 2]$ & Very strong & \cellcolor{jeffreysred4} \\
+      $> 2$ & Decisive & \cellcolor{jeffreysred5} \\
+      \hline
+    \end{tabular}
+  \end{table}
+
+\end{frame}
+
+\subsection{GW170817}
+
+\begin{frame}{GW170817: Source classification}
+
+  Showing $\log_{10}$ Bayes factors relative to model with highest evidence
+
+  \vspace{3mm}
+
+  \begin{table}
+    \centering
+    \scriptsize
+    \begin{tabular}{|l|l|l|c|}
+    \hline
+    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW170817} \\
+    \hline\hline
+    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred4}$-1.83$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.80$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred4}$-1.58$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.68$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \textbf{ref.} \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.76$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred3}$-1.36$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.59$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.92$ \\
+    \hline\hline
+    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred5}$-224.65$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.66$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.66$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-224.67$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.66$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.66$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-224.67$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-224.68$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-224.67$ \\
+    \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{GW170817: Parameter constraints (Gaussian)}
+
+  \vspace{-3mm}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.69\linewidth]{Figures/GW170817_corner_gaussian_bns.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{GW170817: Discussion}
+  \def\x{5mm}
+
+  \textbf{Source classification:}
+  \begin{itemize}
+    \item Decisive evidence for BNS over NSBH
+    \item Prefer Gaussian population model
+    \item Slight preference for softer EOS (PSRs+$\chi_{\rm{EFT}}$)
+  \end{itemize}
+
+  \vspace{\x}
+
+  \textbf{Parameter constraints:}
+  \begin{itemize}
+    \item More equal mass ratio: $q \geq 0.9$
+    \item Constrained tidal deformability $\tilde{\Lambda}$
+    \item Higher luminosity distance compared to agnostic prior
+    \item Matches multimessenger analyses of GW170817~\cite{Radice:2018ozg, Coughlin:2018fis, LIGOScientific:2018hze, Pang:2022rzc, Breschi:2024qlc}
+  \end{itemize}
+\end{frame}
+
+\subsection{GW190425}
+
+\begin{frame}{GW190425: Source classification}
+
+  Showing $\log_{10}$ Bayes factors relative to best model
+
+  \vspace{3mm}
+
+  \begin{table}
+    \centering
+    \scriptsize
+    \begin{tabular}{|l|l|l|c|}
+    \hline
+    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW190425} \\
+    \hline\hline
+    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred1}$-0.07$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.11$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \textbf{ref.} \\
+    \cline{2-4}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-6.89$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-8.47$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-5.45$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.55$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred2}$-0.79$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred2}$-0.57$ \\
+    \hline\hline
+    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred4}$-1.52$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred3}$-1.35$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred4}$-1.63$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred2}$-0.82$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred3}$-1.11$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred3}$-1.43$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-4.11$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-3.83$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-24.31$ \\
+    \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{GW190425: Parameter constraints (Uniform)}
+
+  \vspace{-3mm}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.69\linewidth]{Figures/GW190425_corner_uniform_bns.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{GW190425: Discussion}
+  \def\x{5mm}
+
+  \textbf{Source classification:}
+  \begin{itemize}
+    \item Prefer BNS over NSBH (but less conclusive than GW170817)
+    \item Most consistent with uniform population
+    \item Masses are outliers compared to galactic binaries
+  \end{itemize}
+
+  \vspace{\x}
+
+  \textbf{Parameter constraints:}
+  \begin{itemize}
+    \item Less equal masses: $q \leq 0.9$
+    \item $\tilde{\Lambda} \approx 200$ (more prior-dominated due to lower SNR)
+    \item Higher luminosity distance: $182^{+41}_{-49}$ Mpc vs. $157^{+64}_{-65}$ Mpc ($90\%$ credibility)
+  \end{itemize}
+\end{frame}
+
+\subsection{GW230529}
+
+\begin{frame}{GW230529: Source classification}
+
+  Showing $\log_{10}$ Bayes factors relative to best model
+
+  \vspace{3mm}
+
+  \begin{table}
+    \centering
+    \scriptsize
+    \begin{tabular}{|l|l|l|c|}
+    \hline
+    \textbf{Source} & \textbf{Population} & \textbf{EOS} & \textbf{GW230529} \\
+    \hline\hline
+    \multirow{9}{*}{BNS} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred5}$-13.14$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-13.12$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-12.92$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred5}$-18.82$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-18.83$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-18.81$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred5}$-13.75$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred5}$-13.77$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred5}$-13.71$ \\
+    \hline\hline
+    \multirow{9}{*}{NSBH} & \multirow{3}{*}{Uniform} & PSRs & \cellcolor{jeffreysred1}$-0.08$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.02$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred1}$-0.25$ \\
+    \cline{2-4}
+     & \multirow{3}{*}{Gaussian} & PSRs & \cellcolor{jeffreysred1}$-0.05$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.20$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \textbf{ref.} \\
+    \cline{2-4}
+     & \multirow{3}{*}{Double Gaussian} & PSRs & \cellcolor{jeffreysred1}$-0.14$ \\
+    \cline{3-4}
+     &  & PSRs+$\chi_{\rm{EFT}}$ & \cellcolor{jeffreysred1}$-0.13$ \\
+    \cline{3-4}
+     &  & PSRs+NICER & \cellcolor{jeffreysred1}$-0.05$ \\
+    \hline
+    \end{tabular}
+  \end{table}
+\end{frame}
+
+\begin{frame}{GW230529: Parameter constraints (Gaussian)}
+
+  \vspace{-3mm}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.68\linewidth]{Figures/GW230529_corner_gaussian_nsbh.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{GW230529: Discussion}
+  \def\x{5mm}
+
+  \textbf{Source classification:}
+  \begin{itemize}
+    \item Decisive evidence for NSBH over BNS (agrees with LVK~\cite{LIGOScientific:2024elc})
+    \item No evidence between hypotheses (low SNR)
+  \end{itemize}
+
+  \vspace{\x}
+
+  \textbf{Parameter constraints:}
+  \begin{itemize}
+    \item Mass ratio more constrained: $q \leq 0.4$
+    \begin{itemize}
+      \item As a result, improved spin constraints ($\chi_{1z}$ closer to zero)
+    \end{itemize}
+    \item Tidal deformability posteriors dominated by priors
+    \item Luminosity distance: $235^{+59}_{-58}$ Mpc vs. $201^{+84}_{-97}$ Mpc ($90\%$ credibility)
+    \begin{itemize}
+      \item Important for EM follow-up studies
+    \end{itemize}
+    \item Less tidal information: \texttt{NRTidalv3} tapers at ($90\%$ credibility)
+    \begin{itemize}
+      \item $641_{-158}^{+318}$ Hz (agnostic priors)
+      \item $858_{-108}^{+113}$ Hz (neural prior, reference model)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+  \def\y{3mm}
+
+  \begin{itemize}
+    \item Agnostic priors miss including valuable information
+
+    \vspace{\y}
+    
+    \item \jaxtwo{\textbf{Neural priors}}: flexible way to encode non-trivial prior information
+    
+    \vspace{\y}
+    
+    \item Case study: neutron star physics from
+    \begin{itemize}
+      \item Population models
+      \item EOS constraints
+    \end{itemize}
+
+    \vspace{\y}
+
+    \item We consistelty recover higher luminosity distances with informed priors compared to the agnostic priors
+    \begin{itemize}
+      \item Important for EM follow-up
+      \item Simulation studies ongoing to quantify this
+    \end{itemize}
+
+    \vspace{\y}
+
+    \item Data-driven approach: easy to extend/generalize!
+  \end{itemize}
+\end{frame}
+
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_BNS_2.png}}}
+
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at ([yshift=2cm]current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Thanks for listening!}
+      \end{minipage}
+    };
+  \end{tikzpicture}
+
+  \end{frame}
+}
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+\appendix
+
+\begin{frame}{Likelihood distributions}
+  \begin{columns}[t]
+    \column{0.5\textwidth}
+    
+    \begin{itemize}
+      \item Likelihood distributions, obtained from final posterior samples
+    \end{itemize}
+
+    \column{0.5\textwidth}
+
+    \vspace{-10mm}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.90\linewidth]{Figures/combined_log_likelihood_three_events.pdf}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Information gain}
+
+  \def\x{3mm}
+
+  \begin{columns}[t]
+    \column{0.5\textwidth}
+    
+    \begin{itemize}
+      \item ``Prior'' = $\Lambda_i$ computed from EOSs conditioned on the posterior source-frame masses $m_i^{\rm{src}}$
+
+      \vspace{\x}
+
+      \item ``Posterior'' = $\Lambda_i$ from posterior samples
+
+      \vspace{\x}
+      
+      \item KL divergence between prior and posterior in brackets
+    \end{itemize}
+
+    \column{0.5\textwidth}
+
+    \vspace{-10mm}
+
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.90\linewidth]{Figures/combined_prior_vs_posterior.pdf}
+    \end{figure}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{More posteriors}
+  \vspace{-4mm}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.875\linewidth]{Figures/big_table.jpg}
+  \end{figure}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,337 @@
+\documentclass[usenames,dvipsnames,t]{beamer}
+% \documentclass[usenames,dvipsnames, handout]{beamer}
+\beamertemplatenavigationsymbolsempty % remove toolbar at the bottom of slides
+\usepackage{appendixnumberbeamer} % for appendix
+\usetheme{Madrid}
+\usecolortheme{default}
+\useinnertheme{circles}
+
+\usepackage{fontawesome}
+\usepackage{colortbl}  % For \cellcolor in tables
+
+% Define commands for social media icons with links
+\newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
+\newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
+\newcommand{\myemail}{\href{mailto:t.r.i.wouters@uu.nl}{\textcolor{black}{\faEnvelope}}}
+
+\newcommand{\ghlink}[1]{\href{https://github.com/#1}{\textcolor{black}{\faGithub}}}
+
+\definecolor{customblue}{HTML}{7db8dc}
+\newcommand{\thetaeos}{\boldsymbol{\theta}_{\rm{EOS}}}
+\newcommand{\boldtheta}{\boldsymbol{\theta}}
+
+% Color definitions for Jeffrey's scale interpretation
+% Taken from part of "rocket" color scheme of Seaborn
+\definecolor{jeffreysred1}{HTML}{f6cdb0}  % barely worth mentioning
+\definecolor{jeffreysred2}{HTML}{fc9074}  % substantial
+\definecolor{jeffreysred3}{HTML}{f4744c}  % strong
+\definecolor{jeffreysred4}{HTML}{ef5b43}  % very strong
+\definecolor{jeffreysred5}{HTML}{f52a44}  % decisive
+
+
+
+\setbeamercolor{author in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{title in head/foot}{bg=blue!10, fg=blue}
+\setbeamercolor{date in head/foot}{bg=blue!10, fg=blue}
+
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor\expandafter\ifblank\expandafter{\beamer@shortinstitute}{}{~~(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{}%
+%     / \inserttotalframenumber
+    \hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+% Show the TOC at the beginning
+\AtBeginSection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection,subsectionstyle=shaded/shaded/hide]
+  \end{frame}
+}
+
+% Show TOC at beginning of each subsection
+\AtBeginSubsection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection, currentsubsection, subsectionstyle=show/shaded/hide]
+  \end{frame}
+}
+
+
+\colorlet{beamer@blendedblue}{blue!70} % change color theme
+
+\usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex}%<- specify style
+\addbibresource{references.bib}%<- specify bib file
+
+\usepackage[inkscapearea=page]{svg}
+\usepackage{adjustbox}
+
+
+% For appendix
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+\setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
+
+
+
+% Other preamble stuff:
+\usepackage{preamble}
+
+%%% Uncomment for another color palette
+% \definecolor{Logo1}{rgb}{0.0, 0, 0.7}
+% \definecolor{Logo2}{rgb}{2.55, 2.55, 2.55}
+
+% \setbeamercolor*{palette primary}{bg=Logo1, fg=white}
+% \setbeamercolor*{palette secondary}{bg=Logo2, fg=white}
+% \setbeamercolor*{palette tertiary}{bg=white, fg=Logo1}
+% \setbeamercolor*{palette quaternary}{bg=white,fg=white}
+% \setbeamercolor{structure}{fg=Logo1} % itemize, enumerate, etc
+% \setbeamercolor{section in toc}{fg=Logo1} % TOC sections
+
+% For figures
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mdframed}
+\usepackage{subcaption}
+
+\setbeamertemplate{caption}[numbered]
+
+\usepackage{multirow}
+
+
+% --- Inkscape figures:
+\newcommand{\incfig}[2][0.75\textwidth]{%
+    \def\svgwidth{\columnwidth}
+    \resizebox{#1}{!}{\import{Inkscape/}{#2.pdf_tex}}
+}
+
+% --- Height of frame
+\newlength{\myheight}
+\setlength{\myheight}{7cm}
+
+\newlength\myheightfigureintext
+\newlength\mydepthfigureintext
+\settototalheight\myheightfigureintext{Xygp}
+\settodepth\mydepthfigureintext{Xygp}
+\setlength\fboxsep{0pt}
+
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos} % for precise positioning
+
+\usepackage{ifthen}
+
+
+%------------------------------------------------------------
+%This block of code defines the information to appear in the
+%Title page
+\title[Neural priors] %optional
+{Incorporating neutron star physics into gravitational wave inference with neural priors}
+
+\author[Thibeau Wouters]{\textbf{Thibeau Wouters}, Peter T. H. Pang, Tim Dietrich, Chris Van Den Broeck \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \href{https://arxiv.org/abs/2511.22987}{\texttt{arXiv:2511.22987}} \newline \github \quad \linkedin \quad \myemail}
+
+\date{GWfreeride 2026}
+
+%End of title page configuration block
+%------------------------------------------------------------
+
+
+
+%------------------------------------------------------------
+%The next block of commands puts the table of contents at the
+%beginning of each section and highlights the current section:
+
+%------------------------------------------------------------
+
+
+\begin{document}
+
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_BNS_2.png}}}
+
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at (current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Incorporating neutron star physics into gravitational wave inference with neural priors}\\[1.5ex]
+        \small Thibeau Wouters, Peter T. H. Pang, Tim Dietrich, Chris Van Den Broeck \normalsize \\[0.5ex]
+        {\hypersetup{hidelinks}
+         \href{https://arxiv.org/abs/2511.22987}{\texttt{arXiv:2511.22987}}
+        } \\[0.5ex]
+        \github \quad \linkedin \quad \myemail
+      \end{minipage}
+    };
+  \end{tikzpicture}
+
+  \vspace{7cm}
+
+  \begin{columns}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \vspace{1.5mm}
+    \includegraphics[width=0.75\linewidth]{Figures/utrecht-university.png}
+  \end{figure}
+  \column{0.35\textwidth}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\linewidth]{Figures/Nikhef_logo-transparent.png}
+  \end{figure}
+\end{columns}
+
+  \end{frame}
+}
+
+\begin{frame}{Motivation}
+  \def\x{3mm}
+  \def\y{1mm}
+
+  \begin{itemize}
+    \item Posterior $\propto$ likelihood $\times$ \red{prior}
+    
+    \vspace{\x}
+    
+    \item \red{Prior}: usually agnostic, but can encode valuable information!
+    \begin{itemize}
+      \vspace{\y}
+      \item Theoretical understanding
+
+      \vspace{\y}
+
+      \item Observations outside of GW
+    \end{itemize}
+
+    \pause
+    \vspace{\x}
+
+    \item Neutron stars: key GW observables:
+    \begin{itemize}
+      \item Masses $m_1, m_2$
+
+      \vspace{\y}
+
+      \item Tidal deformabilities $\Lambda_1, \Lambda_2$ $\leftarrow$ equation of state (EOS)
+    \end{itemize}
+
+    \vspace{\x}
+    \incfig[0.80\textwidth]{tidal}
+
+    % Example: neutron stars (NSs)
+    % \begin{itemize}
+    %   \item Equation of state (EOS): pressure vs density inside NS
+    %   \item Tidal deformability $\Lambda$ depends on EOS
+    %   \item Masses:
+    % \end{itemize}
+
+    % \vspace{\x}
+
+    % \item Emulate data-driven priors with normalizing flows~\cite{Alsing:2021wef}
+
+    % \vspace{\x}
+    
+    % \item Our work (\texttt{arXiv:2511.22987}): apply this to neutron star physics in GW
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Key idea}
+  \def\x{3mm}
+
+  \begin{figure}
+    \includegraphics[width=0.80\linewidth]{Figures/Figure1_presentation.pdf}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}{Example prior}
+  \def\x{3mm}
+
+  \begin{figure}
+    \includegraphics[width=0.60\linewidth]{Figures/bns_gaussian_all_eos_chirp_tilde.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{GW170817 posteriors with EOS informed priors}
+  \def\x{3mm}
+
+  \begin{figure}
+    \includegraphics[width=0.65\linewidth]{Figures/GW170817_corner_gaussian_bns.pdf}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Closing thoughts}
+  \def\y{4mm}
+
+  \begin{itemize}
+    \item \jaxtwo{\textbf{Neural priors}}: flexible way to encode non-trivial prior information
+
+    \vspace{\y}
+    
+    \item Implemented in \textsc{bilby}, but works with any stochastic sampler
+    \begin{itemize}
+      \item Appealing for GPU-based samplers
+    \end{itemize}
+
+    \vspace{\y}
+    
+    \item Bayesian source classification:
+    \begin{itemize}
+      \item GW170817: soft EOS
+      \item GW230529: NSBH favored over BNS
+    \end{itemize}
+    
+    \vspace{\y}
+    
+    \item `Informed' sampling: ML used inside traditional samplers
+    
+  \end{itemize}
+\end{frame}
+
+{
+\usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_BNS_2.png}}}
+
+\begin{frame}[plain, noframenumbering]
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at ([yshift=2cm]current page.center) {
+      \begin{minipage}{0.8\textwidth}
+        \centering
+        \textbf{Thanks for listening!}
+      \end{minipage}
+    };
+  \end{tikzpicture}
+
+  \end{frame}
+}
+
+\begin{frame}[allowframebreaks]{References}
+  \printbibliography
+\end{frame}
+
+\appendix
+
+\end{document}

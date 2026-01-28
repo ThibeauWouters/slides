@@ -288,13 +288,13 @@
   \def\y{4mm}
 
   \begin{itemize}
-    \item \jaxtwo{\textbf{Neural priors}}: encode non-trivial prior information (including uncertainties) (cf. Matthew's talk)
+    \item \jaxtwo{\textbf{Neural priors}}: encode non-trivial prior information (including uncertainties)
 
     \vspace{\y}
     
     \item Implemented in \textsc{bilby}, but works with any stochastic sampler
     \begin{itemize}
-      \item Appealing for GPU-based samplers
+      \item Appealing for GPU-based samplers (\textsc{flowMC}, \textsc{blackjax})
     \end{itemize}
 
     \vspace{\y}
@@ -302,13 +302,20 @@
     \item Bayesian source classification:
     \begin{itemize}
       \item GW170817: BNS, soft EOS
-      \item GW190425: BNS
       \item GW230529: NSBH favored over BNS
     \end{itemize}
     
     \vspace{\y}
     
-    \item Another example of `informed' sampling (cf. Michael's talk): ML used inside traditional samplers
+    \item ML for `informed' sampling (cf. Michael Williams's talk)
+    
+    \vspace{\y}
+    
+    \item Code is open source
+    \begin{itemize}
+      \item \scriptsize \textcolor{black}{\faGithub} \url{ThibeauWouters/neural-priors} \normalsize
+      \item \scriptsize \textcolor{black}{\faGithub} \url{ThibeauWouters/bilby/tree/neural_prior_bilby_pipe} \normalsize
+    \end{itemize}
     
   \end{itemize}
 \end{frame}

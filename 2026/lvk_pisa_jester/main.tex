@@ -244,7 +244,7 @@
   \begin{columns}[t]
     \column{0.80\textwidth}
     \begin{itemize}
-      \item EOS inference in JAX~\cite{Wouters:2025zju}
+      \item Hierarchical EOS inference in JAX~\cite{Wouters:2025zju}
       \item GPU-accelerated TOV solvers and samplers
       \item \ghlink{nuclear-multimessenger-astronomy/jester}~\texttt{nuclear-multimessenger-astronomy/jester}
     \end{itemize}
@@ -264,7 +264,7 @@
     \item Samplers:
     \begin{itemize}
       \item \textsc{flowMC} % TODO: citation
-      \item Nested sampling
+      \item Nested sampling (NS)
       \item Sequential Monte Carlo (SMC)
     \end{itemize}
     \item EOS models:
@@ -324,23 +324,28 @@
 
   Analyzing GW170817 with different EOS and samplers:
 
-  \vspace{\x}
+  \vspace{-4mm}
+  % \vspace{\x}
 
   %% With radio 
-  \begin{table}[h]
-    \centering
-    \input{SS_r14_table_radio.tex}
-    \caption{$R_{1.4}$ [km] at 90\% credibility.}
-  \end{table}
+  % \only<1>{
+    \begin{table}[h]
+      \centering
+      \input{SS_r14_table_radio.tex}
+      \caption{$R_{1.4}$ [km] at 90\% credibility.}
+    \end{table}
+  % }
 
   \pause
-  \vspace{\x}
+  \vspace{-2mm}
   
-  \begin{table}[h]
-    \centering
-    \input{SS_runtime_table_radio.tex}
-    \caption{Sampling time on 1 NVIDIA H100 GPU.}
-  \end{table}
+  % \only<2>{
+    \begin{table}[h]
+      \centering
+      \input{SS_runtime_table_radio.tex}
+      \caption{Sampling time on 1 NVIDIA H100 GPU.}
+    \end{table}
+  % }
 \end{frame}
 
 \begin{frame}{Future observing runs}
@@ -361,36 +366,39 @@
   Simulated study for Einstein Telescope (ET):
   \begin{itemize}
     \vspace{\y}
-    \item 100 loudest BNS events from 1 year observations (CoBa catalogue) % TODO: citation
+    \item 100 loudest BNS events from 1 year (CoBa catalogue~\cite{Branchesi:2023mws})
     
     \vspace{\y}
     
     \item GW parameter estimation
     \begin{itemize}
-      \item \texttt{IMRPhenomXP\_NRTidalv3}
+      \item \texttt{IMRPhenomXP\_NRTidalv3}, $f_{\rm{min}} = 5$ Hz
+      \item Relative binning
       \item Done by Fabian Gittins
     \end{itemize}
 
     \vspace{\y}
 
-    \item \red{Preliminary results!}
+    \item \red{Preliminary results in this talk!}
 
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Future observing runs: Results}
-  \def\x{4mm}
+  \def\x{7mm}
   \def\y{2mm}
+
+  \vspace{\x}
 
   \only<1>{
     \begin{figure}
-    \includegraphics[width=0.85\textwidth]{ET_ET_lambda14_comparison.pdf}
+    \includegraphics[width=0.90\textwidth]{ET_ET_lambda14_comparison.pdf}
     \end{figure}
   }
-  
+
   \only<2>{
     \begin{figure}
-    \includegraphics[width=0.85\textwidth]{ET_ET_r14_comparison.pdf}
+    \includegraphics[width=0.90\textwidth]{ET_ET_r14_comparison.pdf}
     \end{figure}
   }
 
@@ -400,19 +408,25 @@
   \def\x{3mm}
   \def\y{2mm}
 
+  \vspace{-4mm}
+  % \only<1>{
     \begin{table}[h]
-    \centering
-    \input{ET_r14_table.tex}
-    \caption{$R_{1.4}$ [km] at 90\% credibility.} % (Injected: $R_{1.4} = 12.49$ km).
-  \end{table}
+      \centering
+      \input{ET_r14_table.tex}
+      \caption{$R_{1.4}$ [km] at 90\% credibility.} % (Injected: $R_{1.4} = 12.49$ km).
+    \end{table}
+  % }
 
-  \vspace{\x}
+  \vspace{-4mm}
+  \pause
   
-  \begin{table}[h]
-    \centering
-    \input{ET_runtime_table.tex}
-    \caption{Sampling time on 1 NVIDIA H100 GPU.}
-  \end{table}
+  % \only<2>{
+    \begin{table}[h]
+      \centering
+      \input{ET_runtime_table.tex}
+      \caption{Sampling time on 1 NVIDIA H100 GPU.}
+    \end{table}
+  % }
   
 
 \end{frame}
@@ -437,7 +451,7 @@
     
     \item Improved EOS physics
     \begin{itemize}
-      \item Composition, finite temperature (Guilherme Grams)
+      \item Composition, temperature (Guilherme Grams)
     \end{itemize}
 
     \vspace{\y}
@@ -468,7 +482,7 @@
 % \end{frame}
 
 \begin{frame}{Conclusion}
-  \def\x{5mm}
+  \def\x{4mm}
 
   \begin{itemize}
     \item \texttt{jester}: GPU-accelerated EOS inference
@@ -483,7 +497,16 @@
 
     \vspace{\x}
 
-    \item Still looking for reviewers!
+    \item For 100 loud BNSs in ET:
+    \begin{itemize}
+      \item Agreement on $\Lambda_{1.4}$
+      \item EOS parametrizations: different uncertainties on $R_{1.4}$
+      \item Samplers consistent
+    \end{itemize}
+    
+    \vspace{\x}
+
+    \item \red{Still looking for reviewers!}
   \end{itemize}
 
 \end{frame}

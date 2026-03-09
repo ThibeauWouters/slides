@@ -10,6 +10,7 @@
 \usepackage{fontawesome}
 \usepackage{colortbl}  % For \cellcolor in tables
 
+
 % Define commands for social media icons with links
 \newcommand{\linkedin}{\href{https://www.linkedin.com/in/ThibeauWouters}{\textcolor{black}{\faLinkedin}}}
 \newcommand{\github}{\href{https://github.com/ThibeauWouters}{\textcolor{black}{\faGithub}}}
@@ -129,7 +130,7 @@
 %This block of code defines the information to appear in the
 %Title page
 \title[\texttt{jester} v0.2.0] %optional
-{\texttt{jester} v0.2.0: Improved inference of the equation of state with multimessenger data}
+{\texttt{jester} v0.2.0: Scalable inference of the equation of state with multimessenger data}
 
 \author[Thibeau Wouters]{Thibeau Wouters \\ \vspace{2mm} \href{mailto:t.r.i.wouters@uu.nl}{t.r.i.wouters@uu.nl} \newline \github \quad \linkedin \quad \myemail}
 
@@ -158,7 +159,7 @@
     \node[fill=customblue, fill opacity=0.75, text opacity=1, rounded corners=10pt, inner sep=15pt] at (current page.center) {
       \begin{minipage}{0.8\textwidth}
         \centering
-        \texttt{jester} v0.2.0: Improved inference of the equation of state with multimessenger data \\[1.5ex]
+        \texttt{jester} v0.2.0: Scalable inference of the equation of state with multimessenger data \\[1.5ex]
         Thibeau Wouters \\[0.5ex]
         \github \quad \linkedin \quad \myemail
       \end{minipage}
@@ -185,7 +186,7 @@
 }
 
 
-\begin{frame}
+\begin{frame}[noframenumbering]
 \frametitle{Table of Contents}
 \tableofcontents[hideallsubsections]
 \end{frame}
@@ -193,71 +194,298 @@
 \section{Introduction}
 
 \begin{frame}{Motivation}
-  \def\x{3mm}
+  \def\x{4mm}
   \def\y{1mm}
+
+  Goal:
+  \begin{itemize}
+    \item Bayesian inference of EOS parametrization with multimessenger data $d$: using stochastic samplers
+    \begin{equation*}
+      P(\thetaeos | d, \mathcal{H}) = \frac{P(d | \thetaeos, \mathcal{H}) P(\thetaeos | \mathcal{H})}{P(d | \mathcal{H})} \, .
+    \end{equation*}
+
+    \vspace{\y}
+
+    \item Model selection through evidence $P(d | \mathcal{H})$
+
+  \end{itemize}
+
+  \pause
+  \vspace{\x}
+
+  Challenges:
+  \begin{itemize}
+    \item Direct EOS sampling: TOV equations are costly
+
+    \vspace{\y}
+
+    \item Multiple inferences (priors, constraints, models, samplers,...) 
+
+    \vspace{\y}
+
+    \item Handle many \& loud events: from O5 to 3G
+  \end{itemize}
+
+  \pause
+
+  \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Need]
+      Scalable, flexible inference framework for multimessenger EOS data
+  \end{tcolorbox}
 
 \end{frame}
 
+
+\begin{frame}{\texttt{jester}: JAX-accelerated EOS inference}
+  \def\x{5mm}
+  \def\y{1mm}
+
+  \vspace{-4mm}
+
+  \begin{columns}[t]
+    \column{0.80\textwidth}
+    \begin{itemize}
+      \item EOS inference in JAX~\cite{Wouters:2025zju}
+      \item GPU-accelerated TOV solvers and samplers
+      \item \ghlink{nuclear-multimessenger-astronomy/jester}~\texttt{nuclear-multimessenger-astronomy/jester}
+    \end{itemize}
+
+    \column{0.20\textwidth}
+    \begin{figure}
+      \centering
+      \includegraphics[scale=0.05]{Figures/JESTER_logo.png}
+    \end{figure}
+  \end{columns}
+
+  \vspace{\x}
+  \pause
+
+  \texttt{jester v0.2.0}:
+  \begin{itemize}
+    \item Samplers:
+    \begin{itemize}
+      \item \textsc{flowMC} % TODO: citation
+      \item Nested sampling
+      \item Sequential Monte Carlo (SMC)
+    \end{itemize}
+    \item EOS models:
+    \begin{itemize}
+      \item Metamodel+speed-of-sound (MM+CSE)
+      \item Spectral expansion
+    \end{itemize}
+    \item User-friendly: config YAML files
+  \end{itemize}
+\end{frame}
+
+
+%%% TODO: decide if to keep or not
+% \begin{frame}{This talk}
+%   \def\x{6mm}
+%   \def\y{1mm}
+
+%   \vspace{-2mm}
+%   \begin{itemize}
+%     \item 
+%   \end{itemize}
+% \end{frame}
+
+\section{Methods}
+
+\begin{frame}{Sequential Monte Carlo (SMC)}
+
+  \def\x{4mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item Evolve swarm of particles through distributions~\cite{Williams:2025szm}:
+    \begin{equation*}
+      p_t(\theta | d) \propto p(d | \theta)^{\beta_t} p(\theta) \, , \quad \beta_t \in [0, 1] \, .
+    \end{equation*}
+
+    \vspace{\y}
+
+    \item Computes the evidence
+
+    \vspace{\y}
+
+    \item Parallelizable: efficient on GPU
+  \end{itemize}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{Figures/SMC_diagram.jpg}
+  \end{figure}
+\end{frame}
 
 \section{Results}
 
-\begin{frame}{Sampler systematics}
-  \def\x{3mm}
+\begin{frame}{Sampler systematics: GW170817}
+  \def\x{4mm}
   \def\y{1mm}
 
-  Analyze GW170817 
+  Analyzing GW170817 with different EOS and samplers:
 
-  %% With radio
+  \vspace{\x}
+
+  %% With radio 
   \begin{table}[h]
     \centering
-    \input{r14_table_radio.tex}
-    \caption{$R_{1.4}$ [km] at 90\% credibility (with radio).}
+    \input{SS_r14_table_radio.tex}
+    \caption{$R_{1.4}$ [km] at 90\% credibility.}
   \end{table}
 
-  % %%% Without radio
-  % \begin{table}[h]
-  %   \centering
-  %   \input{r14_table_noradio.tex}
-  %   \caption{$R_{1.4}$ [km] at 90\% credibility (without radio).}
-  % \end{table}
+  \pause
+  \vspace{\x}
+  
+  \begin{table}[h]
+    \centering
+    \input{SS_runtime_table_radio.tex}
+    \caption{Sampling time on 1 NVIDIA H100 GPU.}
+  \end{table}
 \end{frame}
 
-\section{Conclusion}
-
-\begin{frame}{Conclusion}
-  \def\y{3mm}
+\begin{frame}{Future observing runs}
+  \def\x{6mm}
+  \def\y{2mm}
 
   \begin{itemize}
-    \item PE often uses agnostic priors, missing valuable information
+    \item Sampling systematics under control for GW170817
+    
+    \vspace{\y}
+    
+    \item But... what about future observing runs?
+  \end{itemize}
 
+  \pause
+  \vspace{\x}
+
+  Simulated study for Einstein Telescope (ET):
+  \begin{itemize}
+    \vspace{\y}
+    \item 100 loudest BNS events from 1 year observations (CoBa catalogue) % TODO: citation
+    
     \vspace{\y}
     
-    \item \jaxtwo{\textbf{Neural priors}}: flexible way to encode non-trivial prior information
-    
-    \vspace{\y}
-    
-    \item Case study: neutron star physics from
+    \item GW parameter estimation
     \begin{itemize}
-      \item Population models
-      \item EOS constraints
+      \item \texttt{IMRPhenomXP\_NRTidalv3}
+      \item Done by Fabian Gittins
     \end{itemize}
 
     \vspace{\y}
 
-    \item Two highlights:
-    \begin{enumerate}
-      \item \textbf{Bayesian source classification} (BNS vs. NSBH)
-      \item \textbf{Informed parameter constraints} (narrower posteriors)
-    \end{enumerate}
+    \item \red{Preliminary results!}
 
-    \vspace{\y}
-
-    \item Implemented in \textsc{bilby}
-
-    \vspace{\y}
-
-    \item Data-driven approach: easy to extend/generalize
   \end{itemize}
+\end{frame}
+
+\begin{frame}{Future observing runs: Results}
+  \def\x{4mm}
+  \def\y{2mm}
+
+  \only<1>{
+    \begin{figure}
+    \includegraphics[width=0.85\textwidth]{ET_ET_lambda14_comparison.pdf}
+    \end{figure}
+  }
+  
+  \only<2>{
+    \begin{figure}
+    \includegraphics[width=0.85\textwidth]{ET_ET_r14_comparison.pdf}
+    \end{figure}
+  }
+
+\end{frame}
+
+\begin{frame}{Future observing runs: Results}
+  \def\x{3mm}
+  \def\y{2mm}
+
+    \begin{table}[h]
+    \centering
+    \input{ET_r14_table.tex}
+    \caption{$R_{1.4}$ [km] at 90\% credibility.} % (Injected: $R_{1.4} = 12.49$ km).
+  \end{table}
+
+  \vspace{\x}
+  
+  \begin{table}[h]
+    \centering
+    \input{ET_runtime_table.tex}
+    \caption{Sampling time on 1 NVIDIA H100 GPU.}
+  \end{table}
+  
+
+\end{frame}
+
+\section{Outlook \& Conclusion}
+
+
+\begin{frame}{Looking ahead}
+  \def\x{3mm}
+  \def\y{1mm}
+
+  Future extensions of \texttt{jester}:
+  \begin{itemize}
+    \vspace{\y}
+    \item More TOV solvers
+    \begin{itemize}
+      \item Pressure anisotropy~\cite{Pang:2025fes} \small (Peter T. H. Pang) \normalsize
+      \item Non-GR, e.g., scalar-tensor gravity~\cite{Brown:2024joy, Creci:2024wfu} \small (Dio Danarianto, Alex Brown) \normalsize
+    \end{itemize}
+
+    \vspace{\y}
+    
+    \item Improved EOS physics
+    \begin{itemize}
+      \item Composition, finite temperature (Guilherme Grams)
+    \end{itemize}
+
+    \vspace{\y}
+    
+    \item More neutron star physics
+    \begin{itemize}
+      \item Oscillation modes, phase transitions, postmerger,...
+    \end{itemize}
+    
+    \vspace{\y}
+    
+    \item More EOS parametrizations, constraints,...
+  \end{itemize}
+
+  \vspace{\x}
+
+  \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Input welcome!]
+      What would you like to see in \texttt{jester}?
+  \end{tcolorbox}
+
+\end{frame}
+
+% TODO: decide whether this is interesting?
+% \begin{frame}{How does it compare against other IGWN EM codes?}
+%   \def\x{4mm}
+%   \def\y{1mm}
+
+% \end{frame}
+
+\begin{frame}{Conclusion}
+  \def\x{5mm}
+
+  \begin{itemize}
+    \item \texttt{jester}: GPU-accelerated EOS inference
+
+    \vspace{\x}
+    
+    \item Sequential Monte Carlo: parallelizable sampler, computes evidence
+
+    \vspace{\x}
+
+    \item Scalable inference for multimessenger data to enable projection studies to understand systematics
+
+    \vspace{\x}
+
+    \item Still looking for reviewers!
+  \end{itemize}
+
 \end{frame}
 
 {
@@ -282,5 +510,14 @@
 \end{frame}
 
 \appendix
+
+\begin{frame}{$\Lambda_{1.4}$ for GW170817 inferences}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.90\textwidth]{SS_lambda14_comparison.pdf}
+  \end{figure}
+  
+\end{frame}
 
 \end{document}

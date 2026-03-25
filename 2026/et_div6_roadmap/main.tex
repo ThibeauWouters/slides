@@ -214,54 +214,54 @@
     \item ``we will be able to make statements about how strongly a given detector configuration can constrain deviations from nuclear physics''
   \end{itemize}
 
-  \vspace{\x}
-
-  \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Motivation]
-      How will we do this in practice?
-  \end{tcolorbox}
-
-\end{frame}
-
-\begin{frame}{Motivation}
-  \def\x{4mm}
-  \def\y{1mm}
-
-  Goal:
-  \begin{itemize}
-    \item Bayesian inference of EOS parametrization with multimessenger data $d$: using stochastic samplers
-    \begin{equation*}
-      P(\thetaeos | d, \mathcal{H}) = \frac{P(d | \thetaeos, \mathcal{H}) P(\thetaeos | \mathcal{H})}{P(d | \mathcal{H})} \, .
-    \end{equation*}
-
-    \vspace{\y}
-
-    \item Understand systematics in this inference problem
-  \end{itemize}
-
+  % \vspace{\x}
   \pause
-  \vspace{\x}
-
-  Challenges:
-  \begin{itemize}
-    % \item Direct EOS sampling: TOV equations are costly
-
-    % \vspace{\y}
-    
-    \item Multiple inferences (priors, constraints, models, samplers,...) 
-    
-    \vspace{\y}
-
-    \item Handle many \& loud events in 3G
-  \end{itemize}
-
-  \pause
-  \vspace{1mm}
+  \vspace{3mm}
 
   \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Need]
       Scalable, flexible inference framework for multimessenger EOS data
   \end{tcolorbox}
 
 \end{frame}
+
+% \begin{frame}{Motivation}
+%   \def\x{4mm}
+%   \def\y{1mm}
+
+%   Goal:
+%   \begin{itemize}
+%     \item Bayesian inference of EOS parametrization with multimessenger data $d$: using stochastic samplers
+%     \begin{equation*}
+%       P(\thetaeos | d, \mathcal{H}) = \frac{P(d | \thetaeos, \mathcal{H}) P(\thetaeos | \mathcal{H})}{P(d | \mathcal{H})} \, .
+%     \end{equation*}
+
+%     \vspace{\y}
+
+%     \item Understand systematics in this inference problem
+%   \end{itemize}
+
+%   \pause
+%   \vspace{\x}
+
+%   Challenges:
+%   \begin{itemize}
+%     % \item Direct EOS sampling: TOV equations are costly
+
+%     % \vspace{\y}
+    
+%     \item Multiple inferences (priors, constraints, models, samplers,...) 
+    
+%     \vspace{\y}
+
+%     \item Handle many \& loud events in 3G
+%   \end{itemize}
+
+%   \pause
+%   \vspace{1mm}
+
+  
+
+% \end{frame}
 
 
 \begin{frame}{\texttt{jester}: JAX-accelerated EOS inference}
@@ -314,7 +314,7 @@
 \end{frame}
 
 
-\section{Results}
+\section{First results}
 
 \begin{frame}{EOS inference systematics in ET}
   \def\x{6mm}
@@ -391,7 +391,7 @@
   %     \caption{$R_{1.4}$ [km] at 90\% credibility.} 
   %   \end{table}
 
-  Inference is scalable: ideal to investigate systematics in EOS inference 
+  Inference is \red{scalable}: able to investigate systematics in EOS inference 
 
   \vspace{\x}
 
@@ -461,7 +461,7 @@
 
     \vspace{\x}
 
-    \item Open floor: what to add to this project for ET div. 6 roadmap?
+    \item Open floor: what direction to take for ET div. 6 roadmap?
   \end{itemize}
 
 \end{frame}

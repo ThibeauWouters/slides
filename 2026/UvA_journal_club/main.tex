@@ -47,7 +47,16 @@
   \addtocounter{framenumber}{-1}
   \begin{frame}[plain]
       \frametitle{Contents}
-      \tableofcontents[currentsection,subsectionstyle=shaded/shaded/hide]
+      \tableofcontents[currentsection,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+% Show the TOC at the beginning of each subsection
+\AtBeginSubsection[]{
+  \addtocounter{framenumber}{-1}
+  \begin{frame}[plain]
+      \frametitle{Contents}
+      \tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]
   \end{frame}
 }
 
@@ -576,6 +585,8 @@
 \section{Results}
 %---------------------------------------------------------
 
+\subsection{Einstein Telescope projections}
+
 \begin{frame}{Einstein Telescope}
 
   \def\x{4mm}
@@ -628,6 +639,8 @@
 \end{frame}
 
 
+\subsection{Pressure anisotropy}
+
 \begin{frame}{Pressure anisotropy in neutron stars}
 
   \def\x{3mm}
@@ -642,7 +655,7 @@
 
         \vspace{\x}
 
-        \item Physical mechanisms can violate this (pion/kaon condensation, magnetic fields, dark matter, superfluidity)
+        \item Physical mechanisms can violate this (pion/kaon condensation, magnetic fields, superfluidity)
 
         \vspace{\x}
 

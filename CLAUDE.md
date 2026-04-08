@@ -2,144 +2,103 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Important instructions
+
+- When recycling old slides, copy over the figures and files needed to make the figures to the new directory.
+- When reusing citations, copy over the exact bibtex (do not make up bibtex entries yourself!)
+
 ## Repository Overview
 
-This is a repository containing LaTeX Beamer presentations for academic talks, primarily focused on gravitational wave physics, binary neutron stars, and related astrophysics topics. Presentations are organized by year (2023/, 2024/, 2025/) with each presentation in its own subdirectory.
+LaTeX Beamer presentations for academic talks on gravitational wave physics, binary neutron star mergers, equation of state inference, and related astrophysics. Each year has its own directory (`2023/`, `2024/`, `2025/`, `2026/`), and each talk lives in its own subdirectory within the year.
+
+Every talk subdirectory has a `CLAUDE.md` describing the talk's purpose, topics, and a slide-by-slide breakdown — read those files when looking for specific slides to reuse.
 
 ## Repository Structure
 
-- **template/** - Base template directory containing reference files for new presentations
-  - `main.tex` - Template Beamer presentation structure
-  - `preamble.sty` - Shared LaTeX style package with custom commands and packages
-  - `references.bib` - Bibliography template
-- **YYYY/** (2023, 2024, 2025) - Presentations organized by year
-  - Each presentation lives in its own subdirectory
-  - Standard structure per presentation:
-    - `main.tex` - Main presentation file
-    - `preamble.sty` - Custom style package (often copied/modified from template)
-    - `references.bib` - Bibliography for that specific talk
-    - `Figures/` - PDF, PNG, JPG images
-    - `Inkscape/` - SVG source files and their LaTeX exports (PDF + PDF_TEX files)
-    - `code/` - Python scripts for generating plots/figures
-    - `talk_overview.tex` - Overview slide content (optional)
+```
+YYYY/talk_name/
+  main.tex          # Main presentation
+  preamble.sty      # Custom style/commands
+  references.bib    # Bibliography
+  Figures/          # PDF, PNG, JPG images
+  Inkscape/         # SVG sources + their PDF+LaTeX exports
+  code/             # Python scripts to generate figures
+  CLAUDE.md         # Talk description and slide index (see below)
+```
+
+## Finding and Reusing Slides
+
+Each subdirectory CLAUDE.md contains:
+- Talk title, venue, date, and 1-sentence summary
+- Slide-by-slide breakdown: what each frame covers and what figures/content it uses
+
+**To build a new talk:** describe the desired narrative, then search subdirectory CLAUDE.md files to find individual frames that cover the needed topics. Copy the relevant `\begin{frame}...\end{frame}` blocks, figures, and bibliography entries.
+
+**Common reusable topics across talks:**
+- Parameter estimation / Bayesian inference intro → `2025/AEI`, `2026/neural_priors_GRANDMA`
+- Normalizing flows / flowMC → `2024/jim_BNS/junior_colloquium_15_04_2024`, `2025/ET_symposium`
+- JAX introduction → `2024/jim_BNS/lorentz`, `2025/AEI`
+- EOS parametrization and TOV → `2025/jester_extreme_matter`, `2026/et_div6_roadmap`
+- Neural priors construction → `2025/neural_priors_LVK_PE`, `2026/neural_priors_GRANDMA`
+- GW170817 / GW190425 / GW230529 results → `2025/BeNL_meeting`, `2025/neural_priors_LVK_EM`
+- Einstein Telescope projections → `2025/ET_div6`, `2026/lvk_pisa_jester`
+- Source classification → `2025/AIslands`, `2025/BeNL_meeting`
+- jester EOS solver → `2026/lvk_pisa_jester`, `2026/et_div6_roadmap`
+
+## Slide Style Guide
+
+This is critical: new slides must match the existing style. Do **not** introduce Claude-style verbosity.
+
+**Do:**
+- One main point per slide
+- 2–4 short bullet points maximum per slide (often zero — let figures speak)
+- Figures are the primary content; text is supporting
+- Short, noun-phrase bullets (not full sentences)
+- Use `\blue{...}`, `\red{...}`, `\green{...}` to highlight key terms inline
+- Use `\smallcite{ref}` for citations, placed inline or at frame bottom
+- Keep frame titles short and descriptive (3–6 words)
+- Use `\pause` sparingly for reveals; prefer presenting a complete slide
+
+**Do not:**
+- Write paragraph-length text on any slide
+- Use more than 4–5 bullet points on a single frame
+- Explain everything — assume a physics-literate audience
+- Add motivational filler ("In this talk, we will show that...")
+- Use `\textbf{...}` for emphasis when color commands exist
 
 ## Building Presentations
 
-### Standard LaTeX build process
-Navigate to the presentation directory, then run:
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
-```
-
-Or use `biber` if the presentation uses biblatex:
-```bash
-pdflatex main.tex
-biber main
-pdflatex main.tex
-pdflatex main.tex
-```
-
-### Using latexmk (if available)
-```bash
+cd YYYY/talk_name/
+pdflatex main.tex && biber main && pdflatex main.tex && pdflatex main.tex
+# or
 latexmk -pdf main.tex
 ```
 
-## Working with Figures
+Use `bibtex` instead of `biber` for older talks that use plain BibTeX.
 
-### Python-generated figures
-Python scripts in the `code/` directory generate plots as SVG or other formats. Common pattern:
-```bash
-cd 2025/AEI/
-python gaussian.py          # Generates Figures/gaussian.svg
-```
+## Key Custom Commands (preamble.sty)
 
-Python scripts typically use:
-- `numpy`, `matplotlib` for plotting
-- `scipy` for statistical functions
-- Beamer blue color: `#4c4cfe` for consistency
+- **Colors**: `\red{text}`, `\blue{text}`, `\green{text}`, `\grey{text}`
+- **Citations**: `\smallcite{ref}`
+- **Slide link**: `\slideref{label}` — hyperlinks to another frame
+- **Math**: `\diff`, `\N`, `\Z`, `\R`, `\C`
+- **Inline comment**: `\comment{text}`
+- **Figures**: `\incfig[width]{name}` — includes `Inkscape/name.pdf_tex`
+- **Social**: `\github`, `\linkedin`, `\ghlink{user/repo}` in title slide
 
-### Inkscape figures
-SVG files in the `Inkscape/` directory are source files created with Inkscape. Workflow:
-1. Create/edit SVG in Inkscape (`Inkscape/*.svg`)
-2. Export to PDF + LaTeX using Inkscape's "PDF + LaTeX" export option
-3. This creates two files: `filename.pdf` and `filename.pdf_tex`
-4. Include in LaTeX using the `\incfig` command
+## Beamer Theme
 
-The `\incfig` command is defined in presentations as:
-```latex
-\newcommand{\incfig}[2][0.75\textwidth]{%
-    \def\svgwidth{\columnwidth}
-    \resizebox{#1}{!}{\import{Inkscape figs/}{#2.pdf_tex}}
-}
-```
+Madrid theme + circles inner theme, custom blue (`#4c4cfe`), no navigation symbols, `appendixnumberbeamer` for appendix slide numbering.
 
-Usage: `\incfig[0.90\textwidth]{figure_name}` (without .pdf_tex extension)
+## Figures
 
-## LaTeX Structure and Key Commands
+Python scripts in `code/` use `numpy`, `matplotlib`, `scipy`, `jax`. Beamer blue for plot colors: `#4c4cfe`. Inkscape SVGs are exported as PDF+LaTeX pairs (`name.pdf` + `name.pdf_tex`) and included via `\incfig`.
 
-### Custom Beamer setup
-- Theme: Madrid with circles inner theme
-- Custom blue color scheme
-- Navigation symbols removed
-- Appendix support with `appendixnumberbeamer` package
-- Social media icons using `fontawesome` package
+## Creating a New Talk
 
-### Common custom commands in preamble.sty
-- **Math sets**: `\N`, `\Z`, `\Q`, `\R`, `\C` for number sets
-- **Colors**: `\red{text}`, `\blue{text}`, `\green{text}`, `\black{text}`, `\grey{text}`
-- **Differential**: `\diff` for differential d
-- **Citations**: `\smallcite{ref}` for smaller citation format
-- **Slide references**: `\slideref{label}` for hyperlinking full frames
-- **Comment**: `\comment{text}` for small inline comments
-
-### Social media commands
-Defined in main.tex files:
-- `\github`, `\linkedin`, `\twitter` (or `\myemail`) for icon links in title slide
-- `\ghlink{username/repo}` for GitHub repository links
-
-### Python code highlighting
-The template includes custom Python syntax highlighting using the `listings` package with custom colors (deepblue, deepred, deepgreen).
-
-## Git Workflow
-
-The `.gitignore` file excludes LaTeX build artifacts except:
-- `main.pdf` (included)
-- `main.tex` (included)
-
-All other `main.*` files (aux, log, bbl, etc.) are ignored.
-
-## Dependencies
-
-### LaTeX packages
-Core packages used across presentations:
-- **Beamer**: Madrid theme, appendixnumberbeamer
-- **Bibliography**: biblatex with biber backend (or bibtex)
-- **Math**: amsmath, amssymb, physics, mathtools
-- **Graphics**: graphicx, tikz, svg, import, xifthen, pdfpages, transparent
-- **Figures**: subcaption, caption, mdframed
-- **Code**: listings (for Python syntax highlighting)
-- **Links**: hyperref with custom colors
-- **Fonts**: fontawesome, lmodern
-- **Tables**: multirow, multicol, tabularx, booktabs
-
-### Python dependencies
-Common packages used in figure generation scripts:
-- numpy
-- matplotlib
-- scipy (scipy.stats)
-- jax (for some advanced physics calculations)
-- bilby (gravitational wave analysis, in some presentations)
-
-## Creating New Presentations
-
-1. Copy the `template/` directory to `YYYY/presentation_name/`
-2. Update title, author, date in `main.tex`
-3. Modify `preamble.sty` if custom commands are needed
-4. Add figures to `Figures/` directory
-5. Create Inkscape figures in `Inkscape/` subdirectory
-6. Add Python plotting scripts to `code/` directory if needed
-7. Update `references.bib` with citations
-8. Build using the standard LaTeX build process above
+1. Copy `template/` to `YYYY/talk_name/`
+2. Update title, author, date, social links in `main.tex`
+3. Build the narrative by finding relevant frames in existing talk CLAUDE.md files
+4. Copy and adapt frames, figures, and bib entries
+5. Create a `CLAUDE.md` in the new directory documenting the slide index

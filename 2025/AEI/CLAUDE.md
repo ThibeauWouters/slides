@@ -1,66 +1,58 @@
-# CLAUDE.md
+# CLAUDE.md — 2025/AEI
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+**Title:** Towards GPU-accelerated multimessenger inference of neutron star mergers and dense matter physics  
+**Venue:** AEI Seminar  
+**Date:** 2025  
+**Summary:** Long seminar talk covering the full research program: JAX/flowMC, jim (BNS PE), jester (EOS inference), neural priors, and source classification. The most comprehensive overview talk in the collection.
 
-## Project Structure
+## Slide Index
 
-This is a LaTeX Beamer presentation about binary neutron star analysis for AEI (Albert Einstein Institute). The project contains:
+| Frame title | Content |
+|---|---|
+| Neutron stars | NS basics: structure, mass–radius, EOS |
+| Equation of state | EOS families; pressure–density relation; TOV equation |
+| Multimessenger astrophysics: GW170817 | GW170817 overview; simultaneous GW + kilonova detection |
+| Future GW detectors: Einstein Telescope | ET sensitivity; rate projections; science case |
+| My research focus: why — how — what | Research overview connecting motivation, tools, and applications |
+| Parameter estimation: Bayesian inference | Bayes' theorem; likelihood; posterior sampling |
+| Parameter estimation: MCMC | MCMC in GW context; computational bottleneck for BNS |
+| JAX | JAX transformations (JIT, grad, vmap); GPU acceleration |
+| JAX — Function transformations | Detailed JAX transformation examples |
+| Normalizing flows | NF architecture; expressiveness; use as proposal |
+| flowMC | flowMC: local (MALA) + global (NF) sampler |
+| Overview (jim section) | jim pipeline structure |
+| ripple | ripple: JAX waveform generation |
+| Jim | jim results: GW170817 & GW190425; validation |
+| Einstein Telescope | ET signal properties; PE challenges at 3G |
+| Overlapping signals | Simultaneous BNS signals in ET; joint PE |
+| Open call | Discussion: open problems in 3G PE |
+| Electromagnetic counterparts | Kilonova and GRB context for multimessenger PE |
+| Overview (EOS section) | EOS inference pipeline structure |
+| Equation of state inference — warmup | Toy example of EOS inference |
+| Equation of state inference — parametrization | Piecewise polytrope / spectral EOS parametrization |
+| Tidal deformability | Λ–EOS connection; how GWs measure NS structure |
+| Equation of state | EOS constraint results |
+| Jester | jester: differentiable TOV solver; auto-diff EOS inference |
+| Anisotropy in neutron stars | Anisotropic pressure in NS matter |
+| Auto-differentiable ODE solvers | Differentiable TOV integration via JAX |
+| Neutron star data analysis loop | Full loop: GW PE → EOS inference → classification |
+| Case study | Example: GW230529 through the full pipeline |
+| Equation of state-informed priors | Motivation for EOS-informed priors in PE |
+| Source classification | $P(\text{NS})$ classification framework |
+| Neural priors | Neural prior construction: NF trained on EOS-conditioned posteriors |
+| Application | Applying neural priors to GW events |
+| GW170817 — classification | $P(\text{NS})$ for GW170817 components |
+| GW170817 — parameter constraints | Tidal / mass posteriors with neural priors |
+| GW190425 — classification | $P(\text{NS})$ for GW190425 components |
+| GW190425 — parameter constraints | Posteriors with neural priors |
+| GW230529 — classification | $P(\text{NS})$ for GW230529 primary |
+| GW230529 — parameter constraints | Posteriors with neural priors |
+| Conclusion | Full research summary |
+| (Appendix: ET/CE projections) | ET and CE radius / Λ constraint projections |
 
-- `main.tex` - Main presentation file using Beamer class with Madrid theme
-- `preamble.sty` - Custom style package with mathematical notation, physics commands, and color definitions
-- `talk_overview.tex` - Overview slide content defining the talk structure
-- `references.bib` - Bibliography file with scientific references
-- `Figures/` - Directory containing PDF, JPG, and PNG images for the presentation
-- `Inkscape/` - Directory containing SVG source files and their LaTeX exports (PDF + PDF_TEX)
-- `gaussian.py` - Python script to generate Gaussian curve plot as SVG
-- `gw_strain.py` - Python script using Bilby to generate gravitational wave strain plots
-
-## Commands
-
-### Building the presentation
-```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
-```
-
-### Generating figures from Python scripts
-```bash
-python gaussian.py        # Generates Figures/gaussian.svg
-python gw_strain.py       # Generates gravitational wave strain plots
-```
-
-### Working with Inkscape figures
-- SVG files in `Inkscape/` are the source files
-- Use Inkscape to export to PDF + LaTeX for inclusion in the presentation
-- The PDF_TEX files contain LaTeX commands to overlay text properly
-
-## LaTeX Structure
-
-- The presentation uses a custom theme with blue color scheme
-- Mathematical notation is heavily customized in `preamble.sty`
-- Color commands for different physics topics (GW, BNS, etc.) are defined
-- Bibliography uses scriptsize font for compact citations
-- Python code highlighting is configured for listings package
-
-## Key LaTeX Commands
-
-- `\bns{text}` - Binary neutron star colored text
-- `\mcmcgreen{text}`, `\mcmcred{text}` - MCMC analysis colors
-- `\smallcite{ref}` - Smaller citation format
-- `\incfig[width]{filename}` - Include Inkscape figures
-- `\slideref{label}` - Reference full frames
-
-## Dependencies
-
-### LaTeX Packages
-- Beamer with Madrid theme and circles inner theme
-- Physics, mathematics, and graphics packages
-- Hyperref for links with custom colors
-- Listings for Python code highlighting
-
-### Python Dependencies
-- numpy, matplotlib for basic plotting
-- scipy.stats for statistical functions
-- bilby for gravitational wave analysis (in gw_strain.py)
+## Key Files
+- `gaussian.py` — generates `Figures/gaussian.svg` (Gaussian curve illustration)
+- `gw_strain.py` — generates GW strain plots using bilby
+- `talk_overview.tex` — overview slide content
+- `Figures/` — NS mass–radius diagram, EOS curves, GW170817 corner plots, p-p plot, neural prior figures
+- `Inkscape/` — research overview diagram, neutron star data analysis loop schematic

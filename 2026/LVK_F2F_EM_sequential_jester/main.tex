@@ -153,7 +153,7 @@
 
     \begin{itemize}
       \vspace{\y}
-      \item Scalable: e.g. GPU-acceleration \textsc{jester}
+      \item Scalable: e.g. GPU-acceleration (\textsc{jester})
 
       \vspace{\y}
 
@@ -161,7 +161,12 @@
     \end{itemize}
   \end{itemize}
 
-  SMC
+  \vspace{\x}
+
+  \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Goal]
+    Natural framework for scalable, sequential inference: \blue{sequential Monte Carlo (SMC)}
+  \end{tcolorbox}
+
 \end{frame}
 
 
@@ -192,9 +197,18 @@
 
 \begin{frame}{Sequential Monte Carlo (SMC)}
   \def\x{4mm}
+  \def\y{2mm}
 
   \begin{itemize}
-    \item Particles evolve prior $\rightarrow$ posterior through a sequence of intermediate densities, via \blue{reweight, resample, MCMC move}
+    \item Particles evolve prior $\rightarrow$ posterior through a sequence of intermediate densities $p_t$: reweight, resample, MCMC move
+    
+    \vspace{\y}
+    
+    \item Highly parallelizable: GPU acceleration
+    
+    \vspace{\y}
+    
+    \item What choice for sequence $p_t$?
   \end{itemize}
 
   \vspace{\x}
@@ -212,14 +226,20 @@
 
 \begin{frame}{Likelihood vs.\ data tempering}
   \def\x{3mm}
-  \def\y{1mm}
+  \def\y{4mm}
 
   \begin{itemize}
     \item \red{Likelihood tempering}: anneal in the full likelihood, $\mathcal{L}(\theta)^{\beta_t}$, $\beta_t: 0 \rightarrow 1$
+    \begin{itemize}
+      \item Used in GW PE \tiny (\textsc{pocoMC}~\cite{Karamanis:2022ksp,Williams:2025szm}, \textsc{ASPIRE}~\cite{Williams:2025aar}) \normalsize and \textsc{jester}~\cite{Koehn:2026nin}
+    \end{itemize}
 
     \vspace{\y}
 
     \item \red{Data tempering}: anneal in new observations one at a time
+    \begin{itemize}
+      \item Reuse previous posterior
+    \end{itemize}
   \end{itemize}
 
   \vspace{\x}
@@ -244,10 +264,10 @@
 
     \vspace{\x}
 
-    \item Naturally handles \blue{growing catalogs} without restarting from the prior
+    \item Naturally handles \blue{growing catalogs}, without restarting from the prior
   \end{itemize}
 
-  \vspace{-1mm}
+  \vspace{5mm}
 
   \begin{figure}
     \centering
@@ -260,20 +280,24 @@
 \begin{frame}{Simulating one month of ET data}
   \def\x{3.5mm}
 
+  Demonstrated with proof of concept:
+
+  \vspace{3mm}
+
   \begin{itemize}
     \item ET 2L-misaligned configuration, Gaussian noise, merger rate $106.6~\mathrm{Gpc}^{-3}\mathrm{yr}^{-1}$
 
     \vspace{\x}
 
-    \item SNR $>12$ $\Rightarrow$ \red{1555} detected BNS sources
+    \item SNR $>12$ $\Rightarrow$ \red{1555} detected BNS sources in $1$ month
 
     \vspace{\x}
 
-    \item Single-event PE: nested sampling (\textsc{dynesty}~\smallcite{Speagle:2019ivv}), masses + tidal deformabilities only, $f_{\mathrm{low}} = 20$~Hz
+    \item Single-event PE: nested sampling, masses + tidal deformabilities only, $f_{\mathrm{min}} = 20$~Hz, \texttt{TaylorF2} (simplified settings!)
 
     \vspace{\x}
 
-    \item SMC settings: $N = 2000$ particles, ESS threshold $\alpha = 50\%$, prior informed by PSR~J0740+6620~\smallcite{Fonseca:2021wxt}
+    \item \textsc{jester} settings: $N = 2000$ SMC particles, ESS threshold $\alpha = 50\%$, prior informed by PSR~J0740+6620~\smallcite{Fonseca:2021wxt}
   \end{itemize}
 
 \end{frame}
@@ -294,7 +318,7 @@
 
         \vspace{\x}
 
-        \item Early events highly informative: \blue{frequent} updates
+        \item Early events highly informative: frequent updates
 
         \vspace{\x}
 
@@ -302,7 +326,7 @@
 
         \vspace{\x}
 
-        \item Total: \red{22} updates, $\sim 2.2$h on 1 NVIDIA H100 GPU
+        \item Total: 22 updates, \red{$\sim 2.2$h} on 1 NVIDIA H100 GPU
       \end{itemize}
   \end{columns}
 
@@ -320,11 +344,11 @@
       \end{figure}
     \column{0.46\textwidth}
       \begin{itemize}
-        \item Bulk region ($1$--$3\,n_{\rm{sat}}$): pressure under-/over-estimated
+        \item Bulk region ($1$--$3\,n_{\rm{sat}}$): pressure under- or overestimated
 
         \vspace{\x}
 
-        \item Injected $\Lambda$ within the \blue{95\% credible band} throughout
+        \item Injected $\Lambda$ within the 95\% credible band throughout
 
         \vspace{\x}
 
@@ -347,7 +371,7 @@
 
   \small
   \begin{itemize}
-    \item Runtime flat up to $N \sim 200$, then memory-bound $\Rightarrow$ roughly linear fit ($N > 400$)
+    \item Compute becomes memory-bound $\Rightarrow$ linear fit ($N > 400$)
 
     \vspace{\x}
 
@@ -355,7 +379,7 @@
 
     \vspace{\x}
 
-    \item Projected runtime: \red{a few hours} (1 month), \red{$\sim 1.5$ days} (1 year) on a single GPU
+    \item Projected runtime: \red{a few hours} (1 month), \red{$\sim 1.5$ days} (1 year) on a single NVIDIA H100 GPU
   \end{itemize}
   \normalsize
 
@@ -366,11 +390,15 @@
   \def\x{3.5mm}
 
   \begin{itemize}
-    \item Recipe for scalable, sequential hierarchical inference: \blue{GPU + normalizing flows + SMC}
-
+    \item Recipe for \blue{scalable}, \red{sequential} hierarchical inference:
+    \begin{itemize}
+      \item \blue{GPU}: fast hyperlikelihoods
+      \item \red{SMC}: data tempering sequentially updates posteriors
+    \end{itemize}
+    
     \vspace{\x}
 
-    \item Demonstrated on a realistic $\mathcal{O}(10^3)$-event ET mock catalog
+    \item Demonstrated on a $\mathcal{O}(10^3)$-event ET mock catalog (nested sampling)
 
     \vspace{\x}
 
@@ -378,7 +406,7 @@
 
     \vspace{\x}
 
-    \item Outlook: joint EOS + population + cosmology inference~\smallcite{Koehn:2026nin}; flow surrogate for compounded hyperlikelihood cost
+    \item Outlook: joint EOS + population + cosmology inference~\smallcite{Koehn:2026nin}%; flow surrogate for compounded hyperlikelihood cost
   \end{itemize}
 
 \end{frame}
@@ -442,15 +470,20 @@
 \begin{frame}{Backup: SMC --- likelihood tempering}
   \def\x{1mm}
 
+  % \begin{align*}
+  %   p_t(\theta) &= \frac{\mathcal{L}(\theta)^{\beta_t}\pi(\theta)}{\mathcal{Z}_t} \, , \quad
+  %   w_t^i = \mathcal{L}(\theta_{t-1}^i)^{\beta_t - \beta_{t-1}} \\[0.5mm]
+  %   \beta_t &= \sup_{\beta \in [\beta_{t-1},1]}\{\mathrm{ESS}_t(\beta) \geq \alpha N\}
+  % \end{align*}
+
   \small
-  \begin{align*}
-    p_t(\theta) &= \frac{\mathcal{L}(\theta)^{\beta_t}\pi(\theta)}{\mathcal{Z}_t} \, , \quad
-    w_t^i = \mathcal{L}(\theta_{t-1}^i)^{\beta_t - \beta_{t-1}} \\[0.5mm]
-    \beta_t &= \sup_{\beta \in [\beta_{t-1},1]}\{\mathrm{ESS}_t(\beta) \geq \alpha N\}
-  \end{align*}
+  \begin{equation*}
+    p_t(\theta) = \frac{\mathcal{L}(\theta)^{\beta_t}\pi(\theta)}{\mathcal{Z}_t} \, , \quad \beta_t = \sup_{\beta \in [\beta_{t-1},1]}\{\mathrm{ESS}_t(\beta) \geq \alpha N\}
+  \end{equation*}
   \normalsize
 
-  \vspace{-5mm}
+  % \vspace{-5mm}
+  \vspace{3mm}
 
   \scriptsize
   \begin{algorithmic}[1]
@@ -476,19 +509,25 @@
 
 \end{frame}
 
-
 \begin{frame}{Backup: SMC --- data tempering}
   \def\x{1mm}
 
   \small
-  \begin{align*}
-    \mathcal{P}_t(\theta) &= \frac{\mathcal{L}(d_{1:b_t}|\theta)\pi(\theta)}{\mathcal{Z}_t} \, , \quad
-    w_t^i = \mathcal{L}_{b_{t-1}:b_t}(\theta_{t-1}^i) \\[0.5mm]
-    b_t &= \sup_{b \in [b_{t-1},T]}\{\mathrm{ESS}_t(b) \geq \tilde\alpha N\}
-  \end{align*}
+  \begin{equation*}
+    \mathcal{P}_t(\theta) = \frac{\mathcal{L}(d_{1:b_t}|\theta)\pi(\theta)}{\mathcal{Z}_t} \, , \quad b_t = \sup_{b \in [b_{t-1},T]}\{\mathrm{ESS}_t(b) \geq \tilde\alpha N\}
+  \end{equation*}
   \normalsize
 
-  \vspace{-4mm}
+  % \small
+  % \begin{align*}
+  %   \mathcal{P}_t(\theta) &= \frac{\mathcal{L}(d_{1:b_t}|\theta)\pi(\theta)}{\mathcal{Z}_t} \, , \quad
+  %   w_t^i = \mathcal{L}_{b_{t-1}:b_t}(\theta_{t-1}^i) \\[0.5mm]
+  %   b_t &= \sup_{b \in [b_{t-1},T]}\{\mathrm{ESS}_t(b) \geq \tilde\alpha N\}
+  % \end{align*}
+  % \normalsize
+
+  % \vspace{-4mm}
+  \vspace{3mm}
 
   \scriptsize
   \begin{algorithmic}[1]
@@ -531,7 +570,7 @@
 
         \vspace{\x}
 
-        \item ESS decays \blue{smoothly and monotonically}, no erratic drops
+        \item ESS decays smoothly and monotonically, no erratic drops
 
         \vspace{\x}
 
@@ -561,11 +600,11 @@
 
         \vspace{\x}
 
-        \item Median $\Lambda$ curve matches the injection \blue{much more closely}
+        \item Median $\Lambda$ curve matches the injection much more closely
 
         \vspace{\x}
 
-        \item Confirms that detector noise, not catalog size, drives the small bias seen in the noisy run
+        \item No slight bias in $\Lambda(M)$
       \end{itemize}
   \end{columns}
 

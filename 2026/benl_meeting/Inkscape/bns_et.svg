@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1700"
+   height="600"
+   viewBox="0 0 1700 600"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="bns_et.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.80952829"
+     inkscape:cx="697.93732"
+     inkscape:cy="51.882066"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs2">
+    <radialGradient
+       id="starGlow"
+       cx="0.5"
+       cy="0.5"
+       r="0.5">
+      <stop
+         offset="0.55"
+         stop-color="#31aed6"
+         stop-opacity="1"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#31aed6"
+         stop-opacity="0"
+         id="stop2" />
+    </radialGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient2"
+       cx="34.599998"
+       cy="10.5"
+       r="23.1"
+       fx="34.599998"
+       fy="10.5"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient3"
+       cx="-34.599998"
+       cy="-10.5"
+       r="20.700001"
+       fx="-34.599998"
+       fy="-10.5"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient4"
+       cx="-2.5"
+       cy="48"
+       r="16.4"
+       fx="-2.5"
+       fy="48"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient5"
+       cx="2.5"
+       cy="-48"
+       r="19.6"
+       fx="2.5"
+       fy="-48"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient6"
+       cx="-42.5"
+       cy="60"
+       r="25.700001"
+       fx="-42.5"
+       fy="60"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient7"
+       cx="42.5"
+       cy="-60"
+       r="31.6"
+       fx="42.5"
+       fy="-60"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient8"
+       cx="-16.299999"
+       cy="59.299999"
+       r="29.200001"
+       fx="-16.299999"
+       fy="59.299999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient9"
+       cx="16.299999"
+       cy="-59.299999"
+       r="39.799999"
+       fx="16.299999"
+       fy="-59.299999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient10"
+       cx="-20.9"
+       cy="37.900002"
+       r="17.700001"
+       fx="-20.9"
+       fy="37.900002"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient11"
+       cx="20.9"
+       cy="-37.900002"
+       r="14.6"
+       fx="20.9"
+       fy="-37.900002"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient12"
+       cx="40.299999"
+       cy="33.099998"
+       r="31.4"
+       fx="40.299999"
+       fy="33.099998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient13"
+       cx="-40.299999"
+       cy="-33.099998"
+       r="31.1"
+       fx="-40.299999"
+       fy="-33.099998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient14"
+       cx="-63"
+       cy="25.299999"
+       r="27.299999"
+       fx="-63"
+       fy="25.299999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient15"
+       cx="63"
+       cy="-25.299999"
+       r="32.5"
+       fx="63"
+       fy="-25.299999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient16"
+       cx="30.4"
+       cy="39.700001"
+       r="19.4"
+       fx="30.4"
+       fy="39.700001"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient17"
+       cx="-30.4"
+       cy="-39.700001"
+       r="26.9"
+       fx="-30.4"
+       fy="-39.700001"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient18"
+       cx="44.599998"
+       cy="28.4"
+       r="28.4"
+       fx="44.599998"
+       fy="28.4"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient19"
+       cx="-44.599998"
+       cy="-28.4"
+       r="22.1"
+       fx="-44.599998"
+       fy="-28.4"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient20"
+       cx="57.299999"
+       cy="33.599998"
+       r="22.299999"
+       fx="57.299999"
+       fy="33.599998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient21"
+       cx="-57.299999"
+       cy="-33.599998"
+       r="32"
+       fx="-57.299999"
+       fy="-33.599998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient22"
+       cx="68.199997"
+       cy="11.7"
+       r="31.700001"
+       fx="68.199997"
+       fy="11.7"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient23"
+       cx="-68.199997"
+       cy="-11.7"
+       r="31.799999"
+       fx="-68.199997"
+       fy="-11.7"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient24"
+       cx="23"
+       cy="31"
+       r="25.6"
+       fx="23"
+       fy="31"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient25"
+       cx="-23"
+       cy="-31"
+       r="16.9"
+       fx="-23"
+       fy="-31"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient26"
+       cx="-44.700001"
+       cy="59.099998"
+       r="27.299999"
+       fx="-44.700001"
+       fy="59.099998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient27"
+       cx="44.700001"
+       cy="-59.099998"
+       r="33.299999"
+       fx="44.700001"
+       fy="-59.099998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient28"
+       cx="-3.7"
+       cy="51.599998"
+       r="26.1"
+       fx="-3.7"
+       fy="51.599998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient29"
+       cx="3.7"
+       cy="-51.599998"
+       r="26.1"
+       fx="3.7"
+       fy="-51.599998"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient30"
+       cx="-33.599998"
+       cy="28.799999"
+       r="25.4"
+       fx="-33.599998"
+       fy="28.799999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient31"
+       cx="33.599998"
+       cy="-28.799999"
+       r="26.200001"
+       fx="33.599998"
+       fy="-28.799999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient32"
+       cx="17.299999"
+       cy="43.799999"
+       r="29.700001"
+       fx="17.299999"
+       fy="43.799999"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#starGlow"
+       id="radialGradient33"
+       cx="-17.299999"
+       cy="-43.799999"
+       r="24.5"
+       fx="-17.299999"
+       fy="-43.799999"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="bns_collection"
+     transform="translate(63.864671,113.14527)">
+    <g
+       id="bns_00"
+       transform="translate(95,111.4)">
+      <circle
+         id="bns_00_orbit"
+         cx="0"
+         cy="0"
+         r="36.200001"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.2"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_00_star_a"
+         cx="34.599998"
+         cy="10.5"
+         r="23.1"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient2)" />
+      <circle
+         id="bns_00_star_b"
+         cx="-34.599998"
+         cy="-10.5"
+         r="20.700001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient3)" />
+    </g>
+    <g
+       id="bns_01"
+       transform="translate(288.8,114.6)">
+      <circle
+         id="bns_01_orbit"
+         cx="0"
+         cy="0"
+         r="48.099998"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.26"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_01_star_a"
+         cx="-2.5"
+         cy="48"
+         r="16.4"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient4)" />
+      <circle
+         id="bns_01_star_b"
+         cx="2.5"
+         cy="-48"
+         r="19.6"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient5)" />
+    </g>
+    <g
+       id="bns_02"
+       transform="translate(478.6,97)">
+      <circle
+         id="bns_02_orbit"
+         cx="0"
+         cy="0"
+         r="73.599998"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.77"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_02_star_a"
+         cx="-42.5"
+         cy="60"
+         r="25.700001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient6)" />
+      <circle
+         id="bns_02_star_b"
+         cx="42.5"
+         cy="-60"
+         r="31.6"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient7)" />
+    </g>
+    <g
+       id="bns_03"
+       transform="translate(677.9,120.2)">
+      <circle
+         id="bns_03_orbit"
+         cx="0"
+         cy="0"
+         r="61.5"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.98"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_03_star_a"
+         cx="-16.299999"
+         cy="59.299999"
+         r="29.200001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient8)" />
+      <circle
+         id="bns_03_star_b"
+         cx="16.299999"
+         cy="-59.299999"
+         r="39.799999"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient9)" />
+    </g>
+    <g
+       id="bns_04"
+       transform="translate(885.7,103.2)">
+      <circle
+         id="bns_04_orbit"
+         cx="0"
+         cy="0"
+         r="43.299999"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.15"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_04_star_a"
+         cx="-20.9"
+         cy="37.900002"
+         r="17.700001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient10)" />
+      <circle
+         id="bns_04_star_b"
+         cx="20.9"
+         cy="-37.900002"
+         r="14.6"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient11)" />
+    </g>
+    <g
+       id="bns_05"
+       transform="translate(1076.6,116.7)">
+      <circle
+         id="bns_05_orbit"
+         cx="0"
+         cy="0"
+         r="52.200001"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.68"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_05_star_a"
+         cx="40.299999"
+         cy="33.099998"
+         r="31.4"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient12)" />
+      <circle
+         id="bns_05_star_b"
+         cx="-40.299999"
+         cy="-33.099998"
+         r="31.1"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient13)" />
+    </g>
+    <g
+       id="bns_06"
+       transform="translate(1248.7,122.5)">
+      <circle
+         id="bns_06_orbit"
+         cx="0"
+         cy="0"
+         r="67.800003"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.72"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_06_star_a"
+         cx="-63"
+         cy="25.299999"
+         r="27.299999"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient14)" />
+      <circle
+         id="bns_06_star_b"
+         cx="63"
+         cy="-25.299999"
+         r="32.5"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient15)" />
+    </g>
+    <g
+       id="bns_07"
+       transform="translate(1465.7,105.3)">
+      <circle
+         id="bns_07_orbit"
+         cx="0"
+         cy="0"
+         r="50"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.47"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_07_star_a"
+         cx="30.4"
+         cy="39.700001"
+         r="19.4"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient16)" />
+      <circle
+         id="bns_07_star_b"
+         cx="-30.4"
+         cy="-39.700001"
+         r="26.9"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient17)" />
+    </g>
+    <g
+       id="bns_08"
+       transform="translate(152.9,295.6)">
+      <circle
+         id="bns_08_orbit"
+         cx="0"
+         cy="0"
+         r="52.900002"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.62"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_08_star_a"
+         cx="44.599998"
+         cy="28.4"
+         r="28.4"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient18)" />
+      <circle
+         id="bns_08_star_b"
+         cx="-44.599998"
+         cy="-28.4"
+         r="22.1"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient19)" />
+    </g>
+    <g
+       id="bns_09"
+       transform="translate(353.3,291.7)">
+      <circle
+         id="bns_09_orbit"
+         cx="0"
+         cy="0"
+         r="66.400002"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.62"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_09_star_a"
+         cx="57.299999"
+         cy="33.599998"
+         r="22.299999"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient20)" />
+      <circle
+         id="bns_09_star_b"
+         cx="-57.299999"
+         cy="-33.599998"
+         r="32"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient21)" />
+    </g>
+    <g
+       id="bns_10"
+       transform="translate(529.4,275.5)">
+      <circle
+         id="bns_10_orbit"
+         cx="0"
+         cy="0"
+         r="69.199997"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.66"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_10_star_a"
+         cx="68.199997"
+         cy="11.7"
+         r="31.700001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient22)" />
+      <circle
+         id="bns_10_star_b"
+         cx="-68.199997"
+         cy="-11.7"
+         r="31.799999"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient23)" />
+    </g>
+    <g
+       id="bns_11"
+       transform="translate(727.1,298.5)">
+      <circle
+         id="bns_11_orbit"
+         cx="0"
+         cy="0"
+         r="38.599998"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.29"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_11_star_a"
+         cx="23"
+         cy="31"
+         r="25.6"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient24)" />
+      <circle
+         id="bns_11_star_b"
+         cx="-23"
+         cy="-31"
+         r="16.9"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient25)" />
+    </g>
+    <g
+       id="bns_12"
+       transform="translate(907.8,293.4)">
+      <circle
+         id="bns_12_orbit"
+         cx="0"
+         cy="0"
+         r="74.099998"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.97"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_12_star_a"
+         cx="-44.700001"
+         cy="59.099998"
+         r="27.299999"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient26)" />
+      <circle
+         id="bns_12_star_b"
+         cx="44.700001"
+         cy="-59.099998"
+         r="33.299999"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient27)" />
+    </g>
+    <g
+       id="bns_13"
+       transform="translate(1116.8,278.9)">
+      <circle
+         id="bns_13_orbit"
+         cx="0"
+         cy="0"
+         r="51.700001"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.45"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_13_star_a"
+         cx="-3.7"
+         cy="51.599998"
+         r="26.1"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient28)" />
+      <circle
+         id="bns_13_star_b"
+         cx="3.7"
+         cy="-51.599998"
+         r="26.1"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient29)" />
+    </g>
+    <g
+       id="bns_14"
+       transform="translate(1305.9,273.6)">
+      <circle
+         id="bns_14_orbit"
+         cx="0"
+         cy="0"
+         r="44.200001"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.56"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_14_star_a"
+         cx="-33.599998"
+         cy="28.799999"
+         r="25.4"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient30)" />
+      <circle
+         id="bns_14_star_b"
+         cx="33.599998"
+         cy="-28.799999"
+         r="26.200001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient31)" />
+    </g>
+    <g
+       id="bns_15"
+       transform="translate(1515.3,284.8)">
+      <circle
+         id="bns_15_orbit"
+         cx="0"
+         cy="0"
+         r="47"
+         fill="none"
+         stroke="#2a5885"
+         stroke-width="1.59"
+         stroke-opacity="0.6" />
+      <circle
+         id="bns_15_star_a"
+         cx="17.299999"
+         cy="43.799999"
+         r="29.700001"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient32)" />
+      <circle
+         id="bns_15_star_b"
+         cx="-17.299999"
+         cy="-43.799999"
+         r="24.5"
+         fill="url(#starGlow)"
+         style="fill:url(#radialGradient33)" />
+    </g>
+  </g>
+  <rect
+     style="fill:none;stroke:#00695c;stroke-width:6.82737;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-opacity:1"
+     id="rect33"
+     width="199.84706"
+     height="210.00626"
+     x="640.32068"
+     y="128.36343"
+     ry="56.001671" />
+  <rect
+     style="fill:none;stroke:#9c27b0;stroke-width:6.88687;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-opacity:1"
+     id="rect33-0"
+     width="1565.9915"
+     height="517.5094"
+     x="88.898659"
+     y="44.955547"
+     ry="56.721233" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56px;line-height:0.6;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#00695c;fill-opacity:1;stroke:none;stroke-width:7;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-opacity:1"
+     x="610.23181"
+     y="108.70529"
+     id="text33"><tspan
+       sodipodi:role="line"
+       id="tspan33"
+       x="610.23181"
+       y="108.70529"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Single-event </tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56px;line-height:0.6;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;direction:ltr;fill:#00695c;fill-opacity:1;stroke:none;stroke-width:7;stroke-miterlimit:3.8;stroke-dasharray:none;stroke-opacity:1"
+     x="-443.82874"
+     y="58.881554"
+     id="text33-9"
+     transform="rotate(-90)"><tspan
+       sodipodi:role="line"
+       id="tspan33-7"
+       x="-443.82874"
+       y="58.881554"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:56px;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9c27b0;fill-opacity:1">Population</tspan></text>
+</svg>

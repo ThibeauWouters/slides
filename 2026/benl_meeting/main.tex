@@ -436,18 +436,87 @@
   \def\y{2mm}
 
   \begin{itemize}
-    \item Toy catalogue: $1$ month of binary neutron stars with ET ($\sim 1500$)
+    \item Toy catalogue: $1$ month of binary neutron stars (GW) ($\sim 1500$)
+
+    \vspace{\y}
+
+    \item Runtime $\sim 2$ hrs; expectation for 1 year: $\sim 2$ days
   \end{itemize}
 
-  \vspace{2mm}
-
-  \begin{figure}
-    \centering
-    \includegraphics[width=0.99\textwidth]{Inkscape/scalable_jester.pdf}
-  \end{figure}
+  \only<1>{
+    % \vspace{2mm}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.90\textwidth]{Inkscape/scalable_jester_smc.pdf}
+    \end{figure}
+  }
   
+  \only<2>{
+    % \vspace{2mm}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.875\textwidth]{Inkscape/scalable_jester_eos.pdf}
+    \end{figure}
+  }
 \end{frame}
 
+\begin{frame}{Multimessenger forecasts}
+  \def\x{2mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item Multimessenger forecasts for population + equation of state + cosmology with \textsc{jester}~\cite{Koehn:2026nin}
+
+    \vspace{\y}
+
+    \item Runtime $\sim 2$ hrs; expectation for 1 year: $\sim 2$ days
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Conclusions}
+  \def\x{5mm}
+  \def\y{2mm}
+
+  \begin{itemize}
+    \item ET challenges our data analysis
+
+    \vspace{\x}
+    
+    \item GPU $\times$ software innovations
+
+    \begin{itemize}
+      \vspace{\y}
+      \item \jaxdarkgreen{\textbf{Single-event}}: slice-within-Gibbs
+
+      \vspace{\y}
+
+      \item \jaxpurple{\textbf{Population}}: sequential Monte Carlo
+    \end{itemize}
+
+    \vspace{\x}
+    
+    \item Results
+
+    \begin{itemize}
+      \vspace{\y}
+      \item \jaxdarkgreen{\textbf{\textsc{ripple}, \textsc{jim}}}: ET under development
+
+      \vspace{\y}
+
+      \item \jaxpurple{\textbf{jester}}
+      \begin{itemize}
+        \vspace{\y}
+        \item Scale to $\mathcal{O}(10^3)$ sources
+
+        \vspace{\y}
+        
+        \item Multimessenger forecasts
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
 
 {
 \usebackgroundtemplate{\transparent{0.5}{\includegraphics[width=\paperwidth,height=\paperheight]{Figures/tintin_BNS_2.png}}}

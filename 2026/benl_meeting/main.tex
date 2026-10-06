@@ -199,7 +199,7 @@
 
 \begin{frame}{Neutron stars and fundamental physics}
 
-  Neutron star mergers, especially when observed as multimessenger events (e.g., GW170817), probe
+  Neutron star mergers and multimessenger observations probe
   \vspace{3mm}
   \begin{itemize}
     \item Equation of state of ultradense matter~\cite{LIGOScientific:2018cki}
@@ -243,7 +243,7 @@
 
     \vspace{\x}
 
-    \item \textbf{Solution}: GPU-acceleration and advanced algorithms
+    \item \textbf{Solution}: GPU-acceleration $\times$ algorithm innovations
   \end{itemize}
 
   \begin{figure}
@@ -319,24 +319,20 @@
 \end{frame}
 
 \begin{frame}[plain, noframenumbering]{}
-  \vspace{20mm}
+  \vspace{10mm}
   \begin{figure}
     \centering
-    \includegraphics[width=0.9\textwidth]{Inkscape/population.pdf}
+    \includegraphics[width=0.9\textwidth]{Inkscape/population_eos.pdf}
   \end{figure}
 \end{frame}
 
 
-\begin{frame}{\textsc{jester} and sequential Monte Carlo (SMC)}
+\begin{frame}{Equation of state inference with \textsc{jester}}
   \def\x{4mm}
   \def\y{3mm}
 
   \begin{itemize}
-    \item \textsc{jester} \href{https://github.com/nuclear-multimessenger-astronomy/jester}{\textcolor{black}{\faGithub}}~\cite{Wouters:2025zju}: used by LVK and ET
-
-    \vspace{\y}
-    
-    \item From $N$ events $d_i$ to equation of state (EOS) posterior
+    \item Target: Equation of state (EOS) posterior from $N$ events $d_i$
 
     \vspace{-2mm}
 
@@ -344,9 +340,13 @@
       \mathcal{P}(\theta_{\rm{EOS}} | \{d_1, \dots, d_N\}) \propto \mathcal{L}(\{d_1, \dots, d_N\} | \theta_{\rm{EOS}}) \times \pi(\theta_{\rm{EOS}})
     \end{equation*}
 
+    \vspace{2mm}
+
+    \item \textbf{\smcpurple{Sequential Monte Carlo}}: particles from prior to posterior through a sequence of intermediate densities $p_t$
+
     \vspace{\y}
-    
-    \item \textbf{\smcpurple{Sequential Monte Carlo}}: particles from prior $\rightarrow$ posterior through a sequence of intermediate densities $p_t$
+
+    \item \textsc{jester} \href{https://github.com/nuclear-multimessenger-astronomy/jester}{\textcolor{black}{\faGithub}}~\cite{Wouters:2025zju}: used by LVK and ET
   \end{itemize}
 
   \vfill
@@ -367,7 +367,7 @@
   \def\m{-2mm}
 
   \begin{enumerate}
-    \item \textit{Likelihood tempering}:
+    \item Likelihood tempering:
 
     \vspace{\m}
     
@@ -377,7 +377,7 @@
 
     \vspace{\y}
     
-    \item \textit{Data tempering}: 
+    \item Data tempering:
 
     \vspace{\m}
     
@@ -412,18 +412,18 @@
   % \end{itemize}
 
   \begin{itemize}
-    \item ET catalogs will grow rapidly
+    \item ET catalogs will grow rapidly: need to sequentially update posteriors
 
     \vspace{\x}
 
-    \item Need to sequentially update posteriors (data tempering)
+    \item Effective sample size (ESS): metric for adaptive batching
 
     \vspace{\x}
 
     \item Use likelihood tempering for robustness
   \end{itemize}
 
-  \vspace{2mm}
+  \vspace{3mm}
 
   \begin{figure}
     \centering
@@ -441,6 +441,10 @@
     \vspace{\y}
 
     \item Runtime $\sim 2$ hrs; expectation for 1 year: $\sim 2$ days
+
+    \vspace{\y}
+
+    \item Processing events `in real time', as we will do it $\sim 10$ years from now!
   \end{itemize}
 
   \only<1>{
@@ -460,32 +464,42 @@
   }
 \end{frame}
 
+\begin{frame}[plain, noframenumbering]{}
+  \vspace{10mm}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{Inkscape/population_eos_cosm.pdf}
+  \end{figure}
+\end{frame}
+
 \begin{frame}{Multimessenger forecasts}
   \def\x{2mm}
   \def\y{2mm}
 
   \begin{itemize}
-    \item Multimessenger forecasts for population + equation of state + cosmology with \textsc{jester}~\cite{Koehn:2026nin}
+    \item Multimessenger forecasts ($1$ year of mergers) for population + equation of state + cosmology with \textsc{jester}~\cite{Koehn:2026nin}
 
     \vspace{\y}
 
-    \item Runtime $\sim 2$ hrs; expectation for 1 year: $\sim 2$ days
+    \item 
   \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Conclusions}
-  \def\x{5mm}
-  \def\y{2mm}
+  \def\x{3mm}
+  \def\y{1mm}
+
+  \vspace{-2mm}
 
   \begin{columns}[T]
   \begin{column}{0.725\textwidth}
   \begin{itemize}
-    \item ET challenges data analysis for neutron stars
+    \item \textbf{Challenge}: ET will see $\mathcal{O}(10^4)$ binary neutron star mergers per year
 
     \vspace{\x}
     
-    \item GPU $\times$ software innovations
+    \item \textbf{Solution}: GPU $\times$ algorithmic innovations
 
     \begin{itemize}
       \vspace{\y}
@@ -498,11 +512,15 @@
 
     \vspace{\x}
     
-    \item Results
+    \item \textbf{Results}:
 
     \begin{itemize}
       \vspace{\y}
-      \item \jaxdarkgreen{\textbf{\textsc{ripple}, \textsc{jim}}}: ET under development
+      \item \jaxdarkgreen{\textbf{\textsc{ripple}, \textsc{jim}}}: 
+      \begin{itemize}
+        \item LVK signals (and lensing!)
+        \item ET under development
+      \end{itemize}
 
       \vspace{\y}
 
@@ -516,6 +534,8 @@
         \item Multimessenger forecasts
       \end{itemize}
     \end{itemize}
+    
+    \item Strong BeNL presence!
   \end{itemize}
   \end{column}
   \begin{column}{0.290\textwidth}

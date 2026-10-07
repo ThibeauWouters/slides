@@ -61,7 +61,6 @@
 \setbeamertemplate{bibliography item}{\insertbiblabel} % improved references
 
 
-
 % Other preamble stuff:
 \usepackage{preamble}
 
@@ -260,13 +259,13 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Single event: slice-within-Gibbs sampler}
+\begin{frame}{Single event: slice-within-Gibbs sampler (\texttt{2607.28265})}
 
   \def\x{3mm}
   \def\y{1mm}
 
   \begin{itemize}
-    \item Standard sampling: move in full parameter space
+    \item Waveform generation is expensive
 
     \vspace{\x}
 
@@ -361,7 +360,7 @@
 \end{frame}
 
 
-\begin{frame}{Likelihood vs.\ data tempering}
+\begin{frame}{Likelihood tempering vs.\ data tempering}
   \def\x{5mm}
   \def\y{2mm}
   \def\m{-2mm}
@@ -372,7 +371,7 @@
     \vspace{\m}
     
     \begin{equation*}
-      p_t(\theta) \propto \mathcal{L}(\{d_1, \dots, d_N\} | \theta)^{\red{\beta_t}} \pi(\theta) \, \quad \beta_t: 0 \rightarrow 1
+      p_{\red{t}}(\theta) \propto \mathcal{L}(\{d_1, \dots, d_N\} | \theta)^{\red{\beta_t}} \pi(\theta) \, \quad \beta_t: 0 \rightarrow 1
     \end{equation*}
 
     \vspace{\y}
@@ -382,7 +381,7 @@
     \vspace{\m}
     
     \begin{equation*}
-      p_t(\theta) \propto \mathcal{L}(\{d_1, \dots, d_{\red{t}}\} | \theta) \pi(\theta) \, \quad t: 1 \rightarrow N
+      p_{\red{t}}(\theta) \propto \mathcal{L}(\{d_1, \dots, d_{\red{t}}\} | \theta) \pi(\theta) \, \quad t: 1 \rightarrow N
     \end{equation*}
   \end{enumerate}
 
@@ -396,23 +395,11 @@
 \end{frame}
 
 
-\begin{frame}{Adaptive hybrid algorithm}
+\begin{frame}{Adaptive hybrid algorithm (\texttt{2610.07975})}
   \def\x{2mm}
 
-  % \begin{itemize}
-  %   \item New events \blue{queued} while effective sample size (ESS) stays high
-
-  %   \vspace{\x}
-
-  %   \item ESS drops below threshold $\alpha$ $\Rightarrow$ \red{update} posterior with likelihood tempering over the batch
-
-  %   \vspace{\x}
-
-  %   \item Naturally handles \blue{growing catalogs}, without restarting from the prior
-  % \end{itemize}
-
   \begin{itemize}
-    \item ET catalogs will grow rapidly: need to sequentially update posteriors
+    \item ET catalogs will grow rapidly: sequentially update posteriors~\cite{wouters2026scalablesequentialinferenceneutron}
 
     \vspace{\x}
 
@@ -431,7 +418,7 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Proof of concept}
+\begin{frame}{Proof of concept (\texttt{2610.07975})}
   \def\x{2mm}
   \def\y{2mm}
 
@@ -472,7 +459,7 @@
   \end{figure}
 \end{frame}
 
-\begin{frame}{Multimessenger forecasts}
+\begin{frame}{Multimessenger forecasts (\texttt{2607.28438})}
   \def\x{2mm}
   \def\y{2mm}
 
@@ -592,5 +579,21 @@
 \vfill
 \end{frame}
 
+\begin{frame}{$\Lambda$ recovery}
+  \begin{figure}
+    \includegraphics[width=\textwidth]{Figures/lambda_noise.jpg}
+  \end{figure}
+\end{frame}
 
+\begin{frame}{Zero noise results}
+  \begin{figure}
+    \includegraphics[width=0.75\textwidth]{Figures/no_noise_smc.jpg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Zero noise results}
+  \begin{figure}
+    \includegraphics[width=0.65\textwidth]{Figures/no_noise.jpg}
+  \end{figure}
+\end{frame}
 \end{document}
